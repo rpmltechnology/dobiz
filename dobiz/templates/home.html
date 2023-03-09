@@ -1,0 +1,424 @@
+{% extends 'index.html' %}
+{%block title%} Dobizindia business solution private limited{% endblock %}
+{%load myfilters %}
+{%block body %}
+<style>
+  .message{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .message .success{
+    font-size: 20px;
+    color: green;
+    position: absolute;
+    animation: buttons .3s linear;
+    display: none;
+  }
+  .message .danger{
+    font-size: 20px;
+    color: red;
+    position: absolute;
+    animation: buttons .3s linear;
+    display: none;
+  }
+</style>
+<section class="top-banner" data-aos="fade-left">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-12 pt-5">
+        <h1>Easy to set Up, Manage & Grow <br /> Your Business easily in India. </h1>
+        <p> Setindiabiz provides a complete suite of tax, IPR and compliance services to Companies in India. Through an
+          organised team of CA, CS, and Lawyers, duly supported by a pool of trained accountants and paralegals. </p>
+        <button type="button" class="btn btn-lg btn-primary mt-4 py-2 px-4">Book Free Consultation</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container-fluid py-5">
+    <div class="row">
+      <div class="col-md-3 col-6 bg1 bg-content bg_border">
+        <div class="s-content">
+          <i class="fa fa-server fonta pb-4" aria-hidden="true"></i>
+          <p>100% Online, Easy & All India Services.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6 bg1 bg-content bg_border">
+        <div class="s-content">
+          <i class="fa fa-money pb-4" aria-hidden="true"></i>
+          <p>Quality & Affordable Service Offerings</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6 bg1 bg-content bg_border">
+        <div class="s-content">
+          <i class="fa fa-users pb-4" aria-hidden="true"></i>
+          <p>18+ Years Experienced Team of Professionals</p>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-6 bg1 bg-content bg_border">
+        <div class="s-content">
+          <i class="fa fa-clock-o pb-4" aria-hidden="true"></i>
+          <p>Fast and Accurate Compliance Services</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-5" data-aos="fade-up">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-6 col-12 about-content">
+        <h6>About</h6>
+        <h2>We Have 18+ Years Of Experience In Online Tax & Compliance Services</h2>
+        <p class="fs-5">Our founders and key team members have over 18 years of professional experience in providing
+          quality and affordable compliance services in India. Setindiabiz serves pan India with offices located in
+          major cities.</p>
+        <div class="about-text-style">
+          <div>
+            <p>We are India’s leading online platform to provide corporate law, tax, payroll, compliance and IPR
+              Services.</p>
+            <ul>
+              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> High standards of integrity</li>
+              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Online Service Platform </li>
+              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Best Quality Yet Affordable</li>
+              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Well Trained Tax Team</li>
+              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Superb Customer Support</li>
+              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> 4.8 Rated on Google </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+
+      <div class="col-md-5 col-12">
+        <img src="static/images/about1.jpg" class="img-fluid" alt="about-image">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- <whatsaap chatboard> -->
+
+<section class="py-5 text-center services" data-aos="fade-down">
+  <div class="container py-2">
+    <div class="row">
+      <div class="col-md-12 col-12">
+        <h6>Our Services</h6>
+        <h2>Avail Over 300+ Professional Services At Setindiabiz</h2>
+        <p>We provide a gamut of all taxation and compliance services for startups and small businesses under one roof
+          with accuracy and accountability. Setindiabiz is known to offer fast, reliable and affordable services all
+          over India.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services_btm pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-12 mx-auto border border-1 rounded-pill">
+        <ul>
+          <li class="px-4 butoon_srv"> FDI </li>
+          <li class="px-4"> Startup India </li>
+          <li class="px-4"> Tax </li>
+          <li class="px-4"> License </li>
+          <li class="px-4"> IPR </li>
+          <li class="px-4"> ROC </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 d_invest" data-aos="fade-down">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-12 pt-4">
+        <div class="p-5">
+          <h2>Foreign Direct Investment</h2>
+          <p> We are experienced to obtain all licences required to start and run a successful enterprise by foreign
+            investors or corporations </p>
+          <button type="button" class="btn-lg mt-4 py-2 px-4"> Get Started </button>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12 mt-4 border-dash">
+        <div class="py-4 pb-4 border-dash2">
+          <h4> 01 </h4>
+          <h4> Do Business in India </h4>
+          <p> Favorable tax structure and consistent tax reforms have made India a preferred destination for foreign
+            businesses. </p>
+          <a href="#" class="card-link border-icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="py-4">
+          <h4> 03 </h4>
+          <h4> Branch Office </h4>
+          <p> Foreign companies which have earned profits for five continuous years can open their Branch offices in
+            India. </p>
+          <a href="#" class="card-link border-icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 col-12 mt-4">
+        <div class="py-4 pb-4 border-dash2">
+          <h4> 02 </h4>
+          <h4> Wholly Owned Subsidiary </h4>
+          <p> Most sectors permit foreign companies to set up wholly owned subsidiaries under the automatic approval
+            route. </p>
+          <br />
+          <a href="#" class="card-link border-icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="py-4">
+          <h4> 04 </h4>
+          <h4> Project Office </h4>
+          <p> A foreign company can set up one or more Project offices in India to complete specific assigned projects.
+          </p>
+          <a href="#" class="card-link border-icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-brands">
+  <div class="container">
+    <h4>Leading Brands Rely On Our Expertise</h4>
+    <div class="row py-2">
+
+      <div class="col-md-2 col-4">
+        <div class="shadow m-2">
+          <img src="static/images/client-logo1.png" alt="brands" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-4">
+        <div class="shadow m-2">
+          <img src="static/images/client-logo2.png" alt="brands" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-4">
+        <div class="shadow m-2">
+          <img src="static/images/client-logo3.png" alt="brands" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-4">
+        <div class="shadow m-2">
+          <img src="static/images/client-logo4.png" alt="brands" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-4">
+        <div class="shadow m-2">
+          <img src="static/images/client-logo5.png" alt="brands" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-4">
+        <div class="shadow m-2">
+          <img src="static/images/client-logo6.png" alt="brands" class="img-fluid">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row py-2">
+
+      <div class="col-md-2 col-4">
+        <div class="shadow m-2">
+          <img src="static/images/client-logo7.png" alt="brands" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-4">
+        <div class="shadow m-2">
+          <img src="static/images/client-logo8.png" alt="brands" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-4">
+        <div class="shadow m-2">
+          <img src="static/images/client-logo9.png" alt="brands" class="img-fluid">
+        </div>
+      </div>
+
+
+      <div class="col-md-2 col-4">
+        <div class="shadow m-2">
+          <img src="static/images/client-logo10.png" alt="brands" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-4">
+        <div class="shadow m-2">
+          <img src="static/images/client-logo11.png" alt="brands" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-4">
+        <div class="shadow m-2">
+          <img src="static/images/client-logo12.png" alt="brands" class="img-fluid">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="experience py-5">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-4 col-12 mx-auto">
+        <h5 class="text-primary text-center"> Experienced ProfessionalsOf Setindiabiz Works For You </h3>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-5 col-12">
+        <div class="pt-5">
+          <h4 class="pt-4"> Foreign Direct Investment </h4>
+          <p> We ensure that only the best of the consulting experience is given to our clients to reduce the cost of
+            compliance and provide ease of doing business in India. The team is selected through a rigorous interview
+            and test process, and they go through extensive domain-related training enabling them to provide quality
+            professional advice and service. We have a tradition of over 18 years to help Startup India and MSME in
+            India with 300+ Services across various domains. </p>
+        </div>
+      </div>
+
+      <div class="col-md-1"></div>
+
+      <div class="col-md-3 col-12">
+        <div class="py-2">
+          <h4>Truly Digital</h4>
+          <p>100% Online Customer Service Equipped With a Modern and Effective CRM</p>
+        </div>
+
+        <div class="py-2">
+          <h4> Affordable </h4>
+          <p> We are amazingly affordable while delivering high-quality professional service. </p>
+        </div>
+
+        <div class="py-2">
+          <h4> 4.8 Google Rating </h4>
+          <p> Our Customers love us. We enjoy tremendous trust in form of Google Rating </p>
+        </div>
+
+      </div>
+
+      <div class="col-md-3 col-12">
+
+        <div class="py-2 pt-5">
+          <h4> All CA/CS/Law Services </h4>
+          <p> We have a range of services from startup registration, GST, ROC Filing, Payroll to IPR, all under one
+            umbrella & for all over India </p>
+        </div>
+
+        <div class="py-2">
+          <h4> Fast Service Delivery </h4>
+          <p> Faster delivery of the services is a priority for our team. We take customer support very seriously, which
+            can be tracked here </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="text-white partner" data-aos="fade-down">
+  <div class="container py-2">
+    <div class="row">
+
+      <div class="col-md-5 col-12 par-border p-4">
+        <h2 class="pt-4"> Our Partners Benefit From Expertise in IPR and Compliance. </h2>
+        <p> Earn Money & Peace of Mind while we work in the background for you. </p>
+        <button class="btn-lg mx-1 hire2 px-4 py-2 mt-4 my-1"> <a href="{% url 'signup' %}"> Join Now </a> </button>
+      </div>
+
+      <div class="col-md-7 col-12 p-5">
+        <h4 class="text-center py-2"> Send a message </h4>
+        <form class="mx-5" method="POST">{% csrf_token %}
+          <div class="row py-2">
+            <div class="col">
+              <label for="id_name"></label>
+              {{ form.name.errors }}
+              {{ form.name|addclass:'form-control'|addplaceholder:'Your name'}}
+            </div>
+            <div class="col">
+              <label for="id_email"></label>
+              {{ form.email.errors }}
+              {{ form.email|addclass:'form-control'|addplaceholder:'Email Address'}}
+            </div>
+          </div>
+
+          <div class="row py-2">
+            <div class="col">
+              <label for="id_phone"></label>
+              {{ form.phone.errors }}
+              {{ form.phone|addclass:'form-control'|addplaceholder:'Phone'}}
+            </div>
+            <div class="col">
+              <label for="id_state"></label>
+              {{ form.state.errors }}
+              {{ form.state|addclass:'form-control'|addplaceholder:'State'}}
+            </div>
+          </div>
+
+          <div class="mb-3 py-2">
+            <label for="id_comment"></label>
+            {{ form.comment.errors }}
+            {{ form.comment|addclass:'form-control'|addplaceholder:'Write Us Here'}}
+          </div>
+
+          <div class="d-grid gap-2 py-4">
+            <button class="btn btn-primary" type="submit" onclick="message()">Submit
+            </button>
+          </div>
+
+        </form>
+        <div id="message">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
+<script>
+  function message(){
+    const success = document.getElementById('success');
+    var comment = document.getElementById('id_comment');
+    const danger = document.getElementById('danger')
+    if (comment.value === ''){
+      danger.style.display = 'block';
+    }
+    else {
+      success.style.display = 'block';
+    }
+  }
+  </script>

@@ -1,0 +1,482 @@
+{% extends 'index.html' %}
+{%block title%}Partnership firm Registration{% endblock %}
+{% load static %}
+{%load myfilters %}
+{%block body %}
+
+
+<section class="top-bn1 bn-styles py-4 aos-init aos-animate" data-aos="fade-left">
+  <div class="container py-4">
+    <div class="row pt-4">
+
+      <div class="col-md-4 col-12 space_top">
+        <img src="/media/{{ banner.img }}" alt="logo-img" class="img-fluid">
+      </div>
+
+      <div class="col-md-4 col-12 space_top">
+        <h4 class="fs-1"> {{ banner.heading_text }} </h4>
+        <p><span class="bg-primary p-1 text-white"> {{ banner.review_rating }} </span> <a class="text-decoration-none" href="#"> &nbsp; {{banner.review}} </a> </p>
+        <p class="fs-5"> {{ banner.text }} </p>
+        <p class="fs-5"> <a href="#" class="text-decoration-none text-dark"> {{ banner.text2 }} </a> </p>
+        <p> <a href="#"> Terms and conditions </a> </p>
+      </div>
+
+      <div class="col-md-1"></div>
+
+      {% include 'common_pages/pricing_sum_above.html' %}
+
+
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div id="meaning" class="container tab-pane content active"><br>
+            <h2>{{meaning.heading_text}}</h2>
+            <p>{{meaning.text}}</p>
+
+          </div>
+
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2 class="py-4">{{minimum.heading_text}}</h2>
+                <p>{{minimum.text}}</p>
+
+                <p class="b-style text-style">{{minimum.text2}}
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-2 col-12">
+              </div>
+              <div class="col-md-10 col-12">
+                <h2 class="py-4">{{benefit.heading_text}} </h2>
+                <p>{{benefit.text}} </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading pt-2">
+                <h2 class="fs-4">{{document.heading_text}} <span class="text-primary">{{document.heading_text2}}</span> {{document.heading_text3}}
+                </h2>
+
+                <div class="about-text-style">
+                  <ul>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list1}} </li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list2}} </li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list3}}
+                    </li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list4}} </li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list5}} </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row text-center btm_grd_banner">
+              <div class="col-md-12 col-12">
+                <div class="py-2 text-white heading2">
+                  <h2 class="fs-4 py-2">{{document.heading_text4}} </h2>
+                  <p class="fs-6 pt-2">{{document.text}}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 col-12 heading">
+                <h2 class="py-4">{{document.text2}}</h2>
+                <p>{{document.text3}}</p>
+              </div>
+            </div>
+
+            <div class="row table-responsive-sm">
+              <div class="col-md-12 col-12 p-2">
+                <table class="table">
+                  <tbody>
+                    <tr class="table-dark">
+                      <td>{{document.list6}}s</td>
+                    </tr>
+                    <tr class="table-primary">
+                      <td>{{document.list7}}</td>
+                    </tr>
+
+                    <tr class="table-info">
+                      <td>{{document.list8}}</td>
+                    </tr>
+                    <tr class="table-warning">
+                      <td>{{document.list9}}</td>
+                    </tr>
+
+                    <tr class="table-light">
+                      <td>{{document.list10}}
+                      </td>
+                    </tr>
+
+                    <tr class="table-primary">
+                      <td>{{document.list11}}</td>
+                    </tr>
+
+                    <tr class="table-info">
+                      <td>{{document.list12}}</td>
+                    </tr>
+                    <tr class="table-warning">
+                      <td>{{document.list13}}</td>
+                    </tr>
+
+                    <tr class="table-light">
+                      <td>{{document.list14}}</td>
+                    </tr>
+
+                    <tr class="table-info">
+                      <td>{{document.list15}}</td>
+                    </tr>
+                    <tr class="table-warning">
+                      <td>{{document.list16}}d</td>
+                    </tr>
+
+                    <tr class="table-light">
+                      <td>{{document.list17}}</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+
+            </div>
+
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">{{closure.heading_text}} <span class="text-primary">{{closure.heading_text2}} </span> {{closure.heading_text3}}
+            </h2>
+            <div class="about-text-style">
+              <ul>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{closure.list1}}
+                </li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{closure.list2}}</li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{closure.list3}}</li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{closure.list4}} </li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{closure.list5}}</li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{closure.list6}}</li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{closure.list7}} </li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{closure.list8}} </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {% include 'common_pages/pricing_sum_below.html' %}
+
+    </div>
+  </div>
+</section>
+
+<section class="Professional py-5">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12 text-center text-white">
+        <h2> Our Professional Fee For FSSAI Registration of License </h2>
+      </div>
+    </div>
+
+
+    <div class="row pro-box">
+      <div class="col-md-4 col-12">
+        <div class="shadow bg-light p-5">
+          <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
+          <div class="text-center">
+            <h2> Fssai Registration </h2>
+            <p class="pro-box-para"> Required if the turnover is less than 12 lac in a Financial Year & the business is
+              within the state </p>
+            <div class="pt-4"></div>
+            <h1 class="py-2"> ₹ 2,999/- </h1>
+            <p> Government Fee on Actual </p>
+            <br />
+            <div class="d-grid gap-2">
+              <button class="btn btn-success py-3" type="button"><a href="{% url 'order' %}"> Get started </a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="shadow bg-light p-5">
+          <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
+          <div class="text-center">
+            <h2> Fssai State License </h2>
+            <p class="pro-box-para"> When turnover is more than 12 Lac & upto 20 Crores for retailer/ 30 Crores for
+              wholesalers </p>
+            <div class="pt-4"></div>
+            <h1 class="py-2"> ₹ 8,499/- </h1>
+            <p> Government Fee on Actual </p>
+            <br />
+            <div class="d-grid gap-2">
+              <button class="btn btn-outline-success py-3 text-dark" type="button"><a href="{% url 'order' %}"> Get started
+                </a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="shadow bg-light p-5">
+          <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
+          <div class="text-center">
+            <h2> Fssai Registration </h2>
+            <p class="pro-box-para"> For all cases where turnover exceeds limits prescribed for state License or
+              involved in export. </p>
+            <div class="pt-4"></div>
+            <h1 class="py-2"> ₹ 11,999/- </h1>
+            <p> Government Fee on Actual </p>
+            <br />
+            <div class="d-grid gap-2">
+              <button class="btn btn-outline-success py-3" type="button"><a href="{% url 'order' %}"> Get started </a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="checklist py-5">
+  <div class="container">
+    <h2> {{step.heading_text}} </h2>
+    <div class="row py-4">
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step1}} </h5>
+          <p> {{step.answer1}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step2}} </h5>
+          <p> {{step.answer2}} </p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step3}} </h5>
+          <p> {{step.answer3}} </p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step4}} </h5>
+          <p>{{step.answer4}}
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step5}} </h5>
+          <p> {{step.answer5}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step6}} </h5>
+          <p> {{step.answer6}} </p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step7}} </h5>
+          <p> {{step.answer7}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-11 col-12 mx-auto heading2">
+        <h2>{{faq.heading_text}}</h2>
+        <div class="accordion pt-2" id="accordionExample">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                {{faq.question1}}
+              </button>
+            </h4>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer1}}
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                {{faq.question2}}
+              </button>
+            </h4>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer2}}
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                {{faq.question3}}
+              </button>
+            </h4>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer3}}
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                {{faq.question4}}
+              </button>
+            </h4>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer4}}
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                {{faq.question5}}
+              </button>
+            </h4>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                <strong>{{faq.answer5}}</strong>
+                <ul>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list1}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list2}} </li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list3}} </li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list4}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list5}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list6}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list7}} </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                {{faq.question6}}
+              </button>
+            </h4>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                <strong>{{faq.answer6}}</strong>
+                <ul>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.question7}} </li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.answer7}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list8}} </li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list9}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list10}} </li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.heading_text2}} </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+{% endblock %}

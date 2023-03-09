@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="static/css/order.css">
+     <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <title>Dobizindia business solution private limited</title>
+  </head>
+  <body>
+
+    <section>
+      <div class="area"></div><nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="{%url 'home'%}">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                           Home
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                        <i class="fa fa-laptop fa-2x"></i>
+                        <span class="nav-text">
+                            Manage your account
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                            Manage Orders
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-folder-open fa-2x"></i>
+                        <span class="nav-text">
+                            Inbox
+                        </span>
+                    </a>
+                   
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-bar-chart-o fa-2x"></i>
+                        <span class="nav-text">
+                           Drop message
+                        </span>
+                    </a>
+                </li>
+                
+            </ul>
+
+            <!-- <ul class="logout">
+                <li>
+                   <a href="#">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li>  
+            </ul> -->
+        </nav>
+    </section>
+
+
+    <section class="py-4 bg-primary text-white text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-12">
+            <h1>Order Now</h1>
+            <p><a class="text-white" href="{%url 'home'%}">Home</a> / Order Now</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <div class="table-responsive">
+              <table class="table border border-primary table-striped table-hover">
+                  <thead class="table-dark text-white">
+                    <tr>
+                      <th scope="col">Order ID</th>
+                      <th scope="col">Particulars</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td colspan="2">Larry the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6">
+          </div>
+          {% if user.is_authenticated %}
+          <div class="col-md-1 col-6 text-center">
+            <p><i class="fa fa-user fa-2x" aria-hidden="true"></i></p>
+            <p>Hii {{request.user}}</p>
+          </div>
+
+          <div class="col-md-2 col-6 text-center bg-light p-2">
+            <img src="static/images/s5.jpg" alt="services" class="img-fluid" style="width: 106px;">
+            <div class="py-2">
+            <form action="/action_page.php">
+            
+            <select name="cars" id="cars" class="p-2 border-primary">
+              <option value="volvo">Manage Your Account</option>
+              <option value="saab">Manage Orders</option>
+              <option value="opel">In Box</option>
+              <option value="audi">Drop Message</option>
+            </select>
+            <ul class="navbar-nav mr-2">
+              <li class="nav-item dropdown">
+                <div class="mt-2"><button class="p-2 bg-primary border-none text-white"><a href="{%url 'auth_logout'%}"> Signout </a> </button></div>
+              </li>
+            </ul>
+        </div>
+        {% else %}
+        <!-- Button to  trigger Login modal -->
+        <div class="mt-2"><button class="mx-1 hire px-2 py-2 my-3 rounded-pill"><a href="{%url 'auth_login'%}"> Sign-IN </a> </button></div>
+        </button>
+        {% endif %}
+          </form>
+          </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+</html>

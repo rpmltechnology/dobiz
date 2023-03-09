@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="static/css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="static/css/animation.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Dobizindia business solution private limited</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="static/images/faviconnew.ico">
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      /////// Prevent closing from click inside dropdown
+      document.querySelectorAll('.dropdown-menu').forEach(function (element) {
+        element.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      })
+    });
+        // DOMContentLoaded  end
+  </script>
+
+</head>
+
+<body>
+  <section class="topbar">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-12 col-md-6 col-12 top-content-s" data-aos="fade-right">
+          <div class="">
+            <ul>
+              <li> <a href="#"><i class="fa fa-rss" aria-hidden="true"></i> Blog</a> </li>
+              <li> <a href="#"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Payment</a> </li>
+              <li> <a href="#"><i class="fa fa-headphones" aria-hidden="true"></i> Support</a> </li>
+              <li> <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> Compliance Calendar</a> </li>
+              <li> <a href="#"><i class="fa fa-handshake-o" aria-hidden="true"></i> Contact Us</a> </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-12 top-content-s" data-aos="fade-left">
+          <div class="text-end">
+            <ul>
+              <li> <a href="#"><i class="fa fa-phone" aria-hidden="true"></i> 1234567890</a> </li>
+              <li> <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> admin@gmail.com</a> </li>
+              <li> <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp</a> </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  {% include 'common_pages/header.html'%}
+
+
+  <section class="top-bn5 bn-styles" data-aos="fade-left">
+    <div class="container">
+      <div class="row pt-4">
+        <div class="col-md-8 col-12 pt-5 pt-5">
+
+          <h2 class="text-white"><b>Dobizindia Carrier</b></h2>
+          <h1 class="hire_text">We Are <span>Hiring </span> </h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-md-3 col-12">
+          <div class="border shadow">
+            <h4 class="career">Total Post <span>66</span> </h4>
+            <div class="p-2">
+              <p><b>Job Role:<span class="posts"> Web Designer </span> </b> </p>
+              <p><b>Experience:<span class="posts"> 4 Years </span> </b> </p>
+              <p><b>Qualification:<span class="posts"> B.tech </span> </b> </p>
+              <h2 class="text-center"><i class="fa fa-address-card" aria-hidden="true"></i></h2>
+              <div class="text-center my-4">
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="opportunities.html" class="job_btn">
+                    Apply Now </a> </button>
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="{% url 'jobs'%}" class="job_btn"> Read more..
+                  </a> </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-12">
+          <div class="border shadow">
+            <h4 class="career">Total Post <span>66</span> </h4>
+            <div class="p-2">
+              <p><b>Job Role:<span class="posts"> Web Designer </span> </b> </p>
+              <p><b>Experience:<span class="posts"> 4 Years </span> </b> </p>
+              <p><b>Qualification:<span class="posts"> B.tech </span> </b> </p>
+              <h2 class="text-center"><i class="fa fa-address-card" aria-hidden="true"></i></h2>
+              <div class="text-center my-4">
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="opportunities.html" class="job_btn">
+                    Apply Now </a> </button>
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="{% url 'jobs'%}" class="job_btn"> Read more..
+                  </a> </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-12">
+          <div class="border shadow">
+            <h4 class="career">Total Post <span>66</span> </h4>
+            <div class="p-2">
+              <p><b>Job Role:<span class="posts"> Web Designer </span> </b> </p>
+              <p><b>Experience:<span class="posts"> 4 Years </span> </b> </p>
+              <p><b>Qualification:<span class="posts"> B.tech </span> </b> </p>
+              <h2 class="text-center"><i class="fa fa-address-card" aria-hidden="true"></i></h2>
+              <div class="text-center my-4">
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="opportunities.html" class="job_btn">
+                    Apply Now </a> </button>
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="{% url 'jobs'%}" class="job_btn"> Read more..
+                  </a> </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-3 col-12">
+          <div class="border shadow">
+            <h4 class="career">Total Post <span>66</span> </h4>
+            <div class="p-2">
+              <p><b>Job Role:<span class="posts"> Web Designer </span> </b> </p>
+              <p><b>Experience:<span class="posts"> 4 Years </span> </b> </p>
+              <p><b>Qualification:<span class="posts"> B.tech </span> </b> </p>
+              <h2 class="text-center"><i class="fa fa-address-card" aria-hidden="true"></i></h2>
+              <div class="text-center my-4">
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="opportunities.html" class="job_btn">
+                    Apply Now </a> </button>
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="{% url 'jobs'%}" class="job_btn"> Read more..
+                  </a> </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row my-5">
+        <div class="col-md-3 col-12">
+          <div class="border shadow">
+            <h4 class="career">Total Post <span>66</span> </h4>
+            <div class="p-2">
+              <p><b>Job Role:<span class="posts"> Web Designer </span> </b> </p>
+              <p><b>Experience:<span class="posts"> 4 Years </span> </b> </p>
+              <p><b>Qualification:<span class="posts"> B.tech </span> </b> </p>
+              <h2 class="text-center"><i class="fa fa-address-card" aria-hidden="true"></i></h2>
+              <div class="text-center my-4">
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="opportunities.html" class="job_btn">
+                    Apply Now </a> </button>
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="{% url 'jobs'%}" class="job_btn"> Read more..
+                  </a> </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-12">
+          <div class="border shadow">
+            <h4 class="career">Total Post <span>66</span> </h4>
+            <div class="p-2">
+              <p><b>Job Role:<span class="posts"> Web Designer </span> </b> </p>
+              <p><b>Experience:<span class="posts"> 4 Years </span> </b> </p>
+              <p><b>Qualification:<span class="posts"> B.tech </span> </b> </p>
+              <h2 class="text-center"><i class="fa fa-address-card" aria-hidden="true"></i></h2>
+              <div class="text-center my-4">
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="opportunities.html" class="job_btn">
+                    Apply Now </a> </button>
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="{% url 'jobs'%}" class="job_btn"> Read more..
+                  </a> </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-12">
+          <div class="border shadow">
+            <h4 class="career">Total Post <span>66</span> </h4>
+            <div class="p-2">
+              <p><b>Job Role:<span class="posts"> Web Designer </span> </b> </p>
+              <p><b>Experience:<span class="posts"> 4 Years </span> </b> </p>
+              <p><b>Qualification:<span class="posts"> B.tech </span> </b> </p>
+              <h2 class="text-center"><i class="fa fa-address-card" aria-hidden="true"></i></h2>
+              <div class="text-center my-4">
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="opportunities.html" class="job_btn">
+                    Apply Now </a> </button>
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="{% url 'jobs'%}" class="job_btn"> Read more..
+                  </a> </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-3 col-12">
+          <div class="border shadow">
+            <h4 class="career">Total Post <span>66</span> </h4>
+            <div class="p-2">
+              <p><b>Job Role:<span class="posts"> Web Designer </span> </b> </p>
+              <p><b>Experience:<span class="posts"> 4 Years </span> </b> </p>
+              <p><b>Qualification:<span class="posts"> B.tech </span> </b> </p>
+              <h2 class="text-center"><i class="fa fa-address-card" aria-hidden="true"></i></h2>
+              <div class="text-center my-4">
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="opportunities.html" class="job_btn">
+                    Apply Now </a> </button>
+                <button type="button" class="btn btn-primary px-2 mx-1"><a href="{% url 'jobs'%}" class="job_btn"> Read more..
+                  </a> </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- <whatsaap chatboard> -->
+
+
+  <section class="py-5 text-white bg-black">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 heading">
+          <h5><b>Startup India Recognition</b></h5>
+          <p>Startup India is the flagship program provides various benefits, concessions, and tax breaks to recognize
+            Startups. We assist in recognition from DPIIT.</p>
+          <p>A business or LLP is the result of law; it can be closed according to the regulations of the company law
+            and the LLP Act. Our team can assist you in deciding to dissolve your firm and the LLP quickly.</p>
+        </div>
+
+        <div class="col-md-2 heading">
+          <h5><b>Quick Links</b></h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 heading">
+          <h5><b>Useful Links</b></h5>
+          <ul>
+            <li><a href="index.html">Income Tax Department</a></li>
+            <li><a href="#">TDS/Income Tax Payment</a></li>
+            <li><a href="#">Income Tax Information</a></li>
+            <li><a href="#">Goods & Service Tax</a></li>
+            <li><a href="#">HSN/SAC Code Finder</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 heading">
+          <h5><b>Contact Us</b></h5>
+          <p><i class="fa fa-map-marker" aria-hidden="true"></i>
+            3/9 A/9 Durvankurniwas, Ektacolony, Warje, Pune, Maharashtra, India 411058</p>
+          <p><i class="fa fa-phone" aria-hidden="true"></i> +919960841818</p>
+          <p><i class="fa fa-envelope" aria-hidden="true"></i> info@dobizindia.com</p>
+          <div class="social-icon">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-google-plus" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pt-3 bg-dark text-white text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-12">
+          <p>Copyright © {2022} Dobizindia business solution pvt. ltd.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel();
+    });
+
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 5
+        }
+      }
+    })
+  </script>
+
+  <!-- ///////<scroll>////// -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top">
+    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+  </button>
+  <!-- ///////<scroll>////// -->
+
+  <script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
+  <!--Jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+  <!-- Owl Carousel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- custom JS code after importing jquery and owl -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- /////////////our aos data/////////// -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset: 300,
+      duration: 1000
+    });
+  </script>
+
+  <!-- /////////////our aos data/////////// -->
+
+</body>
+
+</html>

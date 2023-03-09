@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    {%load myfilters %}
+
+<head>
+    {%load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Sign Up</title>
+    <style type="text/css">
+        *{
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+        }
+        .main-img {
+            background-color: #00000061;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+          }
+          .bg-light {
+                background-color: #f8f9fae6!important;
+            }
+        .Profile{
+                width: 86%;
+            }
+            a{
+              text-decoration: none;
+            }
+            @media(max-width:760px){
+               .Profile{
+                width: 100%;
+            }
+            }  
+            .img-fluid {
+    max-width: 10%;
+    height: auto;
+}
+        
+      </style>
+</head>
+
+<body>
+    {%if messages %}
+    {% for message in messages  %}            
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Message : </strong> {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+    {% endfor %}
+    {% endif %}   
+    <section class="py-5 bg-primary" style="background-image: url({% static 'images/bg2.jpg' %});">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <div class="bg-light Profile mx-auto py-4 shadow rounded-2">
+                        <a class="navbar-brand p-4" href="{% url 'home'%}"><img src="{% static 'images/logo.png' %}" alt="logo-img" class="img-fluid"></a>
+                        <h1 class="text-center">Sign Up</h1>
+                        <hr />
+
+                        <form class="px-4" method="POST"> {% csrf_token %}
+                            <div class="row mb-3 py-2">
+                                <label for="id_fname" class="col-sm-2 col-form-label">Name</label>
+                                <div class="col-sm-4">
+                                    {{ form.fname.errors }}
+                                    {{ form.fname|addclass:'form-control'|addplaceholder:'Your first name'}}
+                                </div>
+                                <label for="id_lname" class="col-sm-2 col-form-label"></label>
+                                <div class="col-sm-4">
+                                    {{ form.lname.errors }}
+                                    {{ form.lname|addclass:'form-control'|addplaceholder:'Your last name'}}
+                                </div>
+                            </div>
+            
+                            <div class="row mb-3 py-2">
+                                <label for="id_email" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-4">
+                                    {{ form.email.errors }}
+                                    {{ form.email|addclass:'form-control'|addplaceholder:'Email Address'}}
+                                </div>
+                            </div>
+                            <div class="row mb-3 py-2">
+                                <label for="id_phone" class="col-sm-2 col-form-label">Phone</label>
+                                <div class="col-sm-4">
+                                    {{ form.phone.errors }}
+                                    {{ form.phone|addclass:'form-control'|addplaceholder:'Phone'}}
+                                </div>
+                            </div>
+            
+                            <div class="row mb-3 py-2">
+                                <label for="id_password1" class="col-sm-2 col-form-label">Password</label>
+                                <div class="col-sm-4">
+                                    {{ form.password1.errors }}
+                                    {{ form.password1|addclass:'form-control'|addplaceholder:'Password'}}
+                                </div>
+                                <label for="id_password2" class="col-sm-2 col-form-label"></label>
+                                <div class="col-sm-4">
+                                    {{ form.password2.errors }}
+                                    {{ form.password2|addclass:'form-control'|addplaceholder:'Confirm password'}}
+                                </div>
+                            </div>
+                            <input type="checkbox" name="checkbox" id="checkbox" onchange="showpass()"> Show password
+                            <div class="g-recaptcha" data-sitekey="6Lfi5U8kAAAAAEMK2PAuXUEmXU2nfij9sSosplol">
+                            </div>
+                            <div class="col-md-12">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>  
+                                 <label class="form-check-label" for="flexCheckDefault"> I accept term and condiation </label>
+                              </div>
+                
+                              <div class="col-md-12 py-2">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>  
+                                 <label class="form-check-label" for="flexCheckDefault"> I am allowing to communicate time to time via email and mobile number </label>
+                              </div>
+                
+                            <div class="d-grid gap-2 py-4">
+                                <button class="btn btn-primary" type="submit"> signup </button>
+                                <p class="col-12 text-center py-2">Already have an Account Sign in here</p>
+                                <button class="btn btn-primary"> <a href="{%url 'auth_login'%}" style="color: wheat;"> Sign in </a> </button>
+        </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+            <script>
+                function showpass(){
+                    var pwrd= document.getElementById("id_password1");
+                    var cpwrd = document.getElementById("id_password2");
+                    if(pwrd.type === "password"){
+                        pwrd.type = "text";
+                        cpwrd.type = "text";
+                    }
+                    else{
+                        pwrd.type = "password";
+                        cpwrd.type = "password";
+                    }
+                }
+            </script>
+
+</body>
+
+</html>

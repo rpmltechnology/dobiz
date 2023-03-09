@@ -1,0 +1,361 @@
+{% load static%}
+<section data-aos="fade-up">
+  <!-- ============= COMPONENT ============== -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light space-ud navbar-inverse fixed-menu" data-spy="affix"
+    data-offset-top="197">
+    <div class="container">
+      <a class="navbar-brand" href="{%url 'home'%}">
+        <img src="{% static '/images/logo.png' %}" alt="logo-img" class="img-fluid"></a>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main_nav">
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> STARTUP </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">MOST POPULAR</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'mostpopular' page='types_of_business' %}">Types of Business</a></li>
+                      <li><a href="{% url 'mostpopular' page='sole_p_r' %}">Sole Proprietorship Registration</a></li>
+                      <li><a href="{% url 'mostpopular' page='partnership_f_r' %}">Partnership Firm Registration</a>
+                      </li>
+                      <li><a href="{% url 'mostpopular' page='one_p_c_r' %}">One person Company Registration </a></li>
+                      <li><a href="{% url 'mostpopular' page='company_r' %}">Company Registration </a></li>
+                      <li><a href="{% url 'mostpopular' page='iip_r_i' %}">IIP Registration in India </a></li>
+                      <li><a href="{% url 'mostpopular' page='startup_i_r_dpiit' %}">Startup India registration DPIIT
+                        </a></li>
+
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">SPECIAL BUSINESS</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{%url 'specialbusiness' page='gst_r_i' %}">GST Registration in India </a></li>
+                      <li><a href="{%url 'specialbusiness' page='import_e_c_i'%}">Import export Code-iec </a></li>
+                      <li><a href="{%url 'specialbusiness' page='microfinance_c_r'%}">Microfinance Company Registration </a></li>
+                      <li><a href="{%url 'specialbusiness' page='msme_r' %}">MSME Registration </a></li>
+                      <li><a href="{%url 'specialbusiness' page='nidhi_c_r'%}">NIDHI Company Registration </a></li>
+                      <li><a href="{% url 'specialbusiness' page='produce_c' %}">Producer Company </a></li>
+                      <li><a href="{%url 'specialbusiness' page='public_l_c_r'%}">Public Limited Company registration </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div>
+
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">NGO</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{%url 'trust_registration'%}">Trust Registration</a></li>
+                      <li><a href="{%url 'society_registration'%}">Society Registration</a></li>
+                      <li><a href="{%url 'section_8'%}">Section 8 Company Registration</a></li>
+                      <li><a href="{% url 'roc' %}">ROC Registrations with CSR-1</a></li>
+                      <li><a href="{%url 'patent'%}">Patent registration </a></li>
+                      <li><a href="{%url 'startup'%}">Startup Business </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+                <div class="col-lg-3 col-12">
+
+                </div><!-- end col-3 -->
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> FDI/FEMA </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">DO BUSINESS IN INDIA</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'company_f_i' %}">Company By Foreign Individuals </a></li>
+                      <li><a href="{% url 'doing_b_i' %}">Doing Business In India (FDI) </a></li>
+                      <li><a href="{%url 'sector_w_fdi_l'%}">Sector Wise FDI Limits </a></li>
+                      <li><a href="{% url 'scvbo' %}">Subsidiary Company Vs Branch Office </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">SETUP INDIAN BRANCH</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{%url 'branch_o_f_c'%}">Branch Office of Foreign Company </a></li>
+                      <li><a href="{%url 'liaison_o_r'%}">Liaison Office Registration </a></li>
+                      <li><a href="{% url 'project_o_r' %}">Project Office Registration </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">RBI LICENSES</h6>
+
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> IPR </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">TRADEMARK</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'renewal_tr' %}">Renewal trademark registration </a></li>
+                      <li><a href="{%url 'trademark_mt' %}">Trademark meaning types </a></li>
+                      <li><a href="{%url 'trademark_r' %}">Trademark registration </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div>
+
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">COPYRIGHT & DESIGN</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'copyright_r' %}">Copyright registration </a></li>
+                      <li><a href="{% url 'coptright_t' %}">Copyright types </a></li>
+                      <li><a href="{% url 'design_r' %}">Design Registration </a></li>
+                      <li><a href="{% url 'interrnational_cr' %}">International Copyright Registration </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">PATENT & IPR ENFORCEMENT</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'intellectual_pr' %}">Intellectual property rights </a></li>
+                      <li><a href="{% url 'international_tf' %}">International trademark filing </a></li>
+                      <li><a href="{% url 'patent_r' %}">Patent registration </a></li>
+                      <li><a href="{%url 'patent_s' %}">Patent search </a></li>
+                      <li><a href="{% url 'software_p' %}">Software patent </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> LICENCES </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">FOOD BUSINESS</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'fssai_a_r' %}">FSSAI Annual Return </a></li>
+                      <li><a href="{% url 'fssai_c_l' %}">FSSAI Central License </a></li>
+                      <li><a href="{% url 'fssai_l_r' %}">FSSAI License Renewal </a></li>
+                      <li><a href="{% url 'fssai_r'%}">FSSAI Registration </a></li>
+                      <li><a href="{% url 'fssai_s_l' %}">FSSAI State License </a></li>
+                      <li><a href="{% url 'fssai_a' %}">fssai-applicability </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">GENERAL LICENSE</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'apeda_r_e' %}">APEDA Registration For Exporter </a></li>
+                      <li><a href="{%url 'shop_e_r' %}">Shop and Establishment Registration </a></li>
+                      <li><a href="{% url 'trade_l_r' %}">Trade License Registration </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">INDUSTRIAL LICENSE</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'barcode_r' %}">Barcode-registration </a></li>
+                      <li><a href="{% url 'dot_isp_l' %}">Dot isp licence </a></li>
+                      <li><a href="{% url 'dot_osp_l_r' %}">DOT OSP License Registration </a></li>
+                      <li><a href="{% url 'gst_r_f' %}">GST Return Filing </a></li>
+                      <li><a href="{% url 'import_e_c_r' %}">Import Export Code Renewal </a></li>
+                      <li><a href="{% url 'psara_l' %}">PSARA License </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div>
+
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> TAX & PAYROLL </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">TAX REGISTRATIONS</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'cloud_a' %}">Cloud-accounting </a></li>
+                      <li><a href="{% url 'gst_r_in_i' %}">GST Registration in India </a></li>
+                      <li><a href="{% url 'import_e_c_r' %}">Import Export Code Renewal </a></li>
+                      <li><a href="{% url 'import_e_c_i' %}">import-export-code-iec </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div>
+
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">TAX COMPLIANCE</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'ad_tax' %}">Advance-tax </a></li>
+                      <li><a href="{% url 'gst_r_f' %}">GST Return Filing </a></li>
+                      <li><a href="{% url 'income_t_r_f' %}">Income-tax-return-filing </a></li>
+                      <li><a href="{% url 'professional_t_r' %}">Professional Tax Registration </a></li>
+                      <li><a href="{% url 'registration_l' %}">registration-licenses </a></li>
+                      <li><a href="{% url 'tax_a_s' %}">Tax Assessment & Scrutiny </a></li>
+                      <li><a href="{% url 'tax_a_c' %}">tax-audit by ca </a></li>
+                      <li><a href="{% url 'tax_d_s' %}">tax-deducted-source </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">PAYROLL & FUNDING</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'epf_r' %}">EPF Registration </a></li>
+                      <li><a href="{% url 'esic_r' %}">esic-registration </a></li>
+                      <li><a href="{% url 'tax_p' %}">Tax and Payroll </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> ROC </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">BASIC ROC COMPLIANCES</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'director_kyc' %}">2022 Director KYC [DIR-3-KYC] </a></li>
+                      <li><a href="{% url 'company_a_r' %}">Company Annual Return </a></li>
+                      <li><a href="{% url 'director_i_n' %}">Director Identification Number (DIN) </a></li>
+                      <li><a href="{% url 'file_inc' %}">File INC 20-A (Business Commencement) </a></li>
+                      <li><a href="{% url 'post_i_c' %}">Post Incorporation Compliance </a></li>
+                      <li><a href="{% url 'roc_c' %}">Roc </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">COMPANY CHANGES & RETURN</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{%url 'change_d' %}">Change of Director </a></li>
+                      <li><a href="{% url 'change_m_o' %}">Changes in Main Object </a></li>
+                      <li><a href="{% url 'company_n_c' %}">Company Name Change </a></li>
+                      <li><a href="{% url 'increase_a_c' %}">Increase Authorised Capital </a></li>
+                      <li><a href="{% url 'registered_o_c' %}">Registered Office Change </a></li>
+                      <li><a href="{% url 'share_t_c' %}">Share Transfer in Company </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">LLP CHANGES & RETURN</h6>
+
+                  </div> <!-- col-megamenu.// -->
+                </div>
+
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> EXIT BUSINESS </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">CONVERT TO PRIVATE LIMITED</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'llp_p_l' %}">LLP To Private Limited </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">OTHER CONVERSIONS</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{%url 'active_c_d_c_s'%}">Active Company To Dormant Company Status</a></li>
+                      <li><a href="{% url 'dormant_a_s' %}">Dormant Company To Account Status</a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">CLOSURE OF BUSINESS</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'winging_u_c' %}">Winding Up of Company (STK-2)</a></li>
+                      <li><a href="{% url 'sent_w_u_i'%}">Sent Winding Up of Inactive LLP </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div>
+
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+          {% if user.is_authenticated %}
+          <ul class="navbar-nav mr-2">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href='#' id="navbarDropdown" role="button" data-toggle="dropdown">
+                Welcome {{user.fname}}</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{%url 'profile'%}">profile</a>
+                <a class="dropdown-item" href="{%url 'order_history'%}">Order History</a>
+                <a class="dropdown-item" href="{%url 'forgot_password'%}"> Change Password</a>
+                <a class="dropdown-item" href="{%url 'auth_logout'%}">Logout</a>
+
+              </div>
+            </li>
+          </ul>
+      </div>
+      <button class="mx-1 hire px-2 py-2 my-3 rounded-pill"> <a href="{%url 'cart'%}"> <i class="fa fa-cart-arrow-down"
+            style="font-size:26px;color:white"></i> </a> </button>
+      {% else %}
+      <!-- Button to  trigger Login modal -->
+      <b class="text-start btn-flex">
+        <button class="mx-1 hire glow px-4 py-2 my-1"> <a href="{% url 'signup'%}"> Sign Up </a> </button>
+        <button class="mx-1 hire2 px-4 py-2 my-1"> <a href="{% url 'auth_login'%}"> Login </a> </button>
+      </b>
+      {% endif %}
+
+      </ul>
+
+      <div class="search-box">
+        <button class="btn-search"><i class="fa fa-search"></i></button>
+        <input type="text" class="input-search" placeholder="Type to Search...">
+      </div>
+
+    </div> <!-- navbar-collapse.// -->
+    </div> <!-- container-fluid.// -->
+  </nav>
+  <!-- ============= COMPONENT END// ============== -->
+</section>

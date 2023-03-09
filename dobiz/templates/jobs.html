@@ -1,0 +1,636 @@
+
+<!doctype html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="static/css/animation.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Dobizindia business solution private limited</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" />
+
+
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+     <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico">
+
+     <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(){
+              /////// Prevent closing from click inside dropdown
+              document.querySelectorAll('.dropdown-menu').forEach(function(element){
+                element.addEventListener('click', function (e) {
+                  e.stopPropagation();
+                });
+              })
+          }); 
+        // DOMContentLoaded  end
+      </script>
+
+  </head>
+  <body>
+    <section class="topbar">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-sm-12 col-md-6 col-12 top-content-s" data-aos="fade-right">
+            <div class="">
+              <ul>
+                <li> <a href="#"><i class="fa fa-rss" aria-hidden="true"></i> Blog</a> </li>
+                <li> <a href="#"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Payment</a> </li>
+                <li> <a href="#"><i class="fa fa-headphones" aria-hidden="true"></i> Support</a> </li>
+                <li> <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> Compliance Calendar</a> </li>
+                <li> <a href="#"><i class="fa fa-handshake-o" aria-hidden="true"></i> Contact Us</a> </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-12 top-content-s" data-aos="fade-left">
+            <div class="text-end">
+              <ul>
+                <li> <a href="#"><i class="fa fa-phone" aria-hidden="true"></i> 1234567890</a> </li>
+                <li> <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> admin@gmail.com</a> </li>
+                <li> <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp</a> </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    
+    <section data-aos="fade-up">
+     <!-- ============= COMPONENT ============== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light space-ud navbar-inverse fixed-menu" data-spy="affix"
+    data-offset-top="197">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="static/images/logo.png" alt="logo-img" class="img-fluid"></a>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main_nav">
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> STARTUP </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">MOST POPULAR</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{%url 'types_of_business'%}">Types of Business </a></li>
+                      <li><a href="{%url 'sole_p_r'%}">Sole Proprietorship Registration </a></li>
+                      <li><a href="{%url 'partnership_f_r'%}">Partnership firm Registration </a></li>
+                      <li><a href="{%url 'one_p_c_r'%}">One person Company Registration </a></li>
+                      <li><a href="{%url 'company_r'%}">Company Registration </a></li>
+                      <li><a href="{%url 'iip_r_i'%}">IIP Registration in India </a></li>
+                      <li><a href="{%url 'startup_i_r_dpiit'%}">Startup India registration DPIIT </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">SPECIAL BUSINESS</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{%url 'gst_r_i' %}">GST Registration in India </a></li>
+                      <li><a href="{%url 'import_e_c_i'%}">Import export Code-iec </a></li>
+                      <li><a href="{%url 'microfinance_c_r'%}">Microfinance Company Registration </a></li>
+                      <li><a href="{%url 'msme_r' %}">MSME Registration </a></li>
+                      <li><a href="{%url 'nidhi_c_r'%}">NIDHI Company Registration </a></li>
+                      <li><a href="{% url 'produce_c' %}">Producer Company </a></li>
+                      <li><a href="{%url 'public_l_c_r'%}">Public Limited Company registration </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div>
+
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">NGO</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{%url 'trust_registration'%}">Trust Registration</a></li>
+                      <li><a href="{%url 'society_registration'%}">Society Registration</a></li>
+                      <li><a href="{%url 'section_8'%}">Section 8 Company Registration</a></li>
+                      <li><a href="{% url 'roc' %}">ROC Registrations with CSR-1</a></li>
+                      <li><a href="{%url 'patent'%}">Patent registration </a></li>
+                      <li><a href="{%url 'startup'%}">Startup Business </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+                <div class="col-lg-3 col-12">
+
+                </div><!-- end col-3 -->
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> FDI/FEMA </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">DO BUSINESS IN INDIA</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'company_f_i' %}">Company By Foreign Individuals </a></li>
+                      <li><a href="{% url 'doing_b_i' %}">Doing Business In India (FDI) </a></li>
+                      <li><a href="{%url 'sector_w_fdi_l'%}">Sector Wise FDI Limits </a></li>
+                      <li><a href="{% url 'scvbo' %}">Subsidiary Company Vs Branch Office </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">SETUP INDIAN BRANCH</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{%url 'branch_o_f_c'%}">Branch Office of Foreign Company </a></li>
+                      <li><a href="{%url 'liaison_o_r'%}">Liaison Office Registration </a></li>
+                      <li><a href="{% url 'project_o_r' %}">Project Office Registration </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">RBI LICENSES</h6>
+
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> IPR </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">TRADEMARK</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'renewal_tr' %}">Renewal trademark registration </a></li>
+                      <li><a href="{%url 'trademark_mt' %}">Trademark meaning types </a></li>
+                      <li><a href="{%url 'trademark_r' %}">Trademark registration </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div>
+
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">COPYRIGHT & DESIGN</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'copyright_r' %}">Copyright registration </a></li>
+                      <li><a href="{% url 'coptright_t' %}">Copyright types </a></li>
+                      <li><a href="{% url 'design_r' %}">Design Registration </a></li>
+                      <li><a href="{% url 'interrnational_cr' %}">International Copyright Registration </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">PATENT & IPR ENFORCEMENT</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'intellectual_pr' %}">Intellectual property rights </a></li>
+                      <li><a href="{% url 'international_tf' %}">International trademark filing </a></li>
+                      <li><a href="{% url 'patent_r' %}">Patent registration </a></li>
+                      <li><a href="{%url 'patent_s' %}">Patent search </a></li>
+                      <li><a href="{% url 'software_p' %}">Software patent </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> LICENCES </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">FOOD BUSINESS</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'fssai_a_r' %}">FSSAI Annual Return </a></li>
+                      <li><a href="{% url 'fssai_c_l' %}">FSSAI Central License </a></li>
+                      <li><a href="{% url 'fssai_l_r' %}">FSSAI License Renewal </a></li>
+                      <li><a href="{% url 'fssai_r'%}">FSSAI Registration </a></li>
+                      <li><a href="{% url 'fssai_s_l' %}">FSSAI State License </a></li>
+                      <li><a href="{% url 'fssai_a' %}">fssai-applicability </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">GENERAL LICENSE</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'apeda_r_e' %}">APEDA Registration For Exporter </a></li>
+                      <li><a href="{%url 'shop_e_r' %}">Shop and Establishment Registration </a></li>
+                      <li><a href="{% url 'trade_l_r' %}">Trade License Registration </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">INDUSTRIAL LICENSE</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'barcode_r' %}">Barcode-registration </a></li>
+                      <li><a href="{% url 'dot_isp_l' %}">Dot isp licence </a></li>
+                      <li><a href="{% url 'dot_osp_l_r' %}">DOT OSP License Registration </a></li>
+                      <li><a href="{% url 'gst_r_f' %}">GST Return Filing </a></li>
+                      <li><a href="{% url 'import_e_c_r' %}">Import Export Code Renewal </a></li>
+                      <li><a href="{% url 'psara_l' %}">PSARA License </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div>
+
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> TAX & PAYROLL </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">TAX REGISTRATIONS</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'cloud_a' %}">Cloud-accounting </a></li>
+                      <li><a href="{% url 'gst_r_in_i' %}">GST Registration in India </a></li>
+                      <li><a href="{% url 'import_e_c_r' %}">Import Export Code Renewal </a></li>
+                      <li><a href="{% url 'import_e_c_i' %}">import-export-code-iec </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div>
+
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">TAX COMPLIANCE</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'ad_tax' %}">Advance-tax </a></li>
+                      <li><a href="{% url 'gst_r_f' %}">GST Return Filing </a></li>
+                      <li><a href="{% url 'income_t_r_f' %}">Income-tax-return-filing </a></li>
+                      <li><a href="{% url 'professional_t_r' %}">Professional Tax Registration </a></li>
+                      <li><a href="{% url 'registration_l' %}">registration-licenses </a></li>
+                      <li><a href="{% url 'tax_a_s' %}">Tax Assessment & Scrutiny </a></li>
+                      <li><a href="{% url 'tax_a_c' %}">tax-audit by ca </a></li>
+                      <li><a href="{% url 'tax_d_s' %}">tax-deducted-source </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">PAYROLL & FUNDING</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'epf_r' %}">EPF Registration </a></li>
+                      <li><a href="{% url 'esic_r' %}">esic-registration </a></li>
+                      <li><a href="{% url 'tax_p' %}">Tax and Payroll </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> ROC </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">BASIC ROC COMPLIANCES</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'director_kyc' %}">2022 Director KYC [DIR-3-KYC] </a></li>
+                      <li><a href="{% url 'company_a_r' %}">Company Annual Return </a></li>
+                      <li><a href="{% url 'director_i_n' %}">Director Identification Number (DIN) </a></li>
+                      <li><a href="{% url 'file_inc' %}">File INC 20-A (Business Commencement) </a></li>
+                      <li><a href="{% url 'post_i_c' %}">Post Incorporation Compliance </a></li>
+                      <li><a href="{% url 'roc_c' %}">Roc </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">COMPANY CHANGES & RETURN</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{%url 'change_d' %}">Change of Director </a></li>
+                      <li><a href="{% url 'change_m_o' %}">Changes in Main Object </a></li>
+                      <li><a href="{% url 'company_n_c' %}">Company Name Change </a></li>
+                      <li><a href="{% url 'increase_a_c' %}">Increase Authorised Capital </a></li>
+                      <li><a href="{% url 'registered_o_c' %}">Registered Office Change </a></li>
+                      <li><a href="{% url 'share_t_c' %}">Share Transfer in Company </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">LLP CHANGES & RETURN</h6>
+
+                  </div> <!-- col-megamenu.// -->
+                </div>
+
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> EXIT BUSINESS </a>
+            <div class="dropdown-menu megamenu" role="menu">
+              <div class="row g-3">
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">CONVERT TO PRIVATE LIMITED</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'llp_p_l' %}">LLP To Private Limited </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">OTHER CONVERSIONS</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{%url 'active_c_d_c_s'%}">Active Company To Dormant Company Status</a></li>
+                      <li><a href="{% url 'dormant_a_s' %}">Dormant Company To Account Status</a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div><!-- end col-3 -->
+                <div class="col-lg-4 col-12">
+                  <div class="col-megamenu">
+                    <h6 class="title">CLOSURE OF BUSINESS</h6>
+                    <ul class="list-unstyled">
+                      <li><a href="{% url 'winging_u_c' %}">Winding Up of Company (STK-2)</a></li>
+                      <li><a href="{% url 'sent_w_u_i'%}">Sent Winding Up of Inactive LLP </a></li>
+                    </ul>
+                  </div> <!-- col-megamenu.// -->
+                </div>
+
+              </div><!-- end row -->
+            </div> <!-- dropdown-mega-menu.// -->
+          </li>
+          {% if user.is_authenticated %}
+          <ul class="navbar-nav mr-2">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href='#' id="navbarDropdown" role="button" data-toggle="dropdown">
+                Welcome {{user.fname}}</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{%url 'profile'%}">profile</a>
+                <a class="dropdown-item" href="{%url 'forgot_password'%}"> Change Password</a>
+                <a class="dropdown-item" href="{%url 'auth_logout'%}">Logout</a>
+
+              </div>
+            </li>
+          </ul>
+      </div>
+      {% else %}
+      <!-- Button to  trigger Login modal -->
+      <button class="mx-1 hire px-2 py-2 my-3 rounded-pill"> <a href="{%url 'signup'%}"> Register </a> </button>
+      </button>
+      {% endif %}
+      <button class="mx-1 hire glow px-2 py-2 my-1 rounded-pill"> <a href="{% url 'hire' %}"> We are Hiring </a>
+      </button>
+      </b>
+
+      </ul>
+
+      <div class="search-box">
+        <button class="btn-search"><i class="fa fa-search"></i></button>
+        <input type="text" class="input-search" placeholder="Type to Search...">
+      </div>
+
+    </div> <!-- navbar-collapse.// -->
+    </div> <!-- container-fluid.// -->
+  </nav>
+  <!-- ============= COMPONENT END// ============== -->
+    </section>
+    
+
+    <section class="top-bn5 bn-styles" data-aos="fade-left">
+      <div class="container">
+        <div class="row pt-4">
+          <div class="col-md-8 col-12 pt-5 pt-5">
+
+            <h2 class="text-white"><b>Dobizindia Carrier</b></h2>
+            <h1 class="hire_text">We Are <span>Hiring </span> </h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row my-5">
+
+          <div class="col-md-7 col-12">
+            <div class="social-icon">
+              <h2><span class="text-primary">Job Trainee </span>
+                <span class="text-white">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <i class="fa fa-google-plus" aria-hidden="true"></i>
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+              <i class="fa fa-youtube-play" aria-hidden="true"></i>
+            </span></h2>
+            </div>
+            <p><b>Post Date:</b></p>
+            <p>09 Dec 2022</p>
+
+            <p><b>Function/Business Area:</b></p>
+            <p>Allahabad</p>
+
+            <p><b>Location:</b></p>
+            <p>Allahabad</p>
+
+            <p><b>Job Responsiblity:</b></p>
+            <ol>
+              <li> Designing engaging and responsive landing pages</li>
+              <li> Integrating client CMS programs and data feeds into websites</li>
+              <li> Optimising sites for maximum speed and scalability</li>
+              <li> Employing industry and design best practice through website build process</li>
+              <li> Conducting website testing</li>
+              <li> Liaising with back-end developers to ensure web and app logic is properly integrated</li>
+              <li> Ensuring website function and stability across devices i.e. desktop, mobile, tablet</li>
+              <li> Working with marketing and research teams to incorporate brand elements and relevant market research findings into website</li>
+              <li> Providing internal support and external customer service throughout the build and launch process of the website</li>
+            </ol>
+          </div>
+
+          <div class="col-md-5 col-12 text-end">
+            <div>
+            <button type="button" class="btn btn-primary px-4 mx-2"><a href="hire.html" class="job_btn"> Back to search search reasult </a> </button>
+            <button type="button" class="btn btn-primary px-4 mx-2"><a href="opportunities.html" class="job_btn"> Apply Now </a> </button>
+            </div>
+          </div>
+
+          
+
+          
+
+        </div>
+
+      </div>
+    </section>
+
+
+<!-- <whatsaap chatboard> -->
+
+
+    <section class="py-5 text-white bg-black">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 heading">
+            <h5><b>Startup India Recognition</b></h5>
+            <p>Startup India is the flagship program provides various benefits, concessions, and tax breaks to recognize Startups. We assist in recognition from DPIIT.</p>
+            <p>A business or LLP is the result of law; it can be closed according to the regulations of the company law and the LLP Act. Our team can assist you in deciding to dissolve your firm and the LLP quickly.</p>
+          </div>
+
+          <div class="col-md-2 heading">
+            <h5><b>Quick Links</b></h5>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Refund Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 heading">
+            <h5><b>Useful Links</b></h5>
+            <ul>
+              <li><a href="index.html">Income Tax Department</a></li>
+              <li><a href="#">TDS/Income Tax Payment</a></li>
+              <li><a href="#">Income Tax Information</a></li>
+              <li><a href="#">Goods & Service Tax</a></li>
+              <li><a href="#">HSN/SAC Code Finder</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 heading">
+            <h5><b>Contact Us</b></h5>
+            <p><i class="fa fa-map-marker" aria-hidden="true"></i>
+            3/9 A/9 Durvankurniwas, Ektacolony, Warje, Pune, Maharashtra, India 411058</p>
+            <p><i class="fa fa-phone" aria-hidden="true"></i> +919960841818</p>
+            <p><i class="fa fa-envelope" aria-hidden="true"></i> info@dobizindia.com</p>
+            <div class="social-icon">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <i class="fa fa-google-plus" aria-hidden="true"></i>
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+              <i class="fa fa-youtube-play" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-3 bg-dark text-white text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-12">
+            <p>Copyright © {2022} Dobizindia business solution pvt. ltd.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel();
+    });
+
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    })
+</script>
+
+ <!-- ///////<scroll>////// -->
+      <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      </button>
+      <!-- ///////<scroll>////// -->
+
+        <script>
+// Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+    <!--Jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<!-- Owl Carousel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- custom JS code after importing jquery and owl -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- /////////////our aos data/////////// -->
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset: 300,
+      duration: 1000  
+    });
+  </script>
+
+  <!-- /////////////our aos data/////////// -->
+
+  </body>
+</html>

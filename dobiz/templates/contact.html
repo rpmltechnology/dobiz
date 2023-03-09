@@ -1,0 +1,142 @@
+{% extends 'index.html' %}
+{%block title%} Contact Us{% endblock %}
+{%load myfilters %}
+{%block body %}
+<style>
+  .message{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .message .success{
+    font-size: 20px;
+    color: green;
+    position: absolute;
+    animation: buttons .3s linear;
+    display: none;
+  }
+  .message .danger{
+    font-size: 20px;
+    color: red;
+    position: absolute;
+    animation: buttons .3s linear;
+    display: none;
+  }
+</style>
+<section class="top-bn1 bn-styles py-4 aos-init aos-animate" data-aos="fade-left">
+  <div class="container py-4">
+    <div class="row pt-4">
+      <!-- <div class="col-md-6 col-12 space_top">
+        <h2> Check FSSAI License Applicability Avail Free Consultation with us </h2>
+        <p class="pb-4"> FSSAI Registration or License, whether the state licence or Central License, applies to every food business operator (FBO). Call us to know the applicability of FSSAI Registration or License to your food business. </p>
+        <img src="images/google.png" alt="logo-img" class="img-fluid">
+        <img src="images/logo-s.png" alt="logo-img" class="img-fluid">
+      </div> -->
+      <div class="col-md-3 col-12 space_top">
+        <img src="static/images/common_img.png" alt="logo-img" class="img-fluid">
+      </div>
+
+      <div class="col-md-3 col-12 space_top">
+        <h4> Private Limited Company </h4>
+        <p><span class="bg-primary p-1 text-white"> 4.4 </span> <a class="text-decoration-none" href="#"> &nbsp; 23435
+            customers </a> </p>
+        <p> Company registration including Government Fee & Stamp Duty*. Incorporation kit with share certificates. </p>
+        <p> <a href="#" class="text-decoration-none text-dark"> Complete By* : 17-MAR-2023 </a> </p>
+        <p> <a href="#"> Terms and conditions </a> </p>
+      </div>
+
+      <div class="col-md-2"></div>
+
+      {% include 'common_pages/pricing_sum_above.html' %}
+
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-12 pt-4">
+        <div class="contact1">
+          <h4>Get more than 300 Professional Services for Dobizindia business solution.</h4>
+          <p><b> <i class="fa fa-map-marker" aria-hidden="true"></i> Address:</b></p>
+          <p>Desk NO. 10 A- 62, Ground Floor, Sector-2, Noida, UP-201301</p>
+          <p><b> <i class="fa fa-phone" aria-hidden="true"></i> Phone:</b></p>
+          <p> +91 9471807687</p>
+          <p><b> <i class="fa fa-envelope" aria-hidden="true"></i> Email:</b></p>
+          <p> dobizindia.bspl@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-12">
+        <div class="p-4 bg-light">
+          <div id="message"></div>
+          <form class="mx-5"method="POST">{% csrf_token %}
+            <div class="input-group mb-3 input-group-lg">
+              <span class="input-group-text" id="basic-addon1"><i class="fa fa-user text-primary"
+                  aria-hidden="true"></i></span>
+              <label for="id_name"></label>
+              {{ form.name.errors }}
+              {{ form.name|addclass:'form-control'|addplaceholder:'Your Name'}}
+            </div>
+
+            <div class="input-group mb-3 input-group-lg">
+              <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope text-primary"
+                  aria-hidden="true"></i></span>
+              <label for="id_email"></label>
+              {{ form.email.errors }}
+              {{ form.email|addclass:'form-control'|addplaceholder:'Email'}}
+            </div>
+
+            <div class="input-group mb-3 input-group-lg">
+              <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone text-primary"
+                  aria-hidden="true"></i></span>
+              <label for="id_phone"></label>
+              {{ form.phone.errors }}
+              {{ form.phone|addclass:'form-control'|addplaceholder:'Phone'}}
+            </div>
+
+            <div class="form-floating">
+              <label for="id_comment"></label>
+              {{ form.comment.errors }}
+              {{ form.comment|addclass:'form-control'|addplaceholder:'Write Us Here'}}
+            </div>
+
+            <div class="d-grid gap-2 py-4">
+              <button class="btn btn-primary" type="submit" onclick="message()">Submit
+              </button>
+            </div>
+
+          </form>
+          <div id="message">
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+<script>
+function message(){
+  const success = document.getElementById('success');
+  var comment = document.getElementById('id_comment');
+  const danger = document.getElementById('danger')
+  if (comment.value === ''){
+    danger.style.display = 'block';
+  }
+  else {
+    success.style.display = 'block';
+  }
+}
+</script>
