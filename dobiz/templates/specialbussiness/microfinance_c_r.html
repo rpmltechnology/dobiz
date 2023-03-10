@@ -1,395 +1,307 @@
 {% extends 'index.html' %}
 {%block title%}Microfinance Company Registration{% endblock %}
 {%block body %}
-      <section class="top-bn4 bn-styles aos-init aos-animate" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <h2><b>Register your  <span class="text-white">Microfinance Company </span></b></h2>
-            <p class="pt-4"> <b>Small businesses tend to avoid borrowing from larger banks or NBFCs due to their high-interest loan terms and collateral requirements. To decrease their cost burden, SMEs need to have smaller amounts of collateral-free loans at lower interest rates. Microfinance companies are formed for this purpose. MFIs have been established to offer collateral-free credit to small-scale Indian startups. For more information on MFIs and to create one, contact us. 
-            </b></p>
-            <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
+
+{% include 'common_pages/banner.html'%}
+
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div id="meaning" class="container tab-pane content active"><br>
+            <h2>{{meaning.heading_text}}</h2>
+            <p>{{meaning.text}}</p>
+            <h2>{{meaning.heading_text2}}</h2>
+            <p>{{meaning.text2}}</p>
+            <h2>{{meaning.heading_text3}}</h2>
+            <p class="b-style text-style">{{meaning.text3}} <b>{{meaning.text4}} </b>
+            </p>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            <li> <a class="sidelink" href="#process">
-            <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span>  Step Wise Process</a> </li>
-            <li> <a class="sidelink" href="#document">
-            <span class="icon-s"> <i class="fa fa-file-text" aria-hidden="true"></i> </span>  List of Documents</a> </li>
-            <li> <a class="sidelink" href="#faq">
-            <span class="icon-s"> <i class="fa fa-question-circle" aria-hidden="true"></i> </span>  FAQ</a> </li>
-            
-            </ul>
-          </div>
-
-          <div class="content content-3s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
-
-                    <div class="col-md-12 col-12 heading pt-2">
-                      <h2 class="fs-2">Microfinance  <span class="text-primary">Company Registration </span></h2>
-                      <p class="fs-6">Register your Micro Finance Company at affordable prices with our pan India company registration services. Just subscribe to our comprehensive MFI registration package, and our dedicated team is there to help you with every step. </p>
-                      <h2 class="fs-4">What is a Micro Finance Company? </h2>
-                      <p class="b-style text-style">A Microfinance Institution is an organization offering various financial services to low-income businesses, including credit facilities and insurance. Defines microfinance institutions as "provisions for thrift, credit and other services and products of meager amounts to the poor in rural, suburban, or urban areas to meet their particular financial needs. <b>MFIs are established with RBI approval as non-banking finance companies. </b>
-                        <b>MFI was founded as a Section 8 company under the Companies Act of 2013. </b></p>
-                        
-                    </div>
-
-                  </div>
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h4>{{minimum.heading_text}}</h4>
+                <p>{{minimum.text}}</p>
+                <h2>{{minimum.heading_text2}}</h2>
+                <div class="about-text-style">
+                  <ul>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list1}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list2}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list3}} </li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list4}} </li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list5}} </li>
+                  </ul>
                 </div>
-              </section>
+                <h2>{{minimum.heading_text3}}</h2>
+                <p>{{minimum.text2}}</p>
 
-              <section class="py-5 text-center s-img s-img1">
-                <div class="container py-2">
-                  <div class="row">
-                    <div class="col-md-2 col-12">
-                    </div>
-                  <div class="col-md-10 col-12">
-                    <h2 class="fs-4">Checklist to Register Microfinance Company in India </h2>
-                        <p class="b-style text-style">A microfinance business can be incorporated in a public or private limited partnership to establish itself as a Section 8 or NBFC. We have provided a comprehensive list below of all the conditions for your clear understanding. </p>
-                        
-                  </div>
-                  </div>
-                </div>
-              </section>
-
-
-              <section class="py-5 bg-light">
-                <div class="container">
-                  <div class="row">
-
-                    <div class="col-md-12 col-12 heading pt-2">
-                      <h2 class="fs-2">Checklist to establish a Microfinance firm in India  </h2>
-                      <div class="about-text-style">
-                          <ul>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Private Limited companies must have at least two members, and Public Limited companies must have 7. </li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Pvt Ltd and Section 8 require at least 2 directors. Public Limited companies need 3 directors.  </li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Minimum one resident director  </li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> A unique and valid title  </li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Capital investment limit </li>
-                          </ul>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </section>
+              </div>
 
             </div>
+            <div class="row table-responsive-sm">
 
-             <div id="process">
-
-              <section class="btm_grd_banner py-4">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-12 col-12">
-                        <div class="text-white heading2">
-                        <h2 class="py-2 text-center">Checklist for setting up a Microfinance Company India </h2>
-                        <p class="fs-6 pt-2">A microfinance business can be incorporated in a public or private limited company. It can then be established as an NBFC company or a Section 8. To ensure the success of the microfinance business, all members must meet the prerequisite conditions before forming it. We have listed all these conditions in detail below for your understanding.</p>
-
-                        <div class="row table-responsive-sm">
-                          <div class="col-md-2 col-12 p-2"></div>
-
-                              <div class="col-md-8 col-12 p-2">
-                              <table class="table">
-                                <tbody>
-                                  <tr class="table-dark">
-                                    <td><b>S.No </b>Checklist to establish a Microfinance Company in India</td>
-                                  </tr>     
-                                  <tr class="table-primary">
-                                    <td><b>1. </b> Limitations on loan disbursement are Rs.50,000 in collateral-free loans and R.1.25 lakhs in dwelling units.</td>
-                                  </tr>
-
-                                  <tr class="table-info">
-                                    <td><b>2. </b> MFI has been licensed by the MCA for operation of a Section 8 company</td>
-                                  </tr>
-                                  <tr class="table-warning">
-                                    <td><b>3. </b> The company doesn't accept public deposits</td>
-                                  </tr>
-
-                                </tbody>
-                              </table>
-                            </div>
-
-                          </div>
-
-                        <p class="fs-6 pt-2">Here, you can read the entire process and all documentation required to register a section8 firm. But, for an MFI to be registered as an NBFC, it is mandatory to get the approval of RBI. The step-by-step process of establishing a Microfinance Company in India as an NBFC has been explained. </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                <section class="py-4">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-6 col-12">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">STEP 1- Documentation </h5>
-                              <br>
-                              <p class="card-text">The application form for a license must be completed in the prescribed format. (Direct to the documentation section via the link on "here") Incomplete submission of any documents can result in the rejection of the application. To avoid this, you should arrange all necessary documents before starting the application process. </p>
-                            </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-6 col-12 mt-4">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">STEP 2 – Incorporate your business </h5>
-                              <br>
-                              <p class="card-text">MFI-NBFCs may be incorporated as a Public Limited Company or Private Limited Company. Establishing MFI-NBFCs begins with the incorporation of your company as a Public Limited Company. Dobizindia Business Solution offers affordable, wholesome, and reliable services for both private and public limited companies. For more information or to avail of our services, visit our official webpage on company incorporation India. </p>
-                            </div>
-                          </div>
-                      </div>
-
-                    </div>
-
-
-
-                    <div class="row py-4">
-
-                      <div class="col-md-4 col-12">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">STEP 3 -- Ensure Capital Adequacy </h5>
-                              <br>
-                              <p class="card-text">An MFI NBFC must be able to raise enough capital before it applies for approval from the RBI. The RBI requires that an applicant company have a minimum capital of Rs.5 lakhs to be eligible for the necessary license. This is the amount that India's North Eastern states require. </p>
-                            </div>
-                          </div>
-                      </div>
-
-
-                      <div class="col-md-4 col-12 mt-4">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">STEP 4- Deposit Capital </h5>
-                              <br>
-                              <p class="card-text">Once the prescribed capital of Rs.5 Crores has been arranged, the funds should be deposited as a fixed deposit in an FD bank opened in the NBFC's name at any scheduled commercial banks. The banker must also get the No Lien Certificate.</p>
-                            </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-4 col-12 mt-5">
-                        <div class="mt-5"></div>
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">STEP 5 -- Apply digitally for your RBI license </h5>
-                              <br>
-                              <p class="card-text">The official website for the RBI has the required application. The application must be downloaded and filled out manually. After filling out the application, you must submit it electronically. An application reference number will be generated upon successful submission. </p>
-                            </div>
-                          </div>
-                      </div>
-
-                    </div>
-
-                    <div class="row">
-                      <div class="col-md-6 col-12">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">STEP 6 -- Submit the RBI regional application </h5>
-                              <br>
-                              <p class="card-text"> After the application has already been submitted digitally to the RBI, a copy of that application along with the application number and copies of all required documents must also be submitted to the Regional Office of RBI. The relevant authorities will then review the application and, upon verification, submit it to the Central Office of the RBI. </p>
-                            </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-6 col-12 mt-4">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">STEP 7- Issuance of an RBI license </h5>
-                              <br>
-                              <p class="card-text">The RBI issues the license to applicant companies within days of filing the application. After receiving the license, the NBFC can start operating as a Microfinance Company without difficulties. </p>
-                            </div>
-                          </div>
-                      </div>
-
-                    </div>
-
-                  </div>
-                </section>
-
-            </div>
-
-
-            <div id="document">
-              <section class="py-5 ab-banner text-white">
-                  <div class="container">
-                    <div class="row">
-                    <div class="col-md-12 col-12 heading">
-                      <h2 class="py-4">Documents necessary for MFI Registration </h2>
-                      <p>The documentation is essential for filling out an application for MFI Registration in India. You do not need more documents to register an MFI for Section 8 companies. Has a complete listing of all these documents. Prior approval by the RBI is required to establish an MFI as NBFC. The following documents should be included with the prescribed form: </p>
-                      <h2 class="py-4">List of Documents </h2>
-                      <div class="about-text-style">
-                      <ol>
-                       <li> Memorandum of Association (Motion of Association) and Articles of Association </li>
-             
-                       <li> Certificate of incorporation </li>
-                         
-                       <li> Board resolution certified true copy </li>
-                         
-                       <li> Auditor's Certification on Net-Owned Fund </li>
-                         
-                       <li> Banker's Certificate of No Lien for Fixed Deposit </li>
-                         
-                       <li> Banker's report regarding the company </li>
-                         
-                       <li> CIBIL Credit Report from the directors</li>
-
-                     </ol>
-
-                      <ol>
-
-                        <li> Education Proof of Director </li>
-                         
-                        <li> Documentation proving professional qualification of directors </li>
-                         
-                        <li> Photo, Address, &amp; Identity Proof of Directors</li>
-                         
-                        <li> Income proof for the director </li>
-                         
-                        <li> Relevant work experience in financial services</li>
-                         
-                        <li> Plan Organization Structure </li>
-
-                      </ol>
-                    </div>
-                    </div>
-                    </div>
-                  </div>
-                </section>
-            </div>
-
-
-            <div id="faq">
-             <section class="bg-light py-4">
-                <div class="container">
-                  <div class="row">
-
-                    <div class="col-md-11 col-12 mx-auto heading2">
-                      <h2 class="text-center">Frequently Asked  <span class="text-primary">Questions</span></h2>
-                      <div class="accordion pt-2" id="accordionExample">
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Who regulates Microfinance Companies in India?
-                            </button>
-                          </h4>
-                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              Like all financial institutions in India, RBI or the Reserve Bank regulates microfinance. 
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              Like all financial institutions in India, RBI or the Reserve Bank regulates microfinance. 
-                            </button>
-                          </h4>
-                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              A license from the RBI must be obtained for setting up an MFI to operate as an NBFC. But, the RBI must not have any approvals or licenses for MFIs registered as Section 8 companies. Only one license is required for a section-8 MFI to operate as a Section 8 Company by MCA. 
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                             Are there any restrictions on loan disbursement from Microfinance firms? 
-                            </button>
-                          </h4>
-                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                             MFIs not registered as NBFCs are prohibited from disbursing loans of more than 10% of total assets. MFIs under section 8 of the Companies Act cannot disburse unsecured loans or collateral-free loans above Rs.50,000 and more than Rs.1.25 lakhs for dwelling residences. 
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            Net assets are the assets a company currently has in its possession. 
-                            </button>
-                          </h4>
-                          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                             The report of the Banker in MFI NBFC provides details on the applicant's transactions with the bank as a depositing and lending entity.
-                                
-                            </div>
-                          </div>
-                        </div>
-
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-            {% include 'product.html' %}
-          </div>
-          </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
+              <div class="col-md-12 col-12 p-2">
+                <table class="table">
                   <tbody>
-                    <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
+                    <tr class="table-dark">
+                      <td><b> {{minimum.list6}}.</b> {{minimum.heading_text4}}</td>
                     </tr>
-                    <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
+                    <tr class="table-primary">
+                      <td><b>{{minimum.list7}}</b> {{minimum.text3}}</td>
                     </tr>
-                    <tr>
-                      <th>DobizIndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
+
+                    <tr class="table-info">
+                      <td><b>{{minimum.list8}} </b> {{minimum.text4}}</td>
                     </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
+                    <tr class="table-warning">
+                      <td><b>{{minimum.list9}} </b> {{minimum.text5}}</td>
                     </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
-                    </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
-                    </tr>
+
                   </tbody>
                 </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
-                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h4>Benefits</h4>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12 heading">
+                <h2 class="py-4">{{document.heading_text}}</h2>
+                <p>{{document.text}}</p>
+              </div>
+            </div>
+            <h2>{{document.heading_text2}}</h2>
+
+            <div class="about-text-style">
+              <ol>
+                <li> {{document.list1}} </li>
+
+                <li> {{document.list2}} </li>
+
+                <li>{{document.list3}} </li>
+
+                <li> {{document.list4}} </li>
+
+                <li> {{document.list5}} </li>
+
+                <li>{{document.list6}}</li>
+
+                <li> {{document.list7}}</li>
+
+              </ol>
+
+              <ol>
+
+                <li> {{document.list8}} </li>
+
+                <li> {{document.list9}} </li>
+
+                <li> {{document.list10}}</li>
+
+                <li> {{document.list11}} </li>
+
+                <li> {{document.list12}}</li>
+
+                <li> {{document.list13}} </li>
+
+              </ol>
+            </div>
+
+
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
+        </div>
+      </div>
+
+      {% include 'common_pages/pricing_sum_below.html' %}
+
+    </div>
+  </div>
+</section>
+
+{% include 'common_pages/fssai.html'%}
+
+<section class="checklist py-5">
+  <div class="container">
+    <p class="py-2">{{step.text}}</p>
+    <div class="row py-4">
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step1}} </h5>
+          <p>{{step.answer1}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step2}} </h5>
+          <p>{{step.answer2}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step3}} </h5>
+          <p>{{step.answer3}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step4}} </h5>
+          <p>{{step.answer4}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step5}} </h5>
+          <p>{{step.answer5}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step6}} </h5>
+          <p>{{step.answer6}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step7}} </h5>
+          <p>{{step.answer7}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12 col-12">
+        <h2>{{faq.heading_text}}</h2>
+        <div class="accordion pt-2" id="accordionExample">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+               {{faq.question1}}
+              </button>
+            </h4>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer1}}
               </div>
             </div>
           </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                {{faq.question2}}
+              </button>
+            </h4>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer2}}
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                {{faq.question3}}
+              </button>
+            </h4>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer3}}
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                {{faq.question4}}
+              </button>
+            </h4>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer4}}
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
-    </section>
+    </div>
 
-    {% endblock %}
+  </div>
+</section>
+{% endblock %}

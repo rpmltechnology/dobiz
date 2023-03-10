@@ -5,30 +5,7 @@
 {%block body %}
 
 
-<section class="top-bn1 bn-styles py-4 aos-init aos-animate" data-aos="fade-left">
-  <div class="container py-4">
-    <div class="row pt-4">
-
-      <div class="col-md-4 col-12 space_top">
-        <img src="/media/{{ banner.img }}" alt="logo-img" class="img-fluid">
-      </div>
-
-      <div class="col-md-4 col-12 space_top">
-        <h4 class="fs-1"> {{ banner.heading_text }} </h4>
-        <p><span class="bg-primary p-1 text-white"> {{ banner.review_rating }} </span> <a class="text-decoration-none" href="#"> &nbsp; {{banner.review}} </a> </p>
-        <p class="fs-5"> {{ banner.text }} </p>
-        <p class="fs-5"> <a href="#" class="text-decoration-none text-dark"> {{ banner.text2 }} </a> </p>
-        <p> <a href="#"> Terms and conditions </a> </p>
-      </div>
-
-      <div class="col-md-1"></div>
-
-      {% include 'common_pages/pricing_sum_above.html' %}
-
-
-    </div>
-  </div>
-</section>
+{% include 'common_pages/banner.html'%}
 
 <section class="py-5 bg-light1">
   <div class="container-fluid mt-3">
@@ -65,157 +42,139 @@
         <!-- Tab panes -->
         <div class="tab-content">
           <div id="meaning" class="container tab-pane content active"><br>
-            <h4> Business Structure to begin your own business in India </h4>
-            <p> Companies in India are classified into different types according to various aspects, such as the
-              necessity to register, the process to register, the amount of capital investment, and the responsibility
-              of the business owners. Entrepreneurs in India can choose the structure they prefer to establish their
-              businesses among various choices available. They include private companies, public corporations,
-              one-person businesses, section 8 partnerships, proprietorship companies, LLPs, trusts, societies, and
-              others. </p>
-            <div class="text-center py-4"><img src="{% static '/images/inner-page.jpg' %}" alt="logo-img"
-                class="img-fluid">
-            </div>
+            <h4> {{meaning.heading_text}} </h4>
+            <p> {{meaning.text}} </p>
+            <div class="text-center py-4"><img src="/media/{{ meaning.img }}" alt="logo-img" class="img-fluid"></div>
 
-            <h4 class="text-center py-4">Business Type Based on the Business Activity </h4>
-            <p class="b-style text-style">The list of proposed activities plays a significant role in deciding which
-              type is the most suitable to begin a business in India. For instance, companies involved in social welfare
-              activities have different goals for selling goods or services to earn profits. Thus, they need to be
-              registered under different categories. The following table lists the most appropriate kinds of businesses
-              based on the type of business they are engaged in. </p>
+            <h4 class="text-center py-4">{{meaning.heading_text2}}</h4>
+            <p class="b-style text-style">{{meaning.text2}}</p>
 
-            <div class="row table-responsive-sm">
-
-              <div class="col-md-4 col-12 p-2">
-                <table class="table">
-                  <tbody>
-                    <tr class="table-dark">
-                      <td>Profit from sale</td>
-                    </tr>
-                    <tr class="table-primary">
-                      <td>Private Limited Company</td>
-                    </tr>
-
-                    <tr class="table-info">
-                      <td>Public Limited Company</td>
-                    </tr>
-                    <tr class="table-warning">
-                      <td>One Person Company</td>
-                    </tr>
-
-                    <tr class="table-light">
-                      <td>Limited Liability Partnership</td>
-                    </tr>
-
-                    <tr class="table-primary">
-                      <td>Partner Firm</td>
-                    </tr>
-
-                    <tr class="table-info">
-                      <td>Proprietorship Firm</td>
-                    </tr>
-                    <tr class="table-warning">
-                      <td>Hindu Undivided Family</td>
-                    </tr>
-
-                  </tbody>
-                </table>
-              </div>
-
-
-              <div class="col-md-4 col-12 p-2">
-                <table class="table">
-                  <tbody>
-                    <tr class="table-dark">
-                      <td>Financial Service</td>
-                    </tr>
-                    <tr class="table-primary">
-                      <td>Bank</td>
-                    </tr>
-
-                    <tr class="table-info">
-                      <td>NBFC</td>
-                    </tr>
-                    <tr class="table-warning">
-                      <td>Asset Reconstruction Company</td>
-                    </tr>
-
-                    <tr class="table-light">
-                      <td>Micro Finance Institutions</td>
-                    </tr>
-
-                    <tr class="table-primary">
-                      <td>Nidhi Company</td>
-                    </tr>
-
-                    <tr class="table-info">
-                      <td>Payment Banks</td>
-                    </tr>
-
-                  </tbody>
-                </table>
-              </div>
-
-              <div class="col-md-4 col-12 p-2">
-                <table class="table">
-                  <tbody>
-                    <tr class="table-dark">
-                      <td>Non-Profit</td>
-                    </tr>
-                    <tr class="table-primary">
-                      <td>-</td>
-                    </tr>
-
-                    <tr class="table-info">
-                      <td>-</td>
-                    </tr>
-                    <tr class="table-warning">
-                      <td>Section 8 Company</td>
-                    </tr>
-
-                    <tr class="table-light">
-                      <td>Society</td>
-                    </tr>
-
-                    <tr class="table-primary">
-                      <td>TRUST</td>
-                    </tr>
-
-                  </tbody>
-                </table>
-              </div>
-
-
-            </div>
 
           </div>
 
           <div id="requirement" class="container tab-pane fade"><br>
             <div class="row">
+              <div class="row table-responsive-sm">
+                <h2>{{minimum.heading_text}}</h2>
+                <p class="b-style text-style">{{minimum.text}} </p>
 
-              <div class="col-md-12 col-12 heading">
-                <h2 class="fs-4">FDI is available for various <span class="text-primary">types of companies </span></h2>
+                <div class="col-md-4 col-12 p-2">
+                  <table class="table">
+                    <tbody>
+                      <tr class="table-dark">
+                        <td>{{minimum.heading_text2}}</td>
+                      </tr>
+                      <tr class="table-primary">
+                        <td>{{minimum.heading_text3}}</td>
+                      </tr>
 
-                <p>Foreign direct investment is permissible for companies in India by two routes: the automatic route
-                  and the route of approval. Most sectors can receive 100 percent of FDI through the automatic route.
-                </p>
-                <p>Automatic route: If FDI is received through an automated route, there is no need to get the prior
-                  approval of the government before the time that the shares of the company are sold out to overseas
-                  investors. But, once you have received the FDI, an official report on FC-GPR must be submitted to the
-                  RBI via AD Bank. AD Bank. </p>
+                      <tr class="table-info">
+                        <td>{{minimum.heading_text4}}</td>
+                      </tr>
+                      <tr class="table-warning">
+                        <td>{{minimum.text2}}</td>
+                      </tr>
 
-                <p class="b-style text-style">Approval Route: Certain strategic sectors, as well as foreign direct
-                  investment (FDI) coming from a nation that shares land borders with India, are permitted only in the
-                  Approval Route that requires prior approval from the Central Government before the FDI is accepted.
-                </p>
+                      <tr class="table-light">
+                        <td>{{minimum.text3}}</td>
+                      </tr>
+
+                      <tr class="table-primary">
+                        <td>{{minimum.text4}}</td>
+                      </tr>
+
+                      <tr class="table-info">
+                        <td>{{minimum.text5}}</td>
+                      </tr>
+                      <tr class="table-warning">
+                        <td>{{minimum.text6}}</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+
+                <div class="col-md-4 col-12 p-2">
+                  <table class="table">
+                    <tbody>
+                      <tr class="table-dark">
+                        <td>{{minimum.colorcode1}}</td>
+                      </tr>
+                      <tr class="table-primary">
+                        <td>{{minimum.colorcode2}}</td>
+                      </tr>
+
+                      <tr class="table-info">
+                        <td>{{minimum.list1}}</td>
+                      </tr>
+                      <tr class="table-warning">
+                        <td>{{minimum.list2}}</td>
+                      </tr>
+
+                      <tr class="table-light">
+                        <td>{{minimum.list3}}</td>
+                      </tr>
+
+                      <tr class="table-primary">
+                        <td>{{minimum.list4}}</td>
+                      </tr>
+
+                      <tr class="table-info">
+                        <td>{{minimum.list5}}</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="col-md-4 col-12 p-2">
+                  <table class="table">
+                    <tbody>
+                      <tr class="table-dark">
+                        <td>{{minimum.list6}}</td>
+                      </tr>
+                      <tr class="table-primary">
+                        <td>-</td>
+                      </tr>
+
+                      <tr class="table-info">
+                        <td>-</td>
+                      </tr>
+                      <tr class="table-warning">
+                        <td>{{minimum.list7}}</td>
+                      </tr>
+
+                      <tr class="table-light">
+                        <td>{{minimum.list8}}</td>
+                      </tr>
+
+                      <tr class="table-primary">
+                        <td>{{minimum.list9}}</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+
               </div>
 
             </div>
           </div>
 
           <div id="benefit" class="container tab-pane fade"><br>
+            <div class="col-md-12 col-12 heading">
+              <h2 class="fs-4">{{benefit.heading_text}} <span class="text-primary">{{benefit.heading_text2}} </span></h2>
+
+              <p>{{benefit.text}}</p>
+              <p>{{benefit.text2}}</p>
+
+              <p class="b-style text-style">{{benefit.text3}} </p>
+            </div>
+
             <div class="heading2">
-              <h2 class="fs-4 text-center">The table below discusses the potential of <span class="text-primary">Indian
-                  and foreign investment for </span>various kinds of businesses within India.</h2>
+              <h2 class="fs-4 text-center">{{benefit.text4}} <span class="text-primary">{{benefit.text5}} </span>{{benefit.text6}}</h2>
               <div class="row table-responsive-sm">
                 <!--  <div class="col-md-5 col-12">  
                   
@@ -224,29 +183,29 @@
                   <table class="table">
                     <tbody>
                       <tr class="table-dark">
-                        <td>100% Indian Investment Permitted</td>
+                        <td>{{benefit.list1}}</td>
                       </tr>
                       <tr class="table-primary">
-                        <td>100% Indian Investment Permitted</td>
+                        <td>{{benefit.list2}}</td>
                       </tr>
 
                       <tr class="table-info">
-                        <td>OPC</td>
+                        <td>{{benefit.list3}}</td>
                       </tr>
                       <tr class="table-warning">
-                        <td>LLP</td>
+                        <td>{{benefit.list4}}</td>
                       </tr>
 
                       <tr class="table-light">
-                        <td>Partnership firm</td>
+                        <td>{{benefit.list5}}</td>
                       </tr>
 
                       <tr class="table-primary">
-                        <td>Proprietorship</td>
+                        <td>{{benefit.list6}}</td>
                       </tr>
 
                       <tr class="table-info">
-                        <td>Section 8 Company</td>
+                        <td>{{benefit.list7}}</td>
                       </tr>
 
                     </tbody>
@@ -258,7 +217,7 @@
                   <table class="table">
                     <tbody>
                       <tr class="table-dark">
-                        <td>100% foreign-investment is permitted</td>
+                        <td>{{benefit.list8}}</td>
                       </tr>
                       <tr class="table-primary">
                         <td>-</td>
@@ -268,11 +227,11 @@
                         <td>-</td>
                       </tr>
                       <tr class="table-warning">
-                        <td>Private Limited Company</td>
+                        <td>{{benefit.list9}}</td>
                       </tr>
 
                       <tr class="table-light">
-                        <td>LLP</td>
+                        <td>{{benefit.list10}}</td>
                       </tr>
 
                       <tr class="table-primary">
@@ -291,25 +250,25 @@
                   <table class="table">
                     <tbody>
                       <tr class="table-dark">
-                        <td>Investments are permitted to be made by NRI or OCI</td>
+                        <td>{{benefit.list11}}</td>
                       </tr>
                       <tr class="table-primary">
-                        <td>Company</td>
+                        <td>{{benefit.list12}}</td>
                       </tr>
 
                       <tr class="table-info">
-                        <td>LLP</td>
+                        <td>{{benefit.list13}}</td>
                       </tr>
                       <tr class="table-warning">
-                        <td>Partnership</td>
+                        <td>{{benefit.list14}}</td>
                       </tr>
 
                       <tr class="table-light">
-                        <td>Proprietorship</td>
+                        <td>{{benefit.list15}}</td>
                       </tr>
 
                       <tr class="table-primary">
-                        <td>FDI in Partnerships and Proprietorships is permitted only on a non-repatriation basis.</td>
+                        <td>{{benefit.list16}}</td>
                       </tr>
 
                     </tbody>
@@ -326,38 +285,29 @@
             <div class="row">
 
               <div class="col-md-12 col-12 heading">
-                <h2 class="fs-4">Risk and the liability of a <span class="text-primary">business </span>structure</h2>
+                <h2 class="fs-4">{{document.heading_text}} <span class="text-primary">{{document.heading_text2}} </span>{{document.heading_text3}}</h2>
 
-                <p>It is recommended to consider the potential risk or liability and then decide on the best type that
-                  we will be able to begin the business in India. A small-sized retail store has a low risk of
-                  responsibility compared to businesses involved in international trade or dealing with dangerous
-                  chemicals. From the viewpoint of Risk and Liability, business structure can be divided into two
-                  classes. First, there is a situation where the owner's liability is limited to the amount to which it
-                  is subscribed. The category is where the owner's liability is inimitable.</p>
+                <p>{{document.text}}</p>
 
-                <p class="b-style text-style">The concept of limited liability for entities where the business and their
-                  owners are regarded as distinct legal entities, the owners, have protection from the liability and
-                  losses that the company faces. The liability of owners in a limited liability company is limited to
-                  the share capital they have subscribed to. The table below categorizes businesses according to the
-                  ownership liability of the owners.</p>
+                <p class="b-style text-style">{{document.text2}}</p>
               </div>
 
 
-              <div class="col-md-2 col-6 p-2">
+              <div class="col-md-6 col-6 p-2">
                 <table class="table">
                   <tbody>
                     <tr class="table-dark">
-                      <td>Unlimited Liability of Owners</td>
+                      <td>{{document.list1}}</td>
                     </tr>
                     <tr class="table-primary">
-                      <td>Proprietorship</td>
+                      <td>{{document.list2}}</td>
                     </tr>
 
                     <tr class="table-info">
-                      <td>Partnership</td>
+                      <td>{{document.list3}}</td>
                     </tr>
                     <tr class="table-warning">
-                      <td>HUF</td>
+                      <td>{{document.list4}}</td>
                     </tr>
 
                   </tbody>
@@ -365,21 +315,21 @@
               </div>
 
 
-              <div class="col-md-2 col-6 p-2">
+              <div class="col-md-6 col-6 p-2">
                 <table class="table">
                   <tbody>
                     <tr class="table-dark">
-                      <td>Limited Liability of Owners</td>
+                      <td>{{document.list5}}</td>
                     </tr>
                     <tr class="table-primary">
-                      <td>Company</td>
+                      <td>{{document.list6}}</td>
                     </tr>
 
                     <tr class="table-info">
-                      <td>OPC</td>
+                      <td>{{document.list7}}</td>
                     </tr>
                     <tr class="table-warning">
-                      <td>LLP</td>
+                      <td>{{document.list8}}</td>
                     </tr>
 
                   </tbody>
@@ -392,14 +342,8 @@
           <div id="process" class="container tab-pane fade"><br>
             <div class="row">
               <div class="col-md-112 col-12">
-                <h2 class="py-2">Control and Management for Specific Business Types </h2>
-                <p>Businesses, such as proprietorships and Partnership Companies, have no separation between management
-                  and ownership. The sole proprietor of a proprietorship is accountable for its management and control.
-                  In contrast, each partner of a partnership company, or as stipulated by the Partnership Deed, handles
-                  the control and management of the company. But, some structures, such as companies or LLPs, can
-                  distinguish between management and ownership. The table below categorizes each business based on the
-                  distinction between management and ownership. It is possible to consider the company's management as a
-                  factor that can be used for starting a business in India.</p>
+                <h2 class="py-2">{{incorporation.heading_text}} </h2>
+                <p>{{incorporation.text}}</p>
               </div>
             </div>
           </div>
@@ -410,58 +354,53 @@
                 <table class="table table-bordered table-sm">
                   <thead>
                     <tr>
-                      <th>S.No</th>
-                      <th>Business Type</th>
-                      <th>Ownership</th>
-                      <th>Management Control</th>
+                      <th>{{compliance.heading_text}}</th>
+                      <th>{{compliance.heading_text2}}</th>
+                      <th>{{compliance.heading_text3}}</th>
+                      <th>{{compliance.heading_text4}}</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>1. </td>
+                      <td>{{compliance.list1}} </td>
 
-                      <td>Proprietorship</td>
+                      <td>{{compliance.list2}}</td>
 
-                      <td>One person called the proprietor is the owner of the proprietorship business. The owner
-                        invests the entire capital and has access to all earnings.</td>
+                      <td>{{compliance.list3}}</td>
 
-                      <td>There is no distinction between ownership and management of a proprietorship company. The
-                        proprietor is the one who controls and oversees the business on his own.</td>
+                      <td>{{compliance.list4}}</td>
 
                     </tr>
                     <tr>
-                      <td>2. </td>
-                      <td>Partnership</td>
-                      <td>The partners collectively control the company in a partnership according to their capital
-                        share ratio.</td>
+                      <td>{{compliance.list5}} </td>
+                      <td>{{compliance.list6}}</td>
+                      <td>{{compliance.list7}}</td>
 
-                      <td>All partners control and manage the business according to the agreement of partnership
-                        agreement.</td>
+                      <td>{{compliance.list8}}</td>
                     </tr>
                     <tr>
-                      <td>3. </td>
-                      <td>LLP</td>
-                      <td>In an LLP, the partners jointly are the owners according to their capital share ratio.</td>
+                      <td>{{compliance.list9}} </td>
+                      <td>{{compliance.list10}}</td>
+                      <td>{{compliance.list11}}</td>
 
-                      <td>The LLP's supervision and management are the designated partners' responsibility.</td>
+                      <td>{{compliance.list12}}</td>
                     </tr>
 
                     <tr>
-                      <td>4. </td>
-                      <td>OPC</td>
-                      <td>Only one person in the OPC is referred to as OPC's shareholder. He is also the sole OPC owner.
+                      <td>{{compliance.list13}} </td>
+                      <td>{{compliance.list14}}</td>
+                      <td>{{compliance.list15}}
                       </td>
 
-                      <td>The control and management of OPC are the duty of the directors.</td>
+                      <td>{{compliance.list16}}</td>
                     </tr>
 
                     <tr>
-                      <td>5. </td>
-                      <td>Private Limited</td>
-                      <td>Shareholders have a private limited company proportion of the proportion of their capital
-                        subscribed.</td>
+                      <td>{{compliance.list17}}</td>
+                      <td>{{compliance.list18}}</td>
+                      <td>{{compliance.list19}}</td>
 
-                      <td>A company's board of directors is accountable for the control and management of the company.
+                      <td>{{compliance.list20}}
                       </td>
                     </tr>
 
@@ -475,329 +414,13 @@
           <div id="closure" class="container tab-pane fade"><br>
             <div class="btm_grd_banner py-5">
               <div class="row text-center">
-                <div class="col-md-12 col-12">
-                  <div class="py-2 text-white heading2">
-                    <h2 class="py-2">Are you unsure of how to start your own business? </h2>
-                    <p class="fs-6 pt-2">Our startup consultants are available to answer your questions about the
-                      requirements, the step-by-step procedure, costs, and documents required to register a Company.
-                    </p>
-                    <p class="fs-6">The Cost of Formation for a variety of Business Structures
-                      The cost of establishing a business depends upon the fee for professional services, the cost of
-                      government fees, as well as the stamp duty and tax associated with it. Many factors impact the
-                      determination of the government fee, including the initial authorized capital, the where the
-                      registered office is located address, and the number of promoters for the company. It is possible
-                      to visit our pages for different kinds of companies to learn more about their total cost of
-                      establishment. Our experts are one click away if you're still unsure of the best way to proceed.
-                      All you have to do is reach us, and we'll aid you from the beginning until the end.
-                    </p>
-                    <h2 class="py-2">Cost of Compliance of several Business Structures </h2>
-                    <p class="fs-6">The cost of compliance differs between one type of business and another based on
-                      their particular compliance requirements. The typical costs for compliance include the accounting
-                      process, GST TDS, accounting, advance payments of taxes, and Payroll Processing. They are almost
-                      identical in all business types. But, there are some variations in the total cost, mainly due to
-                      taxes due to the annual submission of tax returns to the ROC. The table below outlines the
-                      application of annual filing for various business structures in India. You may choose to start a
-                      company that has a structure that needs minor compliances to be completed.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-10 col-12">
-                  <table class="table table-bordered border table-sm">
-                    <thead>
-                      <tr>
-                        <th>Business Type</th>
-                        <th>ITR</th>
-                        <th>Annual Return</th>
-                        <th>Audit</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Proprietorship</td>
-                      </tr>
-                      <tr>
-                        <td>Partnership</td>
-                      </tr>
-                      <tr>
-                        <td>LLP</td>
-                      </tr>
-
-                      <tr>
-                        <td>OPC</td>
-                      </tr>
-
-                      <tr>
-
-                        <td>Private Limited</td>
-                      </tr>
-
-                    </tbody>
-                  </table>
-                </div>
+                <h2>closur</h2>
               </div>
             </div>
           </div>
 
           <div id="faq" class="container tab-pane fade"><br>
-            <div class="heading">
-              <h2 class="py-2">Taxation of various forms for business </h2>
-              <p>It is important to note that income tax is assessed in different ways on various types of businesses;
-                we tell that you seek a thorough consultation and review of the latest laws about paying taxes and
-                filing tax returns. Below is a short review of the taxability of income from the typical company
-                structure that is common in India. By considering this aspect, you can make an informed decision on the
-                type of structure you would like to begin your business using.</p>
-
-
-              <div class="row table-responsive-sm">
-
-                <div class="col-md-12 col-12">
-                  <table class="table table-bordered table-sm">
-                    <thead>
-                      <tr>
-                        <th>S.No</th>
-                        <th>Business Type</th>
-                        <th>Rate of Income Tax</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1. </td>
-
-                        <td>Proprietorship</td>
-
-                        <td>The proprietorship isn't considered a distinct entity under the law; therefore, the
-                          proprietorship business's income is reported in the ITR filed by the proprietor. This means
-                          that no separate ITR is required for the proprietorship company. The individual slab-based
-                          taxation of 5%-30 percent applies to proprietorships dependent on the earnings it earns. The
-                          deduction provided under section 80C of the U tax code can also be applied to the owner's
-                          earnings. The individual tax rate slabs for proprietorships have been described below.</td>
-
-                      </tr>
-                      <tr>
-                        <td>- </td>
-                        <td>-</td>
-                        <th>Under the New Income Tax Regime U/S 115 BBAC</th>
-
-                        <td>-</td>
-                      </tr>
-                      <tr>
-                        <th>-</th>
-                        <th>- </th>
-                        <th>No. </th>
-                        <th>The Total Revenue</th>
-
-                        <th>Tax Rate</th>
-                      </tr>
-
-                      <tr>
-                        <th>-</th>
-                        <th>- </th>
-                        <th>1. </th>
-                        <th>As high as Rs. 2,50,000</th>
-
-                        <th>NIL</th>
-                      </tr>
-
-                      <tr>
-                        <th>-</th>
-                        <th>- </th>
-                        <th>2. </th>
-                        <th>Rs. 2,50,001 to Rs. 5,00,000</th>
-
-                        <th>5%</th>
-                      </tr>
-
-                      <tr>
-                        <th>-</th>
-                        <th>- </th>
-                        <th>3. </th>
-                        <th>Rs. 500001 up to Rs. 7,50,000</th>
-
-                        <th>10%</th>
-                      </tr>
-
-                      <tr>
-                        <th>-</th>
-                        <th>- </th>
-                        <th>4. </th>
-                        <th>Rs. 750,000 to. 10,00,000</th>
-
-                        <th>15%</th>
-                      </tr>
-
-                      <tr>
-                        <th>-</th>
-                        <th>- </th>
-                        <th>4. </th>
-                        <th>Rs. 750,000 to. 10,00,000</th>
-
-                        <th>15%</th>
-                      </tr>
-
-                      <tr>
-                        <th>-</th>
-                        <th>-</th>
-                        <th>5. </th>
-                        <th>Rs. 10,001 to. 12,50,000</th>
-
-                        <th>20%</th>
-                      </tr>
-
-                      <tr>
-                        <th>-</th>
-                        <th>-</th>
-                        <th>6. </th>
-                        <th>Rs. 12,500,001 to Rs. 15,00,000</th>
-
-                        <th>25%</th>
-                      </tr>
-
-
-                      <tr>
-                        <th>-</th>
-                        <th>-</th>
-                        <th>7. </th>
-                        <th>More than the amount of Rs. 15,00,001</th>
-
-                        <th>30%</th>
-                      </tr>
-
-
-                      <tr>
-                        <th>-</th>
-                        <th>- </th>
-                        <th>In an old income tax regime</th>
-                        <th></th>
-
-                        <th>-</th>
-                      </tr>
-
-
-                      <tr>
-                        <th>-</th>
-                        <th>- </th>
-                        <th>No. </th>
-                        <th>All Income</th>
-
-                        <th>Tax Rate</th>
-                      </tr>
-
-                      <tr>
-                        <th>-</th>
-                        <th>- </th>
-                        <th>1. </th>
-                        <th>up to Rs. 2,50,000</th>
-
-                        <th>Nil</th>
-                      </tr>
-
-                      <tr>
-                        <th>-</th>
-                        <th>- </th>
-                        <th>2. </th>
-                        <th>Rs. 2,500,001 to Rs. 5,00,000</th>
-
-                        <th>5%</th>
-                      </tr>
-
-                      <tr>
-                        <th>-</th>
-                        <th>- </th>
-                        <th>3. </th>
-                        <th>Rs. 5, 00,001 to. 10,00,000</th>
-
-                        <th>20%</th>
-                      </tr>
-
-                      <tr>
-                        <th>-</th>
-                        <th>- </th>
-                        <th>4. </th>
-                        <th>More than the amount of Rs. 10,00,001</th>
-
-                        <th>30%</th>
-                      </tr>
-
-                      <tr>
-                        <td>2</td>
-                        <td>Partnership &amp; LLP</td>
-                        <td>According to the Income Tax Act, all of the provisions that apply to the partnership firm
-                          apply to the LLP. The income tax rate for the partnership firm and the LLP is 30% flat on the
-                          income total earned.</td>
-                      </tr>
-
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td>The tax rate for income earned by companies can range from 15% to 30%, based on the
-                          particular category. There are two kinds of businesses as described below.</td>
-                      </tr>
-
-                      <tr>
-                        <td>2</td>
-                        <td></td>
-                        <td><b>Newly Incorporated Company: </b>For businesses formed from or after the 1st of October
-                          2019and that are not eligible for any concession, deduction or exemption, or concession under
-                          the Income Tax Act, The tax rates are listed in the table below.</td>
-                      </tr>
-
-                      <tr>
-                        <td>3</td>
-                        <td>Company</td>
-                        <td>Specifications</td>
-                        <td>Manufacturing Company</td>
-                        <td>Other Company</td>
-                      </tr>
-
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td>Tax Rate</td>
-                        <td>15%</td>
-                        <td>22%</td>
-                      </tr>
-
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td>Surcharge</td>
-                        <td>10% on tax</td>
-                        <td>10% on tax</td>
-                      </tr>
-
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td>Cess</td>
-                        <td>4% on tax &amp; cess</td>
-                        <td>4% on tax &amp; cess</td>
-                      </tr>
-
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td>Ratio Effective</td>
-                        <td>17.16%</td>
-                        <td>25.168%</td>
-                      </tr>
-
-
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td>If the company does not belong to the category mentioned above, The tax rate for income is
-                          25% if your turnover falls below Rs.400 Crores and 30% when the total turnover exceeds Rs.400
-                          Crores. The surcharge and education cess at the rate applicable is added over and above the
-                          income tax rate, which is the base rate.</td>
-                      </tr>
-
-                    </tbody>
-                  </table>
-                </div>
-
-              </div>
-
-            </div>
+            <h2>FAQ</h2>
           </div>
 
         </div>
@@ -809,77 +432,9 @@
   </div>
 </section>
 
-<section class="Professional py-5">
-  <div class="container">
 
-    <div class="row">
-      <div class="col-md-12 text-center text-white">
-        <h2> Our Professional Fee For FSSAI Registration of License </h2>
-      </div>
-    </div>
+{% include 'common_pages/fssai.html'%}
 
-
-    <div class="row pro-box">
-      <div class="col-md-4 col-12">
-        <div class="shadow bg-light p-5">
-          <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
-          <div class="text-center">
-            <h2> Fssai Registration </h2>
-            <p class="pro-box-para"> Required if the turnover is less than 12 lac in a Financial Year & the business is
-              within the state </p>
-            <div class="pt-4"></div>
-            <h1 class="py-2"> ₹ 2,999/- </h1>
-            <p> Government Fee on Actual </p>
-            <br />
-            <div class="d-grid gap-2">
-              <button class="btn btn-success py-3" type="button"><a href="{% url 'order' %}"> Get started </a></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-12">
-        <div class="shadow bg-light p-5">
-          <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
-          <div class="text-center">
-            <h2> Fssai State License </h2>
-            <p class="pro-box-para"> When turnover is more than 12 Lac & upto 20 Crores for retailer/ 30 Crores for
-              wholesalers </p>
-            <div class="pt-4"></div>
-            <h1 class="py-2"> ₹ 8,499/- </h1>
-            <p> Government Fee on Actual </p>
-            <br />
-            <div class="d-grid gap-2">
-              <button class="btn btn-outline-success py-3 text-dark" type="button"><a href="{% url 'order' %}"> Get
-                  started
-                </a></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-12">
-        <div class="shadow bg-light p-5">
-          <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
-          <div class="text-center">
-            <h2> Fssai Registration </h2>
-            <p class="pro-box-para"> For all cases where turnover exceeds limits prescribed for state License or
-              involved in export. </p>
-            <div class="pt-4"></div>
-            <h1 class="py-2"> ₹ 11,999/- </h1>
-            <p> Government Fee on Actual </p>
-            <br />
-            <div class="d-grid gap-2">
-              <button class="btn btn-outline-success py-3" type="button"><a href="{% url 'order' %}"> Get started
-                </a></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 
 
@@ -888,150 +443,45 @@
     <div class="row">
 
       <div class="col-md-12 col-12">
-        <h2>Checklist for Company Registration in India</h2>
-        <p> Let’s discuss the minimum requirement or eligibility for Incorporation of Company in India. The checklist
-          given below is for ready reference and the promoters must go through the same and ascertain their eligibility
-          before proceeding with the Incorporation of company in India. </p>
-        <div class="accordion pt-2" id="accordionExample">
-          <div class="accordion-item">
-            <h4 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                Minimum 2 Shareholder & 2 Directors
-              </button>
-            </h4>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                Shareholders are the co-owners of the company. They can either be individuals or non-individuals, Indian
-                or foreign in origin. Directors, on the other hand, are responsible for controlling the management of
-                the company and acts as its agent. They are appointed by the Shareholders of the Company. Only
-                individuals can be appointed as directors, whether Indian or foreign in Origin.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h4 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Max 200 Shareholder and 15 Directors
-              </button>
-            </h4>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                To register a partnership firm it is required to have at least two partners and a registered address for
-                business with a unique and valid name, and some sum of capital to ensure the smooth operation of the
-                company. It is also necessary to have an agreement between all partners in front of a notary as well as
-                two witnesses. The deed must be written on stamp paper, and then signed on it by the notary. It is
-                important to note that a firm can't have more than 20 shareholders.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h4 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                One director must be Resident in India
-              </button>
-            </h4>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                The partnership business is controlled by the Indian Partnership Act, 1932 which provides for the
-                existence of two types of firms, one that is registered but not registered as well as a registered
-                company. A non-registered company is created by forming a partnership agreement that is signed by all
-                members in the presence of 2 witnesses and an official notary. The company is not officially registered
-                by the Registrar for Firms. But companies that are registered by the Registrar of Firms by submitting
-                the prescribed application form with all the required documents are referred to as a Registered
-                Partnership Company.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h4 class="accordion-header" id="headingFive">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                New and Unique Name for Company
-              </button>
-            </h4>
-            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                Although, indeed, the Indian Partnership Act, 1932 permits the registration of partnership firms section
-                69 of that Act outlines the disadvantages firms that are not registered carry. A list of the negatives
-                has been listed below.
-                <br>
-                Unregistered Partnership Firms are not able to assert an offset.
-                <br>
-                Non-registered Partnership Companies cannot collect anything more than Rs.100 from third-party
-                companies.
-                <br>
-                Partnership firms that aren't registered are not permitted to file legal actions before courts of law
-                for the settlement of disputes with the third party.
-                <br>
-                Partners of Partnership Firms that are not registered are not able to bring suit against a partner in
-                the firm or the company itself.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h4 class="accordion-header" id="headingFour">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                A premises to maintain Registered Office
-              </button>
-            </h4>
-            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body list-style">
-                <strong>The law doesn't provide any particular format for the partnership deed. It is the partnership
-                  partners on what they are willing to agree upon and then reduce to writing before beginning their
-                  partnership firm. The partnership, once it is established, can be changed at any time. But, every
-                  amendment to the deed has to be submitted to the registrar of the Partnership Firm registration. Here
-                  is a list of items that must be included in the agreement. </strong>
-                <ul>
-                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The primary objective and mission of the
-                    firm. </li>
-                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The date effective of the formation of the
-                    company. </li>
-                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The length of the term for the Firm. </li>
-                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The ratio of capital sharing between
-                    partners. </li>
-                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Part-time partners share a profit-sharing
-                    percentage. </li>
-                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The Management, Administration, and
-                    Operations of Partnership Companies. </li>
-                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The process to resolve disputes. </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        <h2>{{step.heading_text}}</h2>
+        <p> {{step.text}} </p>
+        <p>{{step.text2}}</p>
+        <h2>{{step.heading_text2}}</h2>
+        <p>{{step.answer1}}</p>
       </div>
 
-      <div class="col-md-4 col-12 text-center">
-        <div class="d-grid gap-2">
-          <button class="btn btn-primary py-3" type="button"><a href="{% url 'order' %}"> Request Name Availability
-            </a></button>
-        </div>
-      </div>
+      <div class="col-md-12 col-12">
+        <table class="table table-bordered border table-sm">
+          <thead>
+            <tr>
+              <th>{{step.list1}}</th>
+              <th>{{step.list2}}</th>
+              <th>{{step.list3}}</th>
+              <th>{{step.list4}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{step.list5}}</td>
+            </tr>
+            <tr>
+              <td>{{step.list6}}</td>
+            </tr>
+            <tr>
+              <td>{{step.list7}}</td>
+            </tr>
 
-      <div class="col-md-4 col-12 text-center">
-        <div class="d-grid gap-2">
-          <button class="btn btn-outline-primary py-3" type="button"><a href="{% url 'order' %}"> Download Questionnaire
-            </a></button>
-        </div>
-      </div>
+            <tr>
+              <td>{{step.list8}}</td>
+            </tr>
 
-      <div class="col-md-4 col-12 text-center">
-        <div class="d-grid gap-2">
-          <button class="btn btn-primary py-3" type="button"><a href="{% url 'order' %}"> Download NOC Format
-            </a></button>
-        </div>
+            <tr>
+
+              <td>{{step.list9}}</td>
+            </tr>
+
+          </tbody>
+        </table>
       </div>
 
     </div>
@@ -1041,515 +491,236 @@
 
 <section class="checklist py-5">
   <div class="container">
-    <h2> Benefits of Private Limited Company Registration </h2>
-    <p class="check_para"> Let’s discuss the minimum requirement or eligibility for Incorporation of Company in India.
-      The checklist given below is for ready reference and the promoters must go through the same and ascertain their
-      eligibility before proceeding with the Incorporation of company in India. </p>
-    <div class="row py-4">
+    <h2> {{faq.heading_text}}</h2>
+    <p class="check_para"> {{faq.answer1}}</p>
 
-      <div class="col-md-4 col-6">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> Limited Liability </h5>
-          <p> Liability of Shareholders is limited only to the capital they have subscribed to. </p>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-6">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> Attractive for investors </h5>
-          <p> Investors find it attractive for funding because of the availability of public records at ROC. </p>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-6">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> Preferred by Creditor </h5>
-          <p> Legal credibility and high growth potential makes a company preferable for funding </p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="row py-4">
-
-      <div class="col-md-4 col-6">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> Easy to Incorporate </h5>
-          <p> Incorporation is 100% online and easy to process and can be completed in a few days. </p>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-6">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> Low Income Tax </h5>
-          <p> Companies enjoy favourable tax rates in comparison to other forms of business. </p>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-6">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> Perpetual Existence </h5>
-          <p> The company exists beyond the life of its shareholder until it is wound up. </p>
-        </div>
-      </div>
-
-    </div>
-
-    <h2> Documents Required for Company Registration in India </h2>
-    <p class="check_para"> Correct documentation is key to fast and easy incorporation of your private limited company.
-      list of documents that we need for Private Limited Company registration online is divided into two broad
-      categories, namely, the documents of all the promoters and the documents of the proposed registered address of the
-      company. </p>
-
-    <div class="row py-4">
-
-      <div class="col-md-6 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> Promoter Document </h5>
-          <hr />
-          <div class="about-text-style">
-            <ul>
-              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Color Photo </li>
-              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> id Proof: (Passport, Voter ID, Driving License,
-                Aadhar) </li>
-              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Address Proof: (Bank Statement or any utility
-                bill like electricity, water or telephone bill. The address proof should not be older than 2 months)
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> Registered Address Related </h5>
-          <hr />
-          <div class="about-text-style">
-            <ul>
-              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Proof of Address: (Latest Utility bill of that
-                address such as electricity bill, water bill or Property Ownership Papers) </li>
-              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> NOC: No Objection Certificate from the owner.
-              </li>
-              <br /><br /><br />
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <p class="pt-4"> We recommend you send the soft copies of documents along with the filled questionnaire that our
-        startup advisors will share with you. We will verify the information and legal documents sent to us. Please
-        contact us for further clarifications and a copy of the prescribed NOC format. </p>
-
-    </div>
-
-    <h2> Stepwise Company Registration Process in India </h2>
-
-    <div class="row py-4">
+    <div class="row table-responsive-sm">
 
       <div class="col-md-12 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> STEP 1 – Documentation & DSC </h5>
-          <p> The Basic Documents of the Promoters (Directors or Shareholders) and Proof of the Registered Office are
-            required to begin the process. The first thing that we do is to make the make the Digital Signature (DSC) of
-            promoters as the application for incorporation of the company is filed electronically and signed with the
-            DSC. </p>
-        </div>
-      </div>
+        <table class="table table-bordered table-sm">
+          <thead>
+            <tr>
+              <th>{{faq.list1}}</th>
+              <th>{{faq.list2}}</th>
+              <th>{{faq.list3}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{faq.list4}} </td>
 
-      <div class="col-md-12 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> STEP 2 – Name Approval For the Company </h5>
-          <p> As discussed earlier, the new company name must be new and unique, complying with the guideline issued for
-            name approval of the company. Ideally few names in order of preference should be filed in Spice Plus form at
-            the time of Private Limited Company Registration online. However, to be doubly sure about the name
-            availability, an advance application may be filed with the ROC in the prescribed RUN form only to obtain the
-            Name Approval. Making a separate application in RUN is advisable when the promoters intend for a specific
-            name for the company, however, it involves additional cost. </p>
-        </div>
-      </div>
+              <td>{{faq.list5}}</td>
 
-      <div class="col-md-12 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> STEP 3 – Drafting of MOA & AOA </h5>
-          <p> The Memorandum of Association is the constitution of the company, that defines the objects for which the
-            company is incorporated. The articles of association (AOA) are the internal rules of the company. We help
-            promoters to draft the MOA and in particular the Main Object of the company and the AOA, commensurate to the
-            requirement of the companies act, of 2023. </p>
-        </div>
-      </div>
+              <td>{{faq.answer2}}</td>
 
-      <div class="col-md-12 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> STEP 4 – Filing SPICE Plus Form </h5>
-          <p> To register a company, we need to file the SPICE Plus form to the ROC along with the prescribed
-            attachments such as the promoter’s personal KYC documents, documents of the registered office address, MOA
-            and AOA. The application is signed using a Digital Signature Certificate. </p>
-        </div>
-      </div>
+            </tr>
+            <tr>
+              <td>- </td>
+              <td>-</td>
+              <th>{{faq.list6}}</th>
 
-      <div class="col-md-12 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> STEP 5 – Issue of Company Registration Certificate </h5>
-          <p> After your SPICE Plus application is approved by the ROC, the procedure of Private Limited Company
-            Registration online gets completed. As a conclusive proof of registration, the ROC issues a Certificate of
-            Registration. The Certificate also contains CIN, and company registration number. Under the integrated
-            incorporation process following registrations are also done simultaneously by the ROC. </p>
-        </div>
+              <td>-</td>
+            </tr>
+            <tr>
+              <th>-</th>
+              <th>- </th>
+              <th>{{faq.list7}} </th>
+              <th>{{faq.list8}}</th>
+
+              <th>{{faq.list9}}</th>
+            </tr>
+
+            <tr>
+              <th>-</th>
+              <th>- </th>
+              <th>{{faq.list10}} </th>
+              <th>{{faq.list11}}</th>
+
+              <th>{{faq.list12}}</th>
+            </tr>
+
+            <tr>
+              <th>-</th>
+              <th>- </th>
+              <th>{{faq.list13}} </th>
+              <th>{{faq.list14}}</th>
+
+              <th>{{faq.list15}}</th>
+            </tr>
+
+            <tr>
+              <th>-</th>
+              <th>- </th>
+              <th>{{faq.list16}}</th>
+              <th>{{faq.list17}}</th>
+
+              <th>{{faq.list18}}</th>
+            </tr>
+
+            <tr>
+              <th>-</th>
+              <th>- </th>
+              <th>{{faq.list19}} </th>
+              <th>{{faq.list20}}</th>
+
+              <th>{{faq.list21}}</th>
+            </tr>
+
+            <tr>
+              <th>-</th>
+              <th>-</th>
+              <th>{{faq.list22}} </th>
+              <th>{{faq.list23}}</th>
+
+              <th>{{faq.list24}}</th>
+            </tr>
+
+            <tr>
+              <th>-</th>
+              <th>-</th>
+              <th>{{faq.list25}} </th>
+              <th>{{faq.list26}}</th>
+
+              <th>{{faq.list27}}</th>
+            </tr>
+
+
+            <tr>
+              <th>-</th>
+              <th>-</th>
+              <th>{{faq.list28}} </th>
+              <th>{{faq.list29}}</th>
+
+              <th>{{faq.list30}}</th>
+            </tr>
+
+
+            <tr>
+              <th>-</th>
+              <th>- </th>
+              <th>{{faq.list31}}</th>
+              <th></th>
+
+              <th>-</th>
+            </tr>
+
+
+            <tr>
+              <th>-</th>
+              <th>- </th>
+              <th>{{faq.list32}} </th>
+              <th>{{faq.list33}}</th>
+
+              <th>{{faq.list34}}</th>
+            </tr>
+
+            <tr>
+              <th>-</th>
+              <th>- </th>
+              <th>{{faq.list35}} </th>
+              <th>{{faq.list36}}</th>
+
+              <th>{{faq.list37}}</th>
+            </tr>
+
+            <tr>
+              <th>-</th>
+              <th>- </th>
+              <th>{{faq.list38}}</th>
+              <th>{{faq.list39}}</th>
+
+              <th>{{faq.list40}}</th>
+            </tr>
+
+            <tr>
+              <th>-</th>
+              <th>- </th>
+              <th>{{faq.list41}}</th>
+              <th>{{faq.list42}}</th>
+
+              <th>{{faq.list43}}</th>
+            </tr>
+
+            <tr>
+              <th>-</th>
+              <th>- </th>
+              <th>{{faq.list44}} </th>
+              <th>{{faq.list45}}</th>
+
+              <th>{{faq.list46}}</th>
+            </tr>
+
+            <tr>
+              <td>{{faq.list47}}</td>
+              <td>{{faq.list48}}</td>
+              <td>{{faq.answer3}}
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>{{faq.answer4}}</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td></td>
+              <td><b>{{faq.answer5}}</td>
+            </tr>
+
+            <tr>
+              <td>{{faq.list49}}</td>
+              <td>{{faq.list50}}</td>
+              <td>{{faq.list51}}</td>
+              <td>{{faq.list52}}</td>
+              <td>{{faq.list53}}</td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>{{faq.list54}}</td>
+              <td>{{faq.list55}}</td>
+              <td>{{faq.list56}}</td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>{{faq.list57}}</td>
+              <td>{{faq.list58}}</td>
+              <td>{{faq.list59}}</td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>{{faq.list60}}</td>
+              <td>{{faq.heading_text2}}</td>
+              <td>{{faq.question1}}</td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>{{faq.question2}}</td>
+              <td>{{faq.question3}}</td>
+              <td>{{faq.question4}}</td>
+            </tr>
+
+
+            <tr>
+              <td></td>
+              <td></td>
+              <td>{{faq.answer6}}</td>
+            </tr>
+
+          </tbody>
+        </table>
       </div>
 
     </div>
-
-  </div>
-</section>
-
-
-<section class="spice-plus py-5">
-  <div class="container">
-    <div class="row">
-      <h5 class="text-center"> Registration or Enrollments Under Spice Plus </h5>
-      <div class="col-md-10 col-12 mx-auto">
-
-        <div class="about-text-style inn-margin btm-border">
-          <ul class="inner-border inn-margin">
-            <li> <span class="text-primary p-4">1 </span> Allotment of DIN </li>
-            <li> <span class="text-primary p-4">2 </span> PAN Application </li>
-            <li> <span class="text-primary p-4">3 </span> TAN Application </li>
-            <li> <span class="text-primary p-4">4 </span> GST Registration (Optional) </li>
-          </ul>
-
-          <ul class="inn-margin btm-border">
-            <li> <span class="text-primary p-4">5 </span> EPFO Registration </li>
-            <li> <span class="text-primary p-4">6 </span> ESIC Registration </li>
-            <li> <span class="text-primary p-4">7 </span> Bank Account Opening (Optional) </li>
-            <li> <span class="text-primary p-4">8 </span> PTEC (only for select state) </li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="checklist py-5">
-  <div class="container">
-    <h2> Compliances for a Private Limited Company </h2>
-    <p class="check_para"> The company is a creation of law and is governed by the provisions of the Companies Act,
-      2013. To ensure transparency, governance and to protect the interest of all the stakeholders such as ROC,
-      Shareholders, Directors, Investors and Tax departments, there are few compliances and related filings that have to
-      be completed within their due dates. We help in meeting all the required compliances within their due dates with
-      ease. The prescribed compliances may be categorized in following four types. We are explaining the one time
-      compliance here. For details on Regular, Event based and annual compliances, you can talk to our expert startup
-      advisors. </p>
-    <div class="row py-4">
-
-      <div class="col-md-6 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> ONE TIME </h5>
-          <p> One Time Compliances & Local Registrations immediately after Incorporation <br /><br /> </p>
-          <a href="#"> Read More </a>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> REGULAR </h5>
-          <p> Regular Compliances, such as Accounting, Tax Filing and Maintenance of Records & Registers </p>
-          <a href="#"> Read More </a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="row py-4">
-
-      <div class="col-md-6 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> EVENT BASED </h5>
-          <p> The compliance filing on change of director, registered address or on allotment of shares, etc. </p>
-          <a href="#"> Read More </a>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> ANNUAL COMPLIANCE </h5>
-          <p> At the end of the financial year, the financial statement audit, ITR and ROC Annual Return Filing. </p>
-          <a href="#"> Read More </a>
-        </div>
-      </div>
-
-    </div>
-
-    <h2> One time compliance </h2>
-    <p class="check_para"> Immediately after a Private Limited Company is incorporated, it has to fulfil certain
-      statutory compliances prescribed by the Companies Act and obtain local registrations based on the place where the
-      company is registered. Following is the list of compliance with their due dates. Our startup advisors are
-      available for detailed discussion. </p>
-
-    <h2> Under the Companies Act, 2013 </h2>
-
-    <table class="table table-bordered py-5">
-      <thead>
-        <tr class="bg-primary text-white">
-          <th scope="col">S.No</th>
-          <th scope="col">Name of Compliance</th>
-          <th scope="col">Due Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Appointment of First Auditor</td>
-          <td>Within 30 Days of Incorporation</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Issue of Share Certificate</td>
-          <td>Within 60 Days of Incorporation</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Stamp Duty Payment on Share Certificate</td>
-          <td>Within 30 Days of Certificate Issue</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>
-            Filing of INC-20A (Declaration for Business Commencement) A company can not start its operations unless and
-            until this declaration is filed to the ROC in the prescribed form INC-20A within 180 days of incorporation.
-            You have to ensure the following before filing INC-20A
-            <br />
-            <div class="about-text-style">
-              <ul>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The Company is maintaining a Registered
-                  Address </li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The details of the Registered office are
-                  filed with ROC. </li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The current Bank Account for the Company is
-                  opened</li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Entire Subscribed Capital is received from
-                  all the shareholders </li>
-              </ul>
-            </div>
-
-          </td>
-          <td>Within 180 days of incorporation</td>
-        </tr>
-
-      </tbody>
-    </table>
-
-    <h2> Local/State Level Compliance </h2>
-    <p class="check_para"> There are few state-level or municipality-level registration or enrollment which may be
-      applicable to any company starting a business in a specific state or within the jurisdiction of a particular
-      municipal corporation. While we strongly recommend you contact us for a detailed overview of the applicable
-      compliance, an indicative list is as under. </p>
-
-    <table class="table table-bordered py-5">
-      <thead>
-        <tr class="bg-primary text-white">
-          <th scope="col">S.No</th>
-          <th scope="col">Registration/Enrolment Name</th>
-          <th scope="col">Due Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Shops & Establishment Act (With Labour Department)</td>
-          <td>Within 30 Days of Incorporation</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Deposit of Professional Tax (Applicable in some states)</td>
-          <td>Within 30 days of Incorporation</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Trade License (based on nature of business)</td>
-          <td>Within 30 days of Incorporation</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>Registration under Labour Welfare Fund (LWF)</td>
-          <td>Varies from State to State</td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>Activity Based License
-            <br />
-            <div class="about-text-style">
-              <ul>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> FSSAI Registration </li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> FSSAI License </li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Drug License</li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> PSARA License </li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> APEDA (RCMC) </li>
-              </ul>
-            </div>
-
-          </td>
-          <td>Prior to Starting Activities</td>
-        </tr>
-
-        <tr>
-          <th scope="row">6</th>
-          <td>MSME Registration</td>
-          <td>ASAP</td>
-        </tr>
-
-      </tbody>
-    </table>
-
-    <h2> How to close a Private Limited Company? </h2>
-    <p class="check_para"> As mentioned earlier, a company is the creation of law and has perpetual succession, meaning
-      that it exists beyond the lives of its promoters. In case the company has to be closed for any reason, we have to
-      first ascertain whether the company is an “Active Company” or an “Inactive/Defunct Company”. The approach to
-      closing the company shall vary based on the above determination. Following is the brief method of closing a
-      company based on its type. </p>
-
-    <div class="row">
-      <div class="col-md-6 col-12">
-        <div class="shadow p-5">
-          <h5 class="text-primary"> Closure of an Inactive/Defunct Company (Striking-off by the ROC) </h5>
-          <hr />
-          <p> To close a defunct or inactive company there is a simplified process, where the ROC based on the affidavit
-            and indemnity bond of the directors struck off the company from the register of companies. To be eligible
-            for simplified closure by filing the STK-2 application, the applicant company should fulfill the following
-            criteria. <br /><br />
-          </p>
-
-          <div class="about-text-style">
-            <ul>
-              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The company is Inactive and is not carrying any
-                business. </li>
-              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The company has closed its Bank Account </li>
-              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The company has no Assets or Liabilities</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="col-md-6 col-12">
-        <div class="shadow p-5">
-          <h5 class="text-primary"> Closure of an “Active Company” by NCLT </h5>
-          <hr />
-          <p> An active company that has some business, employees, assets or liability may make an application to the
-            National Company Law Tribunal (NCLT). The process of closing an active company is complicated in comparison
-            to closing an Inactive or defunct company. We at Setindiabiz provide end to end service to close the
-            company. </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Frequently Asked Questions About Company Registration</h2>
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                How can I register a Company in India?
-              </button>
-            </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-              data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">
-                To register a company, you can file an online application in form SPICe+ to the ROC. The process is
-                simple and completely online. We at Setindiabiz take care of the end to end process for registering your
-                company.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                How much does it cost to register a company in India?
-              </button>
-            </h2>
-            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-              data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being
-                filled with some actual content.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                Which type of Company Registration is best?
-              </button>
-            </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-              data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-                happening here in terms of content, but just filling up the space to make it look, at least at first
-                glance, a bit more representative of how this would look in a real-world application.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingFour">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                How do you register a small company in India?
-              </button>
-            </h2>
-            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
-              data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-                happening here in terms of content, but just filling up the space to make it look, at least at first
-                glance, a bit more representative of how this would look in a real-world application.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingFive">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                Is it better to register as a Limited Company?
-              </button>
-            </h2>
-            <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
-              data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-                happening here in terms of content, but just filling up the space to make it look, at least at first
-                glance, a bit more representative of how this would look in a real-world application.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingSix">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                How to check Company Registration Status?
-              </button>
-            </h2>
-            <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
-              data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-                <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-                happening here in terms of content, but just filling up the space to make it look, at least at first
-                glance, a bit more representative of how this would look in a real-world application.
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 

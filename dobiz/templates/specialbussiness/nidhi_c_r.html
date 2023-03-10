@@ -1,459 +1,377 @@
 {% extends 'index.html' %}
 {%block title%}NIDHI Company Registration{% endblock %}
 {%block body %}
-      <section class="top-bn4 bn-styles aos-init aos-animate" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <h2><b>Nidhi Company  <span class="text-white">Registration </span></b></h2>
-            <p class="pt-4"> <b>A Nidhi is essentially a financial company that does not bank but accepts deposits from its members and lends to them. After satisfying certain conditions in the NIDHI Rules (2014), Public Companies cannot be granted NIDHI company status. Dobizindia business solution offers complete NIDHI Company Formation services. This includes online NIDHI Company Registration and acquisition of NIDHI Company statutes. Paralegal experts can help with any aspect of NIDHI company registration, documentation, legal drafts, and mandatory filings.  
-            </b></p>
-            <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
-          </div>
+
+
+{% include 'common_pages/banner.html'%}
+
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+      <!-- Nav pills -->
+      <ul class="nav nav-pills" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+
+        <div id="meaning" class="container tab-pane content active"><br>
+          <h2>{{meaning.heading_text}}</h2>
+        <p>{{meaning.text}}</p>
+
+        <h2>{{meaning.heading_text2}}</h2>
+        <p>{{meaning.text2}}</p>
+         <p class="b-style text-style">{{meaning.text3}}</p>
+         
         </div>
-      </div>
-    </section>
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            <li> <a class="sidelink" href="#process">
-            <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span>  Step Wise Process</a> </li>
-            <li> <a class="sidelink" href="#document">
-            <span class="icon-s"> <i class="fa fa-file-text" aria-hidden="true"></i> </span>  List of Documents</a> </li>
-            <li> <a class="sidelink" href="#faq">
-            <span class="icon-s"> <i class="fa fa-question-circle" aria-hidden="true"></i> </span>  FAQ</a> </li>
+        <div id="requirement" class="container tab-pane fade"><br>
+          <div class="row">
+            <div class="col-md-12 col-12">
+             <div class="about-text-style">
+                        <ul>
+                           <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.colorcode1}} </li>
+
+                           <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.colorcode2}} </li>
+
+                           <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list1}} </li>
+
+                           <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list2}} </li>
+
+                           <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list3}} </li>
+
+                           <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list4}} </li>
+
+                           <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list5}} </li>
+                        </ul>
+                    </div>
+                    <h2>{{minimum.heading_text}}</h2>
+                    <p>{{minimum.text}}</p>
+                    <h2>{{minimum.heading_text2}}</h2>
+                    <div class="about-text-style">
+                        <ul>
+                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list6}} </li>
+
+                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list7}} </li>
+
+                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list8}} </li>
+
+                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list9}} </li>
+
+                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list10}} </li>
+                        </ul>
+                    </div>
+            </div>
+
+            </div>
+
             
-            </ul>
-          </div>
+        </div>
 
-          <div class="content content-3s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
+        <div id="benefit" class="container tab-pane fade"><br>
+          <h2>Benefits</h2>
+        </div>
 
-                    <div class="col-md-12 col-12 heading pt-2">
-                      <h2 class="fs-2">Register online for <span class="text-primary">Nidhi Company </span>registration in India  </h2>
-                      <p class="fs-6">A Nidhi Company can be described as a Non-banking Financial Company. This is an NBFC that accepts monetary deposits from members and lends them money in exchange for tangible collateral like property mortgages or gold. The Nidhi Rules, 2014's Rule 3(1)(da), drafted by Sections 406 (and 469) of the Companies Act (2013), define a Nidhi Company to be a company that was established with the primary goal of encouraging thrift, savings, and lending among its members. The company is regulated by Sections 406 and 469 of the Companies Act, 2013. Ministry of Corporate Affairs, The regulation of deposit-taking is in place for the Reserve Bank of India. </p>
-                      <p class="b-style text-style">Dobizindia Business Solution assists Public Companies with acquiring the NIDHI Company status. This is done through our easy and quick online Nidhi registration process. You can subscribe to our comprehensive package of NIDHI Company registry, where our legal experts will guide you and assist you throughout the process. </p>
-                    </div>
+        <div id="required" class="container tab-pane fade"><br>
+          <div class="row">
 
+              <div class="col-md-12 col-12 heading">
+                <h2 class="fs-2"> {{document.heading_text}} </span></h2>
+                <p>{{document.text}}</p>
+              </div>
+
+            </div>
+
+            <div class="row table-responsive-sm">
+
+                  <div class="col-md-4 col-12 p-2">
+                  <table class="table">
+                    <tbody>
+                      <tr class="table-dark">
+                        <td>{{document.list1}}</td>
+                      </tr>     
+                      <tr class="table-primary">
+                        <td>{{document.list2}}</td>
+                      </tr>
+
+                      <tr class="table-info">
+                        <td>{{document.list3}}</td>
+                      </tr>
+                      <tr class="table-warning">
+                        <td><b>{{document.list4}}</b></td>
+                      </tr>
+                      
+                      <tr class="table-light">
+                        <td>{{document.list5}} </td>
+                      </tr>
+
+                      <tr class="table-warning">
+                        <td><b>{{document.list6}}</b></td>
+                      </tr>
+                      
+                      <tr class="table-light">
+                        <td>{{document.list7}}</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="col-md-4 col-12 p-2">
+                  <table class="table">
+                    <tbody>
+                      <tr class="table-dark">
+                        <td>{{document.list8}}</td>
+                      </tr>     
+                      <tr class="table-primary">
+                        <td><b>{{document.list9}}</b></td>
+                      </tr>
+                      
+                      <tr class="table-info">
+                        <td>{{document.list10}} </td>
+                      </tr>
+                      <tr class="table-warning">
+                        <td>{{document.list11}}</td>
+                      </tr>
+                      
+                      <tr class="table-light">
+                        <td>{{document.list12}}</td>
+                      </tr>
+
+                      <tr class="table-warning">
+                        <td>{{document.list13}}<br><br></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="col-md-4 col-12 p-2">
+                  <table class="table">
+                    <tbody>
+                      <tr class="table-dark">
+                        <td>{{document.list14}}</td>
+                      </tr>     
+                      <tr class="table-primary">
+                        <td>{{document.list15}}</td>
+                      </tr>
+                      
+                      <tr class="table-info">
+                        <td>{{document.list16}}<br><br></td>
+                      </tr>
+                      <tr class="table-warning">
+                        <td>{{document.list17}} <br><br></td>
+                      </tr>
+                      
+                      <tr class="table-light">
+                        <td>{{document.list18}} <br><br></td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+
+        </div>
+
+        <div id="process" class="container tab-pane fade"><br>
+          
+            <h2>Proccess</h2>
+        </div>
+
+        <div id="compliance" class="container tab-pane fade"><br>
+          <h2>Compliance</h2>
+        </div>
+
+        <div id="closure" class="container tab-pane fade"><br>
+          <h2> closure </h2>
+        </div>
+
+        <div id="faq" class="container tab-pane fade"><br>
+          <h2 class="fs-4">FAQ</h2>
+          
+        </div>
+
+      </div>
+    </div>
+
+    {% include 'common_pages/pricing_sum_below.html' %}
+
+  </div>
+</div>
+</section>
+
+{% include 'common_pages/fssai.html'%}
+
+<section class="checklist py-5">
+<div class="container">
+<div class="row py-4">
+  <h2>{{step.heading_text}}</h2>
+  <p>{{step.text}}</p>
+
+                <div class="col-md-12 col-12">
+                  <div class="shadow p-4">
+                    <h5 class="text-primary"> {{step.step1}} </h5>
+                    <p>{{step.answer1}}</p>
                   </div>
                 </div>
-              </section>
 
-              <section class="py-5 s-img s-img1">
-                  <div class="container py-2">
-                    <div class="row">
-                      <div class="col-md-2 col-12">
+                <div class="col-md-12 col-12">
+                  <div class="shadow p-4">
+                    <h5 class="text-primary"> {{step.step2}} </h5>
+                    <p>{{step.answer2}}</p>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-12">
+                  <div class="shadow p-4">
+                    <h5 class="text-primary"> {{step.step3}} </h5>
+                    <p>{{step.answer3}}</p>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-12">
+                  <div class="shadow p-4">
+                    <h5 class="text-primary"> {{step.step4}} </h5>
+                    <p>{{step.answer4}}</p>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-12">
+                  <div class="shadow p-4">
+                    <h5 class="text-primary"> {{step.step5}} </h5>
+                    <p>{{step.answer5}}</p>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-12">
+                  <div class="shadow p-4">
+                    <h5 class="text-primary"> {{step.step6}} </h5>
+                    <p>{{step.answer6}}</p>
+                  </div>
+                </div>
+
+              </div> 
+
+              <div class="row">
+
+                <div class="col-md-12 col-12">
+                  <h2>{{faq.heading_text}}</h2>
+                  <div class="accordion pt-2" id="accordionExample">
+                    <div class="accordion-item">
+                      <h4 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          {{faq.question1}} 
+                        </button>
+                      </h4>
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body list-style">
+                          {{faq.answer1}}
+                          <ul>
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i>   {{faq.list1}}</li>
+
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i>  {{faq.list2}} </li>
+
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i>  {{faq.list3}} </li>
+
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i>  {{faq.list4}} </li>
+
+                          </ul>
+                        </div>
                       </div>
-                    <div class="col-md-10 col-12">
-                      <div class="about-text-style">
+                    </div>
+                    <div class="accordion-item">
+                      <h4 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          {{faq.question2}} 
+                        </button>
+                      </h4>
+                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          {{faq.answer2}}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h4 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          {{faq.question3}} 
+                        </button>
+                      </h4>
+                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          {{faq.answer3}}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="accordion-item">
+                      <h4 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          {{faq.question4}} 
+                        </button>
+                      </h4>
+                      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body list-style">
+                          {{faq.answer4}}
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="accordion-item">
+                      <h4 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                          {{faq.question5}} 
+                        </button>
+                      </h4>
+                      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                        <div class="accordion-body list-style">
+                         <strong>{{faq.answer5}} </strong>
                             <ul>
-                               <li> <i class="fa fa-check-circle" aria-hidden="true"></i> What critical decisions do you need to make before starting a NIDHI Company? </li>
+                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list5}} </li>
+                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list6}}</li> 
+                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list7}} </li>
 
-                               <li> <i class="fa fa-check-circle" aria-hidden="true"></i> What would be your company's name? </li>
-
-                               <li> <i class="fa fa-check-circle" aria-hidden="true"></i> What would the principal business place be? </li>
-
-                               <li> <i class="fa fa-check-circle" aria-hidden="true"></i> How many members would the business have? </li>
-
-                               <li> <i class="fa fa-check-circle" aria-hidden="true"></i> What amount of capital could be created in the company's capital? </li>
-
-                               <li> <i class="fa fa-check-circle" aria-hidden="true"></i> What is the capital-sharing rate among members? </li>
-
-                               <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Who would become the first directors of the new company? </li>
                             </ul>
-                        </div>
-                      <h2 class="py-4 text-center">Register Nidhi Company: Checklist </h2>
-                      <p>Nidhi companies can be registered as Public Limited Companies. As such, there are very few requirements to establish them. Only the primary business activity is different for a Nidhi firm. This means that it accepts deposits and loans money to its members. The following comprehensive list should be checked before Nidhi Company Registration in India. </p>
-                    </div>
-                    </div>
-                  </div>
-                </section>
-
-                <section class="py-4 bg-light">
-                  <div class="container">
-                    <div class="row">
-
-                      <div class="col-md-12 col-12 heading pt-2">
-                        <h2 class="fs-4 pt-4">Checklist to Register NIDHI Company registration in India </h2>
-                       
-                        <div class="about-text-style">
-                            <ul>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> At least 7 shareholders </li>
-
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> At least three directors </li>
-
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> A unique name ends with the words "Nidhi Limited." </li>
-
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> A registered business address </li>
-
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Minimum equity share capital to be paid up of Rs.5 crore </li>
-                            </ul>
-                        </div>
-                        <p>A Memorandum of Association contains the object of Nidhi as accepting deposits and lending to its members for mutual benefits. </p>
-                      </div>
-
-                    </div>
-                  </div>
-                </section>
-
-            </div>
-
-             <div id="process">
-
-              <section class="btm_grd_banner py-4">
-                  <div class="container">
-                    <div class="row text-center">
-                      <div class="col-md-12 col-12">
-                        <div class="py-2 text-white heading2">
-                        <h2 class="py-2">NIDHI company incorporation: Step by step </h2>
-                        <p class="fs-6 pt-2">NIDHI Company formation requires that you first incorporate your business into a public limited company. Next, you need to apply for the NIDHI Company license within a prescribed time according to the NIDHI Rules, 2014. Below is the detailed step-by procedure for Nidhi Company incorporation. </p>
+                            {{faq.list8}}
                         </div>
                       </div>
                     </div>
-                  </div>
-                </section>
 
-                <section class="py-4">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-6 col-12">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">Step 1- Documentation</h5>
-                              <br>
-                              <p class="card-text">For the NIDHI Company Registry to be valid, you must provide certain legal documents. Below is a complete list. Before you begin the NIDHI company registration process, ensure you have all the necessary documents. If you do not, make arrangements to get them as soon as possible.</p>
-                            </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-6 col-12 mt-4">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">Step- Name Selection </h5>
-                              <br>
-                              <p class="card-text">NIDHI Limited Company must have a unique name that communicates its brand and business objectives. Many requirements must be fulfilled when naming a NIDHI limited company. These include the Companies Act and Company (Incorporation) Rules. The Trademark Act and Names and Emblems. NIDHI Company's names must not be identical or similar to those of LLP, a registered trademark, an applied company or a previously-established company. You can find more information in our article describing the requirements for name approval. </p>
-                            </div>
-                          </div>
-                      </div>
-
-                    </div>
-
-
-
-                    <div class="row pt-4">
-
-                      <div class="col-md-4 col-12">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">Step3 - Name Approval </h5>
-                              <br>
-                              <p class="card-text">Once you have decided on a legal name for the NIDHI Corporation, you must make a reservation with the Registrar of Companies. This is to ensure that no other company can use it without your consent or steal it. To reserve the name, you can use the reservation or the RUN (Reserve Unique Name). </p>
-                            </div>
-                          </div>
-                      </div>
-
-
-                      <div class="col-md-4 col-12 mt-4">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">Step 4 -Application for Incorporation </h5>
-                              <br>
-                              <p class="card-text">Once you have approved the Nidhi Limited Company name, you can proceed with its incorporation. You must complete an online SPICe+ form to be eligible for incorporation as a NIDHI limited company. The application can be divided into two parts: PART A is for the name reservation, and PART B is for incorporation. The application is completed by the director of the company and signed. </p>
-                            </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-4 col-12 mt-5">
-                        <div class="mt-5"></div>
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">Step 5- Issue of Certificates of Incorporation </h5>
-                              <br>
-                              <p class="card-text">After receiving the NIDHI Company incorporation request, the ROC verifies all documents and details. The ROC must verify the authenticity and validity of these documents before registering the NIDHI Limited Companies. He will then issue a Certificate of incorporation to the NIDHI companies as proof that it has been registered. Also, the ROC assigns a Corporate Identity Number to NIDHI companies. </p>
-                            </div>
-                          </div>
-                      </div>
-
-
-                      <div class="col-md-12 col-12 mt-5">
-                        <div class="mt-5"></div>
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">Step6- Get a NIDHI Company license  </h5>
-                              <br>
-                              <p class="card-text">After incorporation, the company must file a request for the NIDHI Company permit. It must also meet certain conditions like term deposits, net money, and the number of members. The complete list of these conditions can be found. The Central Government must submit the NDH 4 form within 4 months of incorporation. If the Regional Director allows, the extension period may be extended. Once satisfied that the NIDHI Company has fulfilled all conditions, the Government will issue the NIDHI Company Licence to NIDHI Company. </p>
-                            </div>
-                          </div>
-                      </div>
-
-                    </div>
 
                   </div>
-                </section>
-
-            </div>
-
-
-            <div id="document">
-              <section class="py-4 ab-banner text-white">
-                <div class="container">
-                  <div class="row">
-                  <div class="col-md-12 col-12 heading">
-                    <h2 class="py-4">NIDHI Company Registration Documents </h2>
-                    <p>NIDHI companies can only get the NIDHI Company license after being incorporated as NIDHI Limited Companies in India. The all-inclusive SPICe+ application must be filed along with the required documents. Below is a list of all documents needed to incorporate a Public Limited Company that seeks to get the NIDHI Company license.</p>
-                  </div>
-                  </div>
-
-
-                  <div class="row table-responsive-sm">
-
-                      <div class="col-md-4 col-12 p-2">
-                      <table class="table">
-                        <tbody>
-                          <tr class="table-dark">
-                            <td>Documents of the Members</td>
-                          </tr>     
-                          <tr class="table-primary">
-                            <td>All members / promoters are shown in colored photographs</td>
-                          </tr>
-
-                          <tr class="table-info">
-                            <td>PAN card of all members/promoters</td>
-                          </tr>
-                          <tr class="table-warning">
-                            <td><b>Dentity Proofs of All Members / Promoters</b></td>
-                          </tr>
-                          
-                          <tr class="table-light">
-                            <td>Voter ID, Driving license, Passport, Aadhar Card </td>
-                          </tr>
-
-                          <tr class="table-warning">
-                            <td><b>Address proofs for all members / promoters</b></td>
-                          </tr>
-                          
-                          <tr class="table-light">
-                            <td>Electricity Bill, Telephone Bill, Gas Bill, Water bill, Bank Statement no older than 2 Months</td>
-                          </tr>
-
-                        </tbody>
-                      </table>
-                    </div>
-
-                    <div class="col-md-3 col-12 p-2">
-                      <table class="table">
-                        <tbody>
-                          <tr class="table-dark">
-                            <td>Documents from the Premises</td>
-                          </tr>     
-                          <tr class="table-primary">
-                            <td><b>Address Proofs</b></td>
-                          </tr>
-                          
-                          <tr class="table-info">
-                            <td>Electricity Bill, Telephone Bill, Water bill </td>
-                          </tr>
-                          <tr class="table-warning">
-                            <td>Not more than 2 months to pay your gas bill</td>
-                          </tr>
-                          
-                          <tr class="table-light">
-                            <td>No Objection Certificate from the Owner of the Property</td>
-                          </tr>
-
-                          <tr class="table-warning">
-                            <td>Copy of property documents, stamped and notarized. <br><br></td>
-                          </tr>
-
-                        </tbody>
-                      </table>
-                    </div>
-
-                    <div class="col-md-2 col-12 p-2">
-                      <table class="table">
-                        <tbody>
-                          <tr class="table-dark">
-                            <td>Legal Drafts</td>
-                          </tr>     
-                          <tr class="table-primary">
-                            <td>Questionnaire For Company Registration</td>
-                          </tr>
-                          
-                          <tr class="table-info">
-                            <td>Consent of Directors in Form DIRC-2 <br><br></td>
-                          </tr>
-                          <tr class="table-warning">
-                            <td>Director's Signature <br><br></td>
-                          </tr>
-                          
-                          <tr class="table-light">
-                            <td>Signed Subscribers Sheet <br><br></td>
-                          </tr>
-                          
-                        </tbody>
-                      </table>
-                    </div>
-
-                  </div>
-                </div>
-              </section>
-            </div>
-
-
-            <div id="faq">
-             <section class="bg-light py-4">
-                <div class="container">
-                  <div class="row">
-
-                    <div class="col-md-11 col-12 mx-auto heading2">
-                      <h2 class="text-center">Frequently Asked  <span class="text-primary">Questions</span></h2>
-                      <div class="accordion pt-2" id="accordionExample">
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Which are the minimum requirements to be granted NIDHI Company Status? 
-                            </button>
-                          </h4>
-                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                              Only businesses that were incorporated as limited public corporations are allowed to apply for the NIDHI Company License after one year, provided the following conditions are met: 
-                              <ul>
-                                <li> <i class="fa fa-check-circle" aria-hidden="true"></i>  A minimum of 200 members is attained within one year from the date of incorporation. </li>
-
-                                <li> <i class="fa fa-check-circle" aria-hidden="true"></i>  Must have a minimum of Rs.20 crore in Net Owned funds </li>
-
-                                <li> <i class="fa fa-check-circle" aria-hidden="true"></i>  Have at least 10% of outstanding deposits in an unencumbered term deposit as defined in Rule 14 NIDHI Rules, 2014. </li>
-
-                                <li> <i class="fa fa-check-circle" aria-hidden="true"></i>  The net owned funds-to-deposit ratio is no more than 1 to 20 </li>
-
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              When do you need to apply for the NIDHI Company's membership? 
-                            </button>
-                          </h4>
-                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              The Central Government must approve or reject the NIDHI Company licensing Application after a NIDHI company limited has filed the NDH-4 Application. This is 45 days from the date the Application was filed. If it fails to approve the Application, the pending one shall be considered approved after 45 days.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Does a NIDHI Company have the right to issue preference shares? 
-                            </button>
-                          </h4>
-                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                             A NIDHI Company may not issue preference shares under the NIDHI Rules 2014. NIDHI Company's preference shares issued before the NIDHI Rules 2014 or Companies Act 2013 must be redeemed per the terms of such shares.
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                             A NIDHI Company can acquire another company. 
-                            </button>
-                          </h4>
-                          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                             No. A NIDHI Company may not get another company by purchasing securities unless a special resolution has been passed at the General Meeting of shareholders. The Regional Director, who has jurisdiction over the NIDHI Company, must also approve the transaction. 
-                            </div>
-                          </div>
-                        </div>
-
-
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingFive">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                             How many deposit accounts can a member open at a NIDHI Company? 
-                            </button>
-                          </h4>
-                          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                             <strong>NIDHI Company may open the following type's accounts: </strong>
-                                <ul>
-                                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Fixed Deposit Accounts </li>
-                                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Recurring deposit accounts,</li> 
-                                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Savings account </li>
-
-                                </ul>
-                                It is important to note that NIDHI Company members cannot open a current bank account.
-                            </div>
-                          </div>
-                        </div>
-
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-            {% include 'product.html' %}
-          </div>
-          </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
-                  <tbody>
-                    <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
-                    </tr>
-                    <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
-                    </tr>
-                    <tr>
-                      <th>DobizIndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
-                    </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
-                    </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
-                    </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
                 </div>
               </div>
+
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          </section>
+
+
 {% endblock %}

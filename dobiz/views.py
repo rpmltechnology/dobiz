@@ -160,7 +160,7 @@ def mostpopular_api(request, page):
 
     
   #SPECIAL BUSSINESS view  
-def special_business_page(request, page):
+def specialbussiness_page(request, page):
     page_dict = {
         'gst_r_i': 'GST Registration in India',
         'import_e_c_i': 'Import export Code',

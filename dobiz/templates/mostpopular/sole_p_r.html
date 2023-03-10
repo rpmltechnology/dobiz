@@ -4,30 +4,7 @@
 {%load myfilters %}
 {%block body %}
 
-<section class="top-bn1 bn-styles py-4 aos-init aos-animate" data-aos="fade-left">
-  <div class="container py-4">
-    <div class="row pt-4">
-
-      <div class="col-md-4 col-12 space_top">
-        <img src="/media/{{ banner.img }}" alt="logo-img" class="img-fluid">
-      </div>
-
-      <div class="col-md-4 col-12 space_top">
-        <h4 class="fs-1"> {{ banner.heading_text }} </h4>
-        <p><span class="bg-primary p-1 text-white"> {{ banner.review_rating }} </span> <a class="text-decoration-none" href="#"> &nbsp; {{banner.review}} </a> </p>
-        <p class="fs-5"> {{ banner.text }} </p>
-        <p class="fs-5"> <a href="#" class="text-decoration-none text-dark"> {{ banner.text2 }} </a> </p>
-        <p> <a href="#"> Terms and conditions </a> </p>
-      </div>
-
-      <div class="col-md-1"></div>
-
-      {% include 'common_pages/pricing_sum_above.html' %}
-
-
-    </div>
-  </div>
-</section>
+{% include 'common_pages/banner.html'%}
 
 <section class="py-5 bg-light1">
   <div class="container-fluid mt-3">
@@ -219,76 +196,7 @@
   </div>
 </section>
 
-<section class="Professional py-5">
-  <div class="container">
-
-    <div class="row">
-      <div class="col-md-12 text-center text-white">
-        <h2> Our Professional Fee For FSSAI Registration of License </h2>
-      </div>
-    </div>
-
-
-    <div class="row pro-box">
-      <div class="col-md-4 col-12">
-        <div class="shadow bg-light p-5">
-          <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
-          <div class="text-center">
-            <h2> Fssai Registration </h2>
-            <p class="pro-box-para"> Required if the turnover is less than 12 lac in a Financial Year & the business is
-              within the state </p>
-            <div class="pt-4"></div>
-            <h1 class="py-2"> ₹ 2,999/- </h1>
-            <p> Government Fee on Actual </p>
-            <br />
-            <div class="d-grid gap-2">
-              <button class="btn btn-success py-3" type="button"><a href="{% url 'order' %}"> Get started </a></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-12">
-        <div class="shadow bg-light p-5">
-          <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
-          <div class="text-center">
-            <h2> Fssai State License </h2>
-            <p class="pro-box-para"> When turnover is more than 12 Lac & upto 20 Crores for retailer/ 30 Crores for
-              wholesalers </p>
-            <div class="pt-4"></div>
-            <h1 class="py-2"> ₹ 8,499/- </h1>
-            <p> Government Fee on Actual </p>
-            <br />
-            <div class="d-grid gap-2">
-              <button class="btn btn-outline-success py-3 text-dark" type="button"><a href="{% url 'order' %}"> Get
-                  started </a></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 col-12">
-        <div class="shadow bg-light p-5">
-          <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
-          <div class="text-center">
-            <h2> Fssai Registration </h2>
-            <p class="pro-box-para"> For all cases where turnover exceeds limits prescribed for state License or
-              involved in export. </p>
-            <div class="pt-4"></div>
-            <h1 class="py-2"> ₹ 11,999/- </h1>
-            <p> Government Fee on Actual </p>
-            <br />
-            <div class="d-grid gap-2">
-              <button class="btn btn-outline-success py-3" type="button"><a href="{% url 'order' %}"> Get started
-                </a></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
+{% include 'common_pages/fssai.html'%}
 
 <section class="checklist py-5">
   <div class="container">

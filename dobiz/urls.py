@@ -39,7 +39,7 @@ path('mostpopular/<str:page>/', views.mostpopular_page, name='mostpopular'),
 
 # SPECIAL BUSINESS
 
-path('specialbusiness/<str:page>/', views.special_business_page, name='specialbusiness'),
+path('specialbusiness/<str:page>/', views.specialbussiness_page, name='specialbusiness'),
 
 # SPECIAL BUSINESS API
 path('specialbussiness_api/<str:page>/', views.specialbussiness_api, name='specialbussiness_api'),
