@@ -30,34 +30,16 @@ path('addToCart',views.addToCart, name="addToCart"),
 
 #MOST POPULAR 
 path('mostpopular_api/<str:page>/', views.mostpopular_api, name='mostpopular_api'),
-
-
-
 #MOST POPULAR API
-
 path('mostpopular/<str:page>/', views.mostpopular_page, name='mostpopular'),
-
 # SPECIAL BUSINESS
-
 path('specialbusiness/<str:page>/', views.specialbussiness_page, name='specialbusiness'),
-
 # SPECIAL BUSINESS API
-path('specialbussiness_api/<str:page>/', views.specialbussiness_api, name='specialbussiness_api'),
-
-
+path('specialbusiness_api/<str:page>/', views.specialbussiness_api, name='specialbusiness_api'),
 #ngo url
-path('trust_registration', views.trust_registration, name='trust_registration'),
-
-path('society_registration', views.society_registration, name='society_registration'),
-
-path('section_8', views.section_8, name='section_8'),
-
-path('roc', views.roc, name='roc'),
-
-path('patent', views.patent, name='patent'),
-
-path('startup', views.startup, name='startup'),
-
+path('ngo/<str:page>/', views.ngo_page, name='ngo'),
+#NGO API URL
+path('ngo_api/<str:page>/', views.ngo_api, name='ngo_api'),
 
 
 #do bussines in india url

@@ -164,6 +164,9 @@ class MinimumRequirement(models.Model):
     list8 = models.CharField(max_length=200,blank=True,null=True)
     list9 = models.CharField(max_length=200,blank=True,null=True)
     list10 = models.CharField(max_length=200,blank=True,null=True)
+    list11 = models.CharField(max_length=200,blank=True,null=True)
+    list12 = models.CharField(max_length=200,blank=True,null=True)
+    list13 = models.CharField(max_length=200,blank=True,null=True)
     def __str__(self):
         return self.category
 
