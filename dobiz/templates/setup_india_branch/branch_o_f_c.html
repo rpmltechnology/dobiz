@@ -3,401 +3,355 @@
 {%block title%}Branch Office of Foreign Company{% endblock %}
 
 {%block body %}
-<section class="top-bn3 bn-styles aos-init aos-animate" data-aos="fade-left">
-  <div class="container">
-    <div class="row pt-4">
-      <div class="col-md-8 col-12 pt-5 pt-5">
-        <h2><b>Branch Office <span class="text-white">Registration </span></b></h2>
-        <p class="pt-4"> <b>Foreign Corporations / Companies can establish a branch of their business in India by
-            obtaining permission from the Reserve Bank of India and registering it with the ROC/State Police. We can
-            offer smooth services in India because of our good relationships.
-          </b></p>
-        <p>Register at the Branch Office</p>
-        <p>Simple Process and Transparent Fee, All India Tax Registration &amp; Returns</p>
 
-        <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
+{% include 'common_pages/banner.html'%}
+
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div id="meaning" class="container tab-pane content active"><br>
+            <h2>{{meaning.heading_text}}</h2>
+            <div class="row table-responsive-sm">
+
+              <div class="col-md-12 col-12 p-2">
+                <table class="table">
+                  <tbody>
+                    <tr class="table-dark">
+                      <td> <b> S.No </b> {{meaning.heading_text2}}</td>
+                    </tr>
+                    <tr class="table-primary">
+                      <td> <b> 1. </b> {{meaning.heading_text3}}</td>
+                    </tr>
+
+                    <tr class="table-info">
+                      <td> <b> 2. </b>{{meaning.heading_text4}} <br> </td>
+                    </tr>
+                    <tr class="table-warning">
+                      <td> <b> 3. </b> {{meaning.text}} <br><br> </td>
+                    </tr>
+
+                    <tr class="table-light">
+                      <td> <b> 4. </b> {{meaning.text2}}</td>
+                    </tr>
+
+                    <tr class="table-warning">
+                      <td> <b> 5. </b> {{meaning.text3}}</td>
+                    </tr>
+
+                    <tr class="table-warning">
+                      <td> <b> 6. </b> {{meaning.list1}} <br> <br></td>
+                    </tr>
+
+                    <tr class="table-warning">
+                      <td> <b> 7. </b> {{meaning.list2}} <br> <br></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="col-md-12 col-12 p-2">
+                <table class="table">
+                  <tbody>
+                    <tr class="table-dark">
+                      <td>{{meaning.list3}}</td>
+                    </tr>
+                    <tr class="table-primary">
+                      <td>{{meaning.list4}}</td>
+                    </tr>
+
+                    <tr class="table-info">
+                      <td>{{meaning.list5}}</td>
+                    </tr>
+                    <tr class="table-warning">
+                      <td>{{meaning.list6}}</td>
+                    </tr>
+
+                    <tr class="table-light">
+                      <td>{{meaning.list7}}</td>
+                    </tr>
+
+                    <tr class="table-warning">
+                      <td>{{meaning.list8}}</td>
+                    </tr>
+
+                    <tr class="table-warning">
+                      <td>{{meaning.list9}}</td>
+                    </tr>
+
+                    <tr class="table-light">
+                      <td>{{meaning.list10}}</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+            {% include 'product.html' %}
+          </div>
+
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2>{{minimum.heading_text}}</h2>
+                <p class="b-style text-style">{{minimum.text}}</p>
+
+                <div class="about-text-style">
+                  <ul>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list1}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{minimum.list2}}</li>
+                  </ul>
+                </div>
+
+                <p class="b-style text-style">{{minimum.list3}}</p>
+                <p>{{minimum.text2}}</p>
+                <p class="b-style text-style">{{minimum.text3}}</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <h2>Required</h2>
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
+        </div>
       </div>
+
+      {% include 'common_pages/pricing_sum_below.html' %}
+
+
     </div>
   </div>
 </section>
 
-<section class="py-5 side-navbg">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-        <div>
-          <ul class="sidebar nav-pills" id="sideMenu">
-            <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b>
-            </h5>
-            <li> <a class="sidelink active" href="#overview">
-                <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a>
-            </li>
-            <li> <a class="sidelink" href="#process">
-                <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span> Step Wise Process</a> </li>
-            <li> <a class="sidelink" href="#document">
-                <span class="icon-s"> <i class="fa fa-file-text" aria-hidden="true"></i> </span> List of Documents</a>
-            </li>
 
+{% include 'common_pages/fssai.html'%}
 
+<section class="checklist py-5">
+  <div class="container">
+    <div class="row py-4">
+      <h2>{{step.heading_text}}</h2>
+      <p><b>{{step.text}}</b></p>
+      <p>{{step.list1}}</p>
+      <p>{{step.list2}}</p>
+
+      <h2>{{step.step1}}</h2>
+      <p>{{step.answer1}}.</p>
+      <h2>{{step.list3}}.</h2>
+      <h5>{{step.list4}}</h5>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.list5}}</h5>
+          <p>{{step.list6}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.list7}}</h5>
+          <p> {{step.list8}} </p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.list9}}</h5>
+          <p>{{step.list10}} </p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step2}}</h5>
+          <p> {{step.answer2}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row table-responsive-sm">
+      <h2>{{meaning.heading_text}}</h2>
+      <div class="row table-responsive-sm">
+
+        <div class="col-md-12 col-12 p-2">
+          <table class="table">
+            <tbody>
+              <tr class="table-dark">
+                <td> <b> S.No </b> {{meaning.heading_text2}}</td>
+              </tr>
+              <tr class="table-primary">
+                <td> <b> 1. </b> {{meaning.heading_text3}}</td>
+              </tr>
+
+              <tr class="table-info">
+                <td> <b> 2. </b>{{meaning.heading_text4}} <br> </td>
+              </tr>
+              <tr class="table-warning">
+                <td> <b> 3. </b> {{meaning.text}} <br><br> </td>
+              </tr>
+
+              <tr class="table-light">
+                <td> <b> 4. </b> {{meaning.text2}}</td>
+              </tr>
+
+              <tr class="table-warning">
+                <td> <b> 5. </b> {{meaning.text3}}</td>
+              </tr>
+
+              <tr class="table-warning">
+                <td> <b> 6. </b> {{meaning.list1}} <br> <br></td>
+              </tr>
+
+              <tr class="table-warning">
+                <td> <b> 7. </b> {{meaning.list2}} <br> <br></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-12 col-12 p-2">
+          <table class="table">
+            <tbody>
+              <tr class="table-dark">
+                <td>{{meaning.list3}}</td>
+              </tr>
+              <tr class="table-primary">
+                <td>{{meaning.list4}}</td>
+              </tr>
+
+              <tr class="table-info">
+                <td>{{meaning.list5}}</td>
+              </tr>
+              <tr class="table-warning">
+                <td>{{meaning.list6}}</td>
+              </tr>
+
+              <tr class="table-light">
+                <td>{{meaning.list7}}</td>
+              </tr>
+
+              <tr class="table-warning">
+                <td>{{meaning.list8}}</td>
+              </tr>
+
+              <tr class="table-warning">
+                <td>{{meaning.list9}}</td>
+              </tr>
+
+              <tr class="table-light">
+                <td>{{meaning.list10}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <h2>{{minimum.heading_text}}</h2>
+        <p class="b-style text-style">{{minimum.text}}</p>
+
+        <div class="about-text-style">
+          <ul>
+            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list1}}</li>
+            <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{minimum.list2}}</li>
           </ul>
         </div>
 
-        <div class="content content-3s bg-light">
-          <div id="overview">
-            <section class="btm_grd_banner py-4">
-              <div class="container">
-                <div class="row text-center">
-                  <div class="col-md-12 col-12">
-                    <div class="py-2 text-white heading2">
-                      <h2 class="py-2 fs-2">Branch Office of a Foreign Company</h2>
-                      <p class="fs-6 pt-2">A foreign company can legally operate in India by registering a Branch. The
-                        bank must approve the branch through AD category 1 Banker to do this. The income tax at 40% is
-                        higher for a branch office not treated as a foreign business entity.</p>
-                      <h2 class="py-2 fs-2">Below are the requirements to register a foreign branch.</h2>
-                      <p>Important Conditions for establishing a branch office</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+        <p class="b-style text-style">{{minimum.list3}}</p>
+        <p>{{minimum.text2}}</p>
+        <p class="b-style text-style">{{minimum.text3}}</p>
 
+        <h2>{{step.step3}}</h2>
+        <p>{{step.answer3}}</p>
+        <p>{{step.step4}} </p>
+        <p>{{step.answer4}}</p>
+        <h2>{{step.step5}}</h2>
+        <p>{{step.answer5}}</p>
+        <h2>{{step.step6}}</h2>
+        <p>{{step.answer6}}</p>
+        <h2>{{step.step7}}</h2>
+        <p>{{step.answer7}}</p>
+        <h2>{{step.step8}}</h2>
+        <p>{{step.answer8}}</p>
+        <p>{{step.heading_text2}}</p>
+        <p>{{step.answer9}}</p>
+        <div class="col-md-6 col-12">
+          <div class="shadow p-4">
+            <h5 class="text-primary"> {{step.step9}} </h5>
+            <p> {{step.text2}}</p>
           </div>
-
-          <div id="process">
-
-            <section class="py-4">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-3 col-12">
-                    <div class="card border-none">
-                      <div class="card-body shadow border-round">
-                        <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                        <h5 class="card-title card-header">Step 1: Requirements for Net Worth</h5>
-                        <br>
-                        <p class="card-text">The foreign parent must have a record of profit for five years
-                          consecutively with a net value of more than $ 1 00,000.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3 col-12 mt-2">
-                    <div class="card border-none">
-                      <div class="card-body shadow border-round">
-                        <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                        <h5 class="card-title card-header">Step 2: Profit Remittance Allowed</h5>
-                        <br>
-                        <p class="card-text">After paying any applicable taxes and auditing the books of A/c., profits
-                          from the branch offices are allowed to be transferred from India to their parent company.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3 col-12 mt-4">
-                    <div class="card border-none">
-                      <div class="card-body shadow border-round">
-                        <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                        <h5 class="card-title card-header">Step 3: Name of the branch office</h5>
-                        <br>
-                        <p class="card-text">Names must be the same as those of foreign parent companies. For each
-                          branch office such as this, RBI will require new approval.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3 col-12 mt-5">
-                    <div class="card border-none">
-                      <div class="card-body shadow border-round">
-                        <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                        <h5 class="card-title card-header">Step 4: Indian taxation</h5>
-                        <br>
-                        <p class="card-text">The income tax payable on profits at branch offices in India of foreign
-                          entities is 40%, plus any applicable surcharges. The supply of goods, or services, is GST.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-            </section>
-
-          </div>
-
-
-          <div id="document">
-            <section class="py-5 bg-light">
-              <div class="container">
-                <div class="row">
-
-                  <div class="col-md-12 col-12 heading pt-2">
-                    <h2>List of Documents Required for Branch Office Registration</h2>
-
-                    <div class="row table-responsive-sm">
-
-                      <div class="col-md-12 col-12 p-2">
-                        <table class="table">
-                          <tbody>
-                            <tr class="table-dark">
-                              <td> <b> S.No </b> A. Mother/Parent Company</td>
-                            </tr>
-                            <tr class="table-primary">
-                              <td> <b> 1. </b> Certificate of incorporation/Registration for Foreign Companies</td>
-                            </tr>
-
-                            <tr class="table-info">
-                              <td> <b> 2. </b> Memorandum of Association &amp; Articles of Association <br> </td>
-                            </tr>
-                            <tr class="table-warning">
-                              <td> <b> 3. </b> List of details about Directors/Key Executives <br><br> </td>
-                            </tr>
-
-                            <tr class="table-light">
-                              <td> <b> 4. </b> Details about shareholders of the applicant firm</td>
-                            </tr>
-
-                            <tr class="table-warning">
-                              <td> <b> 5. </b> Certified Public Accountant has attested the net worth certificate</td>
-                            </tr>
-
-                            <tr class="table-warning">
-                              <td> <b> 6. </b> Audited financial statement from the previous five years <br> <br></td>
-                            </tr>
-
-                            <tr class="table-warning">
-                              <td> <b> 7. </b> Banker's Report by the applicant's banker at the host nation <br> <br>
-                              </td>
-                            </tr>
-
-                          </tbody>
-                        </table>
-                      </div>
-
-                      <div class="col-md-12 col-12 p-2">
-                        <table class="table">
-                          <tbody>
-                            <tr class="table-dark">
-                              <td>B. B.</td>
-                            </tr>
-                            <tr class="table-primary">
-                              <td>Colour Photo – 5</td>
-                            </tr>
-
-                            <tr class="table-info">
-                              <td>Passport 5 Copy</td>
-                            </tr>
-                            <tr class="table-warning">
-                              <td>Copy of Business Visa with Immigration Stamp</td>
-                            </tr>
-
-                            <tr class="table-light">
-                              <td>National Identity Card, 5 copies</td>
-                            </tr>
-
-                            <tr class="table-warning">
-                              <td>Latest Address Proof (Bank Certificate/Electricity/Water Bill/Phone bill)</td>
-                            </tr>
-
-                            <tr class="table-warning">
-                              <td>Board Resolution Nominating AR</td>
-                            </tr>
-
-                            <tr class="table-light">
-                              <td>AR Authorization for Power of Attorney</td>
-                            </tr>
-
-                          </tbody>
-                        </table>
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </section>
-
-
-            <section class="py-4">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12 col-12 heading">
-                    <h2 class="fs-2">Preparation and Documentation for the Registration of the Branch Office</h2>
-                    <p class="fs-6">Check Eligibility to Register a Branch Office in India. The establishment of a
-                      business place in India by a foreign company/corporation in India is governed under the Foreign
-                      Exchange Management Act (Establishment, in India, of a branch or liaison office or project office)
-                      Regulations 2016. These are the most important qualifications to set up a Branch Office.</p>
-                    <div class="about-text-style">
-                      <ul>
-                        <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The net worth for foreign head
-                          offices must be greater than $ 100,000</li>
-                        <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The applicant company should be able
-                          to demonstrate profitability over five years.</li>
-                      </ul>
-                    </div>
-                    <p class="b-style text-style">Only eight activities are allowed for the branch office. For details,
-                      see Permitted Activities Branch Office.</p>
-                    <p class="fs-6">Basic Documentation is essential for the smooth processing of the application to
-                      establish a Branch Office. Provides the required list. You may download the Questionnaire to send
-                      information to us.</p>
-                    <p class="b-style text-style">Document and Form Drafting: Once we have all the necessary documents,
-                      we will begin to draft the documents required for signing by the company applying and the
-                      signatory. Board Resolution authorizing the opening of a branch office in India Declaration by the
-                      applicant regarding FDI eligibility. Declaration about the nature of this activity, the proposed
-                      BO's location, the nature of it, and the company performing the activity. <b>Form FNC</b></p>
-                  </div>
-
-                </div>
-              </div>
-            </section>
-
-            <section class="py-4 s-img s-img1">
-              <div class="container py-2">
-                <div class="row">
-                  <div class="col-md-2 col-12">
-                  </div>
-                  <div class="col-md-10 col-12">
-                    <h2 class="py-4 text-center">Letter of Comfort form held company</h2>
-                    <p> Legalization of Documents: All documents originating from a third country or signed/executed by
-                      a third country must be legalized via the Indian Embassy or apostilled by the Hague Convention.
-                    </p>
-                    <p> India Branch Office Registration Process and Timeline Digital Signature Application of
-                      Authorized Signatory.</p>
-                    <p> A digital signature, the same as a physical or printed signature under the Information
-                      Technology Act, can be considered the equivalent of a physical or written signature. According to
-                      this new process, all company registrar applications are filed in digital format. These must be
-                      authenticated using the digital signature of the proposed shareholders or directors. All
-                      promoters' digital signatures are issued as part of the filing process.</p>
-
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section class="py-4 bg-light">
-              <div class="container">
-                <div class="row">
-
-                  <div class="col-md-12 col-12 heading">
-                    <h2 class="fs-4 pt-4">Applying to RBI via AD Bank</h2>
-                    <p>The prescribed form is used to apply for the registration of a branch bank of a foreign
-                      corporation. The AD Bank plays a key role, as all communication to RBI must be routed through
-                      them. We can obtain approval quickly because of our excellent relationships with Indian banks.
-                      Permissions granted once are valid for six months. You may request an extension if necessary.</p>
-
-                    <h2 class="fs-4 pt-4">Banker of Parent Company Verification of KYC</h2>
-                    <p>After the FNC Form is submitted to the AD Bank is sent a request for verification documents is
-                      made to the foreign banker. This process is also known swift based validation. The next stage of
-                      approval occurs after receiving confirmation from the foreign banking institution. The RBI/AD
-                      Banker might request clarification or add-on documents.</p>
-                  </div>
-
-                </div>
-              </div>
-            </section>
-
-            <section class="btm_grd_banner py-4">
-              <div class="container">
-                <div class="row text-center">
-                  <div class="col-md-12 col-12">
-                    <div class="py-2 text-white heading2">
-                      <h2 class="py-2">Approval of RBI Branch Office Registration in India</h2>
-                      <p class="fs-6 pt-2">There is a policy that the AD Banker must approve the establishment of a
-                        branch office. Cases will be forwarded to the RBI for approval if the automatic route is
-                        impossible. After a quick verification, approval can take up to a week.</p>
-
-                      <h2 class="py-2">Registering a branch office with the ROC</h2>
-                      <p class="fs-6 pt-2"> The RBI approves the establishment of branch offices in India. Within 30
-                        days, the FC-1 application is submitted for registration. If there are Indian directors, the DIN
-                        Number of such directors is required. Additionally, the digital signature and authorization of
-                        the authorized signatory are required to file the ROC's statutory forms.</p>
-                      <p class="fs-6 pt-2"> PAN Card, Bank A/c Open </p>
-                      <p class="fs-6 pt-2"> Income Tax Department issues a unique 10 Digit Alphanumeric number to each
-                        taxpayer as a permanent number. This is also known as the PAN number. Every taxpayer must have a
-                        Tax Deduction Number to comply with TDS requirements. These identification numbers are vital for
-                        compliance with tax rules. After the Income Tax Department has allotted Pan Number, the branch
-                        account can be opened. </p>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section class="py-4">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6 col-12">
-                    <div class="card border-none">
-                      <div class="card-body shadow border-round">
-                        <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                        <h5 class="card-title card-header">Register with State Police</h5>
-                        <br>
-                        <p class="card-text">Finally, the branch must register it at the state police office (in the
-                          office of a superintendent of Police). All authorized Indian and foreign persons must sign the
-                          RBI approval.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 col-12 mt-4">
-                    <div class="card border-none">
-                      <div class="card-body shadow border-round">
-                        <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                        <h5 class="card-title card-header">GST Registration &amp; IEC</h5>
-                        <br>
-                        <p class="card-text">Once the Branch Office has received the Bank account and the checkbook, we
-                          will need a copy to apply for GST Registration.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </section>
-          </div>
-{%include 'product.html'%}
         </div>
-      </div>
-      <div class="col-md-3 col-12 pricing">
-        <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-          <h5>Pricing Summary</h5>
-          <div class="table-responsive">
-            <table class="table border border-white">
-              <tbody>
-                <tr>
-                  <th>Quantity</th>
-                  <td>: 1 Year</td>
-                </tr>
-                <tr>
-                  <th>Market Price</th>
-                  <td>: ₹11899</td>
-                </tr>
-                <tr>
-                  <th>DobizIndiaFilings</th>
-                  <th class="text-danger">: ₹8389 excl. GST</th>
-                </tr>
-                <tr>
-                  <th></th>
-                  <td> &nbsp; ₹9899 incl. GST</td>
-                </tr>
-                <tr>
-                  <th>GST Credit</th>
-                  <td>: ₹1510</td>
-                </tr>
-                <tr>
-                  <th>You Save</th>
-                  <td>: ₹3510 (29%)</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="d-grid gap-2">
-              <button class="btn btn-primary" type="button"><a href="{%url 'order'%}"> Order Now </a></button>
-            </div>
+        <div class="col-md-6 col-12">
+          <div class="shadow p-4">
+            <h5 class="text-primary">{{step.step10}} </h5>
+            <p> {{step.answer10}} </p>
           </div>
         </div>
       </div>
+
     </div>
-  </div>
 </section>
+
 
 {%endblock%}

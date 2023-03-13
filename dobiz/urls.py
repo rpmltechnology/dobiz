@@ -28,38 +28,30 @@ path('order_history',views.order_history,name="order_history"),
 path('cart',views.cart,name="cart"),
 path('addToCart',views.addToCart, name="addToCart"),
 
-#MOST POPULAR 
+#MOST POPULAR URL
 path('mostpopular_api/<str:page>/', views.mostpopular_api, name='mostpopular_api'),
-#MOST POPULAR API
+#MOST POPULAR API URL
 path('mostpopular/<str:page>/', views.mostpopular_page, name='mostpopular'),
-# SPECIAL BUSINESS
+
+# SPECIAL BUSINESS URL
 path('specialbusiness/<str:page>/', views.specialbussiness_page, name='specialbusiness'),
-# SPECIAL BUSINESS API
+# SPECIAL BUSINESS API URL
 path('specialbusiness_api/<str:page>/', views.specialbussiness_api, name='specialbusiness_api'),
-#ngo url
+
+#NGO URL
 path('ngo/<str:page>/', views.ngo_page, name='ngo'),
 #NGO API URL
 path('ngo_api/<str:page>/', views.ngo_api, name='ngo_api'),
 
-
-#do bussines in india url
-
-path('company_f_i', views.company_f_i, name='company_f_i'),
-
-path('doing_b_i', views.doing_b_i, name='doing_b_i'),
-
-path('sector_w_fdi_l', views.sector_w_fdi_l, name='sector_w_fdi_l'),
-
-path('scvbo', views.scvbo, name='scvbo'),
-
+# DO BUSINESS IN INDIA URL
+path('do_bussiness/<str:page>/', views.do_bussiness, name='do_bussiness'),
+# DO BUSINESS IN INDIA API URL
+path('do_bussiness_api/<str:page>/', views.do_bussiness_api, name='do_bussiness_api'),
     
-#SETUP INDIAN BRANCH url
-
-path('branch_o_f_c', views.branch_o_f_c, name='branch_o_f_c'),
-
-path('liaison_o_r', views.liaison_o_r, name='liaison_o_r'),
-
-path('project_o_r', views.project_o_r, name='project_o_r'),
+#SETUP INDIAN BRANCH URL
+path('setup/<str:page>/', views.setup, name='setup'),
+#SETUP INDIAN BRANCH URL API
+path('setup_api/<str:page>/', views.setup_api, name='setup_api'),
 
 #TRADEMAR url
 path('renewal_tr', views.renewal_tr, name='renewal_tr'),

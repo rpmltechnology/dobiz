@@ -3,246 +3,150 @@
 {%block title%}Sector Wise FDI Limits{% endblock %}
 
 {%block body %}
-<section class="top-bn4 bn-styles" data-aos="fade-left">
-  <div class="container">
+{% include 'common_pages/banner.html'%}
+
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
     <div class="row">
-      <div class="col-md-8 col-12 pt-5 pt-5">
-        <h2><b>Sectoral Limits for Foreign Direct <span class="text-white">Investments (FDI)</span></b></h2>
-        <p class="pt-4"> <b>The Centre had already announced Sectoral Limits Foreign Direct Investment reforms, which
-            would relax norms and limit FDI across various sectors like banking, construction, defense, single brand
-            retail, broadcasting and civil aviation. The aim was to improve the investment environment and increase
-            foreign direct investment. Foreign Direct Investment in the Sectoral Limits
-          </b></p>
-        <p>To facilitate quicker approvals of most proposals, the government raised the threshold limit to approval by
-          FIPB to 5000 crore rupees from the previous 3000 crore rupees. According to this Policy, FIPB accepts foreign
-          investment proposals of inflows up to 3000 Crores. The Cabinet Committee of Economic Affairs considers those
-          over that limit.</p>
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
 
-        <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Tab panes -->
+        <div class="tab-content">
 
-<section class="py-5 side-navbg">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-        <div>
-          <ul class="sidebar nav-pills" id="sideMenu">
-            <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b>
-            </h5>
-            <li> <a class="sidelink active" href="#overview">
-                <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a>
-            </li>
-            <li> <a class="sidelink" href="#process">
-                <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span> Step Wise Process</a> </li>
+          <div id="meaning" class="container tab-pane content active"><br>
+            <h2>{{meaning.heading_text}}/h2>
+            <p><b>{{meaning.text}}</b></p>
+            <p>{{meaning.text2}}</p>
 
+            <h2>{{meaning.heading_text2}}</h2>
+            <p>{{meaning.text3}}</p>
+            <p class="b-style text-style"><b>{{meaning.text4}}</b></p>
+            <p>{{meaning.text5}}</p>
+              {% include 'product.html' %}
+          </div>
 
-          </ul>
-        </div>
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <p><b>{{minimum.heading_text}} </b> {{minimum.text}}</p>
+                <p>{{minimum.text2}}</p>
+                <p>{{minimum.list1}}</p>
+                <p><b>{{minimum.heading_text2}}</b>{{minimum.text3}}</p>
 
-        <div class="content content-3s bg-light">
-          <div id="overview">
-            <section class="py-5">
-              <div class="container">
-                <div class="row">
-
-                  <div class="col-md-12 col-12 heading pt-2">
-                    <h2 class="fs-1">The FDI Regime: Major <span class="text-primary">Sectoral Changes</span></h2>
-                    <p class="fs-6"><b>Construction Industry:</b> The Reforms appeared to be a significant recipient of
-                      the Improvements. The FDI Reforms introduced radical changes that will boost demand for steel and
-                      cement and stimulate economic activity. The floor area restriction of 20000sq.m for construction
-                      development projects was removed, along with other conditions. Aside from this, foreign investors
-                      were allowed to exit the project and return their investments via the automatic route. But they
-                      must still complete the lock-in period, which is 3 years.</p>
-                    <p class="b-style text-style"><b>Broadcasting: </b>Up to 90% FDI is permitted through the FIPB
-                      (earlier 26%) terrestrial broadcasting FM(FM), up-linking News and Government route current
-                      affairs, and TV Channels. 100%FDI is permitted in the automatic route for uplinking to non-news
-                      and current TV channels. 100%FDI can also be allowed (up to 49% automatic, above what the
-                      government has approved) in teleosts.</p>
-                    <p class="fs-6">These reforms were designed to make foreign investment more accessible, rational,
-                      open, liberalized, and straightforward in the country. Foreign Direct Investment in the Sectoral
-                      Limits</p>
-                  </div>
-
-                </div>
+                <p>{{minimum.text4}}.</p>
+                <p>{{minimum.text5}}</p>
+                <p>{{minimum.list2}}</p>
+                <p><b>Shopping: </b> {{minimum.text6}}</p>
               </div>
-            </section>
 
-            <section class="py-4 s-img s-img1">
-              <div class="container py-2">
-                <div class="row">
-                  <div class="col-md-2 col-12">
-                  </div>
-                  <div class="col-md-10 col-12">
-                    <p><b>Plantation: </b>According to the Automatic Route, 100% government approval for FDI activities
-                      related to the plantation, such as coffee, cardamom and palm oil trees. For now, foreign
-                      investment was limited to tea plantations.</p>
+            </div>
 
-                    <p>Non-resident Indians (NRIs): Investment by Cos/Trusts/Partnerships owned and controlled by NRIs
-                      on a non-repatriation basis is now treated as domestic investment.</p>
 
-                    <p>Limited Liability Partnerships (LLP): FDI up to 100% has been approved in LLPs using the
-                      Automatic Route.</p>
-
-                    <p><b>Aviation: </b>Foreign investment of up to 49% has been allowed under the Automatic Route.
-                      According to the current Policy, foreign investment over 49% is only allowed for scheduled Air
-                      Transport Service/Domestic Settled Passenger Airline.</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section class="py-4 bg-light">
-              <div class="container">
-                <div class="row">
-
-                  <div class="col-md-12 col-12 heading pt-2">
-                    <p>Portfolio Investment and Foreign Venture Capital Investment - have been increased to 49%. It was
-                      previously 24%. Government approval is required for any infusion of foreign investment through the
-                      automatic route to ensure Indian ownership and control.</p>
-
-                    <p>FDI A maximum of 74% is allowed for FIIs/FPIs/QRIs to access private sector banking. There is 49%
-                      that is the automatic route. Anything beyond it is approved by the government, subject to the
-                      change in management and control of the investee.</p>
-
-                    <p>Manufacturers can now sell their products through wholesalers/retail and e-commerce without
-                      approval from the government.</p>
-
-                    <p><b>Shopping: </b>The government has relaxed FDI norms, Single Brand Retail Trade (SBRT), and
-                      ecommerce. If the Indian market is dominated by state-of-the-art or cutting-edge technology, norms
-                      may be relaxed with government approval.</p>
-                  </div>
-
-                </div>
-              </div>
-            </section>
 
           </div>
 
-          <div id="process">
-
-            <section class="btm_grd_banner py-4">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-12 col-12">
-                    <div class="py-2 text-white heading2">
-                      <p><b>Defense: </b>Foreign investment in defense has been allowed up to 49% under The Automatic
-                        Route. Portfolio and foreign venture capitalists can invest up to 49% instead of 24%.</p>
-
-                      <div class="about-text-style">
-                        <ul>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Agriculture: IFDI is allowed in
-                            agriculture.</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Courier service: 100% FIDI is
-                            permitted in Courier.</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Education 100% is allowed in the
-                            education industry.</li>
-                        </ul>
-
-                        <ul>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Medical Equipment: 100%FDI
-                            permitted in medical services.</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Power 49% FIDI is allowed in the
-                            power sector.</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Print Media26% FDIC is allowed in
-                            print media.</li>
-                        </ul>
-                      </div>
-
-                      <p class="fs-6 pt-2">FDI Permitted in Insurance and Sub-activities. 49% Sectoral Limits Foreign
-                        Direct Investment is permitted in Insurance and sub-activities.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section class="py-4">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6 col-12">
-                    <div class="card border-none">
-                      <div class="card-body shadow border-round">
-                        <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                        <h5 class="card-title card-header">Duty-free shops: 100 FDI is permissible in duty-free outlets
-                          under the Automatic route:</h5>
-                        <br>
-                        <p class="card-text">The World Bank increased India's ranking by 12 places. It was previously at
-                          the number 142nd. It has moved to 130th place (better than ever) for the EASY TO DO BUSINESS.
-                          Because of the increase in sectoral limits for foreign direct investment in India, many
-                          international institutions believe India will be an essential institution for FDI. IMF has
-                          declared India the brightest spot of the global economy. The World Bank has forecast a growth
-                          rate of 7.5% for 15-16. Foreign Direct Investment in India: Sectoral Limits</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 col-12 mt-4">
-                    <div class="card border-none">
-                      <div class="card-body shadow border-round">
-                        <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                        <h5 class="card-title card-header">Dobizindia Business Solution Private Limited</h5>
-                        <br>
-                        <p class="card-text">Dobizindia Business Solution Private Limited is an experienced CA, CS,
-                          &amp; lawyer organization duly supported by a pool of qualified accountants &amp; Paralegal
-                          staff. It provides affordable, high-quality compliance services to Indian startups &amp; small
-                          businesses. These opinions, statements and recommendations only provide information and do not
-                          represent professional advice. The author and any company affiliates do not accept liability
-                          for any loss, damage, or other consequences resulting from any information in this post or any
-                          actions taken in reliance on it.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
 
           </div>
-          {% include 'product.html' %}
-        </div>
-      </div>
-      <div class="col-md-3 col-12 pricing">
-        <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-          <h5>Pricing Summary</h5>
-          <div class="table-responsive">
-            <table class="table border border-white">
-              <tbody>
-                <tr>
-                  <th>Quantity</th>
-                  <td>: 1 Year</td>
-                </tr>
-                <tr>
-                  <th>Market Price</th>
-                  <td>: ₹11899</td>
-                </tr>
-                <tr>
-                  <th>DobizIndiaFilings</th>
-                  <th class="text-danger">: ₹8389 excl. GST</th>
-                </tr>
-                <tr>
-                  <th></th>
-                  <td> &nbsp; ₹9899 incl. GST</td>
-                </tr>
-                <tr>
-                  <th>GST Credit</th>
-                  <td>: ₹1510</td>
-                </tr>
-                <tr>
-                  <th>You Save</th>
-                  <td>: ₹3510 (29%)</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="d-grid gap-2">
-              <button class="btn btn-primary" type="button"><a href="{%url 'order'%}"> Order Now </a></button>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+              <h2>required</h2>
             </div>
           </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
         </div>
       </div>
+
+      {% include 'common_pages/pricing_sum_below.html' %}
+
     </div>
   </div>
 </section>
 
+{% include 'common_pages/fssai.html'%}
+
+<section class="checklist py-5">
+  <div class="container">
+    <div class="row py-4">
+      <h2><b>Defense: </b> {{step.heading_text}}</h2>
+      <div class="about-text-style">
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list1}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{step.list2}} </li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list3}}</li>
+        </ul>
+
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list4}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{step.list5}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{step.list6}}</li>
+        </ul>
+      </div>
+      <p>{{step.text}}</p>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step1}}</h5>
+          <p>{{step.answer1}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step2}}</h5>
+          <p>{{step.answer2}}</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 {% endblock %}
