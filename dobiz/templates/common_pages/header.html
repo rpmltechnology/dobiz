@@ -118,9 +118,9 @@
                   <div class="col-megamenu">
                     <h6 class="title">TRADEMARK</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{% url 'renewal_tr' %}">Renewal trademark registration </a></li>
-                      <li><a href="{%url 'trademark_mt' %}">Trademark meaning types </a></li>
-                      <li><a href="{%url 'trademark_r' %}">Trademark registration </a></li>
+                      <li><a href="{% url 'trademark' page='renewal_tr' %}">Renewal trademark registration </a></li>
+                      <li><a href="{%url 'trademark' page='trademark_mt' %}">Trademark meaning types </a></li>
+                      <li><a href="{%url 'trademark' page='trademark_r' %}">Trademark registration </a></li>
                     </ul>
                   </div> <!-- col-megamenu.// -->
                 </div>
@@ -129,10 +129,10 @@
                   <div class="col-megamenu">
                     <h6 class="title">COPYRIGHT & DESIGN</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{% url 'copyright_r' %}">Copyright registration </a></li>
-                      <li><a href="{% url 'coptright_t' %}">Copyright types </a></li>
-                      <li><a href="{% url 'design_r' %}">Design Registration </a></li>
-                      <li><a href="{% url 'interrnational_cr' %}">International Copyright Registration </a></li>
+                      <li><a href="{% url 'copyright' page='copyright_r' %}">Copyright registration </a></li>
+                      <li><a href="{% url 'copyright' page='coptright_t' %}">Copyright types </a></li>
+                      <li><a href="{% url 'copyright' page='design_r' %}">Design Registration </a></li>
+                      <li><a href="{% url 'copyright' page='interrnational_cr' %}">International Copyright Registration </a></li>
                     </ul>
                   </div> <!-- col-megamenu.// -->
                 </div><!-- end col-3 -->
@@ -140,11 +140,11 @@
                   <div class="col-megamenu">
                     <h6 class="title">PATENT & IPR ENFORCEMENT</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{% url 'intellectual_pr' %}">Intellectual property rights </a></li>
-                      <li><a href="{% url 'international_tf' %}">International trademark filing </a></li>
-                      <li><a href="{% url 'patent_r' %}">Patent registration </a></li>
-                      <li><a href="{%url 'patent_s' %}">Patent search </a></li>
-                      <li><a href="{% url 'software_p' %}">Software patent </a></li>
+                      <li><a href="{% url 'patent' page='intellectual_pr' %}">Intellectual property rights </a></li>
+                      <li><a href="{% url 'patent' page='international_tf' %}">International trademark filing </a></li>
+                      <li><a href="{% url 'patent' page='patent_r' %}">Patent registration </a></li>
+                      <li><a href="{%url 'patent' page='patent_s' %}">Patent search </a></li>
+                      <li><a href="{% url 'patent' page='software_p' %}">Software patent </a></li>
                     </ul>
                   </div> <!-- col-megamenu.// -->
                 </div><!-- end col-3 -->

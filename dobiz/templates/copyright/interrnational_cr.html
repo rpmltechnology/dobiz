@@ -4,102 +4,110 @@
 
 {%block body %}
 
-     <section class="top-bn4 bn-styles aos-init aos-animate" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <h2><b>International Copyright <span class="text-white">Registration </span></b></h2>
-            <p class="pt-4"> <b>Copyrights for works from the countries listed within the International Copyright Order are protected in India in the same way as if these pieces belong to Indian works.
-            </b></p>
-            <p>International Copyright Registration</p>
-            <p>Simple Process and Transparent Fee, All India GST Registration and Returns</p>
+{% include 'common_pages/banner.html'%}
 
-            <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
-          </div>
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+      <!-- Nav pills -->
+      <ul class="nav nav-pills" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+
+        <div id="meaning" class="container tab-pane content active"><br>
+          <h2>{{meaning.heading_text}}</h2>
+        <p><b>{{meaning.text}}</b></p>
+        <p>{{meaning.heading_text2}}</p>
+        <p>{{meaning.heading_text3}}</p>
+        <div class="text-center py-4"><img src="/media/{{ meaning.img }}" alt="logo-img" class="img-fluid"></div>
+        <h2>{{meaning.heading_text4}}</h2>
+        <p>{{meaning.text2}}</p>
+        {% include 'product.html' %}
         </div>
-      </div>
-    </section>
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            
-            
-            </ul>
-          </div>
-
-          <div class="content content-2s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-12 col-12 heading pt-4">
-                        <h2 class="fs-1">International Copyright  <span class="text-primary">Registration </span>in India</h2>
-                        <p class="fs-6">Copyright rights of citizens of nations that have joined the Bern Convention for the Protection of Literary and Artistic Works, the Universal Copyright Convention and the TRIPS Convention are protected in India by the International Copyright Order.</p>
-                        <p class="b-style text-style">Copyright rights, as defined in The Indian Copyright Act, are valid only within the boundaries of India. To protect Indian works that are used in other nations, India has become a part of the following international agreements on copyright as well as neighboring (related) rights</p>
-                        
-                        <h2 class="fs-1">Berne Convention to protect Works of Art and Literature.</h2>
-                        <p class="fs-6">Universal Copyright Convention.</p>
-                        <p class="fs-6">Artistic Works</p>
-                        <p class="fs-6">Convention for the Protection of Producers of Phonograms against duplicates that are not authorized for the Phonograms.</p>
-                        <p class="fs-6">Multilateral Convention for the avoidance of double taxation for Copyright royalties.</p>
-                        <p class="fs-6">Trade-related aspects of the Intellectual Property Rights (TRIPS) Agreement</p>
-                      </div>
-
-                    </div>
-                  </div>
-                </section>
-
+        <div id="requirement" class="container tab-pane fade"><br>
+          <div class="row">
+            <div class="col-md-12 col-12">
+            <p class="b-style text-style">{{minimum.text}}</p>
+        <h2>{{minimum.heading_text}}</h2>
+        <p>{{minimum.list1}}</p>
+        <p>{{minimum.list2}}</p>
+        <p>{{minimum.list3}}</p>
+        <p>{{minimum.list4}}</p>
+        <p>{{minimum.list5}}</p>
             </div>
 
-          </div>
-          </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
-                  <tbody>
-                    <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
-                    </tr>
-                    <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
-                    </tr>
-                    <tr>
-                      <th>DobizIndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
-                    </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
-                    </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
-                    </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
-                </div>
+            </div>
+        </div>
+
+        <div id="benefit" class="container tab-pane fade"><br>
+          <h2>Benefits</h2>
+
+        </div>
+
+        <div id="required" class="container tab-pane fade"><br>
+          <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>Documents.</h2>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
+            </div>
+        </div>
+
+        <div id="process" class="container tab-pane fade"><br>
+          
+            <h2>Proccess</h2>
+        </div>
+
+        <div id="compliance" class="container tab-pane fade"><br>
+          <h2>Compliance</h2>
+        </div>
+
+        <div id="closure" class="container tab-pane fade"><br>
+          <h2> closure </h2>
+        </div>
+
+        <div id="faq" class="container tab-pane fade"><br>
+          <h2 class="fs-4">FAQ</h2>
+          
+        </div>
+
+      </div>
+    </div>
+
+    {% include 'common_pages/pricing_sum_below.html' %}
+
+  </div>
+</div>
+</section>
+
+{% include 'common_pages/fssai.html'%}
      {% endblock %}

@@ -28,20 +28,24 @@ path('order_history',views.order_history,name="order_history"),
 path('cart',views.cart,name="cart"),
 path('addToCart',views.addToCart, name="addToCart"),
 
+
 #MOST POPULAR URL
 path('mostpopular_api/<str:page>/', views.mostpopular_api, name='mostpopular_api'),
 #MOST POPULAR API URL
 path('mostpopular/<str:page>/', views.mostpopular_page, name='mostpopular'),
+
 
 # SPECIAL BUSINESS URL
 path('specialbusiness/<str:page>/', views.specialbussiness_page, name='specialbusiness'),
 # SPECIAL BUSINESS API URL
 path('specialbusiness_api/<str:page>/', views.specialbussiness_api, name='specialbusiness_api'),
 
+
 #NGO URL
 path('ngo/<str:page>/', views.ngo_page, name='ngo'),
 #NGO API URL
 path('ngo_api/<str:page>/', views.ngo_api, name='ngo_api'),
+
 
 # DO BUSINESS IN INDIA URL
 path('do_bussiness/<str:page>/', views.do_bussiness, name='do_bussiness'),
@@ -53,34 +57,23 @@ path('setup/<str:page>/', views.setup, name='setup'),
 #SETUP INDIAN BRANCH URL API
 path('setup_api/<str:page>/', views.setup_api, name='setup_api'),
 
-#TRADEMAR url
-path('renewal_tr', views.renewal_tr, name='renewal_tr'),
+#TRADEMARK URL
+path('trademark/<str:page>/', views.trademark, name='trademark'),
+#TRADEMARK API URL
+path('trademark_api/<str:page>/', views.trademark_api, name='trademark_api'),
 
-path('trademark_mt', views.trademark_mt, name='trademark_mt'),
-
-path('trademark_r', views.trademark_r, name='trademark_r'),
 
 #COPYRIGHT & DESIGN url
+path('copyright/<str:page>/', views.copyright, name='copyright'),
+#COPYRIGHT & DESIGN API url
+path('copyright_api/<str:page>/', views.copyright_api, name='copyright_api'),
 
-path('copyright_r', views.copyright_r, name='copyright_r'),
+#PATENT & IPR ENFORCEMENT URL
+path('patent/<str:page>/', views.patent, name='patent'),
+#PATENT & IPR ENFORCEMENT API URL
+path('patent_api/<str:page>/', views.patent_api, name='patent_api'),
 
-path('coptright_t', views.coptright_t, name='coptright_t'),
 
-path('design_r', views.design_r, name='design_r'),
-
-path('interrnational_cr', views.interrnational_cr, name='interrnational_cr'),
-
-#PATENT & IPR ENFORCEMENT urls
-
-path('intellectual_pr', views.intellectual_pr, name='intellectual_pr'),
-
-path('international_tf', views.international_tf, name='international_tf'),
-
-path('patent_r', views.patent_r, name='patent_r'),
-
-path('patent_s', views.patent_s, name='patent_s'),
-
-path('software_p', views.software_p, name='software_p'),
 # >FOOD BUSINESS url
 
 path('fssai_a_r', views.fssai_a_r, name='fssai_a_r'),

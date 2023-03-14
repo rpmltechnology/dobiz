@@ -3,226 +3,176 @@
 {%block title%} Design Registration {% endblock %}
 
 {%block body %}
-     <section class="top-bn2 bn-styles aos-init aos-animate" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <h2><b>Designs Registrations <span class="text-white">in India</span></b></h2>
-            <p class="pt-4"> <b>Industrial design acknowledges the development of new and unique characteristics of a new design, shape, configuration and surface pattern, as well as ornamentation and arrangement of lines or colors that are applied to products that, in their completed state, appeal to and can be judged by the eyes.
-            </b></p>
-            <p>Design registration in India</p>
-            <p>Simple Process &amp; Transparent Fee, All India GST Registration and Returns</p>
+{% include 'common_pages/banner.html'%}
 
-            <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div id="meaning" class="container tab-pane content active"><br>
+            <h2>{{meaning.heading_text}}</h2>
+            <p><b>{{meaning.text}}</b></p>
+            <p>{{meaning.list1}}</p>
+            <p>{{meaning.list2}}</p>
+
+            <h2>{{meaning.heading_text2}}</h2>
+            <p>{{meaning.text2}}</p>
+            <h2>{{meaning.heading_text3}}</h2>
+            <h5>{{meaning.heading_text4}}</h5>
+            <p class="b-style text-style">{{meaning.text3}}</p>
+              {% include 'product.html' %}
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            <li> <a class="sidelink" href="#process">
-            <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span>  Step Wise Process</a> </li>
-            
-            
-            </ul>
-          </div>
-
-          <div class="content content-3s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12 col-12 heading pt-2">
-                      <h2 class="fs-1">Designs Registration <span class="text-primary">Online </span>in India</h2>
-                      <p class="fs-6">Registration and protection for industrial design in India are governed through the Designs Act, 2000 and the Designs Rules, 2001, which was in force on 11 May 2001, repealing the Act of 1911. Design Rules, 2001 was further amended by the Design Rules, 2001 was later amended with the help of Designs (Amendment) Rules 2008 and Designs (Amendment) Rules 2014. The most recent design rules amendment was enacted on 30 December 2014. It included the category of applicants as small entities in addition to natural persons and any other entity that is not a small one.</p>
-                      <h2 class="fs-4">What are the reasons for <span class="text-primary">applying for a </span>Design Registration?</h2>
-                      <h2 class="fs-5">Legal Protection</h2>
-                      <p class="b-style text-style">The owners or creators of original works can defend their Work with copyright registration. It protects them from the possibility of infringement.</p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section class="py-4 s-img s-img1">
-                  <div class="container py-2">
-                    <div class="row">
-                      <div class="col-md-2 col-12">
-                      </div>
-                    <div class="col-md-10 col-12">
-                      <h2 class="fs-2">Market presence</h2>
-                      <p>When you register copyright rights, the Work you have created is made known to the masses simultaneously. It is a simple process to publish or even for marketing to the client.</p>
-                      <h2 class="fs-2">The Owner's Rights</h2>
-                      <p>Rights to reproduction, dissemination, translation and adaptation of works have been entirely assigned to the person who created the Work.</p>
-                      <h2 class="fs-2">Global Protection</h2>
-                      <p>India permits or grants permission to work that is copied righted in other countries and vice versa. The registration of copyrights in India is protected in many other countries.</p>
-                      <h2 class="fs-2">It helps to Make Work more known.</h2>
-                      <p>The public can learn about registered works quickly and easily search across various platforms thanks to the registered database.</p>
-                    </div>
-                    </div>
-                  </div>
-                </section>
-
-                <section class="py-4 bg-light">
-                  <div class="container">
-                    <div class="row">
-
-                      <div class="col-md-12 col-12 heading">
-                        <h2 class="fs-4 pt-4"> Branding or Goodwill</h2>
-                        <p>It is said that branding plays a crucial function in promoting your product. Therefore, Copyright registration can even aid in creating the impression of trust and trust to your clients.</p>
-                        <h2 class="fs-4 pt-4"> Documents required for Design Registration</h2>
-                        <div class="about-text-style">
-                            <ul>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> <b>A. Documents of Directors/Shareholder</b></li>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Design Questionnaire</li>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Classification and description of the work</li>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Power of Attorney for Design filing (Form-21)</li>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Color Photos from Aarious Angle</li>
-                            </ul>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </section>
-
-            </div>
-
-             <div id="process">
-
-              <section class="btm_grd_banner py-4">
-                <div class="container">
-                  <div class="row text-center">
-                    <div class="col-md-12 col-12">
-                      <div class="py-2 text-white heading2">
-                      <h2 class="py-2 fs-2">Procedure for Design Registration Documentation and Preparation</h2>
-                      <p class="fs-6 pt-2">Regarding the Design registration, the initial step is to create the necessary documents to make it available to the department. The documents include the Design questionnaire, description of the class and the nature of the Design, colour images of the Design, and Power of Attorney in Form-21.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section class="py-4">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-6 col-12">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">Design Specification Drafting Design Specification</h5>
-                              <br>
-                              <p class="card-text">A Design can be described as a 3-dimensional design of objects, products such as equipment, automobile parts, for example. Based on the appearance. It must be written down in a specification, which requires knowledge and knowledge. After drawing the design specification, the specification should be filed.</p>
-                            </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-6 col-12 mt-4">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">The Filing of Design Applications</h5>
-                              <br>
-                              <p class="card-text">The Design application must be made online and signed by the Attorney on every page of the design specification. After the submission is successful, the payment of Rs. 1000/- for filing fees must be made, resulting in the issuance of an acknowledgment.</p>
-                            </div>
-                          </div>
-                      </div>
-
-                    </div>
-
-
-
-                    <div class="row pt-4">
-
-                      <div class="col-md-4 col-12">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">Reply to the report of examination and any objections.</h5>
-                              <br>
-                              <p class="card-text">The last stage is to respond to and rectify any objections made by the department's Design department. If the department is satisfied, it will issue the certificate of Design registration.</p>
-                            </div>
-                          </div>
-                      </div>
-
-
-                      <div class="col-md-4 col-12 mt-4">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">Departmental Objection Handling</h5>
-                              <br>
-                              <p class="card-text">The last stage is to respond to and rectify any objections made from departmental objections raised by the Design department. If the department is satisfied, they will issue an official certificate of Design registration valid for 10 years. This can be extended to five years.</p>
-                            </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-4 col-12 mt-5">
-                        <div class="mt-5"></div>
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">Design Registration</h5>
-                              <br>
-                              <p class="card-text">The Design Registration Certificate is granted from the Design Office after objections, if any were overcome, at the pleasure of the Design Office.</p>
-                            </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-            </div>
-
-          </div>
-          </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
-                  <tbody>
-                    <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
-                    </tr>
-                    <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
-                    </tr>
-                    <tr>
-                      <th>DobizIndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
-                    </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
-                    </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
-                    </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
-                </div>
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2>{{minimum.heading_text}}</h2>
+                <p class="b-style text-style">{{minimum.text}}</p>
+                <h2>{{minimum.heading_text2}}</h2>
+                <p>{{minimum.text2}}</p>
+                <h2>{{minimum.heading_text3}}</h2>
+                <p>{{minimum.text3}}</p>
+                <h2>{{minimum.heading_text4}}</h2>
+                <p>{{minimum.text4}}</p>
               </div>
+
+            </div>
+
+
+
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>Documents.</h2>
+              </div>
+
             </div>
           </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
         </div>
       </div>
-    </section>
+
+      {% include 'common_pages/pricing_sum_below.html' %}
+
+    </div>
+  </div>
+</section>
+
+{% include 'common_pages/fssai.html'%}
+
+<section class="checklist py-5">
+  <div class="container">
+    <div class="row py-4">
+      <h2>{{step.heading_text}}</h2>
+      <p>{{step.text}}</p>
+      <h2>{{step.heading_text2}}</h2>
+      <div class="about-text-style">
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> <b>{{step.list1}}</b></li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list2}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list3}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list4}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{step.list5}}</li>
+        </ul>
+      </div>
+      <h2>{{step.step1}}</h2>
+      <p>{{step.answer1}}</p>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step2}} </h5>
+          <p>{{step.answer2}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step3}} </h5>
+          <p>{{step.answer3}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step4}} </h5>
+          <p>{{step.answer4}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step5}} </h5>
+          <p>{{step.answer5}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step6}} </h5>
+          <p>{{step.answer6}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
      {% endblock %}

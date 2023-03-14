@@ -3,384 +3,307 @@
 {%block title%}Trademark registration {% endblock %}
 
 {%block body %}
-     <section class="top-bn4 bn-styles aos-init aos-animate" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <h2><b>The registration of trademarks is a  <span class="text-white">requirement in India. </span></b></h2>
-            <p class="pt-4"> <b>Trademark registration is among the most important elements for any business that wants to protect its intellectual assets against the threat of plagiarism. We at Dobizindia business solution private limited have over 18 years of experience in Trademark Registration. Subscribe to our wholesome package and avail of our services at the most affordable prices. 
-            </b></p>
-            <p>The Ministry of Commerce and Industry administers trademarks in India. The Trademark Act of 1999 stipulates that any trademark holder with legal standing can bring a lawsuit for damages in the case of plagiarism or misuse of their trademarks. </p>
-            <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
+
+{% include 'common_pages/banner.html'%}
+
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div id="meaning" class="container tab-pane content active"><br>
+            <p>{{meaning.heading_text}}</p>
+            <p>{{meaning.heading_text2}}</p>
+            <h2>{{meaning.heading_text3}}</h2>
+            <p><b>{{meaning.text}}</b></p>
+
+            <h2>{{meaning.heading_text4}}</h2>
+            <p>{{meaning.text2}}</p>
+            <p class="b-style text-style">{{meaning.text3}}</p>
+            <h2>{{meaning.text4}}</h2>
+            <h5>{{meaning.text5}}</h5>
+            <p class="fst-italic fs-6">{{meaning.text6}}</p>
+              {% include 'product.html' %}
           </div>
+
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2>{{minimum.heading_text}}</h2>
+                <p class="b-style text-style">{{minimum.text}}</p>
+
+                <h2>{{minimum.heading_text2}}</h2>
+                <p>{{minimum.text2}}</p>
+                <h2>{{minimum.heading_text3}}</h2>
+                <p>{{minimum.text3}}</p>
+                <h2>{{minimum.heading_text4}}</h2>
+                <p class="b-style text-style">{{minimum.text4}}</p>
+              </div>
+
+            </div>
+
+
+
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>Documents.</h2>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
         </div>
       </div>
-    </section>
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            <li> <a class="sidelink" href="#process">
-            <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span>  Step Wise Process</a> </li>
-            <li> <a class="sidelink" href="#document">
-            <span class="icon-s"> <i class="fa fa-file-text" aria-hidden="true"></i> </span>  List of Documents</a> </li>
-            <li> <a class="sidelink" href="#faq">
-            <span class="icon-s"> <i class="fa fa-question-circle" aria-hidden="true"></i> </span>  FAQ</a> </li>
-            
-            </ul>
-          </div>
+      {% include 'common_pages/pricing_sum_below.html' %}
 
-          <div class="content content-3s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12 col-12 heading pt-2">
-                      <h2 class="fs-2">Mark Registration for  <span class="text-primary">Trademarks in </span>India</h2>
-                      <p class="fs-6">A trademark for a business is significant in identifying your company, its brand, and its products. At Dobizindia Business Solution Private Limited, we are specialized in offering Trademark Registration through the services provided by our team of lawyers. Join our healthy and comprehensive package for our services, and we will assist you in every phase of your registration.</p>
-                      <p class="b-style text-style">The meaning of the Trademark could be an emblem, distinctive mark, or Logo. It represents the company's image, distinguishes it from other companies and enhances its credibility. It is possible to identify the trademarks that represent your company's name or brand name, trade name as well as its label, brand name, Logo as well as its punch line and domain names.</p>
-                      <p class="fs-6">Your company's Intellectual property rights, including trademarks, need to be recognized and secured. More than 11,000 owners of businesses are receiving help through Dobizindia Business Solution Private Limited to assist with IPR registration and protection.</p>
-                    </div>
-                  </div>
-                </div>
-              </section>
+    </div>
+  </div>
+</section>
 
-              <section class="py-4 s-img s-img1">
-                <div class="container py-2">
-                  <div class="row">
-                    <div class="col-md-2 col-12">
-                    </div>
-                  <div class="col-md-10 col-12">
-                    <p>Critical Decisions to make before registering the trademark of all trademarks specific to your company.</p>
-                    <div class="about-text-style">
-                          <ul>
-                           <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Conduct a thorough lookup to determine their availability.</li>
-                           <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Choose the appropriate class of your trademarks.</li>
-                           <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Check that you can quickly identify them.</li>
-                           <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Be sure not to use surnames or any other generic names for trademarks.</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Check that the class in which you plan to trademark your mark is accessible.</li>
-                          </ul>
-                      </div>
-                    <h2 class="text-center">Types of Trademarks with Examples</h2>
-                    <p>Trademarks are part of the rights to intellectual property umbrella, which further breaks down into various types. Examples of various types of trademarks are given below:</p>
-                  </div>
-                  </div>
-                </div>
-              </section>
+{% include 'common_pages/fssai.html'%}
 
-              <section class="py-4 bg-light">
-                <div class="container">
-                  <div class="row">
+<section class="checklist py-5">
+  <div class="container">
+    <div class="row py-4">
+      <h2>{{step.heading_text}}</h2>
+      <p>{{step.text}}</p>
 
-                    <div class="col-md-12 col-12 heading pt-2">
-                      <h2 class="fs-4 pt-4">Company Name</h2>
-                      <p>Your business ' name is your most valuable Trademark, so you must protect it from fraud by registering your Trademark online.</p>
-                      <p>Corporate Logo and Logo represent your business in the form of an image, a work of artwork, or a symbol. You must submit a high-resolution JPEG image to obtain trademark registration for your Logo.</p>
-                      <h2 class="fs-4">Companies and Brands of the Business</h2>
+      <div class="table-responsive-sm">
+        <table class="table border shadow table-warning">
+          <thead>
+            <tr>
+              <th scope="col"> {{step.list1}} </th>
+              <th scope="col"> {{step.list2}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{step.list3}}</td>
+              <td>{{step.list4}}</td>
+            </tr>
+            <tr>
+              <td>{{step.list5}}</td>
+              <td>{{step.list6}}</td>
+            </tr>
 
-                      <p>Products of the business are recognized by their distinctive brand names. The brand can include a mark on a device or an expression mark suitable for registration as a Trademark.</p>
-                      <h2 class="fs-4">Slogan or Punch line or</h2>
-                      <p>A punch line or slogan such as "Ye Dol Mange Further" from Pepsi is also recognized as a Trademark and may be considered for trademark registration.</p>
+            <tr>
+              <td>{{step.list7}}</td>
+              <td>{{step.list8}}</td>
+            </tr>
 
-                      <h2 class="fs-4">Domain Name</h2>
-                      <p>Domain names are also registered as trademarks within the Trademark Law. This provides a lot of protection for your Trademark, and you must register it.</p>
-                      <h2 class="fs-4">Sound Mark</h2>
-                      <p>If the sound you hear is unique to your company, such as the Airtel Ringtone or ICICI Jingle, ensure to register it as Sound Mark by the Trademark law.</p>
-                    </div>
+            <tr>
+              <td> {{step.list9}}</td>
+              <td>{{step.list10}}</td>
+            </tr>
 
-                  </div>
-                </div>
-              </section>
+            <tr>
+              <td></td>
+              <td>{{step.heading_text2}}</td>
+            </tr>
 
-              <section class="btm_grd_banner py-4">
-                <div class="container">
-                  <div class="row text-center">
-                    <div class="col-md-12 col-12">
-                      <div class="py-2 text-white heading2">
-                        <h2 class="py-2 fs-2">Checklist for Trademark Filing in India</h2>
-                        <p class="fs-6 pt-2">A trademark can be an essential aspect of every company since it allows your brand to distinguish itself from other brands. If you do not create and maintain a distinctive brand image in today's competitive market, your company's image will likely be unnoticed by the masses. People may be confused about the identity of your business compared to other companies, which could hurt both the development and the reputation of your business. A checklist to be aware of when identifying and the registration of a trademark in India is given below:</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+          </tbody>
+        </table>
+      </div>
 
-              <section class="py-4 bg-light">
-                <div class="container">
-                  <div class="row">
-                      
-                    <div class="col-md-12 col-12 heading pt-2">
-                      <h2 class="py-4">Checklist to determine Trademark Registration</h2>
-                    <div class="about-text-style">
-                          <ul>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Find the entirety of IPR Assets that can be used for trademark registration.</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Conduct a Trademark Search to protect your trademark's distinctiveness.</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Classify Trademarks Correctly based on classifications of one through 45.</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Draft documents are required for filing trademark applications.</li>
-                          </ul>
-                      </div>
-                      <p>We assist in the entire end process of Trademark Registration, from approval to the application.</p>
-                    </div>
-                  </div>
-                </div>
-              </section>
+      <h2>{{step.text2}}</h2>
 
-            </div>
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step1}} </h5>
+          <p>{{step.answer1}}</p>
+        </div>
+      </div>
 
-             <div id="process">
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step2}} </h5>
+          <p>{{step.answer2}}</p>
+        </div>
+      </div>
 
-              <section class="btm_grd_banner py-4">
-                <div class="container">
-                  <div class="row text-center">
-                    <div class="col-md-12 col-12">
-                      <div class="py-2 text-white heading2">
-                        <h2 class="py-2 fs-2">Stepwise Procedure for Trademark Registration in India</h2>
-                        <p class="fs-6 pt-2">The procedure of registering a trademark is easy and needs to be done in the manner that is prescribed. We'll assist you through the entire process, from submitting your trademark application to getting approved, so you don't miss a beat.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step3}} </h5>
+          <p>{{step.answer3}}</p>
+        </div>
+      </div>
 
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6 col-12">
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                            <h5 class="card-title card-header">1. Filing of Trademark Application</h5>
-                            <br>
-                            <p class="card-text">The trademark application must be submitted within 24 hours after filing with the proper documentation and payment. The trademark application process is entirely online, and an instant acknowledgment is given immediately after filing the form. Once an acknowledgment confirmation, the applicant can begin to use TM in conjunction with the registered trademark.</p>
-                          </div>
-                        </div>
-                    </div>
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step4}} </h5>
+          <p>{{step.answer4}}</p>
+        </div>
+      </div>
 
-                    <div class="col-md-6 col-12 mt-4">
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                            <h5 class="card-title card-header">2. The processing of applications at the Trademark Office</h5>
-                            <br>
-                            <p class="card-text">When the application is filed, the application is carefully examined to find any errors. If there are any errors following the evaluation after the evaluation, the TM office will either mark it for further review or announce that the submission has been rejected. The mistakes must be rectified in both cases.</p>
-                          </div>
-                        </div>
-                    </div>
+    </div>
 
-                  </div>
+    <div class="row">
 
-
-
-                  <div class="row pt-4">
-
-                    <div class="col-md-4 col-12">
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></div>
-                            <h5 class="card-title card-header">3. Examining of Trademark Application</h5>
-                            <br>
-                            <p class="card-text">A trademark examiner reviews applications for trademark registration to assess if the trademark qualifies to be registered. After reviewing the trademark application, the examiner issues an examination report detailing his conclusions.</p>
-                          </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-4 col-12 mt-4">
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                            <h5 class="card-title card-header">4. Respond to Examiner's Report</h5>
-                            <br>
-                            <p class="card-text">The trademark owner must respond to the examiner's report within thirty days after receipt. A response report of an examiner is a crucial drafting task that could either aid or hurt the applicant's trademark. We encourage applicants to help by giving us all the information and documents they can to help us prepare the most detailed and thorough reply to the Examination Report.</p>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-12 mt-5">
-                      <div class="mt-5"></div>
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-                            <h5 class="card-title card-header">5. Show Cause Hearing</h5>
-                            <br>
-                            <p class="card-text">If receiving a written response to the exam report, the examiner is either content with the response or requests an inquiry into show cause. The outcome of the hearing determines the outcome of your Trademark application.</p>
-                          </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-6 col-12 mt-4">
-                      <div class="mt-5"></div>
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-                            <h5 class="card-title card-header">6. Publication Trademark</h5>
-                            <br>
-                            <p class="card-text">Trademark registration is made public in the journal after the examiner has been satisfied that the trademark is legal. This can be done in the exam stage or during the hearing for show cause, depending on the state of the request. Third parties can oppose the trademark registration, but if no objections are not received within 90 days of the date of the hearing, the registration process will be moved to the next step.</p>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-12 mt-5">
-                      <div class="mt-5"></div>
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-                            <h5 class="card-title card-header">7. Presentation of the Trademark Registration Certificate</h5>
-                            <br>
-                            <p class="card-text">The next step is the application for registration by the registered agent. Once the registrar has successfully registered the trademark and issued the certificate of Trademark Registration, valid for 10 years from the date of issue. The trademarks need to be renewed every ten years to prolong the validity period.</p>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-
-                </div>
-              </section>
-
-            </div>
-
-
-            <div id="document">
-              <section class="py-4 ab-banner text-white">
-                <div class="container">
-                  <div class="row">
-                  <div class="col-md-8 col-12 heading">
-                    <h2 class="py-4">Related Services</h2>
-                    <p>Because trademarks are the most valuable asset that an organization can have, it is recommended that you look into a thorough search on databases that are paid and in various areas (Countries) in which you might plan to operate your business shortly.</p>
-                  </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-
-
-            <div id="faq">
-             <section class="bg-light py-4">
-                <div class="container">
-                  <div class="row">
-
-                    <div class="col-md-11 col-12 mx-auto heading2">
-                      <h2 class="text-center">Frequently Asked  <span class="text-primary">Questions</span></h2>
-                      <div class="accordion pt-2" id="accordionExample">
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              What are the best times to use (TM) and (r)? What are they?
-                            </button>
-                          </h4>
-                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                              The symbol TM indicates that trademarks are being registered and that the owner can continue to use the trademark until registration is completed. If a trademark is registered, then the (r) symbol signifies the applicant's full ownership rights to the trademark.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                             Who is eligible to make an application for a trademark?
-                            </button>
-                          </h4>
-                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              Anyone wishing to claim ownership over the trademark can apply for registration.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                           Can the Domain name become a registered trademark within India?
-                            </button>
-                          </h4>
-                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                            Yes. Domain names may be registered as a trademark registered in India.
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                             Can I get the registration of a trademark with a description in India?
-                            </button>
-                          </h4>
-                          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                             No. It is not possible to get the registration of a trademark that is descriptive in India. 
-                            </div>
-                          </div>
-                        </div>
-
-
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingFive">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                             Which is the definition of products used by India?
-                            </button>
-                          </h4>
-                          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                             India has adopted its participation in the Nice Classification of Trademarks, an international method of classifying trademarks based on the nature of the product or service.
-                            </div>
-                          </div>
-                        </div>
-
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-
-          </div>
-          </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
-                  <tbody>
-                    <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
-                    </tr>
-                    <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
-                    </tr>
-                    <tr>
-                      <th>DobizIndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
-                    </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
-                    </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
-                    </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
-                </div>
+      <div class="col-md-12 col-12 mx-auto heading2">
+        <h2>{{faq.heading_text}}</h2>
+        <div class="accordion pt-2" id="accordionExample">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                {{faq.question1}}
+              </button>
+            </h4>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer1}}
               </div>
             </div>
           </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                {{faq.question2}}
+              </button>
+            </h4>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer2}}
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                {{faq.question3}}
+              </button>
+            </h4>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer3}}
+                <ul>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i>  {{faq.list1}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list2}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list3}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list4}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list5}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list6}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{faq.list7}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{faq.list8}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{faq.list9}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{faq.list10}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{faq.list11}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{faq.list12}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{faq.list13}}</li>
+                </ul>
+                {{faq.answer4}}
+                <ul>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{faq.list14}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list15}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list16}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list17}} </li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{faq.list18}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{faq.list19}}</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                {{faq.question5}}
+              </button>
+            </h4>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer5}}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                {{faq.question6}}
+              </button>
+            </h4>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer6}}
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
-    </section>
+    </div>
+
+  </div>
+</section>
 {% endblock %}

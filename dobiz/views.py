@@ -595,54 +595,319 @@ def setup_api(request,page):
     return JsonResponse(response_data, status=200)
 
 #TRADEMAR view
+def trademark(request,page):
+    page_dict = {
+        'renewal_tr': 'Renewal trademark registration',
+        'trademark_mt':'Trademark meaning types',
+        'trademark_r':'Trademark registration'
+    }
+    if page not in page_dict:
+        raise Http404('Invalid page')
 
-def renewal_tr(request):
-    return render(request, 'trademark/renewal_tr.html')
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
 
-def trademark_mt(request):
-    return render(request, 'trademark/trademark_mt.html')
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
+
+    form = ContactUser()
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            return JsonResponse(serializer.data,status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
+
+    context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
+            'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
+            'step':step,'faq':faq,'closure':closure}
+    return render(request, f'trademark/{page}.html', context)
 
 
-def trademark_r(request):
-    return render(request, 'trademark/trademark_r.html')
+@api_view(['GET','POST'])
+def trademark_api(request,page):
+    page_dict = {
+        'renewal_tr': 'Renewal trademark registration',
+        'trademark_mt':'Trademark meaning types',
+        'trademark_r':'Trademark registration'
+    }
+    if page not in page_dict:
+        raise Http404('Invalid page')
+
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
+    # Serialize data
+    product_serializer = ProductSerializer(products, many=True)
+    meaning_serializer = MeaningSerializer(meaning)
+    minimum_serializer = MinimumRequirementSerializer(minimum)
+    beneift_serializer = BenefitsSerializer(benefit)
+    document_serializer = DocumentRequiredSerializer(document)
+    incorporation_serializer = IncorporationProcessSerializer(incorporation)
+    compliance_serializer = ComplianceSerializer(compliance)
+    step_serializer = StepWiseProcedureSerializer(step)
+    faq_serializer = FAQSerializer(faq)
+    closure_serializer = ClosureSerializer(closure)
+     # create response data
+    response_data = {
+        'products': product_serializer.data,
+        'meaning': meaning_serializer.data,
+        'minimum': minimum_serializer.data,
+        'benefit': beneift_serializer.data,
+        'document': document_serializer.data,
+        'incorporation': incorporation_serializer.data,
+        'compliance': compliance_serializer.data,
+        'step': step_serializer.data,
+        'faq': faq_serializer.data,
+        'closure': closure_serializer.data,
+    }
+    #Handle Post Request
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            response_data['form'] = serializer.data
+            return JsonResponse(response_data,status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
+    #Handling GET request
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
+    response_data['banner'] = BannerSerializer(banner).data
+    response_data['price'] = PricingSumSerializer(price).data
+    return JsonResponse(response_data, status=200)
 
 #COPYRIGHT & DESIGN view
+def copyright(request,page):
+    page_dict={
+        'copyright_r':'Copyright registration',
+        'coptright_t':'Copyright types',
+        'design_r':'Design Registration',
+        'interrnational_cr':'International Copyright Registration',
+        
+    }
+    if page not in page_dict:
+        raise Http404('Invalid Page')
 
-def copyright_r(request):
-    return render(request, 'copyright/copyright_r.html')
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
 
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
 
-def coptright_t(request):
-    return render(request, 'copyright/coptright_t.html')
+    form = ContactUser()
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            return JsonResponse(serializer.data, status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
 
+    context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
+            'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
+            'step':step,'faq':faq,'closure':closure}
+    return render(request, f'copyright/{page}.html', context)
 
-def design_r(request):
-    return render(request, 'copyright/design_r.html')
+@api_view(['GET','POST'])
+def copyright_api(request,page):
+    page_dict={
+        'copyright_r':'Copyright registration',
+        'coptright_t':'Copyright types',
+        'design_r':'Design Registration',
+        'interrnational_cr':'International Copyright Registration',
+        
+    }
+    if page not in page_dict:
+        raise Http404('Invalid Page')
 
-
-def interrnational_cr(request):
-    return render(request, 'copyright/interrnational_cr.html')
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
+    # Serialize data
+    product_serializer = ProductSerializer(products, many=True)
+    meaning_serializer = MeaningSerializer(meaning)
+    minimum_serializer = MinimumRequirementSerializer(minimum)
+    beneift_serializer = BenefitsSerializer(benefit)
+    document_serializer = DocumentRequiredSerializer(document)
+    incorporation_serializer = IncorporationProcessSerializer(incorporation)
+    compliance_serializer = ComplianceSerializer(compliance)
+    step_serializer = StepWiseProcedureSerializer(step)
+    faq_serializer = FAQSerializer(faq)
+    closure_serializer = ClosureSerializer(closure)
+     # create response data
+    response_data = {
+        'products': product_serializer.data,
+        'meaning': meaning_serializer.data,
+        'minimum': minimum_serializer.data,
+        'benefit': beneift_serializer.data,
+        'document': document_serializer.data,
+        'incorporation': incorporation_serializer.data,
+        'compliance': compliance_serializer.data,
+        'step': step_serializer.data,
+        'faq': faq_serializer.data,
+        'closure': closure_serializer.data,
+    }
+    #Handle Post Request
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            response_data['form'] = serializer.data
+            return JsonResponse(response_data,status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
+    #Handling GET request
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
+    response_data['banner'] = BannerSerializer(banner).data
+    response_data['price'] = PricingSumSerializer(price).data
+    return JsonResponse(response_data, status=200)
 
 #PATENT & IPR ENFORCEMENT view 
+def patent(request,page):
+    page_dict={
+        'intellectual_pr':'Intellectual property rights',
+        'international_tf':'International trademark filing',
+        'patent_r':'Patent registration',
+        'patent_s':'Patent search',
+        'software_p':'Software patent'
+    }
+    if page not in page_dict:
+        raise Http404('Invalid Page')
 
-def intellectual_pr(request):
-    return render(request, 'patent/intellectual_pr.html')
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
 
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
 
-def international_tf(request):
-    return render(request, 'patent/international_tf.html')
+    form = ContactUser()
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            return JsonResponse(serializer.data, status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
 
-def patent_r(request):
-    return render(request, 'patent/patent_r.html')
+    context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
+            'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
+            'step':step,'faq':faq,'closure':closure}
+    return render(request, f'patent/{page}.html', context)
 
+@api_view(['GET','POST'])
+def patent_api(request,page):
+    page_dict={
+        'intellectual_pr':'Intellectual property rights',
+        'international_tf':'International trademark filing',
+        'patent_r':'Patent registration',
+        'patent_s':'Patent search',
+        'software_p':'Software patent'
+    }
+    if page not in page_dict:
+        raise Http404('Invalid Page')
 
-def patent_s(request):
-    return render(request, 'patent/patent_s.html')
-
-
-def software_p(request):
-    return render(request, 'patent/software_p.html')
-
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
+    # Serialize data
+    product_serializer = ProductSerializer(products, many=True)
+    meaning_serializer = MeaningSerializer(meaning)
+    minimum_serializer = MinimumRequirementSerializer(minimum)
+    beneift_serializer = BenefitsSerializer(benefit)
+    document_serializer = DocumentRequiredSerializer(document)
+    incorporation_serializer = IncorporationProcessSerializer(incorporation)
+    compliance_serializer = ComplianceSerializer(compliance)
+    step_serializer = StepWiseProcedureSerializer(step)
+    faq_serializer = FAQSerializer(faq)
+    closure_serializer = ClosureSerializer(closure)
+     # create response data
+    response_data = {
+        'products': product_serializer.data,
+        'meaning': meaning_serializer.data,
+        'minimum': minimum_serializer.data,
+        'benefit': beneift_serializer.data,
+        'document': document_serializer.data,
+        'incorporation': incorporation_serializer.data,
+        'compliance': compliance_serializer.data,
+        'step': step_serializer.data,
+        'faq': faq_serializer.data,
+        'closure': closure_serializer.data,
+    }
+    #Handle Post Request
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            response_data['form'] = serializer.data
+            return JsonResponse(response_data,status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
+    #Handling GET request
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
+    response_data['banner'] = BannerSerializer(banner).data
+    response_data['price'] = PricingSumSerializer(price).data
+    return JsonResponse(response_data, status=200)
 #>FOOD BUSINESS view
 
 def fssai_a_r(request):
