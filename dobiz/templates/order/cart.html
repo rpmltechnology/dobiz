@@ -113,7 +113,7 @@ table th {
 }
 </style>
 
-<table style="margin-top:100px">
+<table style="margin-top:130px">
     
     <thead >
       <tr class="thead">
@@ -124,11 +124,12 @@ table th {
         <th scope="col">Other</th>
         <th scope="col">Price</th>
         <th scope="col">Buy</th>
+        <!-- <th scope="col">Clear</th> -->
       </tr>
     </thead>
     <tbody>
-        {% for i in items %}
-      <tr>
+      {% for i in items %}
+      <tr data-product-id="{{ i.product.id }}">
         <td data-label="Name">{{i.product.product_name}}</td>
         <td data-label="Title">{{i.product.Dobiz_India_Filings}}</td>
         <td data-label="Website">{{i.product.gst_percent}}</td>
@@ -136,11 +137,40 @@ table th {
         <td data-label="Title">{{i.product.other_cost}}</td>
         <td data-label="Website">{{i.product.price}}</td>
         <td data-label="Role"><a href="/checkout?id={{i.product.id}}&order_id={{i.id}}">Buy Now</a></td>
+        <!-- <td data-label="Website">
+          <button onclick="clearItem({{ i.product.id }})">Clear Item</button>
+        </td> -->
       </tr>
-      {% endfor %}
+    {% endfor %}
+  
   
     </tbody>
   </table>
-
+  <!-- <script>
+  function clearItem(productId) {
+  console.log('Clearing item with product ID:', productId);
+  let cartItems = JSON.parse(localStorage.getItem('items')) || [];
+  let updatedCartItems = cartItems.filter(item => item.product.id !== productId);
+  localStorage.setItem('items', JSON.stringify(updatedCartItems));
+  
+  // Remove the row from the table in the DOM
+  let row = document.querySelector(`tr[data-product-id="${productId}"]`);
+  if (row) {
+    row.remove();
+  }
+}
+function updateCartItem(productId, quantity) {
+  console.log('Updating cart item with product ID:', productId, 'and quantity:', quantity);
+  let cartItems = JSON.parse(localStorage.getItem('items')) || [];
+  let updatedCartItems = cartItems.map(item => {
+    if (item.product.id === productId) {
+      return { ...item, quantity: quantity };
+    } else {
+      return item;
+    }
+  });
+  localStorage.setItem('items', JSON.stringify(updatedCartItems));
+}
+    </script> -->
     {% endblock %}
 

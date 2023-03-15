@@ -4,373 +4,301 @@
 
 {%block body %}
 
-     <section class="top-bn1 bn-styles aos-init aos-animate" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <h2><b>Patent Registration  <span class="text-white">in India</span></b></h2>
-            <p class="pt-4"> <b>Patent Filing is the initial and most crucial step to obtaining an application for a Patent Grant in India. A novel and new Invention are patentable if not made known to the general public. We can assist you with Prior Art Searches in different areas, as well as the drafting of Patent Specifications, Filing and prosecution of regular Indian Applications or Under PCT.  
-            </b></p>
-            <p>Patent Registration in India</p>
+{% include 'common_pages/banner.html' %}
 
-            <p>Make sure you protect your Invention within 10 days, All India GST Registration and Returns</p>
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
 
-            <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div id="meaning" class="container tab-pane content active"><br>
+            <h2>{{meaning.heading_text}}</h2>
+            <p><b>{{meaning.text}}</b></p>
+            <p>{{meaning.heading_text}}</p>
+            <p>{{meaning.list1}}</p>
+
+            <h2>{{meaning.heading_text2}}</h2>
+            <p>{{meaning.text2}}</p>
+            <p class="b-style text-style">{{meaning.text3}}</p>
+            <p>{{meaning.text4}}</p>
+            <p class="b-style text-style"><b>{{meaning.heading_text3}} </b> {{meaning.text5}}</p>
+            <p><b>{{meaning.heading_text4}}</b>{{meaning.text6}}</p>
           </div>
+
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2>{{minimum.heading_text}}</h2>
+                <p>{{minimum.text}}</p>
+                <p>{{minimum.text2}}</p>
+                <p>{{minimum.text3}}</p>
+                <p>{{minimum.text4}}</p>
+                <p>{{minimum.text5}}</p>
+                <div class="about-text-style">
+                  <ul>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.colorcode1}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.colorcode2}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list1}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list2}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list3}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list4}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list5}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list6}}</li>
+
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list7}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{minimum.list8}}</li>
+                  </ul>
+
+                  <ul>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list9}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list10}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list11}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list12}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list13}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list14}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list15}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.heading_text2}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.heading_text3}}/li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.heading_text4}}</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+
+
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>Documents.</h2>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
         </div>
       </div>
-    </section>
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            <li> <a class="sidelink" href="#process">
-            <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span>  Step Wise Process</a> </li>
-            <li> <a class="sidelink" href="#document">
-            <span class="icon-s"> <i class="fa fa-file-text" aria-hidden="true"></i> </span>  List of Documents</a> </li>
-            <li> <a class="sidelink" href="#faq">
-            <span class="icon-s"> <i class="fa fa-question-circle" aria-hidden="true"></i> </span>  FAQ</a> </li>
-            
-            </ul>
-          </div>
+      {% include 'common_pages/pricing_sum_below.html' %}
 
-          <div class="content content-3s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12 col-12 heading pt-4">
-                      <h2 class="fs-2">The Meaning of Patent and Type of <span class="text-primary">Patent Application</span></h2>
-                      <p class="fs-6">Patents grant exclusivity to the creator/owner of the Invention, which is as new products or in the form of improved or new industrial Processes. Patent registration in India is a significant task that requires years of experience and a solid technical understanding of the subject. To grant a patent, an application must be made for the Invention that is unique and novel but has not been disclosed before sending it to the offices of the patent controller in India. </p>
-                      <p class="b-style text-style">The patent application is submitted with a technical description in the form of a Patent Specification. One of the primary factors that determine patentability are novelty and non-obviousness. There are three types of Patent applications that can be filed. Here's a quick overview of what Type of Patent Application.</p>
-                      <p class="fs-6">Regular Indian Patent application The Ordinary Indian Patent Application is the most frequently filed application filed by an Indian inventor. The Invention is made public in the first instance before it is filed with the Indian Patent Office and can be filled with either a full or provisional specification. When the patent application has been filed using an initial specification, the complete specification must be filed within 12 months from the date of the initial application.</p>
-                      
-                    </div>
-                  </div>
-                </div>
-              </section>
+    </div>
+  </div>
+</section>
 
-              <section class="py-4 s-img s-img1">
-                  <div class="container py-2">
-                    <div class="row">
-                      <div class="col-md-2 col-12">
-                      </div>
-                    <div class="col-md-10 col-12">
-                      <p><b>Convention Applications: </b> In The Paris convention of 1883 concerning patents, the parties have acknowledged the importance of the first patent disclosure (or "Prior Art," and in the case of international patents, the applicant can apply for a patent within 12 months from the date of making the first application, and the prior disclosure will not be considered prior art in the following country application.</p>
-                      <p> <b>PCT Applications: </b> Application for Patent Co-Operation Treaty provides an application procedure that allows for an international request for a patent grant that India can make for 152 countries in the contract. In the initial stage, the application is inspected by an international exam authority that the applicant chooses; the applicant may apply for the national phase.</p>
-                    </div>
-                    </div>
-                  </div>
-                </section>
+{% include 'common_pages/fssai.html' %}
 
-                <section class="py-4 bg-light">
-                  <div class="container">
-                    <div class="row">
-
-                      <div class="col-md-12 col-12 heading pt-2">
-                        <h2 class="fs-4 pt-4">Patentability Criteria for Patents</h2>
-                        <p>In granting a patent, the patent holder is granted the exclusive rights to this Invention only to its patent owner within the country's territorial jurisdiction. Patents are an exclusive right that prohibits anyone from producing, selling, using, or trading products or industrial services. Every country has its rules of law to determine the Invention to grant legal protection for the Patent.</p>
-                        <p><b>Novelty: </b> A new invention eligible for grant of a Patent must be original and novel. When we refer to the novel, that means that the Invention or process must not be previously known in any document that was granted a Patent and published Patent or other literature or in open access. The best way to determine the novelty is to conduct a Patent Search, &amp; we can conduct a top-quality patent search in every jurisdiction.</p>
-                        <p><b>Invention Step: </b> The Invention must result from innovative technological advancement or inputs over the current knowledge or provide economic advantages over prior knowledge. It should not be anticipated by someone skilled in the same field. When an inventor can solve a problem with his Invention, and someone else can offer the exact solution with the knowledge he has acquired, the Invention will not be considered inventive.</p>
-                        <p><b>Industrial Applications: </b> Section 2 (ac) of the Indian Patent Act clearly states that the Invention should be able to be used as a means of manufacturing in the form of goods or used as an industrial process. Also, the Invention must be abstract and have a practical benefit to the industry.</p>
-                        <p><b>Nonpatentable Subject Matters:</b> The object of the Invention shouldn't be included in the list of nonpatentable Subject Matters according to sections 3 and 4 of the Indian Patents Act. We suggest that you go through the statute to find the complete list. A few of them are listed below.</p>
-                      </div>
-
-                    </div>
-                  </div>
-                </section>
-
-            </div>
-
-             <div id="process">
-
-              <section class="btm_grd_banner py-5 aos-init aos-animate" data-aos="fade-up">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-12 col-12">
-                        <div class="py-2 text-white heading2">
-                          <div class="about-text-style">
-                            <ul>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Frivolous Invention</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Anything that is contrary to the Natural Laws</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Mere Discovery</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Abstract Theory</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Discovery of Living or Non-Living Things</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Discovering a New Form of the Substance We Know About</li>
-                           </ul>
-
-                           <ul>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Mere Admixture</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Simple Arrangement or Re-Arrangement</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Method of Horticulture</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Method of Agriculture</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The Surgical Procedure</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Mathematical/Business Method</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Algorithm</li>
-                           </ul>
-
-                           <ul>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> PC Program per Se</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> A Simple Scheme or Rule</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The Topology of Integrated Circuit</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Literary or artistic work</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The Presentation of Information</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Traditional Knowledge</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Inventions Related to Atomic Energy</li>
-                           </ul>
-                         </div>
-                         <h2 class="text-center">Precedential Art Lookup for Patent Filing</h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6 col-12">
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                            <br>
-                            <p class="card-text">Prior Art Searches can be performed to discover documents similar to the patent. Through performing Prior Art Searches for an invention, the creator will know whether the same or similar Invention is in use. </p>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-12 mt-2">
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                            <br>
-                            <p class="card-text">However, prior art research is not required in certain circumstances, such as when the patent application is submitted for publicity purposes or the company's marketing efforts without the intention of getting the patent granted, and it is not necessary. </p>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-12 mt-5">
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                            <br>
-                            <p class="card-text">Prior Art Search is non-essential. But, prior art searches are essential if the invention to the company or significant resources have been utilized in the research and development of the new process or product or process. Prior Art Searches become an essential requirement. In the same way, the amount that should be invested in the prior art is also contingent upon the purpose and nature of filing a patent.</p>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-12 mt-5">
-                      <div class="pt-4"></div>
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                            <br>
-                            <p class="card-text">A prior art search can be conducted through several databases in various jurisdictions to locate the exact as or similar to the Invention. Invention or can modify his idea to make it more original and therefore patentable. The prior art search may include the following.</p>
-                          </div>
-                        </div>
-                    </div>
-
-                  </div>
-                </div>
-              </section>
-
-            </div>
+<section class="checklist py-5">
+  <div class="container">
+    <div class="row py-4">
+      <h2>{{faq.heading_text}}</h2>
 
 
-            <div id="document">
-              <section class="py-4 ab-banner text-white">
-                <div class="container">
-                  <div class="row">
-                  <div class="col-md-11 col-12 heading">
-                     <div class="about-text-style">
-                          <ul>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Short-listing of keywords</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> A thorough search of databases</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> A wide range of Internet-based searches</li>
-                          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Interpretation and analysis of the results of a search</li>
-                      </ul></div>
-                      <h2>Drafting and filing of Patent Specification</h2>
-                      <p>A patent specification can be described as a technical document displayed in the public search once the patent is published. The examiner determines the patent application based on the patent specification and the claims. Therefore it is the primary document of the patent application in which the inventor provides all details about the Invention. Invention applications can file in India with a provisional specification or full specification. The application is considered complete when the patent is filed with its complete specification.</p>
-                      <p> <b> Provisional Specification of Patent: </b> The patent application is filed with a Provisional Specification for claiming priority date before it is filed with the Patent Office. The application is made by the inventor whose time is needed to develop the Invention. The invention has come to the point where it can be released. The provisional specification doesn't include claims, and within 12 months after filing the preliminary specification, the entire specification must be filed.</p>
-                      <p><b>Full Specification for Patent: </b> The entire specification is a tech-legal document in which the inventor provides all the details about the Invention and the claims the inventor can make in the Invention. Invention specification should include the following information in the document.</p>
-
-                      <div class="about-text-style">
-                          <ul>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Title</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Field of Invention</li>
-                          </ul>
-                          <ul>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Background</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Summary</li>
-                            
-                          </ul>
-                          <ul>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> A Brief Description of Drawings</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The Full Description</li>
-                          </ul>
-                          <ul>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Abstract</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Claim(s)</li>
-                          </ul>
-                          <ul>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Drawings</li>
-                          </ul>
-                      </div>
-
-                </div>
-              </div>
-            </div>
-          </section>
-
-
-          <section class="py-4 bg-light">
-              <div class="container">
-                <div class="row">
-
-                  <div class="col-md-12 col-12 heading">
-
-                    <p class="b-style text-style">It is important to understand that the Patent Specification is such an important tool that it can be used to benefit the patentee or against them; therefore, it shouldn't be left to chance or created by a novice. We've come across several instances where the inventor made the specification without assistance from a professional and could lose the Patent. The specification should be written keeping in mind the patenting process using technical and legal terminologies and abide by the requirements of the law on patents. We have domain expert lawyers and scientists who can assist with the drafting of patents.</p>
-
-                    <h2 class="fs-4">Step-wise Process for Patent Registration Record the specifics regarding your Invention in Great Detail</h2>
-
-                    <p>The first step in Patent Filing in India should begin by collecting all information, concepts and concepts related to your current Invention. When gathering information about the Invention, it is possible to consider the creation of a sketch or flow chart with a focus on how your Invention differs from prior art or knowledge. This helps us to perform prior art searches and also the creation of the specification for patents.</p>
-                  </div>
-
-                </div>
-              </div>
-            </section>
-            </div>
-
-
-            <div id="faq">
-             <section class="bg-light py-4">
-                <div class="container">
-                  <div class="row">
-
-                    <div class="col-md-11 col-12 mx-auto heading2">
-                      <div class="accordion pt-2" id="accordionExample">
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Patentability Search (This is an optional step)
-                            </button>
-                          </h4>
-                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                              The next step is logical, however crucial, but it's an option. Patentability is determined by four main criteria, which are discussed in the previous section of this webpage. The patentability and prior art searches assist the inventor in determining whether or not to go ahead with the Patent.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              The Drafting phase of Patent Specification
-                            </button>
-                          </h4>
-                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              A patent specification can be described as an important technical document required to be filed as a part of the patent application. The writing of the specification must be handled by the inventor or by someone who is an expert in the area, and the attorney should determine whether the correct terminology is used and whether the specification complies with patent law.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                           The publication of the Patent Application
-                            </button>
-                          </h4>
-                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                             The patent office publishes patents after the applicant applies. The Patent's publication occurs within 18 months of the date of the patent application only if the applicant submits an additional application for the identical. However, a request for early publication can be submitted with an extra fee in conjunction with the application or at any date after the filing.<br>
-                             The reason for promoting this Patent's validity is to provide an opportunity to the general public all over the world to find out whether there are any objections to the granted Patent to the applicant.
-
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                             Request for Examination and First Examination Report
-                            </button>
-                          </h4>
-                          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                             The applicant must apply to examine an application for a patent, in which the examiner evaluates the application from the point of patentability before granting a First Examination Report (FER). The application for examination is submitted after the Patent has been publicized; however, it must be filed within it is filed for 48 months after the initial application. A request for expedited examination could be filed to speed up the procedure. 
-                            </div>
-                          </div>
-                        </div>
-
-
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingFive">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                             Filing of Response to Patent Office Response to Patent Office Objections
-                            </button>
-                          </h4>
-                          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                             The examiner notes the objections of the patent office in connecting the Patent to a specific inventor in the patent examination report. A valid response must be filed along with a point-wise response to each point of disagreement, supported by well-established legal rules and a citation to the ruling.
-                            </div>
-                          </div>
-                        </div>
-
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-
-          </div>
-          </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
-                  <tbody>
-                    <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
-                    </tr>
-                    <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
-                    </tr>
-                    <tr>
-                      <th>DobizIndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
-                    </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
-                    </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
-                    </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"></h5>
+          <p>{{faq.question1}} {{faq.question2}}</p>
         </div>
       </div>
-    </section>
 
-     {% endblock %}
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"></h5>
+          <p>{{faq.answer2}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"></h5>
+          <p>{{faq.answer3}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"></h5>
+          <p>{{faq.answer4}}</p>
+        </div>
+      </div>
+
+      <div class="about-text-style">
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{faq.list1}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list2}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list3}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list4}}</li>
+        </ul>
+      </div>
+      <h2>{{faq.heading_text2}}</h2>
+      <p>{{faq.answer5}}</p>
+      <p>{{faq.answer6}}</p>
+      <p>{{faq.answer7}}</p>
+      <div class="about-text-style">
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list5}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list6}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list7}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list8}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list9}}</li>
+        </ul>
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list10}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list11}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list12}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list13}}</li>
+        </ul>
+      </div>
+      <p class="b-style text-style">{{faq.answer1}}</p>
+
+
+      <h2>{{step.heading_text}}</h2>
+      <p>{{step.text}}</p>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12 col-12">
+        <div class="accordion pt-2" id="accordionExample">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                {{step.step1}}
+              </button>
+            </h4>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.answer1}}
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                {{step.step2}}
+              </button>
+            </h4>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{step.answer2}}
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                {{step.step3}}
+              </button>
+            </h4>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{step.answer3}}
+                <br>
+                {{step.text2}}
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                {{step.step4}}
+              </button>
+            </h4>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.answer4}}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                {{step.step5}}
+              </button>
+            </h4>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.answer5}}
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

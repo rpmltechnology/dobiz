@@ -808,7 +808,7 @@ def patent(request,page):
     page_dict={
         'intellectual_pr':'Intellectual property rights',
         'international_tf':'International trademark filing',
-        'patent_r':'Patent registration',
+        'patent_r':'Patent Registration',
         'patent_s':'Patent search',
         'software_p':'Software patent'
     }
@@ -850,7 +850,7 @@ def patent_api(request,page):
     page_dict={
         'intellectual_pr':'Intellectual property rights',
         'international_tf':'International trademark filing',
-        'patent_r':'Patent registration',
+        'patent_r':'Patent Registration',
         'patent_s':'Patent search',
         'software_p':'Software patent'
     }
@@ -1345,5 +1345,6 @@ def addToCart(request):
     order.email = user.email
     order.remarks = remark
     order.buy_time = datetime.now()
+    order.sell_price = product.market_price
     order.save()
     return JsonResponse({"Success":1})

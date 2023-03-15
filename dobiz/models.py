@@ -117,12 +117,20 @@ class Meaning(models.Model):
     heading_text2 = models.CharField(max_length=200,null=True, blank=True)
     heading_text3 = models.CharField(max_length=200,null=True, blank=True)
     heading_text4 = models.CharField(max_length=200,null=True, blank=True)
+    heading_text5 = models.CharField(max_length=200,null=True, blank=True)
+    heading_text6 = models.CharField(max_length=200,null=True, blank=True)
+    heading_text7 = models.CharField(max_length=200,null=True, blank=True)
+    heading_text8 = models.CharField(max_length=200,null=True, blank=True)
+    heading_text9 = models.CharField(max_length=200,null=True, blank=True)
     text = models.TextField(null=True, blank=True)
     text2 = models.TextField(null=True, blank=True)
     text3 = models.TextField(null=True, blank=True)
     text4 = models.TextField(null=True, blank=True)
     text5 = models.TextField(null=True, blank=True)
     text6 = models.TextField(null=True, blank=True)
+    text7 = models.TextField(null=True, blank=True)
+    text8 = models.TextField(null=True, blank=True)
+    text9 = models.TextField(null=True, blank=True)
     img = models.ImageField(null=True, blank=True)
     colorcode1 = models.CharField(max_length=200,null=True, blank=True, default='#90cd26')
     colorcode2 = models.CharField(max_length=200,null=True, blank=True, default='#1742fd')
@@ -136,6 +144,10 @@ class Meaning(models.Model):
     list8 = models.CharField(max_length=200,blank=True,null=True)
     list9 = models.CharField(max_length=200,blank=True,null=True)
     list10 = models.CharField(max_length=200,blank=True,null=True)
+    list11 = models.CharField(max_length=200,blank=True,null=True)
+    list12 = models.CharField(max_length=200,blank=True,null=True)
+    list13 = models.CharField(max_length=200,blank=True,null=True)
+    list14 = models.CharField(max_length=200,blank=True,null=True)
     def __str__(self):
         return self.category
 
@@ -167,6 +179,8 @@ class MinimumRequirement(models.Model):
     list11 = models.CharField(max_length=200,blank=True,null=True)
     list12 = models.CharField(max_length=200,blank=True,null=True)
     list13 = models.CharField(max_length=200,blank=True,null=True)
+    list14 = models.CharField(max_length=200,blank=True,null=True)
+    list15 = models.CharField(max_length=200,blank=True,null=True)
     def __str__(self):
         return self.category
 

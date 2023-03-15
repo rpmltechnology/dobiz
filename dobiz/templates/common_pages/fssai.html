@@ -1,69 +1,55 @@
-<section class="Professional py-5">
-    <div class="container">
-  
-      <div class="row">
-        <div class="col-md-12 text-center text-white">
-          <h2> Our Professional Fee For FSSAI Registration of License </h2>
-        </div>
+{% load static %}
+<section class="Professional py-5" style="padding-bottom: 50px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center text-white">
+        <h2> Our Professional Fee For FSSAI Registration of License </h2>
       </div>
-  
-  
-      <div class="row pro-box">
-        <div class="col-md-4 col-12">
-          <div class="shadow bg-light p-5">
-            <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
-            <div class="text-center">
-              <h2> Fssai Registration </h2>
-              <p class="pro-box-para"> Required if the turnover is less than 12 lac in a Financial Year & the business is
-                within the state </p>
-              <div class="pt-4"></div>
-              <h1 class="py-2"> ₹ 2,999/- </h1>
-              <p> Government Fee on Actual </p>
-              <br />
-              <div class="d-grid gap-2">
-                <button class="btn btn-success py-3" type="button"><a href="{% url 'order' %}"> Get started </a></button>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <div class="col-md-4 col-12">
-          <div class="shadow bg-light p-5">
-            <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
-            <div class="text-center">
-              <h2> Fssai State License </h2>
-              <p class="pro-box-para"> When turnover is more than 12 Lac & upto 20 Crores for retailer/ 30 Crores for
-                wholesalers </p>
-              <div class="pt-4"></div>
-              <h1 class="py-2"> ₹ 8,499/- </h1>
-              <p> Government Fee on Actual </p>
-              <br />
-              <div class="d-grid gap-2">
-                <button class="btn btn-outline-success py-3 text-dark" type="button"><a href="{% url 'order' %}"> Get started
-                  </a></button>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <div class="col-md-4 col-12">
-          <div class="shadow bg-light p-5">
-            <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
-            <div class="text-center">
-              <h2> Fssai Registration </h2>
-              <p class="pro-box-para"> For all cases where turnover exceeds limits prescribed for state License or
-                involved in export. </p>
-              <div class="pt-4"></div>
-              <h1 class="py-2"> ₹ 11,999/- </h1>
-              <p> Government Fee on Actual </p>
-              <br />
-              <div class="d-grid gap-2">
-                <button class="btn btn-outline-success py-3" type="button"><a href="{% url 'order' %}"> Get started </a></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  
     </div>
-  </section>
+    <div class="row pro-box">
+      {% for i in products %}
+      <div class="col-md-4 col-12">
+        <div class="shadow bg-light p-5">
+          <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
+          <div class="text-center"style="height:400px">
+            <h2 id="namepr{{i.id}}"> {{i.product_name}} </h2>
+            <p class="pro-box-para"> {{i.desc| slice:"0:60"}} </p>
+            <div class="pt-4"></div>
+            <h1 class="py-2" id="pricepr{{i.id}}">{{i.market_price}} </h1>
+            <p> Government Fee on Actual </p>
+            <br />
+            <div class="d-grid gap-2">
+             <button id="pr{{i.id}}" class="btn btn-primary btn-sm add-to-cart" data-product-id="{{i.id}}">Add To Cart</button>
+              <a href="/checkout?id={{i.id}}"><button id="qv{{i.id}}" class="btn btn-primary btn-sm">Buy Now</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function(){
+    $('.add-to-cart').click(function(){
+      var id = $(this).data('product-id');
+      $.ajax({
+        type: 'POST',
+        url: "{% url 'addToCart' %}",
+        data: {
+          "id": id,
+          csrfmiddlewaretoken: '{{ csrf_token }}'
+        },
+        success: function (response) {
+          if (response.Success == 1) {
+            if (confirm("Do you want to visit Cart page?")) {
+              window.location.href = "{% url 'cart' %}";
+            }
+          }
+        }
+      });
+    });
+  });
+</script>
+
