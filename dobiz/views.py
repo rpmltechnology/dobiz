@@ -22,7 +22,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import *
 
-
+# from .Paytm import Checksum
 
 # Create your views here.
 def home(request):
@@ -909,30 +909,113 @@ def patent_api(request,page):
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
 #>FOOD BUSINESS view
+def foodbusiness(request,page):
+    page_dict={
+        'fssai_a_r':'FSSAI Annual Return',
+        'fssai_c_l':'FSSAI Central License',
+        'fssai_l_r':'FSSAI License Renewal',
+        'fssai_r':'FSSAI Registration',
+        'fssai_s_l':'FSSAI State License',
+        'fssai_a':'fssai-applicability'
+        
+    }
+    if page not in page_dict:
+        raise Http404('Invalid Page')
 
-def fssai_a_r(request):
-    return render(request, 'foodbusiness/fssai_a_r.html')
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
 
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
 
-def fssai_c_l(request):
-    return render(request, 'foodbusiness/fssai_c_l.html')
+    form = ContactUser()
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            return JsonResponse(serializer.data, status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
 
+    context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
+            'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
+            'step':step,'faq':faq,'closure':closure}
+    return render(request, f'foodbusiness/{page}.html', context)
+@api_view(['GET','POST'])
+def foodbusiness_api(request,page):
+    page_dict={
+        'fssai_a_r':'FSSAI Annual Return',
+        'fssai_c_l':'FSSAI Central License',
+        'fssai_l_r':'FSSAI License Renewal',
+        'fssai_r':'FSSAI Registration',
+        'fssai_s_l':'FSSAI State License',
+        'fssai_a':'fssai-applicability'
+        
+    }
+    if page not in page_dict:
+        raise Http404('Invalid Page')
 
-def fssai_l_r(request):
-    return render(request, 'foodbusiness/fssai_l_r.html')
-
-def fssai_r(request):
-    return render(request, 'foodbusiness/fssai_r.html')
-
-
-def fssai_s_l(request):
-    return render(request, 'foodbusiness/fssai_s_l.html')
-
-
-def fssai_a(request):
-    return render(request, 'foodbusiness/fssai_a.html')
-
-
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
+     # Serialize data
+    product_serializer = ProductSerializer(products, many=True)
+    meaning_serializer = MeaningSerializer(meaning)
+    minimum_serializer = MinimumRequirementSerializer(minimum)
+    beneift_serializer = BenefitsSerializer(benefit)
+    document_serializer = DocumentRequiredSerializer(document)
+    incorporation_serializer = IncorporationProcessSerializer(incorporation)
+    compliance_serializer = ComplianceSerializer(compliance)
+    step_serializer = StepWiseProcedureSerializer(step)
+    faq_serializer = FAQSerializer(faq)
+    closure_serializer = ClosureSerializer(closure)
+     # create response data
+    response_data = {
+        'products': product_serializer.data,
+        'meaning': meaning_serializer.data,
+        'minimum': minimum_serializer.data,
+        'benefit': beneift_serializer.data,
+        'document': document_serializer.data,
+        'incorporation': incorporation_serializer.data,
+        'compliance': compliance_serializer.data,
+        'step': step_serializer.data,
+        'faq': faq_serializer.data,
+        'closure': closure_serializer.data,
+    }
+    #Handle Post Request
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            response_data['form'] = serializer.data
+            return JsonResponse(response_data,status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
+    #Handling GET request
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
+    response_data['banner'] = BannerSerializer(banner).data
+    response_data['price'] = PricingSumSerializer(price).data
+    return JsonResponse(response_data, status=200)
 # GENERAL LICENSE view
 
 def apeda_r_e(request):
@@ -1276,7 +1359,7 @@ def password_reset(request):
         return render(request, 'register/password_reset.html', {'form': form})
 from datetime import datetime
 
-
+# MERCHANT_KEY = 'ROzQwVTzk@UKCpEM'
 # Order Management
 def checkout(request):
     id = request.GET.get("id")
@@ -1319,8 +1402,40 @@ def checkout(request):
         context = {}
     # messages.error(request, "Form is not valid")
     
-
+    #Request Paytm to transfer the amount to your Payment by User
+    # param_dict = {
+    #     'MID':'AwelBN38594741815146',
+    #     'ORDER_ID':str(order_id),
+    #     'TXN_AMOUNT':str(final_price),
+    #     'CUST_ID':order.email,
+    #     'INDUSTRY_TYPE':'Retail',
+    #     'WEBSITE':'WEBSTAGING',
+    #     'CHANNEL_ID':'WEB',
+    #     'CALLBACK_URL':'http://127.0.0.1:8000/handlerequest'
+    # }
+    # param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict,MERCHANT_KEY)
+    # return render(request, 'payment/paytm.html',{'param_dict':param_dict})
     return render(request,"order/checkout.html",context)
+# @csrf_exempt
+# def handlerequest(request):
+#     #Paytm will send you POST request here
+#     form = request.POST
+#     response_dict = {}
+#     checksum = None # initialize checksum variable with None
+#     for i in form.keys():
+#         response_dict[i] = form[i]
+#         if i == 'CHECKSUMHASH':
+#             checksum = form[i]
+
+#     if checksum is not None: # check if checksum is assigned
+#         verify = Checksum.verify_checksum(response_dict, MERCHANT_KEY, checksum)
+#         if verify:
+#             if response_dict['RESPCODE'] == '01':
+#                 print('order successful')
+#             else:
+#                 print('order was not successful because' + response_dict['RESPMSG'])
+#     return render(request, 'payment/paymentstatus.html', {'response': response_dict})
+
 
 def order_history(request):
     orders = Order.objects.filter(user__id = request.user.id).filter(is_cart=0).order_by("-id")

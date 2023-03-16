@@ -431,6 +431,21 @@ class StepWiseProcedure(models.Model):
     list8 = models.CharField(max_length=200,blank=True,null=True)
     list9 = models.CharField(max_length=200,blank=True,null=True)
     list10 = models.CharField(max_length=200,blank=True,null=True)
+    list11 = models.CharField(max_length=200,blank=True,null=True)
+    list12 = models.CharField(max_length=200,blank=True,null=True)
+    list13 = models.CharField(max_length=200,blank=True,null=True)
+    list14 = models.CharField(max_length=200,blank=True,null=True)
+    list15 = models.CharField(max_length=200,blank=True,null=True)
+    list16 = models.CharField(max_length=200,blank=True,null=True)
+    list17 = models.CharField(max_length=200,blank=True,null=True)
+    list18 = models.CharField(max_length=200,blank=True,null=True)
+    list19 = models.CharField(max_length=200,blank=True,null=True)
+    list20 = models.CharField(max_length=200,blank=True,null=True)
+    list21 = models.CharField(max_length=200,blank=True,null=True)
+    list22 = models.CharField(max_length=200,blank=True,null=True)
+    list23 = models.CharField(max_length=200,blank=True,null=True)
+    list24 = models.CharField(max_length=200,blank=True,null=True)
+    list25 = models.CharField(max_length=200,blank=True,null=True)
     def __str__(self):
         return self.category
 

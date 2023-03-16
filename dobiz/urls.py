@@ -27,6 +27,7 @@ path("checkout",views.checkout,name="checkout"),
 path('order_history',views.order_history,name="order_history"),
 path('cart',views.cart,name="cart"),
 path('addToCart',views.addToCart, name="addToCart"),
+# path('handlerequest',views.handlerequest, name="handlerequest"),
 
 
 #MOST POPULAR URL
@@ -68,25 +69,18 @@ path('copyright/<str:page>/', views.copyright, name='copyright'),
 #COPYRIGHT & DESIGN API url
 path('copyright_api/<str:page>/', views.copyright_api, name='copyright_api'),
 
+
 #PATENT & IPR ENFORCEMENT URL
 path('patent/<str:page>/', views.patent, name='patent'),
 #PATENT & IPR ENFORCEMENT API URL
 path('patent_api/<str:page>/', views.patent_api, name='patent_api'),
 
 
-# >FOOD BUSINESS url
+# FOOD BUSINESS url
+path('foodbusiness/<str:page>/', views.foodbusiness, name='foodbusiness'),
+# FOOD BUSINESS API url
+path('foodbusiness_api/<str:page>/', views.foodbusiness_api, name='foodbusiness_api'),
 
-path('fssai_a_r', views.fssai_a_r, name='fssai_a_r'),
-
-path('fssai_c_l', views.fssai_c_l, name='fssai_c_l'),
-
-path('fssai_l_r', views.fssai_l_r, name='fssai_l_r'),
-
-path('fssai_r', views.fssai_r, name='fssai_r'),
-
-path('fssai_s_l', views.fssai_s_l, name='fssai_s_l'),
-
-path('fssai_a', views.fssai_a, name='fssai_a'),
 
 # GENERAL LICENSE urls
 

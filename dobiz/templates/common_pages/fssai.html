@@ -1,4 +1,5 @@
 {% load static %}
+{% load social_share %}
 <section class="Professional py-5" style="padding-bottom: 50px;">
   <div class="container">
     <div class="row">
@@ -10,7 +11,14 @@
       {% for i in products %}
       <div class="col-md-4 col-12">
         <div class="shadow bg-light p-5">
-          <p class="text-end"><i class="fa fa-arrow-up" aria-hidden="true"></i></p>
+          <button class="text-end">
+            <i class="fa fa-arrow-up share-button" aria-hidden="true"></i>
+            <div class="share-options text-primary" style="display: none;" >
+              {% post_to_telegram i.product_name|urlencode i.get_absolute_url %}
+              {% post_to_whatsapp i.product_name|urlencode i.get_absolute_url %}
+              {% post_to_facebook i.product_name|urlencode i.get_absolute_url %}
+            </div>
+          </button>
           <div class="text-center"style="height:400px">
             <h2 id="namepr{{i.id}}"> {{i.product_name}} </h2>
             <p class="pro-box-para"> {{i.desc| slice:"0:60"}} </p>
@@ -49,6 +57,16 @@
           }
         }
       });
+    });
+  });
+  $(document).ready(function() {
+    $('.share-button').click(function() {
+      var shareOptions = $(this).siblings('.share-options');
+      if (shareOptions.is(':hidden')) {
+        shareOptions.slideDown();
+      } else {
+        shareOptions.slideUp();
+      }
     });
   });
 </script>

@@ -3,242 +3,207 @@
 {%block title%}FSSAI Annual Return {% endblock %}
 
 {%block body %}
-     <section class="top-bn1 bn-styles aos-init aos-animate" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <h2><b>FSSAI annual return <span class="text-white"> (FormD-1) </span></b></h2>
-            <p class="pt-4"> <b>Food businesses licensed by a State or Central FSSAI License need to file an annual return in FOSCOS for the past financial year. Dobizindia Business Solution Private Limited assists food businesses with complying with the FSSAI regulations.  
-            </b></p>
-            <p>FSSAI annual return (Form M-1)</p>
-            <p>Mandatory to License Holders, All India Incorporation Service</p>
-            <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
-          </div>
-        </div>
-      </div>
-    </section>
+{% include 'common_pages/banner.html'%}
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            <li> <a class="sidelink" href="#process">
-            <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span>  Step Wise Process</a> </li>
-            
-            
-            </ul>
-          </div>
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
 
-          <div class="content content-2s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
+        <!-- Tab panes -->
+        <div class="tab-content">
 
-                    <div class="col-md-12 col-12 heading pt-2">
-                      <h2 class="fs-1">Annual Return under <span class="text-primary">FSSAI</span></h2>
-                      <p class="fs-6">FSSAI Annual returns are required of every Food Business Operator who has been issued a State FSSAI or Central License and is engaged in manufacturing or importing food products (other than dairy products). The deadline for filing the annual return is 31 May or earlier each year, as per sub-clause 1, Clause 2.1.13 Food Safety and Standards Act (Licensing and Registering of Food Businesses) Regulations 2011. If your Food Unit meets both eligibility criteria, you must file the annual report.</p>
-                      <div class="about-text-style">
-                          <ul>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> FBO is granted a food State license or Central License.</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> FBOs are involved in Manufacturing, Exporting and Importing Food Products.</li>
-                        </ul>
-                      </div>
-                      <h2 class="fs-4">Last Date to File the Annual Return under FSSAI</h2>
-                      <p class="b-style text-style"><b>Due Deadline: </b> The last date to file annual fssai returns by manufacturing units for importers is 31 May. For example, FSSAI annual return is due for the financial year 2020-21 on 31 May 2021. The COVID-19 Pandemic impacted the deadline to file the annual return. However, the FBO can now furnish the return for FY2020-21 until 30 June 2021.</p>
-                       <p class="fs-6"><b>Prescribed FOR: </b> The licensee submits an annual return on Form D-1 detailing each food item he handled in the past financial year. FSSAI makes it mandatory to submit an online Annual Return by Food Businesses starting from FY. 2020-21 vide notification No. 15(31)2020/FOSCOS/RCD/FSSAI dated 18 December 2020.</p>
-                    </div>
+          <div id="meaning" class="container tab-pane content active"><br>
+            <h2>{{meaning.heading_text}}</h2>
+            <p><b>{{meaning.text}}</b></p>
+            <p>{{meaning.heading_text2}}</p>
+            <p>{{meaning.heading_text3}}</p>
 
-                  </div>
-                </div>
-              </section>
-
-              <section class="py-4 s-img s-img1">
-                  <div class="container py-2">
-                    <div class="row">
-                      <div class="col-md-2 col-12">
-                      </div>
-                    <div class="col-md-10 col-12">
-                      <h2 class="fs-4">Note: Separate Annual Return for Each License</h2>
-                      <p>The annual return must be filed regardless of whether the applicant is located. FBOs with multiple licenses must file separate returns, i.e., each food unit. Different Food Business Operators can hold these Licenses.</p>
-                      <h2 class="fs-4">Half-yearly return by FBO Manufacturing Milk &amp; Mild Products</h2>
-                      <p>Food Safety and Standard Regulation permits licensees to file half-yearly returns if involved in the collection/handling/ manufacture of Milk and Milk Products. They will submit half-yearly returns within one calendar month of the end-of-the-half-year in Form D1 &amp; D2, respectively.</p>
-                      <table class="table table-responsive-sm border">
-                          <thead>
-                            <tr>
-                              <th scope="col"> Sl. No. </th>
-                              <th scope="col"> Period  </th>
-                              <th scope="col"> Due Date  </th>
-                              <th scope="col"> Prescribed Form</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td> First Half Yearly Return from the Period (1st April to 31st Sept) </td>
-                              <td> On or before October 30 </td>
-                              <td> Formula D1</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td> Second Half Yearly Remarks for the period (31st March to October) </td>
-                              <td> on or before the 30th April </td>
-                              <td> Form D2</td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                    </div>
-                    </div>
-                  </div>
-                </section>
-
-               <section class="py-4 bg-light">
-                <div class="container">
-                  <div class="row">
-
-                    <div class="col-md-12 col-12 heading">
-                      <h2 class="fs-4 pt-4">Online Forming of Returns via FosCos Portal to FSSAI</h2>
-                      <p>Effective immediately after 2020-21, the FSSAI annual return can only now be filed online via the FosCos Portal. Below are the benefits of online filing FSSAI Returns.</p>
-                      <p>Doing business is simple.</p>
-                      <div class="about-text-style">
-                          <ul>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Not necessary to maintain physical records and receipts.</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> FoSCoS sends out digital reminders about annual returns.</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> F.Y. 2019 saw the end of the half-yearly return FBO receives in manufacturing milk and milk products. 2020-21 onwards.</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> FBO can save penalties for failure to file returns</li>
-                          </ul>
-                      </div>
-                      <p>It will be used to create national-level databases to analyze and efficiently enforce FSSAI's food laws.</p>
-                    </div>
-
-                  </div>
-                </div>
-              </section>
-
+            <h2>{{meaning.heading_text4}}I</h2>
+            <p>{{meaning.text2}}</p>
+            <div class="about-text-style">
+              <ul>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.heading_text6}}</li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.heading_text7}}</li>
+              </ul>
             </div>
-
-             <div id="process">
-
-              <section class="btm_grd_banner py-4">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-12 col-12">
-                        <div class="py-2 text-white heading2">
-                        <p><b>Information in the Annual Return</b></p>
-                        <p class="fs-6 pt-2">All licensed FBOs involved in producing and importing food products must file an annual return. The manufacturer also includes any processor, repacked, relabeled or other person involved in food production. The online filing of returns is easy. The Food Safety Compliance System, FOSCOS, already contains the format for Annual Returns. These are the required information to be included in the Annual Return.</p>
-                        <div class="about-text-style">
-                            <ul>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Name of FBO</li>
-                            </ul>
-                            <ul>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Address of FBO</li>
-                            </ul>
-                            <ul>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> No License</li>
-                            </ul>
-                          </div>
-                          <p class="fs-6 pt-2">Articulation showing amounts of food items dealt with/fabricated/imported and traded in Tons. This assertion will give the particular in the underneath classifications.</p>
-                          <div class="about-text-style">
-                            <ul>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Name of the Food product handled/manufactured/ exported/imported.</li>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Size of can/bulk/bottle/any other package (like P.P. or</li>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Quantity in metric tones</li>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Value</li>
-                            </ul>
-                            <ul>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> For Export/Import, additional information is required.</li>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Name of country or port of export.</li>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The Kg. of the quantity exported/imported</li>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Rate per kg or unit packing F.O.B./C.I.F. Value</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-              <section class="py-4">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-6 col-12">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">Exemption from Filing the Annual FSSAI Return</h5>
-                              <br>
-                              <p class="card-text">Food Business Operators are exempt from the requirement to submit annual returns if they have an FSSAI Registration Certificate.<br>
-                              Other businesses include distributors, wholesalers, retailers, stock, transporter, and food service.<br>
-                              This means that restaurants, grocery shops, canteens and fast food corners are not required by law to file an annual return.
-                              </p>
-                            </div>
-                          </div>
-                      </div>
-
-                      <div class="col-md-6 col-12 mt-5">
-                        <div class="card border-none">
-                            <div class="card-body shadow border-round">
-                              <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                              <h5 class="card-title card-header">Penalty if FSSAI Annual Return is not Filled</h5>
-                              <br>
-                              <p class="card-text">The penalty for not filing the return by 31 May each year is Rs 100 per calendar day. The penalty continues until the return file is made. To avoid any disruption or penalty to the food business, it is suggested that annual returns be filed.</p>
-                            </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-            </div>
-
-
+            <h2>{{meaning.heading_text5}}</h2>
+            <p class="b-style text-style"><b>{{meaning.heading_text8}} </b> {{meaning.text3}}</p>
+            <p class="fs-6"><b>{{meaning.heading_text9}} </b> {{meaning.text4}}</p>
           </div>
-          </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
+
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2>{{minimum.heading_text}}</h2>
+                <p class="b-style text-style">{{minimum.text}}</p>
+
+                <h2>{{minimum.heading_text2}}</h2>
+                <p>{{minimum.text2}}</p>
+                <table class="table table-responsive-sm border">
+                  <thead>
+                    <tr>
+                      <th scope="col"> {{minimum.list1}} </th>
+                      <th scope="col"> {{minimum.list2}} </th>
+                      <th scope="col"> {{minimum.list3}} </th>
+                      <th scope="col"> {{minimum.list4}}</th>
+                    </tr>
+                  </thead>
                   <tbody>
                     <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
+                      <th scope="row">{{minimum.list5}}</th>
+                      <td> {{minimum.list6}} </td>
+                      <td>{{minimum.list7}} </td>
+                      <td> {{minimum.list8}}</td>
                     </tr>
                     <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
+                      <th scope="row">{{minimum.list9}}</th>
+                      <td> {{minimum.list10}} </td>
+                      <td> {{minimum.list11}} </td>
+                      <td> {{minimum.list12}}</td>
                     </tr>
-                    <tr>
-                      <th>DobizIndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
-                    </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
-                    </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
-                    </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
-                    </tr>
+
                   </tbody>
                 </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
-                </div>
               </div>
+
+            </div>
+
+
+
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>Documents.</h2>
+              </div>
+
             </div>
           </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
         </div>
       </div>
-    </section>
+
+      {% include 'common_pages/pricing_sum_below.html'%}
+
+    </div>
+  </div>
+</section>
+
+{% include 'common_pages/fssai.html'%}
+
+<section class="checklist py-5">
+  <div class="container">
+    <div class="row py-4">
+      <h2>{{faq.heading_text}}</h2>
+      <p>{{faq.answer1}}</p>
+      <p>{{faq.question1}}</p>
+      <div class="about-text-style">
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list1}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list2}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list3}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list4}}</li>
+        </ul>
+      </div>
+      <p>{{faq.list5}}</p>
+      <h2>{{faq.question2}}</h2>
+      <p>{{faq.answer2}}</p>
+      <div class="about-text-style">
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list6}}</li>
+        </ul>
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list7}}</li>
+        </ul>
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{faq.list8}}</li>
+        </ul>
+      </div>
+      <p>{{faq.list9}}</p>
+      <div class="about-text-style">
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{faq.list10}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list11}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list12}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list13}}</li>
+        </ul>
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list14}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list15}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list16}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list17}}</li>
+        </ul>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{faq.question3}} </h5>
+          <p>{{faq.answer3}}</p>
+          <p>{{faq.answer4}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{faq.question5}}</h5>
+          <p>{{faq.answer5}} </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 {%endblock%}

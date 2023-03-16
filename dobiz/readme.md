@@ -132,3 +132,6 @@ def verify(request):
 from django.urls import reverse, reverse_lazy
 from django.views.generic.edit import CreateView
 from django.contrib.auth.views import LoginView, LogoutView
+
+
+{% post_to_whatsapp i.product_name|urlencode i.get_absolute_url %}

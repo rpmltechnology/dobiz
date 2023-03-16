@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_countries',
     'import_export',
+    'django_social_share',
 ]
 
 MIDDLEWARE = [
