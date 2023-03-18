@@ -11,14 +11,11 @@
       {% for i in products %}
       <div class="col-md-4 col-12">
         <div class="shadow bg-light p-5">
-          <button class="text-end">
-            <i class="fa fa-arrow-up share-button" aria-hidden="true"></i>
-            <div class="share-options text-primary" style="display: none;" >
-              {% post_to_telegram i.product_name|urlencode i.get_absolute_url %}
-              {% post_to_whatsapp i.product_name|urlencode i.get_absolute_url %}
-              {% post_to_facebook i.product_name|urlencode i.get_absolute_url %}
-            </div>
+          <p class="text-end">
+            <button type="button" class="btn btn-primary1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+           <i class="fa fa-share" aria-hidden="true"></i>
           </button>
+          </p>
           <div class="text-center"style="height:400px">
             <h2 id="namepr{{i.id}}"> {{i.product_name}} </h2>
             <p class="pro-box-para"> {{i.desc| slice:"0:60"}} </p>
@@ -71,3 +68,28 @@
   });
 </script>
 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Share</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="model-icon">
+            {% post_to_facebook object_or_url %}
+            {% post_to_twitter object_or_url %}
+            {% post_to_whatsapp object_or_url %}
+            {% post_to_linkedin object_or_url %}
+           
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // model---->

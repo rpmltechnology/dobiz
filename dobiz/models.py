@@ -99,6 +99,9 @@ class Order(models.Model):
     order_time = models.DateTimeField(auto_now=True)
     coupan = models.ForeignKey(to=Coupan, null=True, blank=True,on_delete=models.DO_NOTHING)
     sell_price = models.IntegerField(null=True,blank=True)
+    razor_pay_order_id = models.CharField(max_length=100,null=True,blank=True)
+    razor_payment_id = models.CharField(max_length=100,null=True,blank=True)
+    razor_payment_signature = models.CharField(max_length=100,null=True,blank=True)
     def __str__(self):
         return self.product.product_name + self.user.name
 

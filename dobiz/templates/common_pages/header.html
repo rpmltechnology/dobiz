@@ -174,9 +174,9 @@
                   <div class="col-megamenu">
                     <h6 class="title">GENERAL LICENSE</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{% url 'apeda_r_e' %}">APEDA Registration For Exporter </a></li>
-                      <li><a href="{%url 'shop_e_r' %}">Shop and Establishment Registration </a></li>
-                      <li><a href="{% url 'trade_l_r' %}">Trade License Registration </a></li>
+                      <li><a href="{% url 'general' page='apeda_r_e' %}">APEDA Registration For Exporter </a></li>
+                      <li><a href="{%url 'general' page='shop_e_r' %}">Shop and Establishment Registration </a></li>
+                      <li><a href="{% url 'general' page='trade_l_r' %}">Trade License Registration </a></li>
                     </ul>
                   </div> <!-- col-megamenu.// -->
                 </div><!-- end col-3 -->
@@ -184,12 +184,12 @@
                   <div class="col-megamenu">
                     <h6 class="title">INDUSTRIAL LICENSE</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{% url 'barcode_r' %}">Barcode-registration </a></li>
-                      <li><a href="{% url 'dot_isp_l' %}">Dot isp licence </a></li>
-                      <li><a href="{% url 'dot_osp_l_r' %}">DOT OSP License Registration </a></li>
-                      <li><a href="{% url 'gst_r_f' %}">GST Return Filing </a></li>
-                      <li><a href="{% url 'import_e_c_r' %}">Import Export Code Renewal </a></li>
-                      <li><a href="{% url 'psara_l' %}">PSARA License </a></li>
+                      <li><a href="{% url 'industrial' page='barcode_r' %}">Barcode-registration </a></li>
+                      <li><a href="{% url 'industrial' page='dot_isp_l' %}">Dot isp licence </a></li>
+                      <li><a href="{% url 'industrial' page='dot_osp_l_r' %}">DOT OSP License Registration </a></li>
+                      <li><a href="{% url 'industrial' page='gst_r_f' %}">GST Return Filing </a></li>
+                      <li><a href="{% url 'industrial' page='import_e_c_r' %}">Import Export Code Renewal </a></li>
+                      <li><a href="{% url 'industrial' page='psara_l' %}">PSARA License </a></li>
                     </ul>
                   </div> <!-- col-megamenu.// -->
                 </div>
@@ -207,10 +207,10 @@
                   <div class="col-megamenu">
                     <h6 class="title">TAX REGISTRATIONS</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{% url 'cloud_a' %}">Cloud-accounting </a></li>
-                      <li><a href="{% url 'gst_r_in_i' %}">GST Registration in India </a></li>
-                      <li><a href="{% url 'import_e_c_r' %}">Import Export Code Renewal </a></li>
-                      <li><a href="{% url 'import_e_c_i' %}">import-export-code-iec </a></li>
+                      <li><a href="{% url 'taxregister' page='cloud_a' %}">Cloud-accounting </a></li>
+                      <li><a href="{% url 'taxregister' page='gst_r_in_i' %}">GST Registration in India </a></li>
+                      <li><a href="{% url 'industrial' page='import_e_c_r' %}">Import Export Code Renewal </a></li>
+                      <li><a href="{% url 'taxregister' page='import_e_c_i' %}">import-export-code-iec </a></li>
                     </ul>
                   </div> <!-- col-megamenu.// -->
                 </div>
@@ -220,7 +220,7 @@
                     <h6 class="title">TAX COMPLIANCE</h6>
                     <ul class="list-unstyled">
                       <li><a href="{% url 'ad_tax' %}">Advance-tax </a></li>
-                      <li><a href="{% url 'gst_r_f' %}">GST Return Filing </a></li>
+                      <li><a href="{% url 'industrial' page='gst_r_f' %}">GST Return Filing </a></li>
                       <li><a href="{% url 'income_t_r_f' %}">Income-tax-return-filing </a></li>
                       <li><a href="{% url 'professional_t_r' %}">Professional Tax Registration </a></li>
                       <li><a href="{% url 'registration_l' %}">registration-licenses </a></li>

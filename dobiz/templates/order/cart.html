@@ -136,7 +136,8 @@ table th {
         <td data-label="Role">{{i.product.gst}}</td>
         <td data-label="Title">{{i.product.other_cost}}</td>
         <td data-label="Website">{{i.product.price}}</td>
-        <td data-label="Role"><a href="/checkout?id={{i.product.id}}&order_id={{i.id}}">Buy Now</a></td>
+        <td data-label="Role"><button id="rzp-button1">Buy Now</a></td>
+        <!-- <td data-label="Role"><a href="/checkout?id={{i.product.id}}&order_id={{i.id}}">Buy Now</a></td> -->
         <!-- <td data-label="Website">
           <button onclick="clearItem({{ i.product.id }})">Clear Item</button>
         </td> -->
@@ -146,31 +147,37 @@ table th {
   
     </tbody>
   </table>
-  <!-- <script>
-  function clearItem(productId) {
-  console.log('Clearing item with product ID:', productId);
-  let cartItems = JSON.parse(localStorage.getItem('items')) || [];
-  let updatedCartItems = cartItems.filter(item => item.product.id !== productId);
-  localStorage.setItem('items', JSON.stringify(updatedCartItems));
-  
-  // Remove the row from the table in the DOM
-  let row = document.querySelector(`tr[data-product-id="${productId}"]`);
-  if (row) {
-    row.remove();
-  }
-}
-function updateCartItem(productId, quantity) {
-  console.log('Updating cart item with product ID:', productId, 'and quantity:', quantity);
-  let cartItems = JSON.parse(localStorage.getItem('items')) || [];
-  let updatedCartItems = cartItems.map(item => {
-    if (item.product.id === productId) {
-      return { ...item, quantity: quantity };
-    } else {
-      return item;
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "rzp_test_D4hi1vsG8ESCJ2", // Enter the Key ID generated from the Dashboard
+    "amount": "{{payment.amount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "dobiz",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": "{{payment.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+      window.location.href='http://127.0.0.1:8000/success/?razorpay_payment_id=$(response.razorpay_payment_id)&razorpay_order_id=$(response.razorpay_order_id)&razorpay_signature=$(response.razorpay_signature)'
+    },
+    "theme": {
+        "color": "#3399cc"
     }
-  });
-  localStorage.setItem('items', JSON.stringify(updatedCartItems));
+};
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+});
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
 }
-    </script> -->
+</script>
     {% endblock %}
 

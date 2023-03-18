@@ -135,3 +135,65 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 
 {% post_to_whatsapp i.product_name|urlencode i.get_absolute_url %}
+
+
+ #Request Paytm to transfer the amount to your Payment by User
+    # param_dict = {
+    #     'MID':'AwelBN38594741815146',
+    #     'ORDER_ID':str(order_id),
+    #     'TXN_AMOUNT':str(final_price),
+    #     'CUST_ID':order.email,
+    #     'INDUSTRY_TYPE':'Retail',
+    #     'WEBSITE':'WEBSTAGING',
+    #     'CHANNEL_ID':'WEB',
+    #     'CALLBACK_URL':'http://127.0.0.1:8000/handlerequest'
+    # }
+    # param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict,MERCHANT_KEY)
+    # return render(request, 'payment/paytm.html',{'param_dict':param_dict})
+# @csrf_exempt
+# def handlerequest(request):
+#     #Paytm will send you POST request here
+#     form = request.POST
+#     response_dict = {}
+#     checksum = None # initialize checksum variable with None
+#     for i in form.keys():
+#         response_dict[i] = form[i]
+#         if i == 'CHECKSUMHASH':
+#             checksum = form[i]
+
+#     if checksum is not None: # check if checksum is assigned
+#         verify = Checksum.verify_checksum(response_dict, MERCHANT_KEY, checksum)
+#         if verify:
+#             if response_dict['RESPCODE'] == '01':
+#                 print('order successful')
+#             else:
+#                 print('order was not successful because' + response_dict['RESPMSG'])
+#     return render(request, 'payment/paymentstatus.html', {'response': response_dict})
+
+
+<!-- <script>
+  function clearItem(productId) {
+  console.log('Clearing item with product ID:', productId);
+  let cartItems = JSON.parse(localStorage.getItem('items')) || [];
+  let updatedCartItems = cartItems.filter(item => item.product.id !== productId);
+  localStorage.setItem('items', JSON.stringify(updatedCartItems));
+  
+  // Remove the row from the table in the DOM
+  let row = document.querySelector(`tr[data-product-id="${productId}"]`);
+  if (row) {
+    row.remove();
+  }
+}
+function updateCartItem(productId, quantity) {
+  console.log('Updating cart item with product ID:', productId, 'and quantity:', quantity);
+  let cartItems = JSON.parse(localStorage.getItem('items')) || [];
+  let updatedCartItems = cartItems.map(item => {
+    if (item.product.id === productId) {
+      return { ...item, quantity: quantity };
+    } else {
+      return item;
+    }
+  });
+  localStorage.setItem('items', JSON.stringify(updatedCartItems));
+}
+    </script> -->

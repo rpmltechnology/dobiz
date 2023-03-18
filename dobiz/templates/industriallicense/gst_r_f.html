@@ -2,334 +2,291 @@
 {%block title%} GST Return Filing {% endblock %}
 
 {%block body %}
-     <section class="top-bn3 bn-styles aos-init aos-animate" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <b>GST Return Filing Service in India </b>
-            <b>A Simple Procedure &amp; Clear Fee, All India Incorporation Service</b>
+{% include 'common_pages/banner.html'%}
 
-            <h2><b>GST Return Filing  <span class="text-white">Service in India </span></b></h2>
-            <p class="pt-4"> <b>There are many tax returns under GST that a taxpayer is required to file with GSTIN. GSTIN and our staff, made up of GST professionals, chartered accountants, and tax experts, are available to assist you in filing the GST tax return accurately and on time. Completely online ordering and tracking chat with our specialist to help you get started. 
-            </b></p>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            <li> <a class="sidelink" href="#process">
-            <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span>  Step Wise Process</a> </li>
-            <li> <a class="sidelink" href="#document">
-            <span class="icon-s"> <i class="fa fa-file-text" aria-hidden="true"></i> </span>  List of Documents</a> </li>
-            
-            </ul>
-          </div>
+        <!-- Tab panes -->
+        <div class="tab-content">
 
-          <div class="content content-3s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12 col-12 heading pt-2">
-                      <h2 class="fs-2">A brief explanation  <span class="text-primary">of GST return </span></h2>
-                      <p class="fs-6">Taxpayers registered under GST under the tax type have to file many taxes to GSTN. GSTN Portal. 22 types of GST returns are required under GST, and, out of them, just 11 are currently in use at the current time. The deadlines for filing could be altered by way of a notice. Go to gst.gov.in for the most up-to-date information. The tax filing period can also be a quarterly option when the taxpayer's revenue in the prior fiscal year was less than 5 crore. We have an up-to-date Tax Calendar. Click here for the calendar.</p>
-                      <h2 class="fs-4">The most important GST tax returns are now available under their due dates.</h2>
-                      <div class="table-responsive-sm">
-                      <table class="table border table-info">
-                        <thead>
-                          <tr>
-                            <th scope="col"> GST Return  </th>
-                            <th scope="col"> Scope </th>
-                            <th scope="col"> Applicability </th>
-                            <th scope="col"> Filing Frequency  </th>
-                            <th scope="col"> Due Date</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td> GSTR-1  </td>
-                            <td> To provide the specifics of Outward Supply  </td>
-                            <td> All taxpayers </td>
-                            <td> Monthly/Quarterly </td>
-                            <td> The 11th day of the month following or the 13th day of the next month, the month after the quarter</td>
-                          </tr>
-                          <tr>
-                            <td> GSTR-3B </td>
-                            <td> The Tax Statement in the event of receipt of input credit. </td>
-                            <td> All Taxpayers </td>
-                            <td> Monthly/Quarterly </td>
-                            <td> 22-24th day of the next Month</td>
-                          </tr>
-                          <tr>
-                            <td> GSTR-4  </td>
-                            <td> The annual return is due to be filed through the Composition Dealer </td>
-                            <td> Composition Dealer  </td>
-                            <td> Annual  </td>
-                            <td> 30th April for Preceding Year</td>
-                          </tr>
+          <div id="meaning" class="container tab-pane content active"><br>
+            <p><b>{{meaning.heading_text}}</b></p>
+            <h2>{{meaning.heading_text2}}</h2>
+            <p><b>{{meaning.text}}</b></p>
 
-                          <tr>
-                            <td>GSTR-9  </td>
-                            <td>Annual Return </td>
-                            <td>Below are more details. </td>
-                            <td>Annual  </td>
-                            <td>30 December 2021 30 December 2021, FY 2020-21</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      </div>
-                      <p class="b-style text-style"></p>
-                      
-                    </div>
+            <h2>{{meaning.heading_text3}}n</h2>
+            <p>{{meaning.text2}}</p>
+            <h2>{{meaning.heading_text4}}</h2>
+            <div class="table-responsive-sm">
+              <table class="table border table-info">
+                <thead>
+                  <tr>
+                    <th scope="col"> {{meaning.colorcode1}} </th>
+                    <th scope="col"> {{meaning.colorcode2}} </th>
+                    <th scope="col"> {{meaning.list1}} </th>
+                    <th scope="col"> {{meaning.list2}} </th>
+                    <th scope="col"> {{meaning.list3}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{meaning.list4}} </td>
+                    <td> {{meaning.list5}} </td>
+                    <td> {{meaning.list6}} </td>
+                    <td> {{meaning.list7}}</td>
+                    <td> {{meaning.list8}}</td>
+                  </tr>
+                  <tr>
+                    <td> {{meaning.list9}} </td>
+                    <td> {{meaning.list10}} </td>
+                    <td> {{meaning.list11}} </td>
+                    <td>{{meaning.list12}} </td>
+                    <td> {{meaning.list13}}</td>
+                  </tr>
+                  <tr>
+                    <td> {{meaning.list14}} </td>
+                    <td> {{meaning.heading_text5}} </td>
+                    <td> {{meaning.heading_text6}} </td>
+                    <td> {{meaning.heading_text7}} </td>
+                    <td> {{meaning.heading_text8}}</td>
+                  </tr>
 
-                  </div>
-                </div>
-              </section>
-
-              <section class="py-4 s-img s-img1">
-                <div class="container py-2">
-                  <div class="row">
-                    <div class="col-md-2 col-12">
-                    </div>
-                  <div class="col-md-10 col-12">
-                    <h2>GSTR-3B (QRMP</h2>
-                    <p>By the QRMP scheme, the tax must be paid monthly. The GSTR-3B returns are due every quarter. The due date for filing GSTR-3B is based on the state where taxpayers are registered for GST. Below is a list of states and the due dates for filing GSTR-3B.</p>
-                    <div class="table-responsive-sm">
-                      <table class="table border table-info">
-                        <thead>
-                          <tr>
-                            <th scope="col"> The X Category has 22 days of the Next Month </th> 
-                            <th scope="col"> Y Category 24th day of the month to come.</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Chhattisgarh, Madhya Pradesh, Gujarat, Maharashtra, Karnataka, Goa, Kerala, Tamil Nadu, Telangana or Andhra Pradesh or the Union territories of Daman and Diu and Dadra and Nagar Haveli, Puducherry, Andaman and Nicobar Islands and Lakshadweep.</td>  
-                            <td>Himachal Pradesh, Punjab, Uttarakhand, Haryana, Rajasthan, Uttar Pradesh, Bihar, Sikkim, Arunachal Pradesh, Nagaland, Manipur, Mizoram, Tripura, Meghalaya, Assam, West Bengal, Jharkhand or Odisha or the Union Territories of Jammu and Kashmir, Ladakh, Chandigarh and New Delhi.</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      </div>
-                  </div>
-                  </div>
-                </div>
-              </section>
-
-            <section class="py-4 bg-light">
-                <div class="container">
-                  <div class="row">
-
-                    <div class="col-md-12 col-12 heading">
-                      <h2 class="fs-4 pt-4">GSTR-9 (Annual Return)</h2>
-                      <p>GSTR 9 can be used by specific taxpayers. It's a tax return for the year to be filed on GSTN for each taxpayer before the deadline for the financial year in question. GSTR 9 is the GST Annual Report. GST Annual Report is the compilation of taxpayers' monthly or quarterly tax returns. This includes GSTR-1 as well as GSTR-3B. In the GSTR-9 tax returns, taxpayers get the opportunity to reconcile their tax filings of an individual financial year and take corrective steps. Here are the rules applicable and certification requirements in GSTR-9, the Annual Gst Report.</p>
-                      <div class="table-responsive-sm">
-                      <table class="table border table-info">
-                        <thead>
-                          <tr>
-                            <th scope="col"> No  </th>
-                            <th scope="col"> Taxpayer Category </th>
-                            <th scope="col"> Certification</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td> 1 </td>
-                            <td> A turnover of less than 2 crore annual returns for GSTR-9 can be an alternative </td>
-                            <td> Not necessary</td>
-                          </tr>
-                          <tr>
-                            <td> 2 </td>
-                            <td> An amount of turnover that is not greater than. 5 Crore </td>
-                            <td> Self-certification</td>
-                          </tr>
-                          <tr>
-                            <td> 3 </td>
-                            <td> The volume is over the limit of Rs. 5 Crore.  </td>
-                            <td> CA Certification</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </section>
-
+                  <tr>
+                    <td>{{meaning.heading_text9}} </td>
+                    <td>{{meaning.text3}} </td>
+                    <td>{{meaning.text4}} </td>
+                    <td>{{meaning.text5}} </td>
+                    <td>{{meaning.text6}}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-
-             <div id="process">
-
-              <section class="btm_grd_banner py-4">
-                <div class="container">
-                  <div class="row text-center">
-                    <div class="col-md-12 col-12">
-                      <div class="py-2 text-white heading2">
-                      <h2 class="py-2">The late fee is due to a delay in the filing of GSTR-1: </h2>
-                      <p class="fs-6 pt-2">Taxpayers must submit the appropriate GST Returns by the due dates to ensure free credit flows through the tax system. Late filing of GST Returns is allowed under the possibility of penalties for late charges. In the case of NIL GST Returns, the cost of late fees is rupees per each day that is delayed. 20 rupees per day delayed for returns that aren't GST-free. The late fee that must pay is $50 per day. 50 per day. There is a limit on late fees, which will ease the cost of late fees for taxpayers with low incomes.</p>
-
-                      <div class="table-responsive-sm">
-                      <table class="table border table-info">
-                        <thead>
-                          <tr>
-                            <th scope="col"> S.No  </th>
-                            <th scope="col"> Case  </th>
-                            <th scope="col"> Late Fee</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td> 1 </td>
-                            <td> NIL Tax Liability </td>
-                            <td> Limits are set at 500 percent. at 500 Rs (Rs 250 CGST plus 250 SGST)</td>
-                          </tr>
-                          <tr>
-                            <td> 2 </td>
-                            <td> The year prior to it is greater than 1.5 Crores. </td>
-                            <td> 1.5 Crores Limits to 2000+ (1000 of CGST, plus 1000 SGST);</td>
-                          </tr>
-                          <tr>
-                            <td> 3 </td>
-                            <td> The year's turnover before was greater than 1.5 Crores but up to the sum of Rs. 5 Crores  </td>
-                            <td> Limits start at Limits at. 5000or more (2500 CST + 2500);</td>
-                          </tr>
-                          <tr>
-                            <td>4 </td>
-                            <td>The previous year was greater than the Rs 5 Crores  </td>
-                            <td>It was capped at Rs. 10000/Capped at Rs.10000/ (5000 CSTplus 5000 SGST);</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      </div>
-
-                      <p class="fs-6">Late fee for delay in filing Form GSTR-4 with Composition Dealer Limit of 500 dollars (Rs 250 CGST plus 250 SGST) per Return if tax obligation is not paid in the form. The amount is Rs 2000 (Rs 1000 CGST plus Rs 1000 GST) for returns of all other types of returns. </p>
-                      <p class="fs-6">The late fee for the submission of Form GSTR-7 is Reduced to Rs.50 every day (Rs. 25 CST plus Rs. 25 SGST) and caps at 2000/- (Rs. 1,000 CGST + Rs 1,000 SGST) per Return. </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6 col-12">
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                            <h5 class="card-title card-header">Interest in Delay in Payment of GST </h5>
-                            <br>
-                            <p class="card-text">GST can be described as the primary revenue source of state government and unions in India' GST taxes must be paid monthly each month. Any delay in the payment of GST to benefit the Government of India. The government of India attracts an interest rate of 18% per annum that is assessed on an ongoing basis. </p>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-12 mt-4">
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                            <h5 class="card-title card-header">GST Amnesty Scheme 2021 </h5>
-                            <br>
-                            <p class="card-text">Due to a myriad of reasons, as well as many other reasons, also as the GST system's complexity in the initial few months after it was introduced, many taxpayers are not doing GST Returns. </p>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-
-                </div>
-              </section>
-
-            </div>
-
-
-            <div id="document">
-              <section class="py-4 ab-banner text-white">
-                <div class="container py-5">
-                  <div class="row">
-                  <div class="col-md-8 col-12 heading">
-                    <p>It is worth noting that even if there's any business activity; taxpayers are required to submit the NIL Return up to the time they are registered with GST has been completed. To reduce the burden of those taxpayers, the late fee for not providing the GSTR-3B tax form for the tax year 2017-2017, which runs from July 2017 to April 20th, 2021, is being reduced or waived in the following way:</p>
-                  </div>
-                  </div>
-
-
-                  <div class="table-responsive-sm">
-                      <table class="table border table-info">
-                        <thead>
-                          <tr>
-                            <th scope="col"> No  </th>
-                            <th scope="col"> Case  </th>
-                            <th scope="col"> Late Fee</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>1 </td>
-                            <td>Non-Return for taxpayers with no tax liability for the tax year in question;  </td>
-                            <td>Late fee cap is set to the maximal amount Rs. 500+ (Rs. 250/+ for CGST or GST) per return</td>
-                          </tr>
-                          <tr>
-                            <td>2 </td>
-                            <td>All taxpayers </td>
-                            <td>Late fee limit is set to the maximum amount of Rs 1000/ (Rs. 1000/-) (Rs. 500/- for each return to pay CGST or GST) on every return filed by any other taxpayer.</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      </div>
-                </div>
-              </section>
-            </div>
-
           </div>
-          </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
-                  <tbody>
-                    <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
-                    </tr>
-                    <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
-                    </tr>
-                    <tr>
-                      <th>DobizIndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
-                    </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
-                    </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
-                    </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
+
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2>{{minimum.heading_text}}</h2>
+                <p class="b-style text-style">{{minimum.text}}</p>
+                <div class="table-responsive-sm">
+                  <table class="table border table-info">
+                    <thead>
+                      <tr>
+                        <th scope="col"> {{minimum.heading_text2}} </th>
+                        <th scope="col"> {{minimum.heading_text3}}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{minimum.text2}}</td>
+                        <td>{{minimum.text3}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
+
+            </div>
+
+
+
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>Documents.</h2>
+              </div>
+
             </div>
           </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
         </div>
       </div>
-    </section>
+      {% include 'common_pages/pricing_sum_below.html'%}
 
-     {% endblock %}
+    </div>
+  </div>
+</section>
+
+{% include 'common_pages/fssai.html'%}
+
+<section class="checklist py-5">
+  <div class="container">
+    <div class="row py-4">
+      <h2>{{step.heading_text}}</h2>
+      <p>{{step.text}}</p>
+      <div class="table-responsive-sm">
+        <table class="table border table-info">
+          <thead>
+            <tr>
+              <th scope="col"> {{step.list1}} </th>
+              <th scope="col"> {{step.list2}} </th>
+              <th scope="col"> {{step.list3}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> 1 </td>
+              <td> {{step.list4}} </td>
+              <td> {{step.list5}}</td>
+            </tr>
+            <tr>
+              <td> 2 </td>
+              <td>{{step.list6}} </td>
+              <td> {{step.list7}}</td>
+            </tr>
+            <tr>
+              <td> 3 </td>
+              <td> {{step.list8}} </td>
+              <td> {{step.list9}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>{{step.step1}}</h2>
+      <p>{{step.answer1}}</p>
+
+      <div class="table-responsive-sm">
+        <table class="table border table-info">
+          <thead>
+            <tr>
+              <th scope="col"> {{step.list1}} </th>
+              <th scope="col"> {{step.list10}} </th>
+              <th scope="col"> {{step.list11}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> 1 </td>
+              <td> {{step.list12}} </td>
+              <td> {{step.list13}}</td>
+            </tr>
+            <tr>
+              <td> 2 </td>
+              <td> {{step.list14}} </td>
+              <td> {{step.list15}}</td>
+            </tr>
+            <tr>
+              <td> 3 </td>
+              <td> {{step.list16}} </td>
+              <td> {{step.list17}}</td>
+            </tr>
+            <tr>
+              <td>4 </td>
+              <td>{{step.list18}} </td>
+              <td>{{step.list19}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>{{step.answer2}}</p>
+
+      <p>{{step.step2}}</p>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step3}} </h5>
+          <p>{{step.answer3}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step4}} </h5>
+          <p>{{step.answer4}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step5}} </h5>
+          <p>{{step.answer5}}</p>
+        </div>
+      </div>
+      <p>{{step.answer6}}</p>
+
+      <div class="table-responsive-sm">
+        <table class="table border table-info">
+          <thead>
+            <tr>
+              <th scope="col"> {{step.list1}} </th>
+              <th scope="col"> {{step.list10}} </th>
+              <th scope="col"> {{step.list11}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1 </td>
+              <td>{{step.list20}} </td>
+              <td>{{step.list21}}</td>
+            </tr>
+            <tr>
+              <td>2 </td>
+              <td>{{step.list22}} </td>
+              <td>{{step.list23}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

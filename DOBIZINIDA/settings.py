@@ -139,3 +139,9 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_HOST_USER ='rpmltesting@gmail.com'
 EMAIL_HOST_PASSWORD = 'emqkreqdbqjcvhsv'
+
+
+####################
+
+KEY = 'rzp_test_D4hi1vsG8ESCJ2'
+SECRET = 'xuZKmllZbwmbKNT1ES0rdplp'

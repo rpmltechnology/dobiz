@@ -27,6 +27,7 @@ path("checkout",views.checkout,name="checkout"),
 path('order_history',views.order_history,name="order_history"),
 path('cart',views.cart,name="cart"),
 path('addToCart',views.addToCart, name="addToCart"),
+# path('success',views.success, name="success"),
 # path('handlerequest',views.handlerequest, name="handlerequest"),
 
 
@@ -83,33 +84,18 @@ path('foodbusiness_api/<str:page>/', views.foodbusiness_api, name='foodbusiness_
 
 
 # GENERAL LICENSE urls
+path('general/<str:page>/', views.general, name='general'),
+path('general_api/<str:page>/', views.general_api, name='general_api'),
 
-path('apeda_r_e', views.apeda_r_e, name='apeda_r_e'),
-
-path('shop_e_r', views.shop_e_r, name='shop_e_r'),
-
-path('trade_l_r', views.trade_l_r, name='trade_l_r'),
 
 # INDUSTRIAL LICENSE
-path('barcode_r', views.barcode_r, name='barcode_r'),
+path('industrial/<str:page>/', views.industrial, name='industrial'),
+path('industrial_api/<str:page>/', views.industrial_api, name='industrial_api'),
 
-path('dot_isp_l', views.dot_isp_l, name='dot_isp_l'),
-
-path('dot_osp_l_r', views.dot_osp_l_r, name='dot_osp_l_r'),
-
-path('gst_r_f', views.gst_r_f, name='gst_r_f'),
-
-path('import_e_c_r', views.import_e_c_r, name='import_e_c_r'),
-
-path('psara_l', views.psara_l, name='psara_l'),
 
 # TAX REGISTRATIONS url
-
-path('cloud_a', views.cloud_a, name='cloud_a'),
-
-path('gst_r_in_i', views.gst_r_in_i, name='gst_r_in_i'),
-
-path('import_e_c_i', views.import_e_c_i, name='import_e_c_i'),
+path('taxregister/<str:page>/', views.taxregister, name='taxregister'),
+path('taxregister_api/<str:page>/', views.taxregister_api, name='taxregister_api'),
 
 
 # TAX COMPLIANCE url

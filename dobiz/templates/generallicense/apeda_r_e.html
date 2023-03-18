@@ -1,166 +1,160 @@
 {% extends 'index.html' %}
 
 {%block title%}APEDA Registration For Exporter {% endblock %}
-
 {%block body %}
-     <section class="top-bn3 bn-styles aos-init aos-animate" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <p><b>APEDA Registration for Exporter</b></p>
-            <p>All India Online Service, All India Incorporation Service</p>
-            <h2><b>APEDA Registration  <span class="text-white">for Exporter </span></b></h2>
-            <p class="pt-4"> <b>For exporters of scheduled agricultural and processed food products, registration required under APEDA is required. It is mandatory to register under APEDA. APEDA Register is a once-only registration that grants members of APEDA numerous benefits under the government programs for exporting agricultural goods and processed foods.  
-            </b></p>
-            <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
+{% include 'common_pages/banner.html'%}
+
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div id="meaning" class="container tab-pane content active"><br>
+            <h2>{{meaning.heading_text}}</h2>
+            <p>{{meaning.heading_text2}}</p>
+
+            <h2>{{meaning.heading_text}}</h2>
+            <p><b>{{meaning.text}}</b></p>
+            <h2>{{meaning.heading_text3}}</h2>
+            <p>{{meaning.text2}}</p>
+            <p class="b-style text-style">{{meaning.text3}}</p>
+            <h2>{{meaning.heading_text4}}</h2>
+            <p>{{meaning.text4}}</p>
+
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            <li> <a class="sidelink" href="#process">
-            <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span>  Step Wise Process</a> </li>
-            </ul>
-          </div>
-
-          <div class="content content-2s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12 col-12 heading pt-2">
-                      <h2 class="fs-2">APEDA  <span class="text-primary">Sign-up</span></h2>
-                      <p class="fs-6">The agriculture and Processed Food Products Export Development Authority (APEDA) is an agency of the Government of India constituted under the Agriculture and Processed Food Products Export Development Authority Act, 1985 to facilitate the development of exports of scheduled products through financial assistance, information, and statistics and formulating standards, as well as taking action to facilitate the development of scheduled goods. The items that are specified in the APEDA ACT are referred to as Schedule products.</p>
-                      <p class="b-style text-style">All exporters scheduled to export their product(s) must sign up with APEDA. The registration application must be submitted within one month of the date of agreement to export unless Authority can extend the period for registration with a valid reason. This is a once-only registration valid and in force until it is terminated through the Authority.</p>
-                      <h2 class="fs-4">The goal of APEDA</h2>
-                      <p class="fs-6">APEDA aims to boost the export and development of scheduled products. To attain this goal, various tasks are delegated by central authorities to the agency. The central government controls the Authority of the body. The Authority is required to comply with the directives issued and follow the rules laid out by central authorities to assist in the purpose of ensuring the efficient administration of the Act. The Act constitutes an added law and does not constitute an amendment to the enforceable provisions.</p>
-                    </div>
-
-                  </div>
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2>{{minimum.heading_text}}</h2>
+                <div class="about-text-style">
+                  <ul>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.heading_text2}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.heading_text3}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.heading_text4}}</li>
+                  </ul>
                 </div>
-              </section>
+                <p class="b-style text-style">{{minimum.text}}</p>
 
-              <section class="py-4 s-img s-img1">
-                  <div class="container py-2">
-                    <div class="row">
-                      <div class="col-md-2 col-12">
-                      </div>
-                    <div class="col-md-10 col-12">
-                      <h2>The benefits of APEDA Registration</h2>
-                      <div class="about-text-style">
-                            <ul>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> It's a requirement for exporters of scheduled goods.</li>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> It's a single-time registration.</li>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> It allows registered exporters to apply for financial aid under the schemes of APEDA.</li>
-                            </ul>
-                        </div>
-                      <p>Members who are registered can be a part of training courses that are organized across a variety of Industries that deal with scheduled items.</p>
-                    </div>
-                    </div>
-                  </div>
-                </section>
-
-            </div>
-
-             <div id="process">
-
-              <section class="py-4 bg-light">
-                  <div class="container">
-                    <div class="row">
-
-                      <div class="col-md-12 col-12 heading pt-2">
-                        <h2 class="fs-4 pt-4">The most important points to remember to be aware of APEDA Registration</h2>
-                        <div class="row table-responsive-sm">
-
-                        <div class="col-md-12 col-12 p-2">
-                        <table class="table">
-                          <tbody>
-                            <tr class="table-dark">
-                              <td><b>S.No </b> Important Points</td>
-                            </tr>     
-                            <tr class="table-primary">
-                              <td> <b>1. </b>To apply for APEDA registration, an application must be submitted in writing to the Agriculture and Processed Food Products Export Development Authority (APEDA), Ministry of Commerce &amp; Industry, Government of India. Once the application is completed and the applicant pays the application fee, the authority issues Registration Cum-Membership Certificate (RCMC). The applicant needs to specify the primary branch of business at the time of applying to obtain CMC so that the application is referred to the appropriate commodities board and the Export Promotion Council relating to the particular line of business. To apply for APEDA registration, visit Dobizindia Business Solution Private Limited</td>
-                            </tr>
-
-                            <tr class="table-info">
-                              <td> <b>2. </b>The application for registration must be made within one month after the date of the undertaking of export. However, the Authority can, for a good reason, extend the period for requesting APEDA registration to the period it considers necessary.</td>
-                            </tr>
-                            <tr class="table-warning">
-                              <td> <b>3. </b> The registration is a one-time active and valid process until it is revoked through the Authority. Registered members are subject to the rules and regulations of the Agriculture and Processed Food Products Export Development Authority Act (APEDA ACT).</td>
-                            </tr>
-                            
-                            <tr class="table-light">
-                              <td> <b>4. </b>The Central government will be the governing authority. It will make the rules for prohibiting or restriction the import or export of products that are scheduled, and any person who violates any of these laws is liable to prison for a period that can extend up to one year or a fine or both, in along with confiscation and penalty provisions under the Customs Act.</td>
-                            </tr>
-
-                            <tr class="table-warning">
-                              <td> <b>5. </b>Financial assistance is offered to registered members for branding publicity via advertisements, packaging design, surveys, consultancy, upgrading databases, and more. This can only be done when the business can be registered under APEDA. To apply for APEDA registration, please visit Dobizindia Business Solution Private Limited.</td>
-                            </tr>
-
-                          </tbody>
-                        </table>
-                      </div>
-
-                    </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </section>
-
-            </div>
-
-          </div>
-          </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
-                  <tbody>
-                    <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
-                    </tr>
-                    <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
-                    </tr>
-                    <tr>
-                      <th>DobizIndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
-                    </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
-                    </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
-                    </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
-                </div>
               </div>
+
+            </div>
+
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>Documents.</h2>
+              </div>
+
             </div>
           </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
         </div>
       </div>
-    </section>
 
-    {% endblock %}
+      {% include 'common_pages/pricing_sum_below.html'%}
+
+    </div>
+  </div>
+</section>
+
+{% include 'common_pages/fssai.html'%}
+
+<section class="checklist py-5">
+  <div class="container">
+    <div class="row py-4">
+      <h2>{{step.heading_text}}</h2>
+      <div class="row table-responsive-sm">
+
+        <div class="col-md-12 col-12 p-2">
+          <table class="table">
+            <tbody>
+              <tr class="table-dark">
+                <td><b>{{step.list1}} </b> {{step.list2}}</td>
+              </tr>
+              <tr class="table-primary">
+                <td> <b>{{step.list3}} </b>{{step.answer1}}</td>
+              </tr>
+
+              <tr class="table-info">
+                <td> <b>{{step.list4}} </b>{{step.answer2}}</td>
+              </tr>
+              <tr class="table-warning">
+                <td> <b>{{step.list5}} </b>{{step.answer3}}</td>
+              </tr>
+
+              <tr class="table-light">
+                <td> <b>{{step.list6}} </b>{{step.answer4}}</td>
+              </tr>
+
+              <tr class="table-warning">
+                <td> <b>{{step.list7}} </b>{{step.answer5}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

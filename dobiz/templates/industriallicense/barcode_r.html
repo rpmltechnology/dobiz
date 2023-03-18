@@ -2,382 +2,344 @@
 {%block title%} Barcode-registration {% endblock %}
 
 {%block body %}
-    <section class="top-bn2 bn-styles" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <p><b> BarCode Registration Online</b></p>
-            <p><b> Easy Process and Transparent Fee, All India Incorporation Service</b></p>
-            <p><b> BarCode Registration Online</b></p>
-            <p class="pt-4">Barcode is a method of identification to identify products. It represents information about a product in the form of parallel lines that vary in width and spacing between them. It can be read by machines and is commonly utilized in shopping malls, supermarkets and stores. It is used to identify the item. Barcode registration is a way to identify products. Throughout India.</p>
-            <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
+{% include 'common_pages/banner.html'%}
+
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div id="meaning" class="container tab-pane content active"><br>
+            <p><b> {{meaning.heading_text}}</b></p>
+            <p><b> {{meaning.heading_text2}}</b></p>
+            <p><b> {{meaning.heading_text}}</b></p>
+            <p>{{meaning.text}}</p>
+            <h2>{{meaning.heading_text3}}</h2>
+            <p>{{meaning.text2}}</p>
+            <p class="b-style text-style">{{meaning.text3}}</p>
+
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            <li> <a class="sidelink" href="#process">
-            <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span>  Step Wise Process</a> </li>
-            <li> <a class="sidelink" href="#document">
-            <span class="icon-s"> <i class="fa fa-file-text" aria-hidden="true"></i> </span>  List of Documents</a> </li>
-            <li> <a class="sidelink" href="#faq">
-            <span class="icon-s"> <i class="fa fa-question-circle" aria-hidden="true"></i> </span>  FAQ</a> </li>
-            
-            </ul>
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2>Requirement</h2>
+
+              </div>
+
+            </div>
           </div>
 
-          <div class="content content-3s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md12 col-12 heading">
-                        <h2 class="fs-1">BarCode Registration  <span class="text-primary">Company</span> in India</h2>
-                        <p class="fs-6">Barcode is a machine-readable picture that can quickly and accurately identify the product. It is an exclusive global identification system used in supply chains for logistical product items, trade entities, documents, locations, etc. It is widely utilized to manage the supply chain of retail. Most retail stores use barcodes to identify products and their management. </p>
-                        <p class="b-style text-style">Since industrialization and the rise of industrialization, there has been an increased demand for the number of products and their variety. Due to the massive expansion of various items, their variety and quantity in the supply chain, manually collecting information about the product is a tedious job. This is why it became necessary to quickly and accurately identify the items in the supply chain. This has resulted in the creation Bar Code. Bar Code. It was then designed in the year 1970 in the year 1970 by George J. Laurer in the U.S.A.</p>
-                      </div>
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
 
-                    </div>
-                  </div>
-                </section>
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>{{document.heading_text}}</h2>
+              </div>
 
             </div>
 
-             <div id="process">
+            <div class="row table-responsive-sm">
 
-              <section class="btm_grd_banner py-4">
-                  <div class="container">
-                    <div class="row text-center">
-                      <div class="col-md-12 col-12">
-                        <div class="py-2 text-white heading2">
-                        <h2 class="py-2">Barcodes and Their Function</h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6 col-12">
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                            <h5 class="card-title card-header">Step 1: Barcode's function</h5>
-                            <br>
-                            <p class="card-text">Barcode is a technology designed to encode data like serial numbers, product codes, batch numbers, etc. The barcode can be electronically scanned via a laser or camera system to instantly determine the item and its specifications.</p>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-12 mt-4">
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                            <h5 class="card-title card-header">Step 2: Facilitates Supply Chain</h5>
-                            <br>
-                            <p class="card-text">Barcode is revolutionizing the supply chain management process by allowing traders to trade products through automated identification and tracking movements of the product across the entire supply chain. It stores data in an organized and uniform manner and then shares it with trading partners.</p>
-                          </div>
-                        </div>
-                    </div>
-
-                  </div>
-
-
-
-                  <div class="row pt-4">
-
-                    <div class="col-md-6 col-12">
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></div>
-                            <h5 class="card-title card-header">Step 3: Barcodes: Types</h5>
-                            <br>
-                            <p class="card-text">Barcodes are of various classifications based on the nature of the business or the reason for their use. These are EAN/UPC, Data Bar Family, dimensional (1D) Barcodes, Two dimensional (2D) Barcodes. The codes listed are global and are accepted in every nation worldwide. Contact us for more details.</p>
-                          </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-6 col-12 mt-4">
-                      <div class="card border-none">
-                          <div class="card-body shadow border-round">
-                            <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                            <h5 class="card-title card-header">Step 4: Barcodes are allocated to each batch. Batches</h5>
-                            <br>
-                            <p class="card-text">Barcode is a method to encode data such as serial numbers, product numbers and batch numbers. Standardized identification is accessible in a composite box of 100, and it's numerous by, for example, 1001, 1,000, 10,000, or 1 lac. So you have to choose the number of bar codes that your company requires</p>
-                          </div>
-                        </div>
-                    </div>
-
-                  </div>
-
-                </div>
-              </section>
-
-            </div>
-
-
-            <div id="document">
-              <section class="py-4 ab-banner text-white">
-                <div class="container">
-                  <div class="row">
-                  <div class="col-md-8 col-12 heading">
-                    <h2 class="py-4">Documents required to be submitted for Bar Code Registration</h2>
-                  </div>
-                  </div>
-
-
-                  <div class="row table-responsive-sm">
-
-                      <div class="col-md-5 col-12 p-2">
-                      <table class="table">
-                        <tbody>
-                          <tr class="table-dark">
-                            <td><b>A. </b> The validity of barcodes</td>
-                          </tr>     
-                          <tr class="table-primary">
-                            <td><b>1. </b> Certificate of Incorporation</td>
-                          </tr>
-
-                          <tr class="table-info">
-                            <td><b>2. </b> PAN Card as well as GST Registration Certificate</td>
-                          </tr>
-                          <tr class="table-warning">
-                            <td><b>3. </b> Balance Sheet as of 31 March.</td>
-                          </tr>
-                          
-                          <tr class="table-light">
-                            <td><b>4. </b> Any other registration copy issued by the government</td>
-                          </tr>
-
-                        </tbody>
-                      </table>
-                    </div>
-
-                    <div class="col-md-5 col-12 p-2">
-                      <table class="table">
-                        <tbody>
-                          <tr class="table-dark">
-                            <td><b>B. </b> Validity</td>
-                          </tr>     
-                          <tr class="table-primary">
-                            <td><b>1. </b> Valid from April to June Valid until March 31st</td>
-                          </tr>
-                          
-                          <tr class="table-info">
-                            <td><b>2. </b> Valid from July through September. Valid until the 30th day of June</td>
-                          </tr>
-                          <tr class="table-warning">
-                            <td><b>3. </b> Valid from Oct. to Dec. Valid till the 30th of September</td>
-                          </tr>
-                          
-                          <tr class="table-light">
-                            <td><b>4. </b> From January to March Valid until 31st December.</td>
-                          </tr>
-
-                        </tbody>
-                      </table>
-                    </div>
-
-                  </div>
-                </div>
-              </section>
-            </div>
-
-
-            <div id="faq">
-             <section class="bg-light py-4">
-                <div class="container">
-                  <div class="row">
-
-                    <div class="col-md-12 col-12 mx-auto heading2">
-                      <h2 class="text-center">The Method of  <span class="text-primary">Obtaining Bar Code</span></h2>
-                      <div class="accordion pt-2" id="accordionExample">
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Type and Number
-                            </button>
-                          </h4>
-                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                              The barcode can be found in various kinds and can be utilized in various lot sizes. The process begins with a determination of the requirement by the candidate.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              Arrange Documents
-                            </button>
-                          </h4>
-                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              Barcode applications can be used to scan documents. There are numerous documents, such as the balance sheet that proves the company's revenue, MOA etc., to be added to the barcode application.
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Government Fee
-                            </button>
-                          </h4>
-                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                             The government fee is payable via demand drafts after determining the size of the lot and the validity time of the barcode to be purchased.
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                             Delivered
-                            </button>
-                          </h4>
-                          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                             The barcodes are delivered within 2 days of receiving the order, with all the documents, including dd, and the payment of our professional charge for the service.
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-
-              <section class="btm_grd_banner bg-light py-4">
-                <div class="container">
-                  <div class="row">
-
-                    <div class="col-md-11 col-12 mx-auto heading2">
-                      <h2 class="text-center">Frequently Asked Questions</h2>
-                      <div class="accordion pt-2" id="accordionExample">
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              How is the barcode system works?
-                            </button>
-                          </h4>
-                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                              Barcode is a method to encode data such as serial number, product code and batch number. The barcode can be read electronically using a laser or camera-based system to identify the item and its specifications and thus revolutionize the management of supply chains. It allows the trade parties to identify and track the product's movements throughout the chain. It stores data in an organized and uniform manner. It communicates these data to customers and trading partners, assuring security and safety for products involved in the supply chain worldwide.
-                              
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              How many Barcodes are needed as well as when?
-                            </button>
-                          </h4>
-                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                              A unique barcode for each product is required for every product variation, such as shape, size, color, taste, and variety. Each retailer or manufacturer, when applying the barcode, must recognize the product as distinct by the requirements outlined below:
-                              <ul>
-                                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> New product</li>
-                                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The new variant of the product (shape, color, style, shape and flavor)</li>
-                                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Change of name</li>
-                                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Major product description change</li>
-                                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Declared changes to the content</li>
-                                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> New packaging type</li>
-                                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Affected by a change in weight, size or volume</li>
-                                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Gift included</li>
-
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            What is the barcode's genetics technology?
-                            </button>
-                          </h4>
-                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                             UPC Barcode was the first barcode developed by the USA in the 1970s. It's a 12-digit code commonly utilized within the USA. Then, a few years later EAN barcode was created for international use and is 13-digits in length. EAN barcodes are widely used in India as well as across the globe, except for the USA. The majority of scanners for barcodes can scan both barcodes.
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingFour">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                             What is the product identification number required for periodicals and books? 
-                            </button>
-                          </h4>
-                          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                             ISBNs are required to publish books. It allows you to identify a publisher and also permits the publisher to identify an exact addition to the book in an exact format in the output. It is not a legal necessity to have ISBNs, to sell your book through significant bookselling chains or e-commerce sites such as Amazon. You will need an ISBN to aid the internal processing and order system, much like barcodes. In the same way, ISSN is needed for Serials, Periodicals & Journals.
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-
-          </div>
-          </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
+              <div class="col-md-6 col-12 p-2">
+                <table class="table">
                   <tbody>
-                    <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
+                    <tr class="table-dark">
+                      <td><b>{{document.list1}} </b> {{document.list2}}</td>
                     </tr>
-                    <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
+                    <tr class="table-primary">
+                      <td><b>{{document.list3}} </b> {{document.list4}}</td>
                     </tr>
-                    <tr>
-                      <th>DobizIndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
+
+                    <tr class="table-info">
+                      <td><b>{{document.list5}} </b> {{document.list6}}</td>
                     </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
+                    <tr class="table-warning">
+                      <td><b>{{document.list7}} </b> {{document.list8}}</td>
                     </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
+
+                    <tr class="table-light">
+                      <td><b>{{document.list9}} </b> {{document.list10}}</td>
                     </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
-                    </tr>
+
                   </tbody>
                 </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
-                </div>
+              </div>
+
+              <div class="col-md-6 col-12 p-2">
+                <table class="table">
+                  <tbody>
+                    <tr class="table-dark">
+                      <td><b>{{document.list11}} </b> {{document.list12}}</td>
+                    </tr>
+                    <tr class="table-primary">
+                      <td><b>{{document.list13}} </b> {{document.list14}}</td>
+                    </tr>
+
+                    <tr class="table-info">
+                      <td><b>{{document.list15}} </b> {{document.list16}}</td>
+                    </tr>
+                    <tr class="table-warning">
+                      <td><b>{{document.list17}} </b> {{document.list18}}</td>
+                    </tr>
+
+                    <tr class="table-light">
+                      <td><b>{{document.list19}} </b> {{document.list20}}</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
+        </div>
+      </div>
+
+      {% include 'common_pages/pricing_sum_below.html'%}
+    </div>
+  </div>
+</section>
+
+{% include 'common_pages/fssai.html'%}
+
+<section class="checklist py-5">
+  <div class="container">
+    <div class="row py-4">
+      <h2>{{step.heading_text}}</h2>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step1}} </h5>
+          <p>{{step.answer1}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step2}} </h5>
+          <p>{{step.answer2}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step3}} </h5>
+          <p>{{step.answer3}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step4}} </h5>
+          <p>{{step.answer4}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12 col-12 mx-auto heading2">
+        <h2 class="text-center">{{step.heading_text2}} <span class="text-primary">{{step.text}}</span></h2>
+        <div class="accordion pt-2" id="accordionExample">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                {{step.step5}}
+              </button>
+            </h4>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.answer5}}
               </div>
             </div>
           </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                {{step.step6}}
+              </button>
+            </h4>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{step.answer6}}
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                {{step.step7}}
+              </button>
+            </h4>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{step.answer7}}
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                {{step.step8}}
+              </button>
+            </h4>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.answer8}}
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12 col-12">
+        <h2>{{faq.heading_text}}</h2>
+        <div class="accordion pt-2" id="accordionExample">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+               {{faq.question1}}
+              </button>
+            </h4>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer1}}
+
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                {{faq.question2}}
+              </button>
+            </h4>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer2}}
+
+                <ul>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list1}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list2}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list3}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list4}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list5}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list6}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list7}}</li>
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list8}}</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                {{faq.question3}}
+              </button>
+            </h4>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer3}}
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                {{faq.question4}}
+              </button>
+            </h4>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer4}}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% endblock %}

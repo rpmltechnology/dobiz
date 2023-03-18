@@ -2,543 +2,447 @@
 {%block title%} PSARA License {% endblock %}
 
 {%block body %}
-     <section class="top-bn3 bn-styles aos-init aos-animate" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <p>PSARA Permission for Security Agency</p>
-            <p>All India Service @ Best Rates, All India Incorporation Service</p>
+{% include 'common_pages/banner.html'%}
 
-            <h2><b>PSARA License for  <span class="text-white">Security Agency </span></b></h2>
-            <p class="pt-4"> <b>We'll provide our assistance for Documentation, Preparation for filing, and follow-up to obtain the License to create private security agencies in India. The License granted under PSARA is a legal obligation for any agency to hire security guards and provide security-related services.  
-            </b></p>
-            <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            <li> <a class="sidelink" href="#process">
-            <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span>  Step Wise Process</a> </li>
-            <li> <a class="sidelink" href="#document">
-            <span class="icon-s"> <i class="fa fa-file-text" aria-hidden="true"></i> </span>  List of Documents</a> </li>
-            <li> <a class="sidelink" href="#faq">
-            <span class="icon-s"> <i class="fa fa-question-circle" aria-hidden="true"></i> </span>  FAQ</a> </li>
-            
-            </ul>
-          </div>
+        <!-- Tab panes -->
+        <div class="tab-content">
 
-          <div class="content content-3s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12 col-12 heading pt-2">
-                      <h2 class="fs-1">Who can apply to apply for  <span class="text-primary">Psara License </span> online in India?</h2>
-                      <p class="fs-6">PSARA License is required for anyone who wants to start an enterprise in private security in India. Private Security Agency: Private Security Agency is an organization that offers Private Security Guards and other related services to the establishment as an alternative in the absence of the police. Private security agencies' operations are controlled by the Private Security Agencies Regulation Act 2005, which is enforced through the Department of Internal Security of the Ministry of Home Affairs, Government of India. </p>
-                      <p class="b-style text-style">Since the enactment of the PSARA (Act), it is now mandatory for a Security Company to obtain a License through the State Controlling Authority Concerned before launching the business. Additionally, in the event of non-compliance, the Law imposes severe sanctions. The application for a PSARA License to start a private security company is submitted to the appropriate authority of the state. This PSARA License is issued to be able to operate for one or more districts in one particular state or the whole state. </p>
-                      <div class="about-text-style">
-                          <ul>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Legal Regulations</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Legal: The Private Security Agencies (Regulation) Act, 2005</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Rules Privacy Security Agencies Central Model Rules, 2006</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Effective Date: 14th March 2006.</li>
+          <div id="meaning" class="container tab-pane content active"><br>
+            <p>{{meaning.heading_text}}</p>
+            <p>{{meaning.heading_text2}}</p>
+            <h2>{{meaning.heading_text3}}</h2>
+            <p> <b>{{meaning.text}}</b></p>
 
-                          </ul>
-                        </div>                      
-                    </div>
+            <h2>{{meaning.heading_text3}}</h2>
+            <p>{{meaning.text2}}</p>
+            <p class="b-style text-style">{{meaning.text3}}</p>
+            <div class="about-text-style">
+              <ul>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{meaning.list1}}</li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list2}}</li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list3}}</li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list4}}</li>
 
-                  </div>
-                </div>
-              </section>
-
-              <section class="py-4 s-img s-img1">
-                <div class="container py-2">
-                  <div class="row">
-                    <div class="col-md-2 col-12">
-                    </div>
-                  <div class="col-md-10 col-12">
-                    <p>State Govt Role The State Government Role is part of the central Law; however, under section 3 in PSARA, each state is required by Law to name an officer who is not below an officer of rank Joint Secretary as the authority in charge via a notification.</p>
-                    <p>Liability of License It is necessary to note that the PSARA License remains valid for five years from the date of issue or renewal. The renewal application for the Psara license must be filed at least 45 days before the license expiry date. If the License expires, a renewal application would be required.</p>
-                    <h2>Eligibility Requirements for Companies and Firms</h2>
-                    <p>Persons Eligible to Apply for PSARA: Any person, who is an individual or a legal entity, is eligible to apply for an application for PSARA License. Below is the list of those who are eligible to apply for PSARA</p>
-
-                    <div class="about-text-style">
-                          <ul>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Private Limited Company</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Partnership Firms and LLPs</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Proprietorship Firm</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Individual, etc.;</li>
-                          </ul>
-                      </div>
-                    
-                  </div>
-                  </div>
-                </div>
-              </section>
-
-            <section class="py-4 bg-light">
-                <div class="container">
-                  <div class="row">
-
-                    <div class="col-md-12 col-12 heading">
-                      <p>Name, Object and Date of Birth The entity's name should include an expression like Security Services or Related terms that define the applicant's purpose. For a company, the primary objectives of the MOA should include a distinct clause regarding the provision of Security Services.</p>
-                      <p>MOU with Training Institute: The applicants for a PSARA License have to sign an MOU with an educational institute or organization recognized by the state's control authority to provide training to security guards. There is an exemption to the requirements of training for veterans.</p>
-                      <p>National interest: The PSARA License is not granted to an individual who is found to maintain Links to an organization or an association that is prohibited under any law or in an order issued by the government to protect National Security, Public Order or to stop any activity which is harmful towards National Security.</p>
-
-                     
-                      <div class="about-text-style">
-                          <ul>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Director/ Owner Eligibility</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Education: The director/partner/owner etc., must be an 8th grader or higher.</li>
-                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Nationality and Age Indian Nation of birth, over 18 years of age.</li>
-                          </ul>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </section>
-
+              </ul>
             </div>
+          </div>
 
-             <div id="process">
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <p class="b-style text-style">{{minimum.text}}</p>
+                <p>{{minimum.text2}}</p>
 
-              <section class="btm_grd_banner py-4">
-                    <div class="container">
-                      <div class="row text-center">
-                        <div class="col-md-12 col-12">
-                          <div class="py-2 text-white heading2">
-                            <p class="fs-6">Special Qualifications: Special qualification means having completed a unique training program conducted by the training institute designed for directors, owners or the applicant's chief officer to prepare them for managing a security agency. This type of training is required for all directors and the chief officer of the firm that the applicant is in and includes anyone with an army background.</p>
-                            <p class="fs-6">Clean Precursors: The predecessor of the candidate's key people, for example, its chief or the chief officials, are checked by the police division/Controlling Power; the Following data is, for the most part, confirmed during the confirmation stage.</p>
-                            <p class="fs-6">The residence address is according to the documents and information that were filed.</p>
-                            <h2 class="fs-4">Involvement in any criminal activity in India</h2>
-                            <p class="fs-6">The controlling authority can require a document from Tehsildar to confirm antecedents. It is mandatory to state that there is no Bind over cases pending against them.</p>
-                            <p class="fs-6">The phrase "Bind Over" refers to putting a person in custody until trial, either on bail (bail) or in jail. Binding over is the term used to refer to the order that requires that a defendant be placed in custody until the conclusion of any proceedings brought against them.</p>
-
-                            <p class="fs-6"><b>Financial Status: </b> The applicant must be in good financial standing and, to establish the same authority controlling it, could request income tax returns.</p>
-                        <p class="fs-6">FDI in PSARA</p>
-                        <p class="fs-6">Section 6(2) of the Private Security Agencies (Regulation) Act in 2005 spells out the conditions for the PSARA License not issued if the applicant isn't legally registered in India or has an owner or a majority shareholder director, partner, or shareholder that is not a citizen of India. Foreign direct investment into the Private Security Agency business is permitted at a maximum of 49% in the form of a Company or LLP through the approval route. The application to approve FDI is managed through the Ministry of Home Affairs of the federal government. Therefore, before the application to grant a PSARA License is made by a business with foreign investments, it must have prior approval of FDI. The relevant reports, such as FC-GPR, must be submitted and approved.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-
-
-                  <section class="py-4">
-                    <div class="container">
-                      <div class="row">
-                        <h2 class="text-center">Step-by-Step Method of Psara</h2>
-                        <div class="col-md-6 col-12">
-                          <div class="card border-none">
-                              <div class="card-body shadow border-round">
-                                <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                                <h5 class="card-title card-header">Documentation</h5>
-                                <br>
-                                <p class="card-text">The proper documentation is required to make the process smooth, and the list of documents needed is based on the kind of applicant.</p>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-12 mt-4">
-                          <div class="card border-none">
-                              <div class="card-body shadow border-round">
-                                <div class="icon-bg mb-4"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
-                                <h5 class="card-title card-header">MOU with Training Institute</h5>
-                                <br>
-                                <p class="card-text">The applicant must sign the Memorandum of Understanding with a recognized training institution to instruct the guards and supervisors. Every state has recognized various security training institutions to train security guards and supervisors.</p>
-                              </div>
-                            </div>
-                        </div>
-
-                      </div>
-
-
-
-                      <div class="row pt-4">
-
-                        <div class="col-md-4 col-12">
-                          <div class="card border-none">
-                              <div class="card-body shadow border-round">
-                                <div class="icon-bg mb-4"><i class="fa fa-puzzle-piece" aria-hidden="true"></i></div>
-                                <h5 class="card-title card-header">Application Filing</h5>
-                                <br>
-                                <p class="card-text">The application for granting a PSARA License is filed before the state's authority in charge. A separate application has to be submitted for each state, as there is no requirement for a single central license that covers all states.</p>
-                              </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-4 col-12 mt-4">
-                          <div class="card border-none">
-                              <div class="card-body shadow border-round">
-                                <div class="icon-bg mb-4"><i class="fa fa-file-text" aria-hidden="true"></i></div>
-                                <h5 class="card-title card-header">Verification</h5>
-                                <br>
-                                <p class="card-text">Following the submission of the form, the background of the business as well as its principal officers or directors is verified through authorities at the Local Police station having jurisdiction at an address that is provided by the person who filed the application or director or principal officer(s) depending on what the situation is.</p>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-12 mt-5">
-                          <div class="mt-5"></div>
-                          <div class="card border-none">
-                              <div class="card-body shadow border-round">
-                                <div class="icon-bg mb-4"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-                                <h5 class="card-title card-header">PSARA License Issue PSARA License</h5>
-                                <br>
-                                <p class="card-text">After a thorough examination of the documents as well as the applicant's previous antecedent after which, the Controlling Authority issues the PSARA License. In certain instances, the Controlling Authority may require a personal interview with the applicant.</p>
-                              </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-9 col-12 mt-5 mx-auto">
-                          <div class="mt-5"></div>
-                          <div class="card border-none">
-                              <div class="card-body shadow border-round">
-                                <div class="icon-bg mb-4"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
-                                <h5 class="card-title card-header">State Level Variation</h5>
-                                <br>
-                                <p class="card-text">The process of granting a PSARA License is more or more or less the same across all states in India. However, there are minor differences in how documentation is prepared and presented because officers are state-owned subjects; we found that the process for antecedent confirmation of the principal, director or applicant officer differs from state to state.</p>
-                              </div>
-                            </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                  </section>
+                <h2>{{minimum.heading_text}}s</h2>
+                <p>{{minimum.text3}}</p>
+                <div class="about-text-style">
+                  <ul>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list1}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list2}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list3}}</li>
+                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list4}}</li>
+                  </ul>
+                </div>
+                <p>{{minimum.text4}}</p>
+                <p>{{minimum.text5}}</p>
+              </div>
 
             </div>
 
 
-            <div id="document">
-              <section class="py-4 ab-banner text-white">
-                <div class="container">
-                  <div class="row">
-                  <div class="col-md-8 col-12 heading">
-                    <h2 class="py-4">The list of documents required for PSARA</h2>
-                  </div>
-                  </div>
-
-
-                  <div class="row table-responsive-sm">
-
-                      <div class="col-md-4 col-12 p-2">
-                      <table class="table">
-                        <tbody>
-                          <tr class="table-dark">
-                            <td>Private Limited Company</td>
-                          </tr>     
-                          <tr class="table-primary">
-                            <td>A. Entity Documents</td>
-                          </tr>
-
-                          <tr class="table-info">
-                            <td>Certificate of Incorporation (COI)</td>
-                          </tr>
-                          <tr class="table-warning">
-                            <td>Memorandum of Association (MoA)</td>
-                          </tr>
-                          
-                          <tr class="table-light">
-                            <td>Article of Association (AOA)</td>
-                          </tr>
-
-                          <tr class="table-warning">
-                            <td>Pan Card Copy of entity</td>
-                          </tr>
-
-                        </tbody>
-                      </table>
-                    </div>
-
-                    <div class="col-md-4 col-12 p-2">
-                      <table class="table">
-                        <tbody>
-                          <tr class="table-dark">
-                            <td>B. Each Director Documents</td>
-                          </tr>     
-                          <tr class="table-primary">
-                            <td>Passport size photograph</td>
-                          </tr>
-                          
-                          <tr class="table-info">
-                            <td>Pan card, Aadhar card, Address evidence </td>
-                          </tr>
-                          <tr class="table-warning">
-                            <td>Police verification certificate</td>
-                          </tr>
-                          
-                          <tr class="table-light">
-                            <td>Educational documents</td>
-                          </tr>
-
-                        </tbody>
-                      </table>
-                    </div>
-
-                    <div class="col-md-4 col-12 p-2">
-                      <table class="table">
-                        <tbody>
-                          <tr class="table-dark">
-                            <td>C. Premises Related</td>
-                          </tr>     
-                          <tr class="table-primary">
-                            <td>Rental Agreement with the company's name</td>
-                          </tr>
-                          
-                          <tr class="table-info">
-                            <td>The verification of responsibility for property that is. latest electricity bill/property tax paid receptor sale deed(property documents) of the property</td>
-                          </tr>
-                          
-                        </tbody>
-                      </table>
-                    </div>
-
-                    <div class="col-md-4 col-12 p-2">
-                      <table class="table">
-                        <tbody>
-                          <tr class="table-dark">
-                            <td>D. Other Documents</td>
-                          </tr>     
-                          <tr class="table-primary">
-                            <td>MOU with Training Institute, Affidavits</td>
-                          </tr>
-                          
-                          <tr class="table-info">
-                            <td>Guards Photo in uniform</td>
-                          </tr>
-
-                          <tr class="table-primary">
-                            <td>Establishment photo (exterior and interior)</td>
-                          </tr>
-
-                           <tr class="table-info">
-                            <td>Shop Act registration Certificate</td>
-                          </tr>
-
-                          <tr class="table-primary">
-                            <td>PF as well as ESIC certificate (if there is one)</td>
-                          </tr>
-
-                          <tr class="table-info">
-                            <td>GST Certificate (If there is one)</td>
-                          </tr>
-                          
-                        </tbody>
-                      </table>
-                    </div>
-
-                  </div>
-                </div>
-              </section>
-
-              <section class="py-4 bg-light">
-                <div class="container">
-                  <div class="row">
-                    
-
-                    <div class="col-md-12 col-12 heading pt-4">
-                      <h2>Timing line for PSARA License</h2>
-                      <p>The period for granting of PSARA License is different between states. It depends on the standard of documentation and how quickly the antecedent verification process is completed at the police station where you live. Because many government agencies are involved, predicting a specific time duration is not ideal. The actual procedure begins once the application is submitted to the authority in charge; it can take anywhere between 90-120 days after making a PSARA application. A request for the License is possible for a district, five districts, or a state. The process of applying for a license is different for every state.</p>
-                      <h2>Price of the PSARA License</h2>
-                      <p>The cost for PSARA License is based on the total cost. PSARA License depends on mainly three heads.</p>
-                      <p><b>Professional Cost: </b> We extend our services to help you obtain PSARA License. PSARA License. We can be hired as consultants to complete licensing or for a particular objective. We ask you to request an official quote from us.</p>
-                      <p><b>Price of Training </b> A candidate must contract with a training institution for two reasons: to offer special qualifications to the directors or chief officers of the Institute and, secondly, to agree with the applicant and the Institute to provide security guards with training.</p>
-                      <p><b>The Government Fee </b> This is the government-mandated fee that applies to the PSARA License and is based on the number of districts for which it is used. The fee for the government is paid on the internet via Internet Banking or Debit/Credit Card</p>
-                    </div>
-
-                  </div>
-                </div>
-              </section>
-
-              <section class="py-4 ab-banner text-white">
-                  <div class="container">
-                    <div class="row table-responsive-sm">
-
-                        <div class="col-md-6 col-12 p-2">
-                        <table class="table">
-                          <tbody>
-                            <tr class="table-dark">
-                              <td><b>S. No. </b>Details</td>
-
-                            </tr>     
-                            <tr class="table-primary">
-                              <td><b>1. </b> For One District</td>
-                            </tr>
-
-                            <tr class="table-info">
-                              <td><b>2. </b>Up to Five Districts Upton Five District </td>
-                            </tr>
-                            <tr class="table-warning">
-                              <td><b>3. </b> For more than five Districts</td>
-                            </tr>
-                            
-                            <tr class="table-light">
-                              <td><b>4. </b>For Entire State </td>
-                            </tr>
-
-                          </tbody>
-                        </table>
-                      </div>
-
-                      <div class="col-md-6 col-12 p-2">
-                        <table class="table">
-                          <tbody>
-                            <tr class="table-dark">
-                              <td>Amount</td>
-                            </tr>   
-
-                            <tr class="table-primary">
-                              <td>Rs. 5,000/</td>
-                            </tr>
-                            
-                            <tr class="table-info">
-                              <td>Rs. 10,000/-</td>
-                            </tr>
-                            <tr class="table-warning">
-                              <td>Rs. 25,000/-</td>
-                            </tr>
-                            
-                            <tr class="table-light">
-                              <td>Rs. 25,000/-</td>
-                            </tr>
-
-                          </tbody>
-                        </table>
-                      </div>
-
-                      <p><b>Out-of-pocket fee: </b> Since the PSARA license is a collaboration between numerous government agencies and police stations, a few out-of-pocket costs are needed for travel and lodging to follow up and remove objections. The amount of out-of-pocket costs is determined by the quality of the instance.</p>
-                      <p><b>The License Conditions: </b> The PSARA defines the requirements for qualification, qualifications and disqualification of security guards. The applicant must employ supervisors to oversee the work of security personnel. If a supervisor is employed, the security organization will prefer an individual from the navy, army or air force with an average of three years of experience.</p>
-
-
-                    </div>
-                  </div>
-                </section>
-            </div>
-
-
-            <div id="faq">
-             <section class="bg-light py-4">
-                  <div class="container">
-                    <div class="row">
-
-                      <div class="col-md-11 col-12 mx-auto heading2">
-                        <h2 class="text-center">Frequently Asked  <span class="text-primary">Questions</span></h2>
-                        <div class="accordion pt-2" id="accordionExample">
-                          <div class="accordion-item">
-                            <h4 class="accordion-header" id="headingOne">
-                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                               What is the Validity of the PSARA Permission?
-                              </button>
-                            </h4>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                              <div class="accordion-body list-style">
-                                The License granted to engage or provide private security guards under the Private Security Agencies (Regulation) Act 2005 is valid for 5 years in most states. However, it is valid for a year in some states, such as Chhattisgarh and Uttarakhand. The renewal of the License may be made within 90 days before the expiration of the License.
-                              </div>
-                            </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h4 class="accordion-header" id="headingTwo">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Does an agency have the ability to work in any state after it is granted the License in one particular state?
-                              </button>
-                            </h4>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                Each state awards this License when the agency meets the conditions set by the authorities. The agency cannot operate in a state that has not obtained a PSARA License. This indicates that the License is specific to the state, and to operate in other states, one must apply for a PSARA License at the respective State control authority.<br>
-                                For instance, if a company holds a PSARA License in DELHI, It is only allowed to work within those districts in Delhi only. If it plans to work in the NCR region like NOIDA, or Gurugram, it will need to apply for a license within two states, U.P and Haryana and Haryana.
-
-                              </div>
-                            </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h4 class="accordion-header" id="headingThree">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                              What is the procedure for granting PSARA License differs from state to state?
-                              </button>
-                            </h4>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                               Yes, though the Indian Parliament has passed the primary Law which regulates the private security industry as the Private Security Agencies (Regulation) Act 2005. However, it states that each state or union territory will appoint its supervisory authority and set guidelines and procedures for making an application for the PSARA license
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="accordion-item">
-                            <h4 class="accordion-header" id="headingFour">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                               Is FDI permitted for the Private Security Agency Business in India?
-                              </button>
-                            </h4>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                              <div class="accordion-body list-style">
-                               The direct foreign investment allowed in the Private Security Agency business is permitted as high as 49% of the form of a Company or LLP with approval. The application for FDI is handled by the Ministry of Home Affairs of the union's government. Therefore, before a business makes an application for the grant of a PSARA License with foreign investments, it is required to have the prior approval of the FDI and the relevant reports, such as FC-GPR, submitted and approved.
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-            </div>
 
           </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
           </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>{{document.heading_text}}</h2>
+              </div>
+
+            </div>
+
+            <div class="row table-responsive-sm">
+
+              <div class="col-md-6 col-12 p-2">
+                <table class="table">
                   <tbody>
-                    <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
+                    <tr class="table-dark">
+                      <td>{{document.list1}}</td>
                     </tr>
-                    <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
+                    <tr class="table-primary">
+                      <td>{{document.list2}}</td>
                     </tr>
-                    <tr>
-                      <th>DobizIndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
+
+                    <tr class="table-info">
+                      <td>{{document.list3}}</td>
                     </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
+                    <tr class="table-warning">
+                      <td>{{document.list4}}</td>
                     </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
+
+                    <tr class="table-light">
+                      <td>{{document.list5}}</td>
                     </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
+
+                    <tr class="table-warning">
+                      <td>{{document.list6}}</td>
                     </tr>
+
                   </tbody>
                 </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
-                </div>
+              </div>
+
+              <div class="col-md-6 col-12 p-2">
+                <table class="table">
+                  <tbody>
+                    <tr class="table-dark">
+                      <td>{{document.list7}}</td>
+                    </tr>
+                    <tr class="table-primary">
+                      <td>{{document.list8}}</td>
+                    </tr>
+
+                    <tr class="table-info">
+                      <td>{{document.list9}} </td>
+                    </tr>
+                    <tr class="table-warning">
+                      <td>{{document.list10}}</td>
+                    </tr>
+
+                    <tr class="table-light">
+                      <td>{{document.list11}}</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="col-md-6 col-12 p-2">
+                <table class="table">
+                  <tbody>
+                    <tr class="table-dark">
+                      <td>{{document.list12}}</td>
+                    </tr>
+                    <tr class="table-primary">
+                      <td>{{document.list13}}</td>
+                    </tr>
+
+                    <tr class="table-info">
+                      <td>{{document.list14}}</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="col-md-6 col-12 p-2">
+                <table class="table">
+                  <tbody>
+                    <tr class="table-dark">
+                      <td>{{document.list15}}</td>
+                    </tr>
+                    <tr class="table-primary">
+                      <td>{{document.list16}}</td>
+                    </tr>
+
+                    <tr class="table-info">
+                      <td>{{document.list17}}</td>
+                    </tr>
+
+                    <tr class="table-primary">
+                      <td>{{document.list18}}</td>
+                    </tr>
+
+                    <tr class="table-info">
+                      <td>{{document.list19}}</td>
+                    </tr>
+
+                    <tr class="table-primary">
+                      <td>{{document.list20}}</td>
+                    </tr>
+
+                    <tr class="table-info">
+                      <td>{{document.list21}}</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
+        </div>
+      </div>
+      {% include 'common_pages/pricing_sum_below.html'%}
+
+    </div>
+  </div>
+</section>
+
+{% include 'common_pages/fssai.html'%}
+
+<section class="checklist py-5">
+  <div class="container">
+    <div class="row py-4">
+      <p>{{compliance.text}}</p>
+      <div class="about-text-style">
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{compliance.list1}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{compliance.list2}}</li>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{compliance.list3}}</li>
+        </ul>
+      </div>
+      <p>{{compliance.text2}}</p>
+      <p>{{compliance.text3}}</p>
+      <p>{{compliance.list4}}</p>
+      <h6>{{compliance.list5}}</h6>
+      <p>{{compliance.list6}}</p>
+      <p>{{compliance.text4}}</p>
+      <p class="fs-6"><b>{{compliance.list7}} </b> {{compliance.list8}}</p>
+      <p class="fs-6">FDI in PSARA</p>
+      <p>{{compliance.text5}}</p>
+      <h2 class="py-4">{{step.heading_text}}</h2>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step1}} </h5>
+          <p>{{step.answer1}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step2}} </h5>
+          <p>{{step.answer2}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step3}} </h5>
+          <p>{{step.answer3}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step4}} </h5>
+          <p>{{step.answer4}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step5}} </h5>
+          <p>{{step.answer5}}</p>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        <div class="shadow p-4">
+          <h5 class="text-primary"> {{step.step6}} </h5>
+          <p>{{step.answer6}}</p>
+        </div>
+      </div>
+
+      <h2>{{step.step7}}</h2>
+      <p>{{step.answer7}}</p>
+      <h2>{{step.step8}}</h2>
+      <p>{{step.list1}}</p>
+      <p><b>{{step.step8}} </b> {{step.answer8}}</p>
+      <p><b>{{step.step9}} </b> {{step.answer9}}</p>
+      <p><b>{{step.step10}} </b> {{step.answer10}}</p>
+
+    </div>
+
+    <div class="row table-responsive-sm">
+
+      <div class="col-md-6 col-12 p-2">
+        <table class="table">
+          <tbody>
+            <tr class="table-dark">
+              <td><b>{{step.list2}} </b>{{step.list3}}</td>
+
+            </tr>
+            <tr class="table-primary">
+              <td><b>{{step.list4}}</b> {{step.list5}}</td>
+            </tr>
+
+            <tr class="table-info">
+              <td><b>{{step.list6}} </b>{{step.list7}} </td>
+            </tr>
+            <tr class="table-warning">
+              <td><b>{{step.list8}} </b> {{step.list9}}</td>
+            </tr>
+
+            <tr class="table-light">
+              <td><b>{{step.list10}} </b>{{step.list11}} </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-6 col-12 p-2">
+        <table class="table">
+          <tbody>
+            <tr class="table-dark">
+              <td>{{step.list12}}</td>
+            </tr>
+
+            <tr class="table-primary">
+              <td>{{step.list13}}</td>
+            </tr>
+
+            <tr class="table-info">
+              <td>{{step.list14}}</td>
+            </tr>
+            <tr class="table-warning">
+              <td>{{step.list15}}</td>
+            </tr>
+
+            <tr class="table-light">
+              <td>{{step.list15}}</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <p>{{step.text}}</p>
+      <p>{{step.text2}}</p>
+
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12 col-12">
+        <h2></h2>
+        <div class="accordion pt-2" id="accordionExample">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                {{faq.question1}}
+              </button>
+            </h4>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer1}}
               </div>
             </div>
           </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                {{faq.question2}}
+              </button>
+            </h4>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer2}}
+
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                {{faq.question3}}
+              </button>
+            </h4>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer3}}
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                {{faq.question4}}
+              </button>
+            </h4>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer4}}
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
+    </div>
 
-   {% endblock %}
+  </div>
+</section>
+
+
+{% endblock %}

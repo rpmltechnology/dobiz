@@ -782,7 +782,7 @@ ul {
 }
 .heading h2::after {
     content: '';
-    border-bottom: 2px solid #00ff00;
+    border-bottom: 2px solid #3a86fe;
     width: 11%;
     display: block;
     /*margin: 0 auto;*/
@@ -803,7 +803,7 @@ ul {
 }
 .heading2 h2::after {
     content: '';
-    border-bottom: 2px solid #00ff00;
+    border-bottom: 2px solid #8338eb;
     width: 11%;
     display: block;
     margin: 0 auto;
@@ -831,13 +831,12 @@ ul {
 }
 .list-style ul li{
     list-style: none;
+    margin-top: 11px;
 }
 .list-style ul li i{
-    color: #00ff00;
+    color: #8338eb;
+    padding-right: 11px;
 }
-
-
-
 
 .chat-btn {
     position: absolute;
@@ -1026,11 +1025,25 @@ button {
 }
 
 
-
-
-
-
-
+.model-icon{
+    text-align: center;
+}
+.model-icon i {
+    font-size: 31px;
+    margin: 11px;
+    color: #8338eb;
+    background: #ddd;
+    padding: 11px;
+    border-radius: 29px;
+}
+.modal {
+    margin-top: 6%;
+}
+.btn-primary1 {
+    color: #000 !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+}
 .icon-bar {
   position: fixed;
   top: 50%;

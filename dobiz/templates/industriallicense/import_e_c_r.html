@@ -2,267 +2,239 @@
 {%block title%}Import Export Code Renewal {% endblock %}
 
 {%block body %}
-     <section class="top-bn2 bn-styles aos-init aos-animate" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <h2><b>Import Export Code  <span class="text-white">Renewal  </span></b></h2>
-            <p class="pt-4"> <b>Renew IEC, Escape Deactivation, All India Incorporation Service Import Export Code Renewal  
-            </b></p>
-            <p>The Import Export Code is a non-permanent number assigned by DGFT to importers and exporters involved in international trade. But the IEC is required to be renewed each year from April to June to remain in use. If it is not renewed, it will result in the removal of the IEC. </p>
-            <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
+{% include 'common_pages/banner.html'%}
+
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div id="meaning" class="container tab-pane content active"><br>
+            <h2>{{meaning.category}}</h2>
+            <p> <b>{{meaning.heading_text}}</b></p>
+            <p>{{meaning.text}}</p>
+
+            <h2>{{meaning.heading_text2}}</h2>
+            <p>Y{{meaning.text2}}</p>
+            <p class="b-style text-style">{{meaning.text}}3</p>
+
           </div>
+
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2>{{minimum.heading_text}}</h2>
+                <p class="b-style text-style">{{minimum.text}}</p>
+
+                <h2>{{minimum.heading_text2}}</h2>
+                <div class="table-responsive-sm">
+                  <table class="table border table-info">
+                    <thead>
+                      <tr>
+                        <td>{{minimum.list1}}</td>
+                        <td> {{minimum.list2}}</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{minimum.list3}} </td>
+                        <td>{{minimum.text2}}</td>
+                      </tr>
+                      <tr>
+                        <td>{{minimum.list4}}</td>
+                        <td>{{minimum.text3}}</td>
+                      </tr>
+                      <tr>
+                        <td>{{minimum.list5}} </td>
+                        <td>{{minimum.list6}}</td>
+                      </tr>
+
+                      <tr>
+                        <td>{{minimum.list7}} </td>
+                        <td>{{minimum.list8}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+
+
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <div class="py-2 heading2">
+                  <h2 class="py-2 text-center fs-4">{{document.heading_text}} </h2>
+                  <div class="table-responsive-sm">
+                    <table class="table border table-info">
+                      <thead>
+                        <tr>
+                          <td>1 </td>
+                          <td>{{document.list1}}</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>2 </td>
+                          <td>{{document.list2}}</td>
+                        </tr>
+                        <tr>
+                          <td>3 </td>
+                          <td>{{document.list3}}</td>
+                        </tr>
+                        <tr>
+                          <td>4 </td>
+                          <td>{{document.list4}}</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>{{document.list5}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-md-12 col-12">
+                <div class="py-2 heading2">
+                  <h2 class="py-2 text-center fs-4">{{document.heading_text2}}</h2>
+                  <div class="table-responsive-sm">
+                    <table class="table border table-info">
+                      <thead>
+                        <tr>
+                          <td>{{document.list6}}</td>
+                          <td>{{document.list7}}</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td> <br> {{document.list8}} <br><br>
+                          </td>
+                          <td> <br> {{document.list9}} <br><br>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
         </div>
       </div>
-    </section>
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            <li> <a class="sidelink" href="#process">
-            <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span>  Step Wise Process</a> </li>
-            
-            <li> <a class="sidelink" href="#faq">
-            <span class="icon-s"> <i class="fa fa-question-circle" aria-hidden="true"></i> </span>  FAQ</a> </li>
-            
-            </ul>
-          </div>
+      {% include 'common_pages/pricing_sum_below.html'%}
 
-          <div class="content content-3s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12 col-12 heading pt-2">
-                      <h2 class="fs-2">Annual Renewal or <span class="text-primary">Updating of IEC </span></h2>
-                      <p class="fs-6">You must be aware that the Import Export Code (IEC) is a unique PAN-based ID maintained by DGFT and is a mandatory requirement for any transaction involving either export or import. Although the IEC is a code that can be used for a long time, India's government, India, is, as of 2021, introducing an annual update requirement that applies to everyone with an IEC. The IEC update is an online process completed using DSC or Aadhar for the OTP to verify. The reason for this annual renewal of IEC is to provide accurate and up-to-date information about the company and customers of the DGFT portal. It is vital to keep the IEC regularly updated on an annual basis, with the accurate OTP Verified email addresses and mobile numbers for the business, to ensure that the database of the DGFT is accurate and reliable.</p>
-                      <p class="b-style text-style">The DGFT, with its Trade Notice No 01/2021-22 of the 29th of April 2021, introduced the requirement for an annual update of the IEC, which has been obligatory from FY 2021-22. The IEC holders must update their IEC between April and June 2021. But, the deadline has been extended to 31st August 2021. The agreement further states that the failure to update will cause the deactivation of the IEC. </p>
-                      
-                    </div>
+    </div>
+  </div>
+</section>
 
-                    
-                  </div>
-                </div>
-              </section>
+{% include 'common_pages/fssai.html'%}
 
-              <section class="py-4 s-img s-img1">
-                <div class="container py-5">
-                  <div class="row">
-                    <div class="col-md-1 col-12">
-                    </div>
-                  <div class="col-md-11 col-12">
-                    <h2>Deadline to IEC Renewal </h2>
-                    <p>The deadline for renewing IEC Import Export Code is April through June. This means that the IEC holders must make the necessary measures to upgrade their e-IEC by the beginning of the fiscal year. The final date for filling out the IEC Renewal is 30th June. But, for FY 2021-22, due to the COVID pandemic, the deadline for making filing for the year-end IEC Renewal has been extended until the 31st of August 2021. </p>
-                    
-                  </div>
-                  </div>
-                </div>
-              </section>
+<section class="checklist py-5">
+  <div class="container">
 
-            <section class="py-4 bg-light">
-                <div class="container">
-                  <div class="row">
+    <div class="row">
 
-                    <div class="col-md-12 col-12 heading">
-                      <h2 class="fs-4 pt-4">The Stepwise Process for the Annual Renewal of IEC</h2>
-                      <div class="table-responsive-sm">
-                      <table class="table border table-info">
-                        <thead>
-                          <tr>
-                            <td>Step: 1</td>
-                            <td> An Import Export Coding (IEC) user must sign up for the DGFT Portal by providing the company's email, mobile, address, as well as the Authorized Name.</td>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Step: 2 </td>
-                            <td>The first step is that you need to select the category you want to be in: Importer CA, CS, Technical Authority and Foreign Importer/Exporter then, you need to input your name, email ID, Mobile Number, and address, after which click to send OTP. You will receive an OTP for the same Mobile no and Email ID.</td>
-                          </tr>
-                          <tr>
-                            <td>Step: 3</td> 
-                            <td>After the verification of OTP and verification of OTP, you will receive USER Identification Number and password from DGFT with your email id. Then log on to the DGFT Website using the password and user ID you received in the mail.</td>
-                          </tr>
-                          <tr>
-                            <td>Step: 4 </td>
-                            <td>After logging in successfully After logging in successfully, click after logging in, click on the Link IEC button displayed on the homepage.</td>
-                          </tr>
-
-                          <tr>
-                            <td>Step: 5 </td>
-                            <td>Enter your old IEC Number and verify it using Aadhaar or an Aadhaar-based OTP and/or Digital Signature.</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </section>
-
-            </div>
-
-             <div id="process">
-
-              <section class="btm_grd_banner py-4">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-6 col-12">
-                        <div class="py-2 text-white heading2">
-                        <h2 class="py-2 text-center fs-4">Listed of documents to be Used for renewal of IEC </h2>
-                        <div class="table-responsive-sm">
-                        <table class="table border table-info">
-                          <thead>
-                            <tr>
-                              <td>1 </td>
-                              <td>Incorporation documents</td>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>2 </td>
-                              <td>address proof of the Firm or Company</td>
-                            </tr>
-                            <tr>
-                              <td>3 </td>
-                              <td>Cancelled Cheque</td>
-                            </tr>
-                            <tr>
-                              <td>4 </td>
-                              <td>Aadhar of Director/Partner/Owner</td>
-                            </tr>
-                            <tr>
-                              <td>5</td>
-                              <td> Digital Signature</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        </div>
-
-                        </div>
-                      </div>
-
-                      <div class="col-md-6 col-12">
-                        <div class="py-2 text-white heading2">
-                        <h2 class="py-2 text-center fs-4">Renew Fees for Export Import Code</h2>
-                        <div class="table-responsive-sm">
-                        <table class="table border table-info">
-                          <thead>
-                            <tr>
-                              <td>Fees for Government</td> 
-                              <td>Professional FeesFees for Government  Professional Fees</td>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td> <br> There isn't a Government Fee payable to DGFT to process the IEC Renewal. It is entirely online. <br><br>
-                                </td> 
-                              <td> <br> Get Started - Rs. 1499. We offer our services to IEC Renewal/Updating <br><br>
-                                </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        </div>
-
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </section>
-
-            </div>
-
-
-            
-
-            <div id="faq">
-             <section class="bg-light py-4">
-                <div class="container">
-                  <div class="row">
-
-                    <div class="col-md-11 col-12 mx-auto heading2">
-                      <div class="accordion pt-2" id="accordionExample">
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Consequences of Submission of IEC Renewal
-                            </button>
-                          </h4>
-                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body list-style">
-                              If An Import Export Code covers your company, ensure the timely renewal each year. Updating the IEC is mandatory and must be completed by the due date. If you fail to complete the update of the IEC will result in the deactivation or deactivation of the IEC. An inactive IEC cannot be used in international commerce and could cause an unnecessary burden for customs officials since it is active. IEC is necessary for the clearance of imported goods and export. We strongly recommend that you make sure that you complete the renewal of your IEC without delay to be able to avoid the deactivation of your IEC. We can assist you with a small cost to renew your IEC. 
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                          <h4 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              Restore of IEC 
-                            </button>
-                          </h4>
-                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                              If it is not renewed by the due date or not renewed by the due date, it's not done by its due date Import Export Code, and then the IEC becomes inactive and cannot be used indefinitely. It is necessary to change the information as advised in this article to activate your IEC. Also, the IEC is removed if the annual update is not submitted on time and remains inactive until IEC is renewed or updated.
-                            </div>
-                          </div>
-                        </div>
-
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-
-          </div>
-          </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
-                  <tbody>
-                    <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
-                    </tr>
-                    <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
-                    </tr>
-                    <tr>
-                      <th>DobizIndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
-                    </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
-                    </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
-                    </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
-                </div>
+      <div class="col-md-12 col-12">
+        <div class="accordion pt-2" id="accordionExample">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                {{faq.question1}}
+              </button>
+            </h4>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+               {{faq.answer1}}
               </div>
             </div>
           </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                {{faq.question2}}
+              </button>
+            </h4>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+               {{faq.answer2}}
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
-    </section>
+    </div>
+
+  </div>
+</section>
+
 {% endblock %}
