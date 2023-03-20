@@ -10,7 +10,7 @@ from .models import *
 
 admin.site.site_header ="Dobiz Dashboard"
 class OrderSort(ImportExportModelAdmin):
-    list_display = ('user','product','email','status','name','address_line_1','address_line_2','address_line_3','remarks','buy_time','order_time')
+    list_display = ('user','product','email','status','name','address1','address2','address3','remarks','buy_time','order_time')
     list_filter = ('product','email','status','name','buy_time','order_time')
     ordering=["-id"]
 admin.site.register(Order,OrderSort)

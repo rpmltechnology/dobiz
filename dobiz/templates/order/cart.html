@@ -123,6 +123,7 @@ table th {
         <th scope="col">Total GST</th>
         <th scope="col">Other</th>
         <th scope="col">Price</th>
+        <th scope="col">Coupons(*if any)</th>
         <th scope="col">Buy</th>
         <!-- <th scope="col">Clear</th> -->
       </tr>
@@ -136,6 +137,11 @@ table th {
         <td data-label="Role">{{i.product.gst}}</td>
         <td data-label="Title">{{i.product.other_cost}}</td>
         <td data-label="Website">{{i.product.price}}</td>
+        <td data-label="Website"> <form method="POST">{% csrf_token %}
+          <input type="text" class="uppercase" placeholder="APPLY COUPAN" name="coupan">
+          <input type="hidden" class="uppercase" value="{{i.product.id}}" name="id">
+          <button id="applyBtn" type="submit" class="b-main-color pointer">Apply</button>          
+        </form></td>
         <td data-label="Role"><button id="rzp-button1">Buy Now</a></td>
         <!-- <td data-label="Role"><a href="/checkout?id={{i.product.id}}&order_id={{i.id}}">Buy Now</a></td> -->
         <!-- <td data-label="Website">

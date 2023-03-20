@@ -134,9 +134,6 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.views import LoginView, LogoutView
 
 
-{% post_to_whatsapp i.product_name|urlencode i.get_absolute_url %}
-
-
  #Request Paytm to transfer the amount to your Payment by User
     # param_dict = {
     #     'MID':'AwelBN38594741815146',
@@ -197,3 +194,11 @@ function updateCartItem(productId, quantity) {
   localStorage.setItem('items', JSON.stringify(updatedCartItems));
 }
     </script> -->
+
+client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
+        amount = int(final_price * 100)
+        Print('*****************************')
+        print(payment)
+        Print('*****************************')
+        payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
+        order.razor_pay_order_id = payment['id']

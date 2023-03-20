@@ -219,14 +219,14 @@
                   <div class="col-megamenu">
                     <h6 class="title">TAX COMPLIANCE</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{% url 'ad_tax' %}">Advance-tax </a></li>
+                      <li><a href="{% url 'taxcompliance' page='ad_tax' %}">Advance-tax </a></li>
                       <li><a href="{% url 'industrial' page='gst_r_f' %}">GST Return Filing </a></li>
-                      <li><a href="{% url 'income_t_r_f' %}">Income-tax-return-filing </a></li>
-                      <li><a href="{% url 'professional_t_r' %}">Professional Tax Registration </a></li>
-                      <li><a href="{% url 'registration_l' %}">registration-licenses </a></li>
-                      <li><a href="{% url 'tax_a_s' %}">Tax Assessment & Scrutiny </a></li>
-                      <li><a href="{% url 'tax_a_c' %}">tax-audit by ca </a></li>
-                      <li><a href="{% url 'tax_d_s' %}">tax-deducted-source </a></li>
+                      <li><a href="{% url 'taxcompliance' page='income_t_r_f' %}">Income-tax-return-filing </a></li>
+                      <li><a href="{% url 'taxcompliance' page='professional_t_r' %}">Professional Tax Registration </a></li>
+                      <li><a href="{% url 'taxcompliance' page='registration_l' %}">registration-licenses </a></li>
+                      <li><a href="{% url 'taxcompliance' page='tax_a_s' %}">Tax Assessment & Scrutiny </a></li>
+                      <li><a href="{% url 'taxcompliance' page='tax_a_c' %}">tax-audit by ca </a></li>
+                      <li><a href="{% url 'taxcompliance' page='tax_d_s' %}">tax-deducted-source </a></li>
                     </ul>
                   </div> <!-- col-megamenu.// -->
                 </div><!-- end col-3 -->
@@ -235,9 +235,9 @@
                   <div class="col-megamenu">
                     <h6 class="title">PAYROLL & FUNDING</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{% url 'epf_r' %}">EPF Registration </a></li>
-                      <li><a href="{% url 'esic_r' %}">esic-registration </a></li>
-                      <li><a href="{% url 'tax_p' %}">Tax and Payroll </a></li>
+                      <li><a href="{% url 'payrollfunding' page='epf_r' %}">EPF Registration </a></li>
+                      <li><a href="{% url 'payrollfunding' page='esic_r' %}">esic-registration </a></li>
+                      <li><a href="{% url 'payrollfunding' page='tax_p' %}">Tax and Payroll </a></li>
                     </ul>
                   </div> <!-- col-megamenu.// -->
                 </div><!-- end col-3 -->

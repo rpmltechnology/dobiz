@@ -3,35 +3,125 @@
 {%block title%} Income-tax-return-filing {% endblock %}
 
 {%block body %}
-    {%load static %}
-<section class="top-bn1 bn-styles aos-init aos-animate" data-aos="fade-left">
-  <div class="container">
-    <div class="row pt-4">
-      <div class="col-md-8 col-12 pt-5 pt-5">
-        <p><b>Filing Income Tax Returns  </b></p>
-        <p><b>Simple Process and Transparent Fee </b></p>
-        <p><b>All India Incorporation Service </b></p>
+{% load static %}
+{% include 'common_pages/banner.html'%}
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
 
-        <h2><b>Income Tax  <span class="text-white">Return Filing  </span></b></h2>
-        <p class="pt-4"> <b>ITR filing is a yearly event that applies to all taxpayers, whether they are a business, LLP or Individual. Taxation of income is different according to the taxpayer. We have designed easy to comprehend packages for filing income tax returns. Note that these are not charges for software access but a basic CA-assisted ITR filing service.   
-        </b></p>
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div id="meaning" class="container tab-pane content active"><br>
+            <p><b>{{meaning.heading_text}} </b></p>
+            <p><b>{{meaning.heading_text2}} </b></p>
+            <p><b>{{meaning.heading_text3}} </b></p>
+
+            <h2>{{meaning.heading_text4}}</h2>
+            <p> <b>{{meaning.text}}</b></p>
+            <div class="text-center py-4"><img src="/media/{{ meaning.img }}" alt="logo-img" class="img-fluid"></div>
+          </div>
+
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2>Requirement</h2>
+
+              </div>
+
+            </div>
+
+
+
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>Documents.</h2>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
+        </div>
       </div>
+
+      {% include 'common_pages/pricing_sum_below.html' %}
+
     </div>
   </div>
 </section>
 
-<section class="text-white py-5 review v-banner aos-init aos-animate" data-aos="fade-down">
+{% include 'common_pages/fssai.html'%}
+
+<section class="text-white py-5 bg-dark v-banner aos-init aos-animate" data-aos="fade-down">
   <div class="container">
     <div class="row">
 
       <div class="col-md-6 col-12 heading">
-        <h2 class="fs-4 pt-4">Income Tax Return Filing</h2>
-        <p>ITR filing is an annual event applicable for all types of taxpayers whether it is a company, LLP or Individual. The income is taxed differently based on type of tax payer. We have made simple to understand packages for income tax return filing. Please note these are not software access fees but a real CA Assisted ITR Filing Service.</p>
+        <h2 class="fs-4 pt-4">{{minimum.heading_text}}</h2>
+        <p>{{minimum.text}}</p>
       </div>
 
       <div class="col-md-6 col-12">
         <div class="embed-responsive embed-responsive-16by9 border">
-          <iframe src="https://www.youtube.com/embed/NPkPtu61yV4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="{{minimum.text2}}" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen=""></iframe>
         </div>
       </div>
 
@@ -39,13 +129,11 @@
   </div>
 </section>
 
-
-
 <section class="py-5 tax-filling">
   <div class="container">
     <div class="row heading2">
-      <h2 class="text-center">CA Assisted Tax Filing Plans By dobizindia</h2>
-      <p class="text-center">Easy & Online Tax Filing Service By Chartered Accountants. No Software can do a better job than a CA.</p>
+      <h2 class="text-center">{{closure.heading_text}}</h2>
+      <p class="text-center">{{closure.heading_text2}}</p>
       <div class="pt-4"></div>
       <div class="col-md-3 col-6">
         <div class="card mb-3">
@@ -54,7 +142,7 @@
               <i class="fa fa-handshake-o" aria-hidden="true"></i>
             </div>
             <div class="col-md-9">
-                <p class="card-text">Dedicated Relationship Manager</p>
+              <p class="card-text">{{closure.text}}</p>
             </div>
           </div>
         </div>
@@ -67,7 +155,7 @@
               <i class="fa fa-inr" aria-hidden="true"></i>
             </div>
             <div class="col-md-9">
-                <p class="card-text"> 100% Transparent and Accurate Tax Computation</p>
+              <p class="card-text"> {{closure.text2}}</p>
             </div>
           </div>
         </div>
@@ -80,7 +168,7 @@
               <i class="fa fa-file-text-o" aria-hidden="true"></i>
             </div>
             <div class="col-md-9">
-                <p class="card-text">Online process and Live Track of the progress</p>
+              <p class="card-text">{{closure.text3}}</p>
             </div>
           </div>
         </div>
@@ -93,7 +181,7 @@
               <i class="fa fa-user" aria-hidden="true"></i>
             </div>
             <div class="col-md-9">
-                <p class="card-text">Advisory and Consultation with CA</p>
+              <p class="card-text">{{closure.text4}}</p>
             </div>
           </div>
         </div>
@@ -102,139 +190,144 @@
   </div>
 </section>
 
-
 <section class="py-5 bg-light">
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-12">
         <div>
-        <h4><b> Pricing for Individual </b></h4>
-        <p>For Salaried Individual or With No Business Income</p>
+          <h4><b> {{benefit.heading_text}} </b></h4>
+          <p>{{benefit.heading_text2}}</p>
         </div>
       </div>
 
       <div class="col-md-3 col-12">
         <div class="plan-bg1 p-2">
-        <p class="border-start p-1 border-primary text-primary">PLAN A</p>
-        <h5><b> Salary or Rental Income </b></h5>
-        <h4 class="text-primary"><b> ₹ 749/- </b></h4>
-        <p class="bg-grad1 text-white p-2"> COVERS INCOME FROM </p>
-        <div class="plantext-b">
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Salary</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Rent from House Property</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Bank/FD Interest</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Does not include Business Income</p>
-        </div>
+          <p class="border-start p-1 border-primary text-primary">{{benefit.list1}}</p>
+          <h5><b>{{benefit.list2}}</b></h5>
+          <h4 class="text-primary"><b> {{benefit.list3}} </b></h4>
+          <p class="bg-grad1 text-white p-2"> {{benefit.list4}} </p>
+          <div class="plantext-b">
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list5}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list6}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list7}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list8}}</p>
+          </div>
 
-        <div class="d-grid gap-2 pt-4">
-         <button class="btn btn-outline-primary" type="button"> <a href="{% url 'order' %}" class="text-dark"> Order now </a> </button>
-        </div>
+          <div class="d-grid gap-2 pt-4">
+            <button class="btn btn-outline-primary" type="button"> <a href="{% url 'order' %}" class="text-dark"> Order now </a>
+            </button>
+          </div>
         </div>
       </div>
 
       <div class="col-md-3 col-12">
         <div class="plan-bg2 p-2">
-        <p class="border-start p-1 border-danger text-danger">PLAN A</p>
-        <h5><b> Salary or Rental Income </b></h5>
-        <h4 class="text-danger"><b> ₹ 749/- </b></h4>
-        <p class="bg-grad2 text-white p-2"> COVERS INCOME FROM </p>
-        <div class="plantext-b">
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Salary</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Rent from House Property</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Bank/FD Interest</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Does not include Business Income</p>
-        </div>
+          <p class="border-start p-1 border-danger text-danger">{{benefit.list1}}</p>
+          <h5><b> {{benefit.list2}} </b></h5>
+          <h4 class="text-danger"><b> {{benefit.list3}} </b></h4>
+          <p class="bg-grad2 text-white p-2">  {{benefit.list4}} </p>
+          <div class="plantext-b">
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b>{{benefit.list5}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list6}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list7}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list8}}</p>
+          </div>
 
-        <div class="d-grid gap-2 pt-4">
-         <button class="btn btn-outline-danger" type="button"> <a href="{% url 'order' %}" class="text-dark"> Order now </a> </button>
-        </div>
+          <div class="d-grid gap-2 pt-4">
+            <button class="btn btn-outline-danger" type="button"> <a href="{% url 'order' %}" class="text-dark"> Order now </a>
+            </button>
+          </div>
         </div>
       </div>
 
       <div class="col-md-3 col-12">
         <div class="plan-bg3 p-2">
-        <p class="border-start p-1 border-success text-success">PLAN A</p>
-        <h5><b> Salary or Rental Income </b></h5>
-        <h4 class="text-success"><b> ₹ 749/- </b></h4>
-        <p class="bg-grad3 text-white p-2"> COVERS INCOME FROM </p>
-        <div class="plantext-b">
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Salary</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Rent from House Property</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Bank/FD Interest</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Does not include Business Income</p>
-        </div>
+          <p class="border-start p-1 border-success text-success">{{benefit.list1}}</p>
+          <h5><b> {{benefit.list2}} </b></h5>
+          <h4 class="text-success"><b> {{benefit.list3}} </b></h4>
+          <p class="bg-grad3 text-white p-2">  {{benefit.list4}}  </p>
+          <div class="plantext-b">
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list5}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list6}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list7}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list8}}</p>
+          </div>
 
-        <div class="d-grid gap-2 pt-4">
-         <button class="btn btn-outline-success" type="button"> <a href="{% url 'order' %}" class="text-dark"> Order now </a> </button>
-        </div>
+          <div class="d-grid gap-2 pt-4">
+            <button class="btn btn-outline-success" type="button"> <a href="{% url 'order' %}" class="text-dark"> Order now </a>
+            </button>
+          </div>
         </div>
       </div>
 
     </div>
 
-  <br />
+    <br>
     <div class="row pt-5">
       <div class="col-md-3 col-12">
         <div>
-        <h4><b> Pricing for Individual </b></h4>
-        <p>For Salaried Individual or With No Business Income</p>
+          <h4><b> {{benefit.heading_text}} </b></h4>
+          <p>{{benefit.heading_text2}}</p>
         </div>
       </div>
 
       <div class="col-md-3 col-12">
         <div class="plan-bg1 p-2">
-        <p class="border-start p-1 border-primary text-primary">PLAN A</p>
-        <h5><b> Salary or Rental Income </b></h5>
-        <h4 class="text-primary"><b> ₹ 749/- </b></h4>
-        <p class="bg-grad1 text-white p-2"> COVERS INCOME FROM </p>
-        <div class="plantext-b">
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Salary</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Rent from House Property</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Bank/FD Interest</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Does not include Business Income</p>
-        </div>
+          <p class="border-start p-1 border-primary text-primary">{{benefit.list1}}</p>
+          <h5><b>{{benefit.list2}}</b></h5>
+          <h4 class="text-primary"><b> {{benefit.list3}} </b></h4>
+          <p class="bg-grad1 text-white p-2"> {{benefit.list4}} </p>
+          <div class="plantext-b">
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list5}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list6}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list7}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list8}}</p>
+          </div>
 
-        <div class="d-grid gap-2 pt-4">
-         <button class="btn btn-outline-primary" type="button"> <a href="{% url 'order' %}" class="text-dark"> Order now </a> </button>
-        </div>
+          <div class="d-grid gap-2 pt-4">
+            <button class="btn btn-outline-primary" type="button"> <a href="{% url 'order' %}" class="text-dark"> Order now </a>
+            </button>
+          </div>
         </div>
       </div>
 
       <div class="col-md-3 col-12">
         <div class="plan-bg2 p-2">
-        <p class="border-start p-1 border-danger text-danger">PLAN A</p>
-        <h5><b> Salary or Rental Income </b></h5>
-        <h4 class="text-danger"><b> ₹ 749/- </b></h4>
-        <p class="bg-grad2 text-white p-2"> COVERS INCOME FROM </p>
-        <div class="plantext-b">
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Salary</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Rent from House Property</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Bank/FD Interest</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Does not include Business Income</p>
-        </div>
+          <p class="border-start p-1 border-danger text-danger">{{benefit.list1}}</p>
+          <h5><b> {{benefit.list2}} </b></h5>
+          <h4 class="text-danger"><b> {{benefit.list3}} </b></h4>
+          <p class="bg-grad2 text-white p-2">  {{benefit.list4}} </p>
+          <div class="plantext-b">
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b>{{benefit.list5}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list6}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list7}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list8}}</p>
+          </div>
 
-        <div class="d-grid gap-2 pt-4">
-         <button class="btn btn-outline-danger" type="button"> <a href="{% url 'order' %}" class="text-dark"> Order now </a> </button>
-        </div>
+          <div class="d-grid gap-2 pt-4">
+            <button class="btn btn-outline-danger" type="button"> <a href="{% url 'order' %}" class="text-dark"> Order now </a>
+            </button>
+          </div>
         </div>
       </div>
 
       <div class="col-md-3 col-12">
         <div class="plan-bg3 p-2">
-        <p class="border-start p-1 border-success text-success">PLAN A</p>
-        <h5><b> Salary or Rental Income </b></h5>
-        <h4 class="text-success"><b> ₹ 749/- </b></h4>
-        <p class="bg-grad3 text-white p-2"> COVERS INCOME FROM </p>
-        <div class="plantext-b">
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Salary</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Rent from House Property</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Bank/FD Interest</p>
-        <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> Does not include Business Income</p>
-        </div>
+          <p class="border-start p-1 border-success text-success">{{benefit.list1}}</p>
+          <h5><b> {{benefit.list2}} </b></h5>
+          <h4 class="text-success"><b> {{benefit.list3}} </b></h4>
+          <p class="bg-grad3 text-white p-2">  {{benefit.list4}}  </p>
+          <div class="plantext-b">
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list5}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list6}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list7}}</p>
+            <p> <b> <i class="fa fa-chevron-right" aria-hidden="true"></i> </b> {{benefit.list8}}</p>
+          </div>
 
-        <div class="d-grid gap-2 pt-4">
-         <button class="btn btn-outline-success" type="button"> <a href="{% url 'order' %}" class="text-dark"> Order now </a> </button>
-        </div>
+          <div class="d-grid gap-2 pt-4">
+            <button class="btn btn-outline-success" type="button"> <a href="{% url 'order' %}" class="text-dark"> Order now </a>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -243,13 +336,12 @@
 </section>
 
 
-
 <section class="py-5 tax-return">
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-12">
-        <h2 class="text-primary py-2">Important Information On Income Tax Return (ITR)</h2>
-        <img src="{% static 'images/requirements.png' %}" class="img-fluid" alt="tex-img">
+        <h2 class="text-primary py-2">{{compliance.heading_text}}</h2>
+        <img src="/media/{{ compliance.img }}" class="img-fluid" alt="tex-img">
       </div>
 
       <div class="col-md-8 col-12">
@@ -259,8 +351,8 @@
               <i class="fa fa-handshake-o" aria-hidden="true"></i>
             </div>
             <div class="col-md-10">
-              <h4 class="tex-spc-text card-text"><b>First Pay Tax Then File Return</b></h4>
-                <p class="tex-spc-text">Filing of income tax return is a self assessment method wherein the taxpayer needs to make a computation of taxable income earned during the previous year and the income tax payable thereon. Before filing the return, the due tax must be paid. The tax can be paid online or through challan 280 by depositing in bank with cheque or cash.</p>
+              <h4 class="tex-spc-text card-text"><b>{{compliance.heading_text2}}</b></h4>
+              <p class="tex-spc-text">{{compliance.text}}</p>
             </div>
           </div>
         </div>
@@ -271,8 +363,8 @@
               <i class="fa fa-handshake-o" aria-hidden="true"></i>
             </div>
             <div class="col-md-10">
-              <h4 class="tex-spc-text card-text"><b>First Pay Tax Then File Return</b></h4>
-                <p class="tex-spc-text">Filing of income tax return is a self assessment method wherein the taxpayer needs to make a computation of taxable income earned during the previous year and the income tax payable thereon. Before filing the return, the due tax must be paid. The tax can be paid online or through challan 280 by depositing in bank with cheque or cash.</p>
+              <h4 class="tex-spc-text card-text"><b>{{compliance.heading_text2}}</b></h4>
+              <p class="tex-spc-text">{{compliance.text}}</p>
             </div>
           </div>
         </div>
@@ -283,8 +375,8 @@
               <i class="fa fa-handshake-o" aria-hidden="true"></i>
             </div>
             <div class="col-md-10">
-              <h4 class="tex-spc-text card-text"><b>First Pay Tax Then File Return</b></h4>
-                <p class="tex-spc-text">Filing of income tax return is a self assessment method wherein the taxpayer needs to make a computation of taxable income earned during the previous year and the income tax payable thereon. Before filing the return, the due tax must be paid. The tax can be paid online or through challan 280 by depositing in bank with cheque or cash.</p>
+              <h4 class="tex-spc-text card-text"><b>{{compliance.heading_text2}}</b></h4>
+              <p class="tex-spc-text">{{compliance.text}}</p>
             </div>
           </div>
         </div>
@@ -293,173 +385,173 @@
     </div>
   </div>
 </section>
-
 
 <section class="py-5 bg-light">
   <div class="container">
     <div class="row">
       <div class="col-md-9 mx-auto col-12 heading2">
-        <h2 class="text-center"><b>Due Date Of Filing of ITR for Assessment Year 2020-21</b></h2>
+        <h2 class="text-center"><b>{{document.heading_text}}</b></h2>
         <div class="table-responsive pt-4">
           <table class="table table-bordered border-primary">
-              <thead>
-                <tr class="bg-primary text-white">
-                  <th scope="col">SL. NO.</th>
-                  <th scope="col">TYPE OF TAXPAYER (ASSESSEE)</th>
-                  <th scope="col">DUE DATE</th>
-                  <th scope="col">TAX AUDIT CAES</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Company</td>
-                  <td>30- Sep -2020</td>
-                  <td>30- Sep -2020</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Company</td>
-                  <td>30- Sep -2020</td>
-                  <td>30- Sep -2020</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Company</td>
-                  <td>30- Sep -2020</td>
-                  <td>30- Sep -2020</td>
-                </tr>
-                 <tr>
-                  <th scope="row">4</th>
-                  <td>Company</td>
-                  <td>30- Sep -2020</td>
-                  <td>30- Sep -2020</td>
-                </tr>
-                 <tr>
-                  <th scope="row">5</th>
-                  <td>Company</td>
-                  <td>30- Sep -2020</td>
-                  <td>30- Sep -2020</td>
-                </tr>
-              </tbody>
-            </table>
+            <thead>
+              <tr class="bg-primary text-white">
+                <th scope="col">{{document.list1}}</th>
+                <th scope="col">{{document.list2}}</th>
+                <th scope="col">{{document.list3}}</th>
+                <th scope="col">{{document.list4}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{document.list5}}</th>
+                <td>{{document.list6}}</td>
+                <td>{{document.list7}}</td>
+                <td>{{document.list7}}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{document.list8}}</th>
+                <td>{{document.list6}}</td>
+                <td>{{document.list7}}</td>
+                <td>{{document.list7}}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{document.list9}}</th>
+                <td>{{document.list6}}</td>
+                <td>{{document.list7}}</td>
+                <td>{{document.list7}}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{document.list10}}</th>
+                <td>{{document.list6}}</td>
+                <td>{{document.list7}}</td>
+                <td>{{document.list7}}</td>
+              </tr>
+              <tr>
+                <th scope="row">{{document.list11}}</th>
+                <td>{{document.list6}}</td>
+                <td>{{document.list7}}</td>
+                <td>{{document.list7}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 
 <section class="py-5 video-i-tax aos-init aos-animate" data-aos="fade-down">
   <div class="container">
     <div class="row heading2">
-      <h2 class="text-center py-4">Video on Income Tax Return Filing</h2>
+      <h2 class="text-center py-4">{{incorporation.heading_text}}</h2>
 
       <div class="col-md-6 col-12">
         <div class="embed-responsive embed-responsive-16by9 border">
-          <iframe src="https://www.youtube.com/embed/NPkPtu61yV4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+          <iframe src="{{incorporation.text2}}" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen=""></iframe>
         </div>
       </div>
 
       <div class="col-md-6 col-12">
-        <p>The return of Income Tax also known as ITR is a statement of taxable income, a computation as to how the taxable income is calculated and details of the taxes paid by the taxpayer during a specific financial year.</p>
+        <p>{{incorporation.text}}</p>
         <div class="plantext-b">
           <p> <i class="fa fa-check-square text-primary" aria-hidden="true"></i> &nbsp;
-           All India Services at Reasonable Price</p>
-           <p> <i class="fa fa-check-square text-primary" aria-hidden="true"></i> &nbsp;
-           CA, CS & Legal Services at One Place</p>
-           <p> <i class="fa fa-check-square text-primary" aria-hidden="true"></i> &nbsp;
-           Old is Gold, Serving startups Since 2004</p>
+            {{incorporation.heading_text2}}</p>
+          <p> <i class="fa fa-check-square text-primary" aria-hidden="true"></i> &nbsp;
+            {{incorporation.heading_text3}}</p>
+          <p> <i class="fa fa-check-square text-primary" aria-hidden="true"></i> &nbsp;
+            {{incorporation.heading_text4}}</p>
         </div>
-        <button type="button" class="btn btn-danger py-2">Well, do you have questions? <br />
-        Income Tax Return FilingLet us know, we shall revert back with a solution. </button>
+        <button type="button" class="btn btn-danger py-2">Well, do you have questions? <br>
+          Income Tax Return FilingLet us know, we shall revert back with a solution. </button>
       </div>
 
     </div>
   </div>
 </section>
 
-
 <section class="py-5 bg-secondary logoimage">
-<div class="container text-center heading2">
-<h2 class="text-white py-4"><b>Leading Brands Rely On Our Expertise</b></h2>
-<div class="row">
-  
-  <div class="col-md-2 col-6">
-    <div class="bg-light shadow rounded p-1">
-    <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
+  <div class="container text-center heading2">
+    <h2 class="text-white py-4"><b>Leading Brands Rely On Our Expertise</b></h2>
+    <div class="row">
+
+      <div class="col-md-2 col-6">
+        <div class="bg-light shadow rounded p-1">
+          <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-6">
+        <div class="bg-light shadow rounded p-1">
+          <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-6">
+        <div class="bg-light shadow rounded p-1">
+          <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
+        </div>
+      </div>
+      <div class="col-md-2 col-6">
+        <div class="bg-light shadow rounded p-1">
+          <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-6">
+        <div class="bg-light shadow rounded p-1">
+          <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-6">
+        <div class="bg-light shadow rounded p-1">
+          <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row pt-4">
+
+      <div class="col-md-2 col-6">
+        <div class="bg-light shadow rounded p-1">
+          <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-6">
+        <div class="bg-light shadow rounded p-1">
+          <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-6">
+        <div class="bg-light shadow rounded p-1">
+          <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-6">
+        <div class="bg-light shadow rounded p-1">
+          <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-6">
+        <div class="bg-light shadow rounded p-1">
+          <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
+        </div>
+      </div>
+
+      <div class="col-md-2 col-6">
+        <div class="bg-light shadow rounded p-1">
+          <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
+        </div>
+      </div>
+
     </div>
   </div>
-
-  <div class="col-md-2 col-6">
-    <div class="bg-light shadow rounded p-1">
-    <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
-    </div>
-  </div>
-
-  <div class="col-md-2 col-6">
-    <div class="bg-light shadow rounded p-1">
-    <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
-    </div>
-  </div>
-  <div class="col-md-2 col-6">
-    <div class="bg-light shadow rounded p-1">
-    <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
-    </div>
-  </div>
-
-  <div class="col-md-2 col-6">
-    <div class="bg-light shadow rounded p-1">
-    <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
-    </div>
-  </div>
-
-  <div class="col-md-2 col-6">
-    <div class="bg-light shadow rounded p-1">
-    <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
-    </div>
-  </div>
-
-</div>
-
-<div class="row pt-4">
-  
-  <div class="col-md-2 col-6">
-    <div class="bg-light shadow rounded p-1">
-    <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
-    </div>
-  </div>
-
-  <div class="col-md-2 col-6">
-    <div class="bg-light shadow rounded p-1">
-    <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
-    </div>
-  </div>
-
-  <div class="col-md-2 col-6">
-    <div class="bg-light shadow rounded p-1">
-    <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
-    </div>
-  </div>
-
-  <div class="col-md-2 col-6">
-    <div class="bg-light shadow rounded p-1">
-    <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
-    </div>
-  </div>
-
-  <div class="col-md-2 col-6">
-    <div class="bg-light shadow rounded p-1">
-    <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
-    </div>
-  </div>
-
-  <div class="col-md-2 col-6">
-    <div class="bg-light shadow rounded p-1">
-    <img src="{% static 'images/1.png' %}" class="img-fluid" alt="logo-img">
-    </div>
-  </div>
-
-</div>
 </section>
 {% endblock %}

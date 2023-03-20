@@ -81,6 +81,8 @@ class Coupan(models.Model):
     coupan = models.CharField(max_length=20,unique=True)
     amount = models.IntegerField()
     active = models.IntegerField(default=0)
+    percentage = models.IntegerField(null=True,blank=True)
+    username = models.ForeignKey(to=User, on_delete=models.CASCADE,null=True,blank=True)
     def __str__(self):
         return self.coupan
 
@@ -91,9 +93,9 @@ class Order(models.Model):
     status = models.CharField(max_length=200, null=True, blank=True)
     name = models.CharField(max_length=200, null=True,blank= True)
     email = models.EmailField(null=True, blank=True)
-    address_line_1 = models.CharField(max_length=200, null=True,blank= True)
-    address_line_2 = models.CharField(max_length=200, null=True,blank= True)
-    address_line_3 = models.CharField(max_length=200, null=True,blank= True)
+    address1 = models.CharField(max_length=200, null=True,blank= True)
+    address2 = models.CharField(max_length=200, null=True,blank= True)
+    address3 = models.CharField(max_length=200, null=True,blank= True)
     remarks = models.CharField(max_length=300, null=True, blank=True)
     buy_time = models.DateTimeField(null=True, blank=True)
     order_time = models.DateTimeField(auto_now=True)

@@ -3,110 +3,118 @@
 {%block title%} registration-licenses {% endblock %}
 
 {%block body %}
-     <section class="top-bn4 bn-styles aos-init aos-animate" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <h2><b>Registration &amp;  <span class="text-white">Licenses </span></b></h2>
-            <p class="pt-4"> <b>Every business operates in a highly regulated environment. They are required to follow all laws that may apply to them. These regulations can either be activity-based or location-based. They also depend on the type of entity. The first step is to identify the certification required by your business. The location-based registrations, in general, are compulsory. But, licenses must be obtained before the start of any relevant activity. The regulations that apply to a particular industry are many. We will let you with a one-to at least one consultation. Please send us a short description of your business and fill in the contact form. The following are the main categories of registrations and licenses. 
-            </b></p>
+{% include 'common_pages/banner.html'%}
+
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div id="meaning" class="container tab-pane content active"><br>
+            <h2>{{meaning.heading_text}}</h2>
+            <p> <b>{{meaning.text}}</b></p>
+
+            <h2>{{meaning.heading_text2}}</h2>
+            <h6>{{meaning.heading_text3}}</h6>
+            <p>{{meaning.text2}}</p>
+            <h2>{{meaning.heading_text4}}</h2>
+            <p class="b-style text-style">{{meaning.text3}}</p>
+            <div class="text-center py-4"><img src="/media/{{ meaning.img }}" alt="logo-img" class="img-fluid"></div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            
-            </ul>
-          </div>
-
-          <div class="content content-2s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-12 col-12 heading">
-                        <h2 class="fs-2">Registration  <span class="text-primary">licenses</span></h2>
-                        <h2 class="fs-4">Shops &amp; Establishment</h2>
-                        <p class="fs-6">The store and status quo act governs work hours, safety, and conditions for personal zone workers. In India, the registration process is compulsory and must be completed by the local labor officer. Non Compliance is a Crime.</p>
-                        <h2 class="fs-4">Trade License</h2>
-                        <p class="b-style text-style">The municipality regulates trading activity to safeguard the neighborhood and prevent nuisances to the people living around the trading concern. It is compulsory, and a different fee is collected depending on the activity.</p>
-                      </div>
-
-                    </div>
-                  </div>
-                </section>
-
-              <section class="py-4 s-img s-img1">
-                <div class="container py-2">
-                  <div class="row">
-                    <div class="col-md-2 col-12">
-                    </div>
-                  <div class="col-md-10 col-12">
-                    <h2 class="fs-4">Register for GST</h2>
-                      <p class="fst-italic">Supply of Goods and Supply, which are taxable events under GST, require that all persons involved in the supply or collection of GST be liable to the GST. To follow the above GST Registration, the taxpayer must file a periodical GST Return.</p>
-                    <h2 class="fs-4">Export and Import Code</h2>
-                      <p>Import and export codes are unique identifications of individuals registered with the. DGFT. These are prerequisites for conducting an Indian Import/Export trade. IEC may be acquired in opposition to a single pan. Only one IEC is possible against one PAN.</p>
-                    <h2 class="fs-4">License to Use Drugs</h2>
-                    <p class="fst-italic">You will need a wholesale or retail license to trade in pharmaceutical goods. Many pharmacy companies market and sell their products after receiving them from a third-party manufacturer.</p>
-                    <h2 class="fs-4">PSARA</h2>
-                    <p>Private security guards are in high demand. Before the agency can begin a business, it must first get a License. The license may be issued for one district or several districts in the state.</p>
-                  </div>
-                  </div>
-                </div>
-              </section>
-
-            </div>
-
-          </div>
-          </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
-                  <tbody>
-                    <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
-                    </tr>
-                    <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
-                    </tr>
-                    <tr>
-                      <th>DobizIndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
-                    </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
-                    </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
-                    </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
-                </div>
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2 class="fs-4">{{minimum.heading_text}}</h2>
+                <p class="fst-italic">{{minimum.text}}</p>
+                <h2 class="fs-4">{{minimum.heading_text2}}</h2>
+                <p>{{minimum.text2}}</p>
+                <h2 class="fs-4">{{minimum.heading_text3}}</h2>
+                <p class="fst-italic">{{minimum.text3}}</p>
+                <h2 class="fs-4">{{minimum.heading_text4}}</h2>
+                <p>{{minimum.text4}}</p>
               </div>
+
             </div>
+
+
+
           </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>Documents.</h2>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
         </div>
       </div>
-    </section>
+
+
+      {% include 'common_pages/pricing_sum_below.html' %}
+
+    </div>
+  </div>
+</section>
+
+{% include 'common_pages/fssai.html'%}
+
 {% endblock %}

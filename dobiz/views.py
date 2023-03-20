@@ -1332,50 +1332,216 @@ def taxregister_api(request, page):
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
 
-
-
 # TAX COMPLIANCE view
+def taxcompliance(request,page):
+    page_dict={
+        'ad_tax':'Advance-tax',
+        'income_t_r_f':'Income-tax-return-filing',
+        'professional_t_r':'Professional Tax Registration',
+        'registration_l':'registration-licenses',
+        'tax_a_s':'Tax Assessment & Scrutiny',
+        'tax_a_c':'tax-audit by ca',
+        'tax_d_s':'tax-deducted-source'
+        
+    }
+    if page not in page_dict:
+        raise Http404('Invalid Page')
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
 
-def ad_tax(request):
-    return render(request, 'taxcompliance/ad_tax.html')
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
 
+    form = ContactUser()
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            return JsonResponse(serializer.data, status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
 
-def income_t_r_f(request):
-    return render(request, 'taxcompliance/income_t_r_f.html')
-
-
-def professional_t_r(request):
-    return render(request, 'taxcompliance/professional_t_r.html')
-
-
-def registration_l(request):
-    return render(request, 'taxcompliance/registration_l.html')
-
-
-def tax_a_s(request):
-    return render(request, 'taxcompliance/tax_a_s.html')
-
-
-def tax_a_c(request):
-    return render(request, 'taxcompliance/tax_a_c.html')
-
-
-def tax_d_s(request):
-    return render(request, 'taxcompliance/tax_d_s.html')
+    context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
+            'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
+            'step':step,'faq':faq,'closure':closure}
+    return render(request, f'taxcompliance/{page}.html', context)
+@api_view(['GET','POST'])
+def taxcompliance_api(request,page):
+    page_dict={
+        'ad_tax':'Advance-tax',
+        'income_t_r_f':'Income-tax-return-filing',
+        'professional_t_r':'Professional Tax Registration',
+        'registration_l':'registration-licenses',
+        'tax_a_s':'Tax Assessment & Scrutiny',
+        'tax_a_c':'tax-audit by ca',
+        'tax_d_s':'tax-deducted-source'
+        
+    }
+    if page not in page_dict:
+        raise Http404('Invalid Page')
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
+    # Serialize data
+    product_serializer = ProductSerializer(products, many=True)
+    meaning_serializer = MeaningSerializer(meaning)
+    minimum_serializer = MinimumRequirementSerializer(minimum)
+    beneift_serializer = BenefitsSerializer(benefit)
+    document_serializer = DocumentRequiredSerializer(document)
+    incorporation_serializer = IncorporationProcessSerializer(incorporation)
+    compliance_serializer = ComplianceSerializer(compliance)
+    step_serializer = StepWiseProcedureSerializer(step)
+    faq_serializer = FAQSerializer(faq)
+    closure_serializer = ClosureSerializer(closure)
+     # create response data
+    response_data = {
+        'products': product_serializer.data,
+        'meaning': meaning_serializer.data,
+        'minimum': minimum_serializer.data,
+        'benefit': beneift_serializer.data,
+        'document': document_serializer.data,
+        'incorporation': incorporation_serializer.data,
+        'compliance': compliance_serializer.data,
+        'step': step_serializer.data,
+        'faq': faq_serializer.data,
+        'closure': closure_serializer.data,
+    }
+    #Handle Post Request
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            response_data['form'] = serializer.data
+            return JsonResponse(response_data,status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
+    #Handling GET request
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
+    response_data['banner'] = BannerSerializer(banner).data
+    response_data['price'] = PricingSumSerializer(price).data
+    return JsonResponse(response_data, status=200)
 
 # PAYROLL & FUNDING view
+def payrollfunding(request,page):
+    page_dict={
+        'epf_r':'EPF Registration',
+        'esic_r':'esic-registration',
+        'tax_p':'Tax and Payroll',
+        
+    }
+    if page not in page_dict:
+        raise Http404('Invalid Page')
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
 
-def epf_r(request):
-    return render(request, 'payrollfunding/epf_r.html')
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
 
+    form = ContactUser()
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            return JsonResponse(serializer.data, status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
 
-def esic_r(request):
-    return render(request, 'payrollfunding/esic_r.html')
+    context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
+            'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
+            'step':step,'faq':faq,'closure':closure}
+    return render(request, f'payrollfunding/{page}.html', context)
 
-
-def tax_p(request):
-    return render(request, 'payrollfunding/tax_p.html')
-
+@api_view(['GET','POST'])
+def payrollfunding_api(request,page):
+    page_dict={
+        'epf_r':'EPF Registration',
+        'esic_r':'esic-registration',
+        'tax_p':'Tax and Payroll',
+        
+    }
+    if page not in page_dict:
+        raise Http404('Invalid Page')
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
+    # Serialize data
+    product_serializer = ProductSerializer(products, many=True)
+    meaning_serializer = MeaningSerializer(meaning)
+    minimum_serializer = MinimumRequirementSerializer(minimum)
+    beneift_serializer = BenefitsSerializer(benefit)
+    document_serializer = DocumentRequiredSerializer(document)
+    incorporation_serializer = IncorporationProcessSerializer(incorporation)
+    compliance_serializer = ComplianceSerializer(compliance)
+    step_serializer = StepWiseProcedureSerializer(step)
+    faq_serializer = FAQSerializer(faq)
+    closure_serializer = ClosureSerializer(closure)
+     # create response data
+    response_data = {
+        'products': product_serializer.data,
+        'meaning': meaning_serializer.data,
+        'minimum': minimum_serializer.data,
+        'benefit': beneift_serializer.data,
+        'document': document_serializer.data,
+        'incorporation': incorporation_serializer.data,
+        'compliance': compliance_serializer.data,
+        'step': step_serializer.data,
+        'faq': faq_serializer.data,
+        'closure': closure_serializer.data,
+    }
+    #Handle Post Request
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            response_data['form'] = serializer.data
+            return JsonResponse(response_data,status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
+    #Handling GET request
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
+    response_data['banner'] = BannerSerializer(banner).data
+    response_data['price'] = PricingSumSerializer(price).data
+    return JsonResponse(response_data, status=200)
 # BASIC ROC COMPLIANCES view
 
 def director_kyc(request):
@@ -1680,62 +1846,45 @@ def checkout(request):
     except:
         context = {}
     return render(request, "order/checkout.html", context)
-def success(request):
-    ordeer_id = request.GET.get('order_id')
-    order.is_cart = 0
-    order.status = "Success"
-    cart = Order.objects.get(razor_pay_order_id= order_id)
-    return HttpResonse('Payment Success')
-# def checkout(request):
-#     id = request.GET.get("id")
-#     order_id = request.GET.get("order_id")
-#     try:
-#         product = Product.objects.get(id = id)
-#         if order_id:
-#             print("Oder id ",order_id)
-#             order = Order.objects.get(id = order_id)
-#         else:
-#             order = Order()
-#         final_price = product.gst + product.other_cost + product.Dobiz_India_Filings
-        
-#         if request.method == 'POST' and request.POST.get("coupan"):
-#             try:
-#                 coupan = request.POST.get("coupan")
-#                 offer = Coupan.objects.filter(active = 1).get(coupan = coupan)
-#                 final_price = final_price-offer.amount
-#             except Exception as e:
-#                 print("Error : ",e)
-        
-#         elif request.method == 'POST':
-#             remark = request.POST.get("remark")
-#             user = User.objects.get(id = request.user.id)
-            
-#             order.product = product
-#             order.user = user
-#             order.is_cart = 0
-#             order.status ="Success"
-#             order.name = user.name
-#             order.email = user.email
-#             order.remarks = remark
-#             order.buy_time = datetime.now()
-#             order.save()
-#             return redirect("/order_history")
-#         context = {"product":product,
-#                     "final_price":final_price
-#                 }
-#     except:
-#         context = {}
-#     # messages.error(request, "Form is not valid")
-#     return render(request,"order/checkout.html",context)
 
 def order_history(request):
     orders = Order.objects.filter(user__id = request.user.id).filter(is_cart=0).order_by("-id")
     context = {"orders":orders}
     return render(request,"order/order_history.html",context)
 def cart(request):
-    items = Order.objects.filter(user__id = request.user.id).filter(is_cart=1).order_by("-id")
-    context = {"items":items}
-    return render(request,"order/cart.html",context)
+    id = request.POST.get("id")
+    items = Order.objects.filter(user__id=request.user.id).filter(is_cart=1).order_by("-id")
+    final_price = 0
+    for item in items:
+        final_price += item.product.price
+
+    if request.method == 'POST' and request.POST.get("coupan"):
+        try:
+            product = Product.objects.get(id=id)
+            coupan = request.POST.get("coupan")
+            offer = Coupan.objects.filter(active=1).get(coupan=coupan)
+            final_price = product.gst + product.other_cost + product.Dobiz_India_Filings
+            final_price = final_price - offer.amount
+        except Exception as e:
+            print("Error : ", e)
+    client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
+    amount = int(final_price * 100)
+    if amount < 100:
+        amount = 100  # set minimum amount as INR 1.00
+    payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
+    print('*****************************')
+    print(payment)
+    print('*****************************')
+    product_id = id  # assign the product_id from request to a variable
+    # order = Order(user=request.user, product_id=product_id, razor_pay_order_id=payment['id'])
+    # order.save()
+    context = {"items": items,
+               "final_price": final_price,
+               "payment": payment
+              }
+    return render(request, "order/cart.html", context)
+
+
 @csrf_exempt
 def addToCart(request):
     id = request.POST.get("id")
@@ -1751,6 +1900,5 @@ def addToCart(request):
     order.email = user.email
     order.remarks = remark
     order.buy_time = datetime.now()
-    order.sell_price = product.market_price
-    order.save()
+
     return JsonResponse({"Success":1})
