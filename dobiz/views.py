@@ -1869,8 +1869,6 @@ def cart(request):
             print("Error : ", e)
     client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
     amount = int(final_price * 100)
-    if amount < 100:
-        amount = 100  # set minimum amount as INR 1.00
     payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
     print('*****************************')
     print(payment)
@@ -1900,5 +1898,5 @@ def addToCart(request):
     order.email = user.email
     order.remarks = remark
     order.buy_time = datetime.now()
-
+    order.save()
     return JsonResponse({"Success":1})
