@@ -59,6 +59,7 @@ class Profile(models.Model):
     state = models.CharField(max_length=20)
     def __str__(self):
         return self.fname + self.email
+
 class Product(models.Model):
     # product_id = models.AutoField
     product_name = models.CharField(max_length=50)
@@ -76,10 +77,11 @@ class Product(models.Model):
 
     def __str__(self):
         return self.product_name
+    
 
 class Coupan(models.Model):
     coupan = models.CharField(max_length=20,unique=True)
-    amount = models.IntegerField()
+    amount = models.IntegerField(null=True,blank=True)
     active = models.IntegerField(default=0)
     percentage = models.IntegerField(null=True,blank=True)
     username = models.ForeignKey(to=User, on_delete=models.CASCADE,null=True,blank=True)

@@ -1,161 +1,180 @@
-
-
-
- {% extends 'index.html' %}
+{% extends 'index.html' %}
 {%block title%}Cart{% endblock %}
 
 {%block body %}
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600;700&display=swap');
-*{
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600;700&display=swap');
+
+  * {
     font-family: 'Ubuntu', sans-serif;
 
-}
-body{
-  height:98vh;
-  background-color: #4158D0;
-background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-  font-family: 'Ubuntu', sans-serif;
-  background-position:center center;
-}
-table {
-/*   border: 1px solid #ccc; */
-  border-collapse: collapse;
-  margin: 0 auto;
-  padding: 0;
-  width: 80%;
-  table-layout: fixed;
-}
-
-table caption {
-    font-family: 'Ubuntu', sans-serif;
-  font-size: 55px;
-  font-weight:700;
-  color:#00000090;
-  padding: 15px;
-}
-
-table tr {
-  background-color: #ffffff90;
-  border: 1px solid #ddd;
-  padding: 10px;
-}
-.thead{
-  background-color: rgb(67 56 202);
-  color:#fff;
-}
-
-table th,
-table td {
-  padding: 20px;
-  text-align: center;
-}
-
-table th {
-  font-size: 20px;
-  letter-spacing: .1em;
-  text-transform: capitalize;
-}
-
-@media screen and (max-width: 600px) {
-  table {
-    border: 0;
   }
-  .thead{
-  background-color: rgb(67 56 202);
-  color:#fff;
-}
+
+  body {
+    height: 98vh;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    font-family: 'Ubuntu', sans-serif;
+    background-position: center center;
+  }
+
+  table {
+    /*   border: 1px solid #ccc; */
+    border-collapse: collapse;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+    table-layout: fixed;
+  }
 
   table caption {
-     font-size: 35px;
-  font-weight:700;
-  color:#00000090;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 55px;
+    font-weight: 700;
+    color: #00000090;
+    padding: 15px;
   }
-  
-  table thead {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-  
+
   table tr {
-    border-bottom: 3px solid #ddd;
-    display: block;
-    margin-bottom: .625em;
+    background-color: #ffffff90;
+    border: 1px solid #ddd;
+    padding: 10px;
   }
-  
+
+  .thead {
+    background-color: rgb(67 56 202);
+    color: #fff;
+  }
+
+  table th,
   table td {
-    border-bottom: 1px solid #ddd;
-    display: block;
-    font-size: .8em;
-    text-align: right;
+    padding: 20px;
+    text-align: center;
   }
-  
-  table td::before {
-    /*
+
+  table th {
+    font-size: 20px;
+    letter-spacing: .1em;
+    text-transform: capitalize;
+  }
+
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+
+    .thead {
+      background-color: rgb(67 56 202);
+      color: #fff;
+    }
+
+    table caption {
+      font-size: 35px;
+      font-weight: 700;
+      color: #00000090;
+    }
+
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+
+    table td::before {
+      /*
     * aria-label has no advantage, it won't be read inside a table
     content: attr(aria-label);
     */
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  table td:last-child {
-    border-bottom: 0;
-  }
-}
-</style>
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
 
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+</style>
 <table style="margin-top:130px">
-    
-    <thead >
-      <tr class="thead">
-        <th scope="col">Product Name</th>
-        <th scope="col">DOBIZ Price</th>
-        <th scope="col">GST %</th>
-        <th scope="col">Total GST</th>
-        <th scope="col">Other</th>
-        <th scope="col">Price</th>
-        <th scope="col">Coupons(*if any)</th>
-        <th scope="col">Buy</th>
-        <!-- <th scope="col">Clear</th> -->
-      </tr>
-    </thead>
-    <tbody>
-      {% for i in items %}
-      <tr data-product-id="{{ i.product.id }}">
-        <td data-label="Name">{{i.product.product_name}}</td>
-        <td data-label="Title">{{i.product.Dobiz_India_Filings}}</td>
-        <td data-label="Website">{{i.product.gst_percent}}</td>
-        <td data-label="Role">{{i.product.gst}}</td>
-        <td data-label="Title">{{i.product.other_cost}}</td>
-        <td data-label="Website">{{i.product.price}}</td>
-        <td data-label="Website"> <form method="POST">{% csrf_token %}
-          <input type="Website" class="uppercase" placeholder="APPLY COUPAN" name="coupan">
+  <thead>
+    <tr class="thead">
+      <th scope="col">Product Name</th>
+      <th scope="col">MARKET Price</th>
+      <th scope="col">DOBIZ Filling Cost</th>
+      <th scope="col">GST %</th>
+      <th scope="col">Total GST</th>
+      <th scope="col">Other</th>
+      <th scope="col">Price</th>
+      <th scope="col">Coupons(*if any)</th>
+      <th scope="col">Buy</th>
+      <!-- <th scope="col">Clear</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in items %}
+    <tr data-product-id="{{ i.product.id }}">
+      <td data-label="Name">{{i.product.product_name}}</td>
+      <td data-label="Name">{{i.product.market_price}}</td>
+      <td data-label="Title">{{i.product.Dobiz_India_Filings}}</td>
+      <td data-label="Website">{{i.product.gst_percent}}</td>
+      <td data-label="Role">{{i.product.gst}}</td>
+      <td data-label="Title">{{i.product.other_cost}}</td>
+      {% if i.final_price %}
+      <td data-label="Website">{{ i.final_price }}</td>
+      {% else %}
+      <td data-label="Website">{{i.product.price}}</td>
+      {% endif %}
+      <td data-label="Website">
+        <form method="POST">{% csrf_token %}
+          <input type="Website" class="uppercase" placeholder="APPLY COUPAN" name="coupan"style="width: 150px;">
           <!-- <input type="hidden" class="uppercase" value="{{i.product.id}}" name="id"> -->
-          <button id="applyBtn" type="submit" class="b-main-color pointer">Apply</button>          
-        </form></td>
-        <td data-label="Role"><button id="rzp-button1">Buy Now</a></td>
-        <!-- <td data-label="Role"><a href="/checkout?id={{i.product.id}}&order_id={{i.id}}">Buy Now</a></td> -->
-        <!-- <td data-label="Website">
+          <button id="applyBtn" type="submit" class="b-main-color pointer" style="margin-top: 10px;">Apply</button>
+        </form>
+      </td>
+
+      <td data-label="Role"><button id="rzp-button1">Buy Now</a></td>
+      <!-- <td data-label="Role"><a href="/checkout?id={{i.product.id}}&order_id={{i.id}}">Buy Now</a></td> -->
+      <!-- <td data-label="Website">
           <button onclick="clearItem({{ i.product.id }})">Clear Item</button>
         </td> -->
-      </tr>
+    </tr>
     {% endfor %}
-  
-  
-    </tbody>
-  </table>
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+  </tbody>
+</table>
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show text-center" role="alert">
+      <strong>Message:</strong> {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
+{% endif %}
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
-var options = {
+  var options = {
     "key": "rzp_test_D4hi1vsG8ESCJ2", // Enter the Key ID generated from the Dashboard
     "amount": "{{payment.amount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
     "currency": "INR",
@@ -163,27 +182,26 @@ var options = {
     "description": "Test Transaction",
     "image": "https://example.com/your_logo",
     "order_id": "{{payment.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-    "handler": function (response){
-      window.location.href='http://127.0.0.1:8000/success/?razorpay_payment_id=$(response.razorpay_payment_id)&razorpay_order_id=$(response.razorpay_order_id)&razorpay_signature=$(response.razorpay_signature)'
+    "handler": function (response) {
+      window.location.href = 'http://127.0.0.1:8000/success/?razorpay_payment_id=$(response.razorpay_payment_id)&razorpay_order_id=$(response.razorpay_order_id)&razorpay_signature=$(response.razorpay_signature)'
     },
     "theme": {
-        "color": "#3399cc"
+      "color": "#3399cc"
     }
-};
-var rzp1 = new Razorpay(options);
-rzp1.on('payment.failed', function (response){
-        alert(response.error.code);
-        alert(response.error.description);
-        alert(response.error.source);
-        alert(response.error.step);
-        alert(response.error.reason);
-        alert(response.error.metadata.order_id);
-        alert(response.error.metadata.payment_id);
-});
-document.getElementById('rzp-button1').onclick = function(e){
+  };
+  var rzp1 = new Razorpay(options);
+  rzp1.on('payment.failed', function (response) {
+    alert(response.error.code);
+    alert(response.error.description);
+    alert(response.error.source);
+    alert(response.error.step);
+    alert(response.error.reason);
+    alert(response.error.metadata.order_id);
+    alert(response.error.metadata.payment_id);
+  });
+  document.getElementById('rzp-button1').onclick = function (e) {
     rzp1.open();
     e.preventDefault();
-}
+  }
 </script>
-    {% endblock %}
-
+{% endblock %}

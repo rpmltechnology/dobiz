@@ -1543,30 +1543,110 @@ def payrollfunding_api(request,page):
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
 # BASIC ROC COMPLIANCES view
+def basicroc(request,page):
+    page_dict={
+        'director_kyc':'2022 Director KYC [DIR-3-KYC]',
+        'company_a_r':'Company Annual Return',
+        'director_i_n':'Director Identification Number (DIN)',
+        'file_inc':'File INC 20-A (Business Commencement)',
+        'post_i_c':'Post Incorporation Compliance',
+        'roc_c':'Roc'
+    }
+    if page not in page_dict:
+        raise Http404('Invalid Page')
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
 
-def director_kyc(request):
-    return render(request, 'basicroc/director_kyc.html')
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
 
+    form = ContactUser()
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            return JsonResponse(serializer.data, status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
 
-def company_a_r(request):
-    return render(request, 'basicroc/company_a_r.html')
-
-
-def director_i_n(request):
-    return render(request, 'basicroc/director_i_n.html')
-
-
-def file_inc(request):
-    return render(request, 'basicroc/file_inc.html')
-
-
-def post_i_c(request):
-    return render(request, 'basicroc/post_i_c.html')
-
-
-def roc_c(request):
-    return render(request, 'basicroc/roc_c.html')
-
+    context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
+            'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
+            'step':step,'faq':faq,'closure':closure}
+    return render(request, f'basicroc/{page}.html', context)
+@api_view(['GET','POST'])
+def basicroc_api(request,page):
+    page_dict={
+        'director_kyc':'2022 Director KYC [DIR-3-KYC]',
+        'company_a_r':'Company Annual Return',
+        'director_i_n':'Director Identification Number (DIN)',
+        'file_inc':'File INC 20-A (Business Commencement)',
+        'post_i_c':'Post Incorporation Compliance',
+        'roc_c':'Roc'
+    }
+    if page not in page_dict:
+        raise Http404('Invalid Page')
+    products = Product.objects.filter(category=page_dict.get(page))
+    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
+    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
+    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
+    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
+    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
+    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
+    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
+    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
+    closure = Closure.objects.filter(category=page_dict.get(page)).first()
+    # Serialize data
+    product_serializer = ProductSerializer(products, many=True)
+    meaning_serializer = MeaningSerializer(meaning)
+    minimum_serializer = MinimumRequirementSerializer(minimum)
+    beneift_serializer = BenefitsSerializer(benefit)
+    document_serializer = DocumentRequiredSerializer(document)
+    incorporation_serializer = IncorporationProcessSerializer(incorporation)
+    compliance_serializer = ComplianceSerializer(compliance)
+    step_serializer = StepWiseProcedureSerializer(step)
+    faq_serializer = FAQSerializer(faq)
+    closure_serializer = ClosureSerializer(closure)
+     # create response data
+    response_data = {
+        'products': product_serializer.data,
+        'meaning': meaning_serializer.data,
+        'minimum': minimum_serializer.data,
+        'benefit': beneift_serializer.data,
+        'document': document_serializer.data,
+        'incorporation': incorporation_serializer.data,
+        'compliance': compliance_serializer.data,
+        'step': step_serializer.data,
+        'faq': faq_serializer.data,
+        'closure': closure_serializer.data,
+    }
+    #Handle Post Request
+    if request.method == 'POST':
+        form = ContactUser(request.POST)
+        if form.is_valid():
+            form.save()
+            serializer = ContactUserSerializer(form.instance)
+            response_data['form'] = serializer.data
+            return JsonResponse(response_data,status=201)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'errors': errors}, status=400)
+    #Handling GET request
+    banner = Banner.objects.get(category='CommonBanner')
+    price = PricingSum.objects.get(category='Common Price')
+    response_data['banner'] = BannerSerializer(banner).data
+    response_data['price'] = PricingSumSerializer(price).data
+    return JsonResponse(response_data, status=200)
+    
 # COMPANY CHANGES & RETURN view
 
 def change_d(request):
@@ -1851,36 +1931,71 @@ def order_history(request):
     orders = Order.objects.filter(user__id = request.user.id).filter(is_cart=0).order_by("-id")
     context = {"orders":orders}
     return render(request,"order/order_history.html",context)
+
+
+from django.utils import timezone
+
 def cart(request):
-    id = request.POST.get("id")
     items = Order.objects.filter(user__id=request.user.id).filter(is_cart=1).order_by("-id")
+    coupan = request.POST.get("coupan")
     final_price = 0
     for item in items:
         final_price += item.product.price
 
-    if request.method == 'POST' and request.POST.get("coupan"):
+    if request.method == 'POST' and coupan:
         try:
-            product = Product.objects.get(id=id)
-            coupan = request.POST.get("coupan")
-            offer = Coupan.objects.filter(active=1).get(coupan=coupan)
-            final_price = product.gst + product.other_cost + product.Dobiz_India_Filings
-            final_price = final_price - offer.amount
+            coupan = coupan.upper()
+            offer = Coupan.objects.filter(active=1).get(coupan=coupan,username=request.user) #checks for username and user
+            for item in items:
+                product = item.product
+                if offer.percentage is not None and offer.amount is not None:
+                    product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
+                    discounted_price_percentage = product_cost - (product_cost * offer.percentage / 100)
+                    discounted_price_amount = product_cost - offer.amount
+                    if discounted_price_percentage > discounted_price_amount:
+                        product_cost = discounted_price_percentage
+                    else:
+                        product_cost = discounted_price_amount
+                elif offer.percentage is not None:
+                    product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
+                    product_cost = product_cost - (product_cost * offer.percentage / 100)
+                elif offer.amount is not None:
+                    product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
+                    product_cost = product_cost - offer.amount
+                item.final_price = product_cost
+                item.save()
+            if offer.percentage is not None:
+                final_price -= final_price * offer.percentage / 100
+                messages.success(request, "Coupon Applied")
+            else:
+                final_price -= offer.amount
+                messages.success(request, "Coupon Applied")
+        except Coupan.DoesNotExist:
+            messages.error(request, "Invalid Coupon, Please Try Again")
         except Exception as e:
             print("Error : ", e)
+
     client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
     amount = int(final_price * 100)
     payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
-    print('*****************************')
-    print(payment)
-    print('*****************************')
-    product_id = id  # assign the product_id from request to a variable
-    # order = Order(user=request.user, product_id=product_id, razor_pay_order_id=payment['id'])
-    # order.save()
+
+    # Check if the payment is successful
+    if payment['status'] == 'captured':
+        # Create an order object for each item in the cart with the payment status 'success'
+        for item in items:
+            product = item.product
+            user = request.user
+            order = Order.objects.create(product=product, user=user, is_cart=0, status='success', name=user.name, email=user.email, buy_time=timezone.now(), razor_pay_order_id=payment['id'])
+
     context = {"items": items,
                "final_price": final_price,
-               "payment": payment
+               "payment": payment,
+               "coupan":coupan
               }
     return render(request, "order/cart.html", context)
+
+
+
 
 
 @csrf_exempt

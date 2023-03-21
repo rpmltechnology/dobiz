@@ -96,18 +96,8 @@ path('payrollfunding/<str:page>/', views.payrollfunding, name='payrollfunding'),
 path('payrollfunding_api/<str:page>/', views.payrollfunding_api, name='payrollfunding_api'),
 
 # BASIC ROC COMPLIANCES url
-
-path('director_kyc', views.director_kyc, name='director_kyc'),
-
-path('company_a_r', views.company_a_r, name='company_a_r'),
-
-path('director_i_n', views.director_i_n, name='director_i_n'),
-
-path('file_inc', views.file_inc, name='file_inc'),
-
-path('post_i_c', views.post_i_c, name='post_i_c'),
-
-path('roc_c', views.roc_c, name='roc_c'),
+path('basicroc/<str:page>/', views.basicroc, name='basicroc'),
+path('basicroc_api/<str:page>/', views.basicroc_api, name='basicroc_api'),
 
 # COMPANY CHANGES & RETURN url
 
