@@ -22,11 +22,6 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import *
 
-#For integration with Paytm
-#pip install pyctrodome
-# from .Paytm import Checksum
-# MERCHANT_KEY = 'ROzQwVTzk@UKCpEM'
-
 #integration with razarpay
 import razorpay
 
@@ -41,6 +36,15 @@ def home(request):
     else:
         form = ContactUser()
     return render(request, 'home.html', {'form': form})
+
+#View Product
+from django.contrib.auth.decorators import login_required
+def viewproduct(request, **kwargs):
+    user_id = kwargs.get('user_id')
+    id = kwargs.get('id')
+    products = get_object_or_404(Product, id=id)
+    context = {'products': products, 'user_id': user_id}
+    return render(request, 'viewproduct.html', context)
 
 
 #order view
@@ -1547,8 +1551,8 @@ def basicroc(request,page):
     page_dict={
         'director_kyc':'2022 Director KYC [DIR-3-KYC]',
         'company_a_r':'Company Annual Return',
-        'director_i_n':'Director Identification Number (DIN)',
-        'file_inc':'File INC 20-A (Business Commencement)',
+        'director_i_n':'Director Identification Number',
+        'file_inc':'File INC 20-A',
         'post_i_c':'Post Incorporation Compliance',
         'roc_c':'Roc'
     }
@@ -1877,55 +1881,55 @@ from datetime import datetime
 
 
 # Order Management
-def checkout(request):
-    id = request.GET.get("id")
-    order_id = request.GET.get("order_id")
-    try:
-        product = Product.objects.get(id=id)
-        if order_id:
-            print("Oder id ", order_id)
-            order = Order.objects.get(id=order_id)
-        else:
-            order = Order()
-        final_price = product.gst + product.other_cost + product.Dobiz_India_Filings
+# def checkout(request):
+#     id = request.GET.get("id")
+#     order_id = request.GET.get("order_id")
+#     try:
+#         product = Product.objects.get(id=id)
+#         if order_id:
+#             print("Oder id ", order_id)
+#             order = Order.objects.get(id=order_id)
+#         else:
+#             order = Order()
+#         final_price = product.gst + product.other_cost + product.Dobiz_India_Filings
 
-        if request.method == 'POST' and request.POST.get("coupan"):
-            try:
-                coupan = request.POST.get("coupan")
-                offer = Coupan.objects.filter(active=1).get(coupan=coupan)
-                final_price = final_price - offer.amount
-            except Exception as e:
-                print("Error : ", e)
+#         if request.method == 'POST' and request.POST.get("coupan"):
+#             try:
+#                 coupan = request.POST.get("coupan")
+#                 offer = Coupan.objects.filter(active=1).get(coupan=coupan)
+#                 final_price = final_price - offer.amount
+#             except Exception as e:
+#                 print("Error : ", e)
 
-        elif request.method == 'POST':
-            remark = request.POST.get("remark")
-            user = User.objects.get(id=request.user.id)
+#         elif request.method == 'POST':
+#             remark = request.POST.get("remark")
+#             user = User.objects.get(id=request.user.id)
 
-            order.product = product
-            order.user = user
-            order.is_cart = 0
-            order.status = "Success"
-            order.name = user.name
-            order.email = user.email
-            order.remarks = remark
-            order.buy_time = datetime.now()
-            order.save()
-            return redirect("/order_history")
-        client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
-        amount = int(final_price * 100)
-        Print('*****************************')
-        print(payment)
-        Print('*****************************')
-        payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
-        order.razor_pay_order_id = payment['id']
-        order.save()
-        context = {"product": product,
-                   "final_price": final_price,
-                   "payment": payment
-                   }
-    except:
-        context = {}
-    return render(request, "order/checkout.html", context)
+#             order.product = product
+#             order.user = user
+#             order.is_cart = 0
+#             order.status = "Success"
+#             order.name = user.name
+#             order.email = user.email
+#             order.remarks = remark
+#             order.buy_time = datetime.now()
+#             order.save()
+#             return redirect("/order_history")
+#         client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
+#         amount = int(final_price * 100)
+#         Print('*****************************')
+#         print(payment)
+#         Print('*****************************')
+#         payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
+#         order.razor_pay_order_id = payment['id']
+#         order.save()
+#         context = {"product": product,
+#                    "final_price": final_price,
+#                    "payment": payment
+#                    }
+#     except:
+#         context = {}
+#     return render(request, "order/checkout.html", context)
 
 def order_history(request):
     orders = Order.objects.filter(user__id = request.user.id).filter(is_cart=0).order_by("-id")
@@ -1945,7 +1949,7 @@ def cart(request):
     if request.method == 'POST' and coupan:
         try:
             coupan = coupan.upper()
-            offer = Coupan.objects.filter(active=1).get(coupan=coupan,username=request.user) #checks for username and user
+            offer = Coupan.objects.filter(active=1).get(coupan=coupan) #checks for username and user
             for item in items:
                 product = item.product
                 if offer.percentage is not None and offer.amount is not None:
@@ -2015,3 +2019,14 @@ def addToCart(request):
     order.buy_time = datetime.now()
     order.save()
     return JsonResponse({"Success":1})
+
+# def dashboar(requets):
+#     user = user.res(user)
+#     coupan = couapn.objet(userid=user)
+#     for i in couan:
+#         order = Order.object.filter(coupan.id)
+#         tim
+        
+#         yar
+#         month
+#         week

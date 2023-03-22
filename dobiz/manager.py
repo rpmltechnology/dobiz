@@ -1,15 +1,6 @@
 from django.contrib.auth.base_user import BaseUserManager
 
 class UserManager(BaseUserManager): 
-    # use_in_migrations=True
-    # def _create_user(self,email,password,**extrafields):
-    #     if not email:
-    #         raise ValueError("The given email must be set")
-    #     email = self.normalize_email(email)
-    #     user = self.model(email = email, **extrafields)
-    #     user.set_password(password)
-    #     user.save(using=self._db)
-    #     return user
 
     def create_user(self, email, name,password=None,**extrafields):
         if not email:
@@ -29,3 +20,14 @@ class UserManager(BaseUserManager):
         if extrafields.get('is_superuser') is not True:
             raise ValueError('superuser must have is_superuser=True.')
         return self.create_user(email, password, **extrafields)
+    
+
+    # use_in_migrations=True
+    # def _create_user(self,email,password,**extrafields):
+    #     if not email:
+    #         raise ValueError("The given email must be set")
+    #     email = self.normalize_email(email)
+    #     user = self.model(email = email, **extrafields)
+    #     user.set_password(password)
+    #     user.save(using=self._db)
+    #     return user

@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+{% block title %}Detail Product{% endblock %}
+{% load static %}
+{% load social_share %}
+{% block body %}
+<style>
+  .facebook{
+    display: inline-block;
+    padding: 10px;
+  }
+  .twitter{
+    display: inline-block;
+    padding: 10px;
+  }
+  .whatsapp{
+    display: inline-block;
+    padding: 10px;
+  }
+  .linkdein{
+    display: inline-block;
+    padding: 10px;
+  }
+</style>
+<div class="container pt-5" style="margin-top:130px">
+  <div class="col-md-8 py-4 col-12 mx-auto">
+    <div class="shadow bg-light p-5">
+      <div class="text-center">
+        <h1 id="namepr{{products.id}}" class=" text-primary"> {{products.product_name}} </h1>
+        <h4 class="py-2 text-decoration-line-through text-muted" id="pricepr{{i.id}}">Market-Price:
+          Rs.{{products.market_price}} </h4>
+        <h3 class="text-danger py-2">Dobiz-Price: ₹{{ products.price }}</h3>
+        <p class="pro-box-para"> {{products.desc}} </p>
+        <br>
+        <div class="facebook fa-2x">
+          {% post_to_facebook object_or_url %}
+        </div>
+        <div class="twitter fa-2x">
+          {% post_to_twitter object_or_url %}
+        </div>
+        <div class="whatsapp fa-2x">
+          {% post_to_whatsapp object_or_url %}
+        </div>
+        <div class="linkdein fa-2x">{% post_to_linkedin object_or_url %}
+        </div>
+        <br>
+        <button id="pr{{products.id}}" class="btn btn-primary py-2 px-4 add-to-cart"
+          data-product-id="{{products.id}}">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $('.add-to-cart').click(function () {
+      var id = $(this).data('product-id');
+      $.ajax({
+        type: 'POST',
+        url: "{% url 'addToCart' %}",
+        data: {
+          "id": id,
+          csrfmiddlewaretoken: '{{ csrf_token }}'
+        },
+        success: function (response) {
+          if (response.Success == 1) {
+            if (confirm("Do you want to visit Cart page?")) {
+              window.location.href = "{% url 'cart' %}";
+            }
+          }
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}

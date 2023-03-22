@@ -23,13 +23,13 @@ path('password_otp/', views.password_otp, name='password_otp'),
 path('password_reset/', views.password_reset, name='password_reset'),
     
     # Order Management
-path("checkout",views.checkout,name="checkout"),
+# path("checkout",views.checkout,name="checkout"),
 path('order_history',views.order_history,name="order_history"),
 path('cart',views.cart,name="cart"),
 path('addToCart',views.addToCart, name="addToCart"),
 # path('success',views.success, name="success"),
 # path('handlerequest',views.handlerequest, name="handlerequest"),
-
+path('viewproduct/user_id=<int:user_id>/product_id=<int:id>/', views.viewproduct, name="viewproduct"),
 
 #MOST POPULAR URL
 path('mostpopular_api/<str:page>/', views.mostpopular_api, name='mostpopular_api'),
