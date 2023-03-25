@@ -268,12 +268,12 @@
                   <div class="col-megamenu">
                     <h6 class="title">COMPANY CHANGES & RETURN</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{%url 'change_d' %}">Change of Director </a></li>
-                      <li><a href="{% url 'change_m_o' %}">Changes in Main Object </a></li>
-                      <li><a href="{% url 'company_n_c' %}">Company Name Change </a></li>
-                      <li><a href="{% url 'increase_a_c' %}">Increase Authorised Capital </a></li>
-                      <li><a href="{% url 'registered_o_c' %}">Registered Office Change </a></li>
-                      <li><a href="{% url 'share_t_c' %}">Share Transfer in Company </a></li>
+                      <li><a href="{%url 'companychanges' page='change_d' %}">Change of Director </a></li>
+                      <li><a href="{% url 'companychanges' page='change_m_o' %}">Changes in Main Object </a></li>
+                      <li><a href="{% url 'companychanges' page='company_n_c' %}">Company Name Change </a></li>
+                      <li><a href="{% url 'companychanges' page='increase_a_c' %}">Increase Authorised Capital </a></li>
+                      <li><a href="{% url 'companychanges' page='registered_o_c' %}">Registered Office Change </a></li>
+                      <li><a href="{% url 'companychanges' page='share_t_c' %}">Share Transfer in Company </a></li>
                     </ul>
                   </div> <!-- col-megamenu.// -->
                 </div><!-- end col-3 -->
@@ -296,7 +296,7 @@
                   <div class="col-megamenu">
                     <h6 class="title">CONVERT TO PRIVATE LIMITED</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{% url 'llp_p_l' %}">LLP To Private Limited </a></li>
+                      <li><a href="{% url 'exitbussiness' page='llp_p_l' %}">LLP To Private Limited </a></li>
                     </ul>
                   </div> <!-- col-megamenu.// -->
                 </div><!-- end col-3 -->
@@ -304,8 +304,8 @@
                   <div class="col-megamenu">
                     <h6 class="title">OTHER CONVERSIONS</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{%url 'active_c_d_c_s'%}">Active Company To Dormant Company Status</a></li>
-                      <li><a href="{% url 'dormant_a_s' %}">Dormant Company To Account Status</a></li>
+                      <li><a href="{%url 'exitbussiness' page='active_c_d_c_s'%}">Active Company To Dormant Company Status</a></li>
+                      <li><a href="{% url 'exitbussiness' page='dormant_a_s' %}">Dormant Company To Account Status</a></li>
                     </ul>
                   </div> <!-- col-megamenu.// -->
                 </div><!-- end col-3 -->
@@ -313,8 +313,8 @@
                   <div class="col-megamenu">
                     <h6 class="title">CLOSURE OF BUSINESS</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{% url 'winging_u_c' %}">Winding Up of Company (STK-2)</a></li>
-                      <li><a href="{% url 'sent_w_u_i'%}">Sent Winding Up of Inactive LLP </a></li>
+                      <li><a href="{% url 'exitbussiness' page='winging_u_c' %}">Winding Up of Company (STK-2)</a></li>
+                      <li><a href="{% url 'exitbussiness' page='sent_w_u_i'%}">Sent Winding Up of Inactive LLP </a></li>
                     </ul>
                   </div> <!-- col-megamenu.// -->
                 </div>

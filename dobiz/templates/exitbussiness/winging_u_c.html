@@ -1,0 +1,437 @@
+{% extends 'index.html' %}
+
+{%block title%}Winding Up of Company (STK-2) {% endblock %}
+
+{%block body %}
+{% include 'common_pages/banner.html' %}
+
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div id="meaning" class="container tab-pane content active"><br>
+            <p><b>{{meaning.heading_text}} </b></p>
+            <p><b>{{meaning.heading_text2}} </b></p>
+            <p><b>{{meaning.heading_text3}} </b></p>
+
+            <h2>{{meaning.heading_text}}</h2>
+            <p><b>{{meaning.text}}</b></p>
+            <h2>{{meaning.heading_text4}}</h2>
+            <p>{{meaning.text2}}</p>
+            <p class="b-style text-style"><b>{{meaning.heading_text5}} </b> {{meaning.text3}}</p>
+
+          </div>
+
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2>{{minimum.heading_text}}</h2>
+                <p class="b-style text-style"><b>{{minimum.heading_text2}} </b> {{minimum.text}}</p>
+                <p><b>{{minimum.heading_text3}} </b> {{minimum.text2}}</p>
+                <p><b>{{minimum.heading_text4}} </b> {{minimum.text3}}</p>
+
+              </div>
+
+            </div>
+
+
+
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>Documents.</h2>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
+        </div>
+      </div>
+
+      {% include 'common_pages/pricing_sum_below.html' %}
+
+    </div>
+  </div>
+</section>
+
+{% include 'common_pages/fssai.html' %}
+
+<section class="checklist py-5">
+  <div class="container">
+    <div class="row py-4">
+      <h2>{{document.heading_text}}</h2>
+      <p>{{document.list1}} </p>
+
+      <p>{{document.list2}} </p>
+
+      <p>{{document.list3}} </p>
+      <h2 class="fs-4">{{document.heading_text2}} </h2>
+      <p class="fst-italic">{{document.list4}} </p>
+
+      <p class="fst-italic">{{document.list5}} </p>
+
+      <p class="fst-italic">{{document.list6}}</p>
+
+      <p class="fst-italic">{{document.text}}</p>
+      <h2 class="fs-4">{{document.heading_text3}} </h2>
+      <p>{{document.text2}}</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-12 heading">
+        <h2>{{document.heading_text}}</h2>
+        <p>{{document.list1}} </p>
+
+        <p>{{document.list2}} </p>
+
+        <p>{{document.list3}} </p>
+        <h2 class="fs-4">{{document.heading_text2}} </h2>
+        <p class="fst-italic">{{document.list4}} </p>
+
+        <p class="fst-italic">{{document.list5}} </p>
+
+        <p class="fst-italic">{{document.list6}}</p>
+
+        <p class="fst-italic">{{document.text}}</p>
+        <h2 class="fs-4">{{document.heading_text3}} </h2>
+        <p>{{document.text2}}</p>
+      </div>
+
+      <div class="col-md-12 col-12 mx-auto">
+        <div class="table-responsive-sm">
+          <table class="table border table-info">
+            <thead>
+              <tr>
+                <th>{{document.list7}} </th>
+                <th>{{document.list8}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{document.list9}} </td>
+                <td>{{document.list10}}</td>
+              </tr>
+              <tr>
+                <td>{{document.list9}} </td>
+                <td>{{document.list11}}</td>
+              </tr>
+              <tr>
+                <td>{{document.list9}} </td>
+                <td>{{document.text3}}</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-12">
+        <div class="py-2">
+          <h2 class="py-2">{{step.heading_text}} </h2>
+          <p class="fs-6 pt-2">{{step.text}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12 col-12">
+        <div class="accordion pt-2" id="accordionExample">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                {{step.step1}}
+              </button>
+            </h4>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.answer1}}
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                {{step.step2}}
+              </button>
+            </h4>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{step.answer2}}
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                {{step.step3}}
+              </button>
+            </h4>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{step.answer3}}
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                {{step.step4}}
+              </button>
+            </h4>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.answer4}}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                {{step.step5}}
+              </button>
+            </h4>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.answer5}}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                {{step.step6}}
+              </button>
+            </h4>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.answer6}}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingSeven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                {{step.step7}}
+              </button>
+            </h4>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.answer7}}
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingEight">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                {{step.step8}}
+              </button>
+            </h4>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.answer8}}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingNine">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                {{step.step9}}
+              </button>
+            </h4>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.answer9}}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                {{step.step10}}
+              </button>
+            </h4>
+            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.answer10}}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingEleven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                {{step.list1}}
+              </button>
+            </h4>
+            <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.list2}}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTwelve">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                {{step.list3}}
+              </button>
+            </h4>
+            <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.list4}}
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingThirteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                {{step.list5}}
+              </button>
+            </h4>
+            <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{step.list6}}
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFourteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                {{step.list7}}
+              </button>
+            </h4>
+            <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <b>{{step.list8}}</b>
+                <ol>
+                  <li> {{step.list9}}</li>
+                  <li> {{step.list10}}</li>
+                  <li> {{step.list11}}</li>
+                  <li> {{step.list12}}</li>
+                  <li> {{step.list13}}</li>
+                  <li> {{step.list14}}</li>
+                  <li> {{step.list15}}</li>
+                  <li> {{step.list16}}</li>
+
+                </ol>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+{% endblock %}

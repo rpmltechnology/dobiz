@@ -1,197 +1,184 @@
 {% extends 'index.html' %}
 
-{%block title%} Share Transfer in Company   {% endblock %}
+{%block title%} Share Transfer in Company {% endblock %}
 
 {%block body %}
 
-     <section class="top-bn1 bn-styles aos-init aos-animate" data-aos="fade-left">
-      <div class="container">
-        <div class="row pt-4">
-          <div class="col-md-8 col-12 pt-5 pt-5">
-            <p><b>Transfer of shares</b></p>
-            <p><b>Simple Process and Transparent Fee </b></p> 
-            <p><b>All India Incorporation Service </b></p>
+{% include 'common_pages/banner.html' %}
 
-            <h2><b>Transfer of <span class="text-white">shares  </span></b></h2>
-            <p class="pt-4"> <b>The AOA of the company and the Companies Act restrict the transferability of ownership rights in companies. Otherwise, the transfer of shares is simple. We can complete the job within one day if all parties are present for the signing. 
-            </b></p>
-            <!-- <button type="button" class="btn btn-primary mt-4 rounded-pill py-2 px-4">Book Free Consultation</button> -->
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
 
-    <section class="py-5 side-navbg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-9 col-12 bg-side-color" data-spy="affix" data-offset-top="597">
-          <div>
-            <ul class="sidebar nav-pills" id="sideMenu">
-              <h5><b>Table Of Content &nbsp; &nbsp; <i class="fa fa-hand-o-up" style="font-size:28px;color:blue"></i> </b></h5>
-            <li> <a class="sidelink active" href="#overview"> 
-            <span class="icon-s"> <i class="fa fa-database" aria-hidden="true"></i> </span> Basic Overview </a> </li>
-            <li> <a class="sidelink" href="#process">
-            <span class="icon-s"> <i class="fa fa-tasks" aria-hidden="true"></i> </span>  Step Wise Process</a> </li>
-            <li> <a class="sidelink" href="#document">
-            <span class="icon-s"> <i class="fa fa-file-text" aria-hidden="true"></i> </span>  List of Documents</a> </li>
-           
-            </ul>
-          </div>
+        <!-- Tab panes -->
+        <div class="tab-content">
 
-          <div class="content content-3s bg-light">
-            <div id="overview">
-              <section class="py-4">
-                  <div class="container">
-                    <div class="row">
+          <div id="meaning" class="container tab-pane content active"><br>
+            <p><b>{{meaning.heading_text}}</b></p>
+            <p><b>{{meaning.heading_text2}} </b></p>
+            <p><b>{{meaning.heading_text3}} </b></p>
 
-                      <div class="col-md-12 col-12 heading pt-2">
-                        <h2 class="fs-1">Transfer of  <span class="text-primary">shares </span></h2>
-                        <p class="fs-6">The shares of a company's stock are movable assets and can thus be transferred in the same way as other property. Private companies cannot transfer their shares freely, but public companies have certain restrictions. These restrictions are put in place to protect the rights and interests of shareholders and investors. </p>
-                        <h2 class="fs-4">Preparation for Initiating a Share Transfer</h2>
-                        <div class="about-text-style">
-                            <ul>
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The AOA may have restrictions.</li>
+            <h2>{{meaning.heading_text2}}</h2>
+            <p><b>{{meaning.text}}</b></p>
+            <h2>{{meaning.heading_text3}}</h2>
+            <p class="b-style text-style">{{meaning.text2}}</p>
+            <h2>{{meaning.heading_text4}}</h2>
+            <div class="about-text-style">
+              <ul>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list1}}</li>
 
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> First, offer shares of your stock to existing members.</li> 
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> Enter into a Share Transfer Agreement </li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list2}}</li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{meaning.list3}}</li>
 
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> The transfer of shares is restricted.</li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list4}}</li>
 
-                              <li> <i class="fa fa-check-circle" aria-hidden="true"></i> SH-4 (Sec 56) is the share-transfer form.</li>
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list5}}</li>
 
-                            </ul>
-                          </div>
-                          <h2 class="fs-4">Documents Requirements for Transfer of Shares </h2>
-                        <p class="b-style text-style">The registration of a company is easier when there is good documentation. Here's a list listing the documents required by the directors and the registered address for the company for incorporation. If you have clear and valid documents, please submit them to us.</p>
-                        
-                      </div>
-
-                    </div>
-                  </div>
-                </section>
-
+              </ul>
             </div>
-
-             <div id="process">
-
-              <section class="py-4 s-img s-img1">
-                    <div class="container py-2">
-                      <div class="row">
-                        <div class="col-md-2 col-12">
-                        </div>
-                      <div class="col-md-10 col-12">
-
-                        <div class="table-responsive-sm">
-                          <table class="table border table-info">
-                            <thead>
-                              <tr>
-                                <th>S.No</th>  
-                                <th>A. Documents of Directors/Shareholder</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>1.</td>  
-                                <td>Original share certificate to be transferred</td>
-                              </tr>
-                              <tr>
-                                <td>2.</td>  
-                                <td>Certificate of Stamp duty payment, Franking (Certificate of Stamp Duty Payment) upon issue of share certificate</td>
-                              </tr>
-                              <tr>
-                                <td>3.</td>  
-                                <td>Valuation &amp; the Share Transfer Agreement</td>
-                              </tr>
-
-                              <tr>
-                                <td>4.</td>  
-                                <td>Form for sharing transfer duly signed by all parties</td>
-                              </tr>
-
-                              <tr>
-                                <td>5.</td>  
-                                <td>ID and address proof of transferor and recipient</td>
-                              </tr>
-
-                              <tr>
-                                <td>6.</td>  
-                                <td>Any proof of payment for consideration of transfer</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          </div>
-
-                        <h2 class="py-4 text-center">Notice of intent to transfer shares </h2>
-                        <p>The seller gives written notice to the Company, stating his intent to transfer the shares. Existing members are informed about the intention and are invited by the seller to buy the shares. </p>
-                      </div>
-                      </div>
-                    </div>
-                  </section>
-
-            </div>
-
-
-            <div id="document">
-               <section class="py-4 bg-light">
-                  <div class="container">
-                    <div class="row">
-
-                      <div class="col-md-12 col-12 heading pt-4">
-                        <h2 class="fs-4">Documentation needed for the transfer of shares </h2>
-                        <p class="b-style text-style">Once the deal to transfer has been concluded, consideration of such transfer can be fixed. The potential buyer completes Form No.SH.4 and then signs the Form before a witness. The transferor then hands the SH-4 and the share certificate to their new recipient. To pay appropriate stamp duty on share transfers, the transferor must attach share transfer tickets to the share form.</p> 
-                        <h2 class="fs-4">Send the Share Transfer Form (and Certificate) to Company </h2>
-                        <p>After the transfer is completed, witnessed and adequately stamped, the transferee can request that the register of member members be updated with his details instead of the transferor. The Company keeps these transfers. </p>
-                        <h2 class="fs-4">Issue of a new Share Certificate by the Company </h2>
-                        <p class="fst-italic">After the approval of the board members of the Company, the share transfers are recorded in the register for transfer of shares. A replacement share certificate will be issued in the new member's name.</p>
-                      </div>
-
-                    </div>
-                  </div>
-                </section>
-            </div>
-
           </div>
-          </div>
-          <div class="col-md-3 col-12 pricing">
-            <div class="s_fixed bg-light p-2 px-5 pricing-spc">
-            <h5>Pricing Summary</h5>
-              <div class="table-responsive">
-                <table class="table border border-white">
-                  <tbody>
-                    <tr>
-                      <th>Quantity</th>
-                      <td>: 1 Year</td>
-                    </tr>
-                    <tr>
-                      <th>Market Price</th>
-                      <td>: ₹11899</td>
-                    </tr>
-                    <tr>
-                      <th>DobizndiaFilings</th>
-                      <th class="text-danger">: ₹8389 excl. GST</th>
-                    </tr>
-                    <tr>
-                      <th></th>
-                      <td> &nbsp; ₹9899 incl. GST</td>
-                    </tr>
-                    <tr>
-                      <th>GST Credit</th>
-                      <td>: ₹1510</td>
-                    </tr>
-                    <tr>
-                      <th>You Save</th>
-                      <td>: ₹3510 (29%)</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button"><a href="{%url 'order'%}">  Order Now </a></button>
-                </div>
+
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2>Requirement</h2>
+
               </div>
+
             </div>
+
+
+
           </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>{{document.heading_text}}</h2>
+                <p>{{document.text}}</p>
+                <div class="table-responsive-sm">
+                  <table class="table border table-info">
+                    <thead>
+                      <tr>
+                        <th>{{document.list1}}</th>
+                        <th>{{document.list2}}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1.</td>
+                        <td>{{document.list3}}</td>
+                      </tr>
+                      <tr>
+                        <td>2.</td>
+                        <td>{{document.list4}}</td>
+                      </tr>
+                      <tr>
+                        <td>3.</td>
+                        <td>{{document.list5}}</td>
+                      </tr>
+
+                      <tr>
+                        <td>4.</td>
+                        <td>{{document.list6}}</td>
+                      </tr>
+
+                      <tr>
+                        <td>5.</td>
+                        <td>{{document.list7}}</td>
+                      </tr>
+
+                      <tr>
+                        <td>6.</td>
+                        <td>{{document.list8}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <h4>{{document.heading_text2}}</h4>
+                <p>{{document.text2}}</p>
+                <h2>{{document.heading_text3}}</h2>
+                <p class="b-style text-style">{{document.text3}}</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
         </div>
       </div>
-    </section>
 
-    {% endblock %}
+      {% include 'common_pages/pricing_sum_below.html' %}
+
+    </div>
+  </div>
+</section>
+
+{% include 'common_pages/fssai.html' %}
+
+<section class="checklist py-4">
+  <div class="container">
+    <div class="row py-4">
+      <h2>{{faq.question1}}</h2>
+      <p>{{faq.answer1}}</p>
+      <h2>{{faq.question2}}y</h2>
+      <p class="fst-italic">{{faq.answer2}}</p>
+
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

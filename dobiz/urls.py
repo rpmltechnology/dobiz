@@ -97,38 +97,16 @@ path('payrollfunding_api/<str:page>/', views.payrollfunding_api, name='payrollfu
 
 # BASIC ROC COMPLIANCES url
 path('basicroc/<str:page>/', views.basicroc, name='basicroc'),
+
 path('basicroc_api/<str:page>/', views.basicroc_api, name='basicroc_api'),
 
 # COMPANY CHANGES & RETURN url
+path('companychanges/<str:page>/', views.companychanges, name='companychanges'),
+path('companychanges_api/<str:page>/', views.companychanges_api, name='companychanges_api'),
 
-path('change_d', views.change_d, name='change_d'),
-
-path('change_m_o', views.change_m_o, name='change_m_o'),
-
-path('company_n_c', views.company_n_c, name='company_n_c'),
-
-path('increase_a_c', views.increase_a_c, name='increase_a_c'),
-
-path('registered_o_c', views.registered_o_c, name='registered_o_c'),
-
-path('share_t_c', views.share_t_c, name='share_t_c'),
-
-# CONVERT TO PRIVATE LIMITED url
-
-path('llp_p_l', views.llp_p_l, name='llp_p_l'),
-
-# OTHER CONVERSIONS url
-
-path('active_c_d_c_s', views.active_c_d_c_s, name='active_c_d_c_s'),
-
-path('dormant_a_s', views.dormant_a_s, name='dormant_a_s'),
-
-# CLOSURE OF BUSINESS url
-
-path('winging_u_c', views.winging_u_c, name='winging_u_c'),
-path('sent_w_u_i', views.sent_w_u_i, name='sent_w_u_i'),
-
-
+#Exit Business
+path('exitbussiness/<str:page>/', views.exitbussiness, name='exitbussiness'),
+path('exitbussiness_api/<str:page>/', views.exitbussiness_api, name='exitbussiness_api'),
 
     
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
