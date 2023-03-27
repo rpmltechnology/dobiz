@@ -202,3 +202,15 @@ client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
         Print('*****************************')
         payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
         order.razor_pay_order_id = payment['id']
+
+
+# def dashboar(requets):
+#     user = user.res(user)
+#     coupan = couapn.objet(userid=user)
+#     for i in couan:
+#         order = Order.object.filter(coupan.id)
+#         tim
+        
+#         yar
+#         month
+#         week

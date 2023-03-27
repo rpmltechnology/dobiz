@@ -21,7 +21,7 @@ from django.contrib.auth import update_session_auth_hash
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import *
-
+from datetime import datetime
 #integration with razarpay
 import razorpay
 
@@ -2040,7 +2040,7 @@ def password_reset(request):
     else:
         form = PasswordResetForm()
         return render(request, 'register/password_reset.html', {'form': form})
-from datetime import datetime
+
 
 
 # Order Management
@@ -2183,13 +2183,46 @@ def addToCart(request):
     order.save()
     return JsonResponse({"Success":1})
 
-# def dashboar(requets):
-#     user = user.res(user)
-#     coupan = couapn.objet(userid=user)
-#     for i in couan:
-#         order = Order.object.filter(coupan.id)
-#         tim
-        
-#         yar
-#         month
-#         week
+from django.db.models import Sum
+
+from datetime import date
+
+def dashboard(request):
+    user = request.user.id
+    today = date.today()
+    this_month_start = date(today.year, today.month, 1)
+    this_year_start = date(today.year, 1, 1)
+
+    # getting the coupons used by the user
+    coupons_used = Coupan.objects.filter(username=user)
+
+    # initializing variables for total buy amount and coupon usage count
+    total_buy_amount = 0
+    coupon_usage_count = 0
+
+    # iterating over the coupons used and calculate total buy amount and coupon usage count
+    for coupon in coupons_used:
+        orders = Order.objects.filter(coupan=coupon)
+        coupon_usage_count += orders.count()
+        total_buy_amount += sum(order.sell_price for order in orders)
+
+    # calculate commission based on the total buy amount
+    commission_rate = 0.1 # assuming 10% commission rate
+    commission = total_buy_amount * commission_rate
+
+    # calculating monthly and yearly commission
+    month_product_sales = Order.objects.filter(user=user, buy_time__gte=this_month_start).aggregate(Sum('sell_price'))['sell_price__sum'] or 0
+    month_commission = month_product_sales * commission_rate
+
+    year_product_sales = Order.objects.filter(user=user, buy_time__gte=this_year_start).aggregate(Sum('sell_price'))['sell_price__sum'] or 0
+    year_commission = year_product_sales * commission_rate
+
+    context = {
+        'total_buy_amount': total_buy_amount,
+        'coupon_usage_count': coupon_usage_count,
+        'commission': commission,
+        'month_commission': month_commission,
+        'year_commission': year_commission,
+    }
+    return render(request, 'dashboard.html', context)
+
