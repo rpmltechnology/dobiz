@@ -40,11 +40,14 @@ def home(request):
 #View Product
 from django.contrib.auth.decorators import login_required
 def viewproduct(request, **kwargs):
-    user_id = kwargs.get('user_id')
     id = kwargs.get('id')
     products = get_object_or_404(Product, id=id)
-    context = {'products': products, 'user_id': user_id}
+    context = {'products': products}
+    user_id = kwargs.get('user_id')
+    if user_id is not None:
+        context['user_id'] = user_id
     return render(request, 'viewproduct.html', context)
+
 
 
 #order view
@@ -2162,9 +2165,6 @@ def cart(request):
     return render(request, "order/cart.html", context)
 
 
-
-
-
 @csrf_exempt
 def addToCart(request):
     id = request.POST.get("id")
@@ -2188,34 +2188,52 @@ from django.db.models import Sum
 from datetime import date
 
 def dashboard(request):
-    user = request.user.id
     today = date.today()
     this_month_start = date(today.year, today.month, 1)
     this_year_start = date(today.year, 1, 1)
 
-    # getting the coupons used by the user
-    coupons_used = Coupan.objects.filter(username=user)
+    # get the selected user ID from the form, or use the current user ID by default
+    user_id = request.GET.get('option', request.user.id)
 
-    # initializing variables for total buy amount and coupon usage count
+    # Getting the coupons used by the user(s)
+    if user_id == 'all':
+        coupons_used = Coupan.objects.all()
+    else:
+        coupons_used = Coupan.objects.filter(username=user_id)
+
+    # Initializing variables for total buy amount, coupon usage count, and commission
     total_buy_amount = 0
     coupon_usage_count = 0
+    commission = 0
 
-    # iterating over the coupons used and calculate total buy amount and coupon usage count
+    # Iterating over the coupons used and calculating total buy amount, coupon usage count, and commission
     for coupon in coupons_used:
         orders = Order.objects.filter(coupan=coupon)
         coupon_usage_count += orders.count()
         total_buy_amount += sum(order.sell_price for order in orders)
+        commission += coupon.commissionpaid
+    total_buy_amount = round(total_buy_amount, 2)
+    commission = round(commission, 2)
 
-    # calculate commission based on the total buy amount
-    commission_rate = 0.1 # assuming 10% commission rate
-    commission = total_buy_amount * commission_rate
+    # Calculating monthly and yearly commission for the user(s)
+    if user_id == 'all':
+        month_product_sales = Order.objects.filter(buy_time__gte=this_month_start).aggregate(Sum('sell_price'))['sell_price__sum'] or 0
+        year_product_sales = Order.objects.filter(buy_time__gte=this_year_start).aggregate(Sum('sell_price'))['sell_price__sum'] or 0
+    else:
+        month_product_sales = Order.objects.filter(user=user_id, buy_time__gte=this_month_start).aggregate(Sum('sell_price'))['sell_price__sum'] or 0
+        year_product_sales = Order.objects.filter(user=user_id, buy_time__gte=this_year_start).aggregate(Sum('sell_price'))['sell_price__sum'] or 0
+    month_product_sales = round(month_product_sales, 2)
+    year_product_sales = round(year_product_sales, 2)
 
-    # calculating monthly and yearly commission
-    month_product_sales = Order.objects.filter(user=user, buy_time__gte=this_month_start).aggregate(Sum('sell_price'))['sell_price__sum'] or 0
-    month_commission = month_product_sales * commission_rate
+    month_commission = month_product_sales *(commission*0.01)*coupon_usage_count #converting commission in to percentage 
+    year_commission = year_product_sales *(commission*0.01)*coupon_usage_count
+    month_commission = round(month_commission, 2)
+    year_commission = round(year_commission, 2)
 
-    year_product_sales = Order.objects.filter(user=user, buy_time__gte=this_year_start).aggregate(Sum('sell_price'))['sell_price__sum'] or 0
-    year_commission = year_product_sales * commission_rate
+    # get the count of how many times the coupons were used, and the total amount sold with coupons
+    coupon_use_count = coupons_used.count()
+    coupon_total_amount = sum(Order.objects.filter(coupan__in=coupons_used).values_list('sell_price', flat=True))
+    coupon_total_amount = round(coupon_total_amount, 2)
 
     context = {
         'total_buy_amount': total_buy_amount,
@@ -2223,6 +2241,8 @@ def dashboard(request):
         'commission': commission,
         'month_commission': month_commission,
         'year_commission': year_commission,
+        'users': User.objects.all(),
+        'coupon_use_count': coupon_use_count,
+        'coupon_total_amount': coupon_total_amount,
     }
     return render(request, 'dashboard.html', context)
-

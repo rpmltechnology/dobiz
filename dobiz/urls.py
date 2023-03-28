@@ -30,7 +30,7 @@ path('addToCart',views.addToCart, name="addToCart"),
 path('dashboard',views.dashboard, name="dashboard"),
 # path('success',views.success, name="success"),
 # path('handlerequest',views.handlerequest, name="handlerequest"),
-path('viewproduct/user_id=<int:user_id>/product_id=<int:id>/', views.viewproduct, name="viewproduct"),
+path('viewproduct/user_id=(?P<user_id>[0-9]+)?/product_id=(?P<id>[0-9]+)/', views.viewproduct, name='viewproduct'),
 
 #MOST POPULAR URL
 path('mostpopular_api/<str:page>/', views.mostpopular_api, name='mostpopular_api'),

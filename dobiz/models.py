@@ -86,7 +86,7 @@ class Coupan(models.Model):
     active = models.IntegerField(default=0)
     percentage = models.IntegerField(null=True,blank=True)
     username = models.ForeignKey(to=User, on_delete=models.CASCADE,null=True,blank=True)
-    # usrpercentage = models.IntegerField(null=True,blank=True)
+    commissionpaid = models.IntegerField(null=True,blank=True)
     def __str__(self):
         return self.coupan
 
