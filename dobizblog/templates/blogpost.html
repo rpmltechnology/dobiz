@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{%block title%} BlogPost{% endblock %}
+
+{%block body %}
+
+{% include 'common_pages/banner.html'%}
+
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row py-4">
+            <div class="col-md-8 col-12">
+                <img src="images/common_img.png" alt="" class="img-fluid">
+                <h4 class="pt-4"><a href="#" class="text-decoration-none">{{post.title}} </a></h4>
+                <p><b>{{post.author}}</b></p>
+                <p><b>{{post.timestap}}</b></p>
+                <p>{{post.content}}</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+{% endblock %}

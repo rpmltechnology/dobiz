@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dobiz',
+    'dobizblog',
     'rest_framework',
     'django_countries',
     'import_export',
