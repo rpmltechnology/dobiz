@@ -2246,3 +2246,37 @@ def dashboard(request):
         'coupon_total_amount': coupon_total_amount,
     }
     return render(request, 'dashboard.html', context)
+
+from dobizblog.models import *
+
+# from haystack.query import SearchQuerySet
+
+# def search(request):
+#     query = request.GET.get('query', '')
+#     if len(query) > 78:
+#         allPosts = Post.objects.none()
+#     else:
+#         # Perform a search using Haystack
+#         sqs = SearchQuerySet().filter(content=query)
+#         allPosts = [result.object for result in sqs]
+#     if not allPosts:
+#         messages.warning(request, "No search results found. Please refine your query.")
+#     params = {'allPosts': allPosts, 'query': query}
+#     return render(request, 'search.html', params)
+
+def search(request):
+    query = request.GET.get('query', '')
+    allPosts = Post.objects.none()
+    if query:
+        if len(query) > 78:
+            messages.warning(request, "Search query too long. Please refine your query.")
+        else:
+            allPostsTitle = Post.objects.filter(title__icontains=query)
+            allPostsAuthor = Post.objects.filter(author__icontains=query)
+            allPostsContent = Post.objects.filter(content__icontains=query)
+            allPosts = allPostsTitle.union(allPostsContent, allPostsAuthor)
+            if allPosts.count() == 0:
+                messages.warning(request, "No search results found. Please refine your query.")
+    params = {'allPosts': allPosts, 'query': query}
+    return render(request, 'search.html', params)
+

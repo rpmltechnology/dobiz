@@ -44,7 +44,16 @@ INSTALLED_APPS = [
     'django_countries',
     'import_export',
     'django_social_share',
+    # 'haystack',
+    # 'django_comments_xtd',
+    # 'django_comments',
+    'crispy_forms',
+    'django.contrib.sites',
+    'django.contrib.humanize',
 ]
+# SITE_ID = 1
+# COMMENTS_APP = 'django_comments_xtd'
+# COMMENTS_XTD_MAX_THREAD_LEVEL=2
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -146,3 +155,14 @@ EMAIL_HOST_PASSWORD = 'emqkreqdbqjcvhsv'
 
 KEY = 'rzp_test_D4hi1vsG8ESCJ2'
 SECRET = 'xuZKmllZbwmbKNT1ES0rdplp'
+
+#search
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch5_backend.Elasticsearch5SearchEngine',
+        'URL': 'http://localhost:9200/',
+        'INDEX_NAME': 'myapp',
+    },
+}
+
+#COMMENTS

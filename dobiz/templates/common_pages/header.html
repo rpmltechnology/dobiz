@@ -350,8 +350,11 @@
       </ul>
 
       <div class="search-box">
+        <form method="get" action="/search">
         <button class="btn-search"><i class="fa fa-search"></i></button>
-        <input type="text" class="input-search" placeholder="Type to Search...">
+        <input type="text" class="input-search" placeholder="Type to Search..." name="query" id="query" required>
+
+      </form>
       </div>
 
     </div> <!-- navbar-collapse.// -->
