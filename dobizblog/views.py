@@ -3,6 +3,8 @@ from dobiz.forms import *
 from dobiz.models import *
 from .models import *
 from django.contrib import messages
+#extras
+from dobiz.templatetags import extras
 # Create your views here.
 def bloghome(request):
     form = ContactUser()
@@ -27,7 +29,14 @@ def blogpost(request,pk):
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
     post = Post.objects.get(sno=pk)
-    comments= BlogComment.objects.filter(post=post)
+    comments= BlogComment.objects.filter(post=post, parent=None)
+    replies= BlogComment.objects.filter(post=post).exclude(parent=None)
+    replyDict={}
+    for reply in replies:
+        if reply.parent.sno not in replyDict.keys():
+            replyDict[reply.parent.sno]=[reply]
+        else:
+            replyDict[reply.parent.sno].append(reply)
     if request.method == 'POST':
         form = ContactUser(request.POST)
         if form.is_valid():
@@ -36,7 +45,7 @@ def blogpost(request,pk):
             return redirect('bloghome')
         else:
             form = ContactUser()
-    context={'banner':banner,'price':price,'form':form,'post':post,'comments':comments}
+    context={'banner':banner,'price':price,'form':form,'post':post,'comments':comments,'replyDict': replyDict}
     return render(request, 'blogpost.html',context)
 
 def postComment(request):

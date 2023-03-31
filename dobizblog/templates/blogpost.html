@@ -1,6 +1,7 @@
 {% extends 'index.html' %}
 {%block title%} BlogPost{% endblock %}
 {% load humanize %}
+{% load extras %}
 {%block body %}
 
 {% include 'common_pages/banner.html'%}
@@ -36,42 +37,85 @@
     {% for comment in comments %}
     <div class="row my-3">
       <div class="col-md-1  ">
-        <img class="rounded mx-auto d-block w-50 p-2"
-          src="https://www.transparentpng.com/thumb/user/black-username-png-icon-free--4jlZLb.png" alt="user">
+        <i class="fa fa-user fs-1" aria-hidden="true"></i>
       </div>
       <div class="col-md-11 ">
         <b> {{comment.user.fname}} </b> <span class="badge bg-secondary"> {{comment.timestamp| naturaltime}}</span>
         <div> {{comment.comment}} </div>
         <div class="reply mx-0">
-            
-          <button class="btn btn-sm btn-primary" type="button" data-toggle="collapse" data-target="#replyBox{{comment.sno}}" aria-expanded="false" aria-controls="replyBox{{comment.sno}}">
-              Reply
+          {% if user.is_authenticated %}
+          <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="collapse"
+            data-bs-target="#replyBox{{comment.sno}}" aria-expanded="false" aria-controls="replyBox{{comment.sno}}">
+            Reply
           </button>
+
           <div class="collapse" id="replyBox{{comment.sno}}">
-              <div class="card card-body my-2">
-                  <form action="/blog/postComment" method="post">
-                      {% csrf_token %}
-                      <div class="form-group">
-                          <label for="comment">Post a reply </label>
-                          <input type="text" class="form-control" name="comment" placeholder="Enter comment here">
-                          <input type="hidden" name="parentSno" value="{{comment.sno}}">
-                      </div>
-                      <input type="hidden" name="postSno" value="{{post.sno}}">
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
+            <div class="card card-body my-2">
+              <form action="{% url 'dobizblog:postComment' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="comment">Post a reply </label>
+                  <input type="text" class="form-control" name="comment" placeholder="Enter comment here">
+                  <input type="hidden" name="parentSno" value="{{comment.sno}}">
+                </div>
+                <input type="hidden" name="postSno" value="{{post.sno}}">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+          {% else %}
+          <button class="btn btn-sm btn-primary" type="button" data-toggle="collapse" data-target="#replyBox{{comment.sno}}" aria-expanded="false" aria-controls="replyBox{{comment.sno}}">
+              Login to reply
+          </button>
+          {% endif %}
+          <div class="replies my-2 ">
+            {% for reply in replyDict|get_val:comment.sno %}
+            <div class="row my-2">
+              <div class="col-md-1 ">
+                <i class="fa fa-user fs-1" aria-hidden="true"></i>
+              </div>
+              <div class="col-md-11">
+                  <div class="col-md-11 ">
+                      <b> {{reply.user.fname}} </b> <span class="badge bg-secondary">{{reply.timestamp| naturaltime}}</span>
+                      <div>{{reply.comment}}</div>
+                  </div>
+                  <br>
               </div>
           </div>
-
-          <div class="replies bg-danger my-2 ">
-          {% for reply in replyDict %}
-          {{reply}}
-          <br> 
-          {% endfor %}
+            {% endfor %}
           </div>
+        </div>
       </div>
-  </div>
-</div>
-{% endfor %}
-      </div>
+    </div>
+    {% endfor %}
 </section>
 {% endblock %}
+
+<!-- <div class="reply mx-0">
+
+  <button class="btn btn-sm btn-primary" type="button" data-toggle="collapse"
+    data-target="#replyBox{{comment.sno}}" aria-expanded="false" aria-controls="#replyBox{{comment.sno}}">
+    Reply
+  </button>
+  <div class="collapse" id="replyBox{{comment.sno}}">
+    <div class="card card-body my-2">
+      <form action="{% url 'dobizblog:postComment' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="comment">Post a reply </label>
+          <input type="text" class="form-control" name="comment" placeholder="Enter comment here">
+          <input type="hidden" name="parentSno" value="{{comment.sno}}">
+        </div>
+        <input type="hidden" name="postSno" value="{{post.sno}}">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="replies bg-danger my-2 ">
+    {% for reply in replyDict %}
+    {{reply}}
+    <br>
+    {% endfor %}
+  </div>
+</div> -->
