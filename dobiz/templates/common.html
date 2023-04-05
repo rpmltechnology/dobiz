@@ -1,0 +1,1962 @@
+{% extends 'index.html' %}
+{%block title%}{{page.pagetitle}}{% endblock %}
+{% load static %}
+{%load myfilters %}
+{%block body %}
+
+
+{% include 'common_pages/banner.html'%}
+
+<section class="py-5 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div id="meaning" class="container tab-pane content active"><br>
+            {% if meaning.heading_text %}
+            <h4> {{meaning.heading_text}} </h4>
+            {% endif %}
+
+            {% if meaning.text %}
+            <p> {{meaning.text}} </p>
+            {% endif %}
+            {% if meaning.heading_text2 %}
+            <h4> {{meaning.heading_text2}} </h4>
+            {% endif %}
+
+            {% if meaning.text2 %}
+            <p> {{meaning.text2}} </p>
+            {% endif %}
+
+            {% if meaning.img %}
+            <div class="text-center py-4"><img src="/media/{{ meaning.img }}" alt="logo-img" class="img-fluid"></div>
+            {% endif %}
+
+            {% if meaning.heading_text3 %}
+            <h4> {{meaning.heading_text3}} </h4>
+            {% endif %}
+
+            {% if meaning.text3 %}
+            <p> {{meaning.text3}} </p>
+            {% endif %}
+
+            {% if meaning.heading_text4 %}
+            <h4> {{meaning.heading_text4}} </h4>
+            {% endif %}
+
+            {% if meaning.text4 %}
+            <p> {{meaning.text4}} </p>
+            {% endif %}
+
+            {% if meaning.heading_text5 %}
+            <h4> {{meaning.heading_text5}} </h4>
+            {% endif %}
+
+            {% if meaning.text5 %}
+            <p> {{meaning.text5}} </p>
+            {% endif %}
+
+            {% if meaning.heading_text6 %}
+            <h4> {{meaning.heading_text6}} </h4>
+            {% endif %}
+
+            {% if meaning.text6 %}
+            <p> {{meaning.text6}} </p>
+            {% endif %}
+
+            {% if meaning.heading_text7 %}
+            <h4> {{meaning.heading_text7}} </h4>
+            {% endif %}
+
+            {% if meaning.text7 %}
+            <p> {{meaning.text7}} </p>
+            {% endif %}
+
+            {% if meaning.heading_text8 %}
+            <h4> {{meaning.heading_text8}} </h4>
+            {% endif %}
+
+            {% if meaning.text8 %}
+            <p> {{meaning.text8}} </p>
+            {% endif %}
+
+            {% if meaning.heading_text9 %}
+            <h4> {{meaning.heading_text9}} </h4>
+            {% endif %}
+
+            {% if meaning.text9 %}
+            <p> {{meaning.text9}} </p>
+            {% endif %}
+            <div class="col-md-4 col-12 p-2">
+              <div class="row">
+                <table class="table">
+                  <tbody>
+                    {% if meaning.list1 %}
+                    <tr class="table-dark">
+                      <td>{{meaning.list1}}</td>
+                    </tr>
+                    {% endif %}
+                    {% if meaning.list2 %}
+                    <tr class="table-warning">
+                      <td>{{meaning.list2}}</td>
+                    </tr>
+                    {% endif %}
+                    {% if meaning.list3 %}
+                    <tr class="table-light">
+                      <td>{{meaning.list3}}</td>
+                    </tr>
+                    {% endif %}
+                    {% if meaning.list4 %}
+                    <tr class="table-primary">
+                      <td>{{meaning.list4}}</td>
+                    </tr>
+                    {% endif %}
+                    {% if meaning.list5 %}
+                    <tr class="table-info">
+                      <td>{{meaning.list5}}</td>
+                    </tr>
+                    {% endif %}
+                  </tbody>
+                </table>
+
+                <div class="col-md-4 col-12 p-2">
+                  <table class="table">
+                    <tbody>
+                      {% if meaning.list6 %}
+                      <tr class="table-dark">
+                        <td>{{meaning.list6}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if meaning.list7 %}
+                      <tr class="table-primary">
+                        <td>{{meaning.list7}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if meaning.list8 %}
+                      <tr class="table-info">
+                        <td>{{meaning.list8}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if meaning.list9 %}
+                      <tr class="table-warning">
+                        <td>{{meaning.list9}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if meaning.list10 %}
+                      <tr class="table-light">
+                        <td>{{meaning.list10}}</td>
+                      </tr>
+                      {% endif %}
+
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-md-4 col-12 p-2">
+                  <table class="table">
+                    <tbody>
+                      {% if meaning.list11 %}
+                      <tr class="table-dark">
+                        <td>{{meaning.list11}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if meaning.list12 %}
+                      <tr class="table-primary">
+                        <td>{{meaning.list12}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if meaning.list13 %}
+                      <tr class="table-info">
+                        <td>{{meaning.list13}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if meaning.list14 %}
+                      <tr class="table-warning">
+                        <td>{{meaning.list14}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if meaning.list15 %}
+                      <tr class="table-light">
+                        <td>{{meaning.list15}}</td>
+                      </tr>
+                      {% endif %}
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="row table-responsive-sm">
+                {% if minimum.heading_text %}
+                <h4> {{minimum.heading_text}} </h4>
+                {% endif %}
+                {% if minimum.text %}
+                <p> {{minimum.text}} </p>
+                {% endif %}
+                {% if minimum.heading_text2 %}
+                <h4> {{minimum.heading_text2}} </h4>
+                {% endif %}
+
+                {% if minimum.text2 %}
+                <p> {{minimum.text2}} </p>
+                {% endif %}
+
+                {% if minimum.heading_text3 %}
+                <h4> {{minimum.heading_text3}} </h4>
+                {% endif %}
+                {% if mimimum.img %}
+                <div class="text-center py-4"><img src="/media/{{ meaning.img }}" alt="logo-img" class="img-fluid">
+                </div>
+                {% endif %}
+                {% if minimum.text3 %}
+                <p> {{minimum.text3}} </p>
+                {% endif %}
+
+                {% if minimum.heading_text4 %}
+                <h4> {{minimum.heading_text4}} </h4>
+                {% endif %}
+
+                {% if minimum.text4 %}
+                <p> {{minimum.text4}} </p>
+                {% endif %}
+
+                <div class="col-md-4 col-12 p-2">
+                  <div class="row">
+                    <table class="table">
+                      <tbody>
+                        {% if minimum.list1 %}
+                        <tr class="table-dark">
+                          <td>{{minimum.list1}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if minimum.list2 %}
+                        <tr class="table-warning">
+                          <td>{{minimum.list2}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if minimum.list3 %}
+                        <tr class="table-light">
+                          <td>{{minimum.list3}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if minimum.list4 %}
+                        <tr class="table-primary">
+                          <td>{{minimum.list4}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if minimum.list5 %}
+                        <tr class="table-info">
+                          <td>{{minimum.list5}}</td>
+                        </tr>
+                        {% endif %}
+                      </tbody>
+                    </table>
+
+
+                    <div class="col-md-4 col-12 p-2">
+                      <table class="table">
+                        <tbody>
+                          {% if minimum.list6 %}
+                          <tr class="table-dark">
+                            <td>{{minimum.list6}}</td>
+                          </tr>
+                          {% endif %}
+                          {% if minimum.list7 %}
+                          <tr class="table-primary">
+                            <td>{{minimum.list7}}</td>
+                          </tr>
+                          {% endif %}
+                          {% if minimum.list8 %}
+                          <tr class="table-info">
+                            <td>{{minimum.list8}}</td>
+                          </tr>
+                          {% endif %}
+                          {% if minimum.list9 %}
+                          <tr class="table-warning">
+                            <td>{{minimum.list9}}</td>
+                          </tr>
+                          {% endif %}
+                          {% if minimum.list10 %}
+                          <tr class="table-light">
+                            <td>{{minimum.list10}}</td>
+                          </tr>
+                          {% endif %}
+
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="col-md-4 col-12 p-2">
+                      <table class="table">
+                        <tbody>
+                          {% if minimum.list11 %}
+                          <tr class="table-dark">
+                            <td>{{minimum.list11}}</td>
+                          </tr>
+                          {% endif %}
+                          {% if minimum.list12 %}
+                          <tr class="table-primary">
+                            <td>{{minimum.list12}}</td>
+                          </tr>
+                          {% endif %}
+                          {% if minimum.list13 %}
+                          <tr class="table-info">
+                            <td>{{minimum.list13}}</td>
+                          </tr>
+                          {% endif %}
+                          {% if minimum.list14 %}
+                          <tr class="table-warning">
+                            <td>{{minimum.list14}}</td>
+                          </tr>
+                          {% endif %}
+                          {% if minimum.list15 %}
+                          <tr class="table-light">
+                            <td>{{minimum.list15}}</td>
+                          </tr>
+                          {% endif %}
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  {% if minimum.text5 %}
+                  <p> {{minimum.text5}} </p>
+                  {% endif %}
+
+                  {% if minimum.text6 %}
+                  <p> {{minimum.text6}} </p>
+                  {% endif %}
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <div class="col-md-12 col-12 heading">
+              {% if benefit.heading_text %}
+              <h4> {{benefit.heading_text}} </h4>
+              {% endif %}
+
+              {% if benefit.text %}
+              <p> {{benefit.text}} </p>
+              {% endif %}
+              {% if benefit.heading_text2 %}
+              <h4> {{benefit.heading_text2}} </h4>
+              {% endif %}
+
+              {% if benefit.text2 %}
+              <p> {{benefit.text2}} </p>
+              {% endif %}
+
+              {% if benefit.img %}
+              <div class="text-center py-4"><img src="/media/{{ meaning.img }}" alt="logo-img" class="img-fluid">
+              </div>
+              {% endif %}
+
+              {% if benefit.heading_text3 %}
+              <h4> {{benefit.heading_text3}} </h4>
+              {% endif %}
+
+              {% if benefit.text3 %}
+              <p> {{benefit.text3}} </p>
+              {% endif %}
+
+              {% if benefit.heading_text4 %}
+              <h4> {{benefit.heading_text4}} </h4>
+              {% endif %}
+
+              {% if benefit.text4 %}
+              <p> {{benefit.text4}} </p>
+              {% endif %}
+
+
+
+              {% if benefit.text5 %}
+              <p> {{benefit.text5}} </p>
+              {% endif %}
+
+
+
+              {% if benefit.text6 %}
+              <p> {{benefit.text6}} </p>
+              {% endif %}
+
+
+
+              {% if benefit.text7 %}
+              <p> {{benefit.text7}} </p>
+              {% endif %}
+
+
+
+              {% if benefit.text8 %}
+              <p> {{benefit.text8}} </p>
+              {% endif %}
+
+              {% if benefit.text9 %}
+              <p> {{benefit.text9}} </p>
+
+              {% endif %}
+              <div class="col-md-4 col-12 p-2">
+                <div class="row">
+                  <table class="table">
+                    <tbody>
+                      {% if benefit.list1 %}
+                      <tr class="table-dark">
+                        <td>{{benefit.list1}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if benefit.list2 %}
+                      <tr class="table-warning">
+                        <td>{{benefit.list2}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if benefit.list3 %}
+                      <tr class="table-light">
+                        <td>{{benefit.list3}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if benefit.list4 %}
+                      <tr class="table-primary">
+                        <td>{{benefit.list4}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if benefit.list5 %}
+                      <tr class="table-info">
+                        <td>{{benefit.list5}}</td>
+                      </tr>
+                      {% endif %}
+                    </tbody>
+                  </table>
+
+
+
+                  <table class="table">
+                    <tbody>
+                      {% if benefit.list6 %}
+                      <tr class="table-dark">
+                        <td>{{benefit.list6}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if benefit.list7 %}
+                      <tr class="table-primary">
+                        <td>{{benefit.list7}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if benefit.list8 %}
+                      <tr class="table-info">
+                        <td>{{benefit.list8}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if benefit.list9 %}
+                      <tr class="table-warning">
+                        <td>{{benefit.list9}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if benefit.list10 %}
+                      <tr class="table-light">
+                        <td>{{benefit.list10}}</td>
+                      </tr>
+                      {% endif %}
+
+                    </tbody>
+                  </table>
+
+                  <div class="col-md-4 col-12 p-2">
+                    <table class="table">
+                      <tbody>
+                        {% if benefit.list11 %}
+                        <tr class="table-dark">
+                          <td>{{benefit.list11}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if benefit.list12 %}
+                        <tr class="table-primary">
+                          <td>{{benefit.list12}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if benefit.list13 %}
+                        <tr class="table-info">
+                          <td>{{benefit.list13}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if benefit.list14 %}
+                        <tr class="table-warning">
+                          <td>{{benefit.list14}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if benefit.list15 %}
+                        <tr class="table-light">
+                          <td>{{benefit.list15}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if benefit.list16 %}
+                        <tr class="table-light">
+                          <td>{{benefit.list16}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if benefit.list17 %}
+                        <tr class="table-light">
+                          <td>{{benefit.list17}}</td>
+                        </tr>
+                        {% endif %}
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                {% if document.heading_text %}
+                <h4 class="fs-4"> {{document.heading_text}} </h4>
+                {% endif %}
+                {% if document.text %}
+                <p>{{document.text}}</p>
+                {% endif %}
+
+                {% if document.heading_text2 %}
+                <h4 class="fs-4"> {{document.heading_text2}} </h4>
+                {% endif %}
+                {% if document.text2 %}
+                <p class="b-style text-style">{{document.text2}}</p>
+                {% endif %}
+                {% if document.heading_text3 %}
+                <h4 class="fs-4"> {{document.heading_text3}} </h4>
+                {% endif %}
+                {% if document.text3 %}
+                <p class="b-style text-style">{{document.text3}}</p>
+                {% endif %}
+                {% if document.text4 %}
+                <p class="b-style text-style">{{document.text4}}</p>
+                {% endif %}
+                {% if document.text5 %}
+                <p class="b-style text-style">{{document.text5}}</p>
+                {% endif %}
+                {% if document.heading_text4 %}
+                <h4 class="fs-4"> {{document.heading_text4}} </h4>
+                {% endif %}
+                {% if document.text6 %}
+                <p>{{document.text6}}</p>
+                {% endif %}
+
+              </div>
+
+
+              <div class="col-md-6 col-6 p-2">
+                <div class="row">
+                  <table class="table">
+                    <tbody>
+                      {% if document.list1 %}
+                      <tr class="table-dark">
+                        <td>{{document.list1}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if document.list2 %}
+                      <tr class="table-warning">
+                        <td>{{document.list2}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if document.list3 %}
+                      <tr class="table-light">
+                        <td>{{document.list3}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if document.list4 %}
+                      <tr class="table-primary">
+                        <td>{{document.list4}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if document.list5 %}
+                      <tr class="table-info">
+                        <td>{{document.list5}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if document.list6 %}
+                      <tr class="table-dark">
+                        <td>{{document.list6}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if document.list7 %}
+                      <tr class="table-primary">
+                        <td>{{document.list7}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if document.list8 %}
+                      <tr class="table-info">
+                        <td>{{document.list8}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if document.list9 %}
+                      <tr class="table-warning">
+                        <td>{{document.list9}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if document.list10 %}
+                      <tr class="table-light">
+                        <td>{{document.list10}}</td>
+                      </tr>
+                      {% endif %}
+                    </tbody>
+                  </table>
+
+
+                  <div class="col-md-4 col-12 p-2">
+                    <table class="table">
+                      <tbody>
+                        {% if document.list11 %}
+                        <tr class="table-dark">
+                          <td>{{document.list11}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list12 %}
+                        <tr class="table-primary">
+                          <td>{{document.list12}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list13 %}
+                        <tr class="table-info">
+                          <td>{{document.list13}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list14 %}
+                        <tr class="table-warning">
+                          <td>{{document.list14}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list15 %}
+                        <tr class="table-light">
+                          <td>{{document.list15}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list16 %}
+                        <tr class="table-dark">
+                          <td>{{document.list16}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list17 %}
+                        <tr class="table-primary">
+                          <td>{{document.list17}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list18 %}
+                        <tr class="table-info">
+                          <td>{{document.list18}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list19 %}
+                        <tr class="table-warning">
+                          <td>{{document.list19}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list20 %}
+                        <tr class="table-light">
+                          <td>{{document.list20}}</td>
+                        </tr>
+                        {% endif %}
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-md-4 col-12 p-2">
+                    <table class="table">
+                      <tbody>
+                        {% if document.list21 %}
+                        <tr class="table-dark">
+                          <td>{{document.list21}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list22 %}
+                        <tr class="table-primary">
+                          <td>{{document.list22}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list23 %}
+                        <tr class="table-info">
+                          <td>{{document.list23}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list24 %}
+                        <tr class="table-warning">
+                          <td>{{document.list24}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list25 %}
+                        <tr class="table-light">
+                          <td>{{document.list25}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list26 %}
+                        <tr class="table-dark">
+                          <td>{{document.list26}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list27 %}
+                        <tr class="table-primary">
+                          <td>{{document.list27}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list28 %}
+                        <tr class="table-info">
+                          <td>{{document.list28}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list29 %}
+                        <tr class="table-warning">
+                          <td>{{document.list29}}</td>
+                        </tr>
+                        {% endif %}
+                        {% if document.list30 %}
+                        <tr class="table-light">
+                          <td>{{document.list30}}</td>
+                        </tr>
+                        {% endif %}
+
+                      </tbody>
+                    </table>
+
+                  </div>
+                  <div class="about-text-style">
+                    <ul>
+                      {% if document.list31 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list31}} </li>
+                      {% endif %}
+                      {% if document.list32 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list32}} </li>
+                      {% endif %}
+                      {% if document.list33 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list33}}
+                      </li>
+                      {% endif %}
+                      {% if document.list34 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list34}} </li>
+                      {% endif %}
+                      {% if document.list35 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list35}} </li>
+                      {% endif %}
+                      {% if document.list36 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list36}} </li>
+                      {% endif %}
+                      {% if document.list37 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list37}} </li>
+                      {% endif %}
+                      {% if document.list38 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list38}}
+                      </li>
+                      {% endif %}
+                      {% if document.list39 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list39}} </li>
+                      {% endif %}
+                      {% if document.list40 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list40}} </li>
+                      {% endif %}
+                    </ul>
+                  </div>
+                  <div class="about-text-style">
+                    <ul>
+                      {% if document.list41 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list41}} </li>
+                      {% endif %}
+                      {% if document.list42 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list42}} </li>
+                      {% endif %}
+                      {% if document.list43 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list43}}
+                      </li>
+                      {% endif %}
+                      {% if document.list44 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list44}} </li>
+                      {% endif %}
+                      {% if document.list45 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list45}} </li>
+                      {% endif %}
+                      {% if document.list46 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list46}} </li>
+                      {% endif %}
+                      {% if document.list47 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list47}} </li>
+                      {% endif %}
+                      {% if document.list48 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list48}}
+                      </li>
+                      {% endif %}
+                      {% if document.list49 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list49}} </li>
+                      {% endif %}
+                      {% if document.list50 %}
+                      <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list50}} </li>
+                      {% endif %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-112 col-12">
+                {% if incorporation.heading_text %}
+                <h2 class="py-2">{{incorporation.heading_text}} </h2>
+                {% endif %}
+
+                {% if incorporation.text %}
+                <p>{{incorporation.text}}</p>
+                {% endif %}
+
+                {% if incorporation.heading_text2 %}
+                <h2 class="py-2">{{incorporation.heading_text2}} </h2>
+                {% endif %}
+
+                {% if incorporation.text2 %}
+                <p>{{incorporation.text2}}</p>
+                {% endif %}
+
+                {% if incorporation.heading_text3 %}
+                <h2>{{incorporation.heading_text3}} </h2>
+                {% endif %}
+
+                {% if incorporation.text3 %}
+                <p>{{incorporation.text3}}</p>
+                {% endif %}
+
+                {% if incorporation.heading_text4 %}
+                <h2 class="py-2">{{incorporation.heading_text4}} </h2>
+                {% endif %}
+
+                {% if incorporation.text4 %}
+                <p>{{incorporation.text4}}</p>
+                {% endif %}
+
+                {% if incorporation.text5 %}
+                <p>{{incorporation.text5}}</p>
+                {% endif %}
+
+                {% if incorporation.text6 %}
+                <p>{{incorporation.text6}}</p>
+                {% endif %}
+              </div>
+              <div class="col-md-6 col-6 p-2">
+                <div class="row">
+                  <table class="table">
+                    <tbody>
+                      {% if incorporation.list1 %}
+                      <tr class="table-dark">
+                        <td>{{incorporation.list1}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if incorporation.list2 %}
+                      <tr class="table-warning">
+                        <td>{{incorporation.list2}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if incorporation.list3 %}
+                      <tr class="table-light">
+                        <td>{{incorporation.list3}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if incorporation.list4 %}
+                      <tr class="table-primary">
+                        <td>{{incorporation.list4}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if incorporation.list5 %}
+                      <tr class="table-info">
+                        <td>{{incorporation.list5}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if incorporation.list6 %}
+                      <tr class="table-dark">
+                        <td>{{incorporation.list6}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if incorporation.list7 %}
+                      <tr class="table-primary">
+                        <td>{{incorporation.list7}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if incorporation.list8 %}
+                      <tr class="table-info">
+                        <td>{{incorporation.list8}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if incorporation.list9 %}
+                      <tr class="table-warning">
+                        <td>{{incorporation.list9}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if incorporation.list10 %}
+                      <tr class="table-light">
+                        <td>{{incorporation.list10}}</td>
+                      </tr>
+                      {% endif %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                {% if compliance.heading_text %}
+                <h2 class="py-2">{{compliance.heading_text}} </h2>
+                {% endif %}
+
+                {% if compliance.text %}
+                <p>{{compliance.text}}</p>
+                {% endif %}
+
+                {% if compliance.heading_text2 %}
+                <h2 class="py-2">{{compliance.heading_text2}} </h2>
+                {% endif %}
+
+                {% if compliance.text2 %}
+                <p>{{compliance.text2}}</p>
+                {% endif %}
+
+                {% if compliance.heading_text3 %}
+                <h2>{{compliance.heading_text3}} </h2>
+                {% endif %}
+
+                {% if incorporation.text3 %}
+                <p>{{incorporation.text3}}</p>
+                {% endif %}
+
+                {% if compliance.heading_text4 %}
+                <h2 class="py-2">{{compliance.heading_text4}} </h2>
+                {% endif %}
+
+                {% if compliance.text4 %}
+                <p>{{compliance.text4}}</p>
+                {% endif %}
+
+                {% if compliance.text5 %}
+                <p>{{compliance.text5}}</p>
+                {% endif %}
+
+                {% if compliance.text6 %}
+                <p>{{compliance.text6}}</p>
+                {% endif %}
+              </div>
+              <div class="col-md-6 col-6 p-2">
+                <div class="row">
+                  <table class="table">
+                    <tbody>
+                      {% if compliance.list1 %}
+                      <tr class="table-dark">
+                        <td>{{compliance.list1}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list2 %}
+                      <tr class="table-warning">
+                        <td>{{compliance.list2}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list3 %}
+                      <tr class="table-light">
+                        <td>{{compliance.list3}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list4 %}
+                      <tr class="table-primary">
+                        <td>{{compliance.list4}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list5 %}
+                      <tr class="table-info">
+                        <td>{{compliance.list5}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list6 %}
+                      <tr class="table-dark">
+                        <td>{{compliance.list6}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list7 %}
+                      <tr class="table-primary">
+                        <td>{{compliance.list7}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list8 %}
+                      <tr class="table-info">
+                        <td>{{compliance.list8}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list9 %}
+                      <tr class="table-warning">
+                        <td>{{compliance.list9}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list10 %}
+                      <tr class="table-light">
+                        <td>{{compliance.list10}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list11 %}
+                      <tr class="table-warning">
+                        <td>{{compliance.list11}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list12 %}
+                      <tr class="table-light">
+                        <td>{{compliance.list12}}</td>
+                      </tr>
+                      {% endif %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-6 col-6 p-2">
+                <div class="row">
+                  <table class="table">
+                    <tbody>
+                      {% if compliance.list13 %}
+                      <tr class="table-dark">
+                        <td>{{compliance.list13}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list14 %}
+                      <tr class="table-warning">
+                        <td>{{compliance.list14}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list15 %}
+                      <tr class="table-light">
+                        <td>{{compliance.list15}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list16 %}
+                      <tr class="table-primary">
+                        <td>{{compliance.list16}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list17 %}
+                      <tr class="table-info">
+                        <td>{{compliance.list17}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list18 %}
+                      <tr class="table-dark">
+                        <td>{{compliance.list18}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list19 %}
+                      <tr class="table-primary">
+                        <td>{{compliance.list19}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list20 %}
+                      <tr class="table-info">
+                        <td>{{compliance.list20}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list21 %}
+                      <tr class="table-warning">
+                        <td>{{compliance.list21}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list22 %}
+                      <tr class="table-light">
+                        <td>{{compliance.list22}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list23 %}
+                      <tr class="table-warning">
+                        <td>{{compliance.list23}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list24 %}
+                      <tr class="table-light">
+                        <td>{{compliance.list24}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if compliance.list25 %}
+                      <tr class="table-light">
+                        <td>{{compliance.list25}}</td>
+                      </tr>
+                      {% endif %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <div class="py-5">
+              <div class="row text-center">
+                {% if closure.heading_text %}
+                <h2 class="py-2">{{closure.heading_text}} </h2>
+                {% endif %}
+
+                {% if closure.text %}
+                <p>{{closure.text}}</p>
+                {% endif %}
+
+                {% if closure.heading_text2 %}
+                <h2 class="py-2">{{closure.heading_text2}} </h2>
+                {% endif %}
+
+                {% if closure.text2 %}
+                <p>{{closure.text2}}</p>
+                {% endif %}
+
+                {% if closure.heading_text3 %}
+                <h2>{{closure.heading_text3}} </h2>
+                {% endif %}
+
+                {% if incorporation.text3 %}
+                <p>{{incorporation.text3}}</p>
+                {% endif %}
+
+                {% if closure.heading_text4 %}
+                <h2 class="py-2">{{closure.heading_text4}} </h2>
+                {% endif %}
+
+                {% if closure.text4 %}
+                <p>{{closure.text4}}</p>
+                {% endif %}
+
+                {% if closure.text5 %}
+                <p>{{closure.text5}}</p>
+                {% endif %}
+
+                {% if closure.text6 %}
+                <p>{{closure.text6}}</p>
+                {% endif %}
+              </div>
+              <div class="col-md-6 col-6 p-2">
+                <div class="row">
+                  <table class="table">
+                    <tbody>
+                      {% if closure.list1 %}
+                      <tr class="table-dark">
+                        <td>{{closure.list1}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if closure.list2 %}
+                      <tr class="table-warning">
+                        <td>{{closure.list2}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if closure.list3 %}
+                      <tr class="table-light">
+                        <td>{{closure.list3}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if closure.list4 %}
+                      <tr class="table-primary">
+                        <td>{{closure.list4}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if incorporation.list5 %}
+                      <tr class="table-info">
+                        <td>{{incorporation.list5}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if closure.list6 %}
+                      <tr class="table-dark">
+                        <td>{{closure.list6}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if closure.list7 %}
+                      <tr class="table-primary">
+                        <td>{{closure.list7}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if closure.list8 %}
+                      <tr class="table-info">
+                        <td>{{closure.list8}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if closure.list9 %}
+                      <tr class="table-warning">
+                        <td>{{closure.list9}}</td>
+                      </tr>
+                      {% endif %}
+                      {% if closure.list10 %}
+                      <tr class="table-light">
+                        <td>{{closure.list10}}</td>
+                      </tr>
+                      {% endif %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2>FAQ</h2>
+          </div>
+
+        </div>
+      </div>
+
+      {% include 'common_pages/pricing_sum_below.html' %}
+    </div>
+  </div>
+</section>
+
+
+{% include 'common_pages/fssai.html'%}
+
+
+
+
+<section class="checklist py-5">
+  <div class="container">
+    {% if step.heading_text %}
+    <h2> {{step.heading_text}} </h2>
+    {% endif %}
+    {% if step.text %}
+    <p> {{step.text}} </p>
+    {% endif %}
+   
+    <div class="row py-4">
+
+      <div class="col-md-12 col-12">
+        {% if step.step1 %}
+        <div class="shadow p-4">
+         
+          <h5 class="text-primary"> {{step.step1}} </h5>
+          {% endif %}
+          {% if step.answer1 %}
+          <p> {{step.answer1}} </p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        {% if step.step2 %}
+        <div class="shadow p-4">
+         
+          <h5 class="text-primary"> {{step.step2}} </h5>
+          {% endif %}
+          {% if step.answer2 %}
+          <p> {{step.answer2}} </p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        {% if step.step3 %}
+        <div class="shadow p-4">
+         
+          <h5 class="text-primary"> {{step.step3}}</h5>
+          {% endif %}
+          {% if step.answer3 %}
+          <p> {{step.answer3}} </p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        {% if step.step4 %}
+        <div class="shadow p-4">
+          
+          <h5 class="text-primary"> {{step.step4}} </h5>
+          {% endif %}
+          {% if step.answer4 %}
+          <p> {{step.answer4}}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        {% if step.step5 %}
+        <div class="shadow p-4">
+         
+          <h5 class="text-primary"> {{step.step5}} </h5>
+          {% endif %}
+          {% if step.answer5 %}
+          <p>{{step.answer5}}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        {% if step.step6 %}
+        <div class="shadow p-4">
+          
+          <h5 class="text-primary"> {{step.step6}} </h5>
+          {% endif %}
+          {% if step.answer6 %}
+          <p>{{step.answer6}}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        {% if step.step7 %}
+        <div class="shadow p-4">
+        
+          <h5 class="text-primary"> {{step.step7}} </h5>
+          {% endif %}
+          {% if step.answer7 %}
+          <p>{{step.answer7}}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        {% if step.step8 %}
+        <div class="shadow p-4">
+         
+          <h5 class="text-primary"> {{step.step8}} </h5>
+          {% endif %}
+          {% if step.answer8 %}
+          <p>{{step.answer8}}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        {% if step.step9 %}
+        <div class="shadow p-4">
+        
+          <h5 class="text-primary"> {{step.step9}} </h5>
+          {% endif %}
+          {% if step.answer9 %}
+          <p>{{step.answer9}}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col-md-12 col-12">
+        {% if step.step10 %}
+        <div class="shadow p-4">
+        
+          <h5 class="text-primary"> {{step.step10}} </h5>
+          {% endif %}
+          {% if step.answer10 %}
+          <p>{{step.answer10}}</p>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+    {% if step.heading_text2 %}
+    <h2> {{step.heading_text2}} </h2>
+    {% endif %}
+
+    {% if step.text2 %}
+    <p> {{step.text2}} </p>
+    {% endif %}
+    <div class="col-md-6 col-6 p-2">
+      <div class="row">
+        <table class="table">
+          <tbody>
+            {% if step.list1 %}
+            <tr class="table-dark">
+              <td>{{step.list1}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list2 %}
+            <tr class="table-warning">
+              <td>{{step.list2}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list3 %}
+            <tr class="table-light">
+              <td>{{step.list3}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list4 %}
+            <tr class="table-primary">
+              <td>{{step.list4}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list5 %}
+            <tr class="table-info">
+              <td>{{step.list5}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list6 %}
+            <tr class="table-dark">
+              <td>{{compliance.list6}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list7 %}
+            <tr class="table-primary">
+              <td>{{step.list7}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list8 %}
+            <tr class="table-info">
+              <td>{{step.list8}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list9 %}
+            <tr class="table-warning">
+              <td>{{step.list9}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list10 %}
+            <tr class="table-light">
+              <td>{{step.list10}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list11 %}
+            <tr class="table-warning">
+              <td>{{step.list11}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list12 %}
+            <tr class="table-light">
+              <td>{{step.list12}}</td>
+            </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-6 col-6 p-2">
+      <div class="row">
+        <table class="table">
+          <tbody>
+            {% if step.list13 %}
+            <tr class="table-dark">
+              <td>{{step.list13}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list14 %}
+            <tr class="table-warning">
+              <td>{{step.list14}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list15 %}
+            <tr class="table-light">
+              <td>{{step.list15}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list16 %}
+            <tr class="table-primary">
+              <td>{{step.list16}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list17 %}
+            <tr class="table-info">
+              <td>{{step.list17}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list18 %}
+            <tr class="table-dark">
+              <td>{{step.list18}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list19 %}
+            <tr class="table-primary">
+              <td>{{step.list19}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list20 %}
+            <tr class="table-info">
+              <td>{{step.list20}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list21 %}
+            <tr class="table-warning">
+              <td>{{step.list21}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list22 %}
+            <tr class="table-light">
+              <td>{{step.list22}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list23 %}
+            <tr class="table-warning">
+              <td>{{step.list23}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list24 %}
+            <tr class="table-light">
+              <td>{{step.list24}}</td>
+            </tr>
+            {% endif %}
+            {% if step.list25 %}
+            <tr class="table-light">
+              <td>{{step.list25}}</td>
+            </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-12 col-12">
+        {% if faq.heading_text %}
+        <h2>{{faq.heading_text}}</h2>
+        {% endif %}
+        {% if faq.heading_text2 %}
+        <h2>{{faq.heading_text2}}</h2>
+        {% endif %}
+        <div class="accordion pt-2" id="accordionExample">
+          <div class="accordion-item">
+            {% if faq.question1 %}
+            <h4 class="accordion-header" id="headingOne">
+              
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                {{faq.question1}}
+              </button>
+              {% endif %}
+            </h4>
+            {% if faq.answer1 %}
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer1}}
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTwo">
+              {% if faq.question2 %}
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                {{faq.question2}}
+              </button>
+              {% endif %}
+            </h4>
+            {% if faq.answer2 %}
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer2}}
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingThree">
+              {% if faq.question3 %}
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                {{faq.question3}}
+              </button>
+              {% endif %}
+            </h4>
+            {% if faq.answer3 %}
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                {{faq.answer3}}
+              </div>
+            </div>
+            {% endif %}
+          </div>
+
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingFour">
+              {% if faq.question4 %}
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                {{faq.question4}}
+              </button>
+              {% endif %}
+            </h4>
+            {% if faq.answer4 %}
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer4}}
+              </div>
+            </div>
+            {% endif %}
+          </div>
+
+
+          <div class="accordion-item">
+            {% if faq.question5 %}
+            <h4 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                {{faq.question5}}
+              </button>
+            </h4>
+            {% endif %}
+            {% if faq.answer5 %}
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer5}}
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          <div class="accordion-item">
+            {% if faq.question6 %}
+            <h4 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                {{faq.question6}}
+              </button>
+            </h4>
+            {% endif %}
+            {% if faq.answer6 %}
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer6}}
+              </div>
+            </div>
+            {% endif %}
+          </div>
+          <div class="accordion-item">
+            {% if faq.question7 %}
+            <h4 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                {{faq.question7}}
+              </button>
+            </h4>
+            {% endif %}
+            {% if faq.answer7 %}
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                {{faq.answer7}}
+              </div>
+            </div>
+            {% endif %}
+          </div>
+
+
+        </div>
+        <div class="col-md-6 col-6 p-2">
+          <div class="row">
+            <table class="table">
+              <tbody>
+                {% if faq.list1 %}
+                <tr class="table-dark">
+                  <td>{{faq.list1}}</td>
+                </tr>
+                {% endif %}
+                {% if faq.list2 %}
+                <tr class="table-warning">
+                  <td>{{faq.list2}}</td>
+                </tr>
+                {% endif %}
+                {% if faq.list3 %}
+                <tr class="table-light">
+                  <td>{{faq.list3}}</td>
+                </tr>
+                {% endif %}
+                {% if faq.list4 %}
+                <tr class="table-primary">
+                  <td>{{faq.list4}}</td>
+                </tr>
+                {% endif %}
+                {% if faq.list5 %}
+                <tr class="table-info">
+                  <td>{{faq.list5}}</td>
+                </tr>
+                {% endif %}
+                {% if faq.list6 %}
+                <tr class="table-dark">
+                  <td>{{faq.list6}}</td>
+                </tr>
+                {% endif %}
+                {% if faq.list7 %}
+                <tr class="table-primary">
+                  <td>{{faq.list7}}</td>
+                </tr>
+                {% endif %}
+                {% if faq.list8 %}
+                <tr class="table-info">
+                  <td>{{faq.list8}}</td>
+                </tr>
+                {% endif %}
+                {% if faq.list9 %}
+                <tr class="table-warning">
+                  <td>{{faq.list9}}</td>
+                </tr>
+                {% endif %}
+                {% if faq.list10 %}
+                <tr class="table-light">
+                  <td>{{faq.list10}}</td>
+                </tr>
+                {% endif %}
+              </tbody>
+            </table>
+
+
+            <div class="col-md-4 col-12 p-2">
+              <table class="table">
+                <tbody>
+                  {% if faq.list11 %}
+                  <tr class="table-dark">
+                    <td>{{faq.list11}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list12 %}
+                  <tr class="table-primary">
+                    <td>{{faq.list12}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list13 %}
+                  <tr class="table-info">
+                    <td>{{faq.list13}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list14 %}
+                  <tr class="table-warning">
+                    <td>{{faq.list14}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list15 %}
+                  <tr class="table-light">
+                    <td>{{faq.list15}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list16 %}
+                  <tr class="table-dark">
+                    <td>{{faq.list16}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list17 %}
+                  <tr class="table-primary">
+                    <td>{{faq.list17}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list18 %}
+                  <tr class="table-info">
+                    <td>{{faq.list18}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list19 %}
+                  <tr class="table-warning">
+                    <td>{{faq.list19}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list20 %}
+                  <tr class="table-light">
+                    <td>{{faq.list20}}</td>
+                  </tr>
+                  {% endif %}
+
+                </tbody>
+              </table>
+            </div>
+            <div class="col-md-4 col-12 p-2">
+              <table class="table">
+                <tbody>
+                  {% if faq.list21 %}
+                  <tr class="table-dark">
+                    <td>{{faq.list21}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list22 %}
+                  <tr class="table-primary">
+                    <td>{{faq.list22}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list23 %}
+                  <tr class="table-info">
+                    <td>{{faq.list23}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list24 %}
+                  <tr class="table-warning">
+                    <td>{{faq.list24}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list25 %}
+                  <tr class="table-light">
+                    <td>{{faq.list25}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list26 %}
+                  <tr class="table-dark">
+                    <td>{{faq.list26}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list27 %}
+                  <tr class="table-primary">
+                    <td>{{faq.list27}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list28 %}
+                  <tr class="table-info">
+                    <td>{{faq.list28}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list29 %}
+                  <tr class="table-warning">
+                    <td>{{faq.list29}}</td>
+                  </tr>
+                  {% endif %}
+                  {% if faq.list30 %}
+                  <tr class="table-light">
+                    <td>{{faq.list30}}</td>
+                  </tr>
+                  {% endif %}
+
+                </tbody>
+              </table>
+
+            </div>
+            <div class="about-text-style">
+              <ul>
+                {% if faq.list31 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list31}} </li>
+                {% endif %}
+                {% if faq.list32 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list32}} </li>
+                {% endif %}
+                {% if faq.list33 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list33}}
+                </li>
+                {% endif %}
+                {% if faq.list34 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list34}} </li>
+                {% endif %}
+                {% if faq.list35 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list35}} </li>
+                {% endif %}
+                {% if faq.list36 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list36}} </li>
+                {% endif %}
+                {% if faq.list37 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list37}} </li>
+                {% endif %}
+                {% if faq.list38 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list38}}
+                </li>
+                {% endif %}
+                {% if faq.list39 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list39}} </li>
+                {% endif %}
+                {% if faq.list40 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list40}} </li>
+                {% endif %}
+              </ul>
+            </div>
+            <div class="about-text-style">
+              <ul>
+                {% if faq.list41 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list41}} </li>
+                {% endif %}
+                {% if faq.list42 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list42}} </li>
+                {% endif %}
+                {% if faq.list43 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list43}}
+                </li>
+                {% endif %}
+                {% if faq.list44 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list44}} </li>
+                {% endif %}
+                {% if faq.list45 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list45}} </li>
+                {% endif %}
+                {% if faq.list46 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list46}} </li>
+                {% endif %}
+                {% if faq.list47 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list47}} </li>
+                {% endif %}
+                {% if faq.list48 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list48}}
+                </li>
+                {% endif %}
+                {% if faq.list49 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list49}} </li>
+                {% endif %}
+                {% if faq.list50 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list50}} </li>
+                {% endif %}
+              </ul>
+            </div>
+            <div class="about-text-style">
+              <ul>
+                {% if faq.list51 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list51}} </li>
+                {% endif %}
+                {% if faq.list52 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list52}} </li>
+                {% endif %}
+                {% if faq.list53 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list53}}
+                </li>
+                {% endif %}
+                {% if faq.list54 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list54}} </li>
+                {% endif %}
+                {% if faq.list55 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list55}} </li>
+                {% endif %}
+                {% if faq.list56 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list56}} </li>
+                {% endif %}
+                {% if faq.list57 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list57}} </li>
+                {% endif %}
+                {% if faq.list58 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list58}}
+                </li>
+                {% endif %}
+                {% if faq.list59 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list59}} </li>
+                {% endif %}
+                {% if faq.list60 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list60}} </li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -27,6 +27,7 @@ import razorpay
 
 # Create your views here.
 def home(request):
+    allpage=Page.objects.all()
     if request.method == 'POST':
         form = ContactUser(request.POST)
         if form.is_valid():
@@ -35,7 +36,7 @@ def home(request):
             return redirect('home')
     else:
         form = ContactUser()
-    return render(request, 'home.html', {'form': form})
+    return render(request, 'home.html', {'form': form,"allpage":allpage})
 
 #View Product
 from django.contrib.auth.decorators import login_required
@@ -55,9 +56,51 @@ def viewproduct(request, **kwargs):
 def order(request):
     return render(request, 'order.html')
 
-#MOSTPOPULAR view
+#CommonPage
+def commonPages(request):
+    allpage=Page.objects.all()
+    pagename = request.GET.get('pagename')
+    if pagename:
+        try:
+            page = Page.objects.get(pagename=pagename)
+        except Page.DoesNotExist:
+            
+            raise Http404('Invalid page')
 
+        products = Product.objects.filter(page=page)
+        meaning = Meaning.objects.filter(page=page).first()
+        minimum = MinimumRequirement.objects.filter(page=page).last()
+        benefit = Benefits.objects.filter(page=page).first()
+        document = DocumentRequired.objects.filter(page=page).last()
+        incorporation = IncorporationProcess.objects.filter(page=page).last()
+        compliance = Compliance.objects.filter(page=page).last()
+        step = StepWiseProcedure.objects.filter(page=page).last()
+        faq = FAQ.objects.filter(page=page).last()
+        closure = Closure.objects.filter(page=page).last()
+
+        form = ContactUser()
+        banner = Banner.objects.get(category='CommonBanner')
+        price = PricingSum.objects.get(category='Common Price')
+        if request.method == 'POST':
+            form = ContactUser(request.POST)
+            if form.is_valid():
+                form.save()
+                serializer = ContactUserSerializer(form.instance)
+                return JsonResponse(serializer.data, status=201)
+            else:
+                errors = form.errors.as_json()
+                return JsonResponse({'errors': errors}, status=400)
+
+        context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
+                'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
+                'step':step,'faq':faq,'closure':closure,"page":page,"allpage":allpage}
+        return render(request, f'common.html', context)
+    else:
+        return HttPResponse("Invailid Request")
+
+#MOSTPOPULAR view
 def mostpopular_page(request, page):
+    allpage=Page.objects.all()
     page_dict = {
         'types_of_business': 'Types of Business',
         'sole_p_r': 'Sole Proprietorship Registration',
@@ -95,7 +138,7 @@ def mostpopular_page(request, page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'mostpopular/{page}.html', context)
 
 #MOSTPOPULAR API
@@ -170,9 +213,13 @@ def mostpopular_api(request, page):
     return JsonResponse(response_data, status=200)
 
 
+
+
     
   #SPECIAL BUSSINESS view  
 def specialbussiness_page(request, page):
+    allpage=Page.objects.all()
+    print(allpage)
     page_dict = {
         'gst_r_i': 'GST Registration in India',
         'import_e_c_i': 'Import export Code',
@@ -211,7 +258,7 @@ def specialbussiness_page(request, page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'specialbussiness/{page}.html', context)
 
 #SPECIAL BUSSINESS API 
@@ -289,6 +336,7 @@ def specialbussiness_api(request, page):
 
 #NGO view
 def ngo_page(request, page):
+    allpage=Page.objects.all()
     page_dict = {
         'trust_registration': 'Trust Registration',
         'society_registration': 'Society Registration',
@@ -326,7 +374,7 @@ def ngo_page(request, page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'ngo/{page}.html', context)
 
 #NGO API
@@ -401,6 +449,7 @@ def ngo_api(request, page):
 
 #do bussines in india view
 def do_bussiness(request, page):
+    allpage=Page.objects.all()
     page_dict = {
         'company_f_i':'Company By Foreign Individuals',
         'doing_b_i': 'Doing Business In India',
@@ -437,7 +486,7 @@ def do_bussiness(request, page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'do_bussiness/{page}.html', context)
 
 @api_view(['GET','POST'])
@@ -507,6 +556,7 @@ def do_bussiness_api(request, page):
 
 #SETUP INDIAN BRANCH view
 def setup(request,page):
+    allpage=Page.objects.all()
     page_dict ={
         'branch_o_f_c':'Branch Office of Foreign Company',
         'liaison_o_r':'Liaison Office Registration',
@@ -542,11 +592,12 @@ def setup(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'setup_india_branch/{page}.html', context)
 
 @api_view(['GET','POST'])
 def setup_api(request,page):
+    
     page_dict ={
         'branch_o_f_c':'Branch Office of Foreign Company',
         'liaison_o_r':'Liaison Office Registration',
@@ -609,6 +660,7 @@ def setup_api(request,page):
 
 #TRADEMAR view
 def trademark(request,page):
+    allpage=Page.objects.all()
     page_dict = {
         'renewal_tr': 'Renewal trademark registration',
         'trademark_mt':'Trademark meaning types',
@@ -644,7 +696,7 @@ def trademark(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'trademark/{page}.html', context)
 
 
@@ -712,6 +764,7 @@ def trademark_api(request,page):
 
 #COPYRIGHT & DESIGN view
 def copyright(request,page):
+    allpage=Page.objects.all()
     page_dict={
         'copyright_r':'Copyright registration',
         'coptright_t':'Copyright types',
@@ -749,7 +802,7 @@ def copyright(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'copyright/{page}.html', context)
 
 @api_view(['GET','POST'])
@@ -818,6 +871,7 @@ def copyright_api(request,page):
 
 #PATENT & IPR ENFORCEMENT view 
 def patent(request,page):
+    allpage=Page.objects.all()
     page_dict={
         'intellectual_pr':'Intellectual property rights',
         'international_tf':'International trademark filing',
@@ -855,7 +909,7 @@ def patent(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'patent/{page}.html', context)
 
 @api_view(['GET','POST'])
@@ -923,6 +977,7 @@ def patent_api(request,page):
     return JsonResponse(response_data, status=200)
 #>FOOD BUSINESS view
 def foodbusiness(request,page):
+    allpage=Page.objects.all()
     page_dict={
         'fssai_a_r':'FSSAI Annual Return',
         'fssai_c_l':'FSSAI Central License',
@@ -962,7 +1017,7 @@ def foodbusiness(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'foodbusiness/{page}.html', context)
 @api_view(['GET','POST'])
 def foodbusiness_api(request,page):
@@ -1031,6 +1086,7 @@ def foodbusiness_api(request,page):
     return JsonResponse(response_data, status=200)
 # GENERAL LICENSE view
 def general(request,page):
+    allpage=Page.objects.all()
     page_dict = {
         'apeda_r_e':'APEDA Registration For Exporter',
         'shop_e_r':'Shop and Establishment Registration',
@@ -1066,7 +1122,7 @@ def general(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'generallicense/{page}.html', context)
 @api_view(['GET','POST'])
 def general_api(request,page):
@@ -1132,6 +1188,7 @@ def general_api(request,page):
     return JsonResponse(response_data, status=200)
 # INDUSTRIAL LICENSE
 def industrial(request, page):
+    allpage=Page.objects.all()
     page_dict={
         'barcode_r':'Barcode-registration',
         'dot_isp_l':'Dot isp licence',
@@ -1170,7 +1227,7 @@ def industrial(request, page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'industriallicense/{page}.html', context)
 @api_view(['GET','POST'])
 def industrial_api(request, page):
@@ -1240,6 +1297,7 @@ def industrial_api(request, page):
 
 # TAX REGISTRATIONS view
 def taxregister(request,page):
+    allpage=Page.objects.all()
     page_dict={
         'cloud_a':'Cloud-accounting',
         'gst_r_in_i':'GST Registration in india',
@@ -1275,7 +1333,7 @@ def taxregister(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'taxregistration/{page}.html', context)
 @api_view(['GET','POST'])
 def taxregister_api(request, page):
@@ -1341,6 +1399,7 @@ def taxregister_api(request, page):
 
 # TAX COMPLIANCE view
 def taxcompliance(request,page):
+    allpage=Page.objects.all()
     page_dict={
         'ad_tax':'Advance-tax',
         'income_t_r_f':'Income-tax-return-filing',
@@ -1380,7 +1439,7 @@ def taxcompliance(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'taxcompliance/{page}.html', context)
 @api_view(['GET','POST'])
 def taxcompliance_api(request,page):
@@ -1450,6 +1509,7 @@ def taxcompliance_api(request,page):
 
 # PAYROLL & FUNDING view
 def payrollfunding(request,page):
+    allpage=Page.objects.all()
     page_dict={
         'epf_r':'EPF Registration',
         'esic_r':'esic-registration',
@@ -1485,7 +1545,7 @@ def payrollfunding(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'payrollfunding/{page}.html', context)
 
 @api_view(['GET','POST'])
@@ -1551,6 +1611,7 @@ def payrollfunding_api(request,page):
     return JsonResponse(response_data, status=200)
 # BASIC ROC COMPLIANCES view
 def basicroc(request,page):
+    allpage=Page.objects.all()
     page_dict={
         'director_kyc':'2022 Director KYC [DIR-3-KYC]',
         'company_a_r':'Company Annual Return',
@@ -1588,7 +1649,7 @@ def basicroc(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'basicroc/{page}.html', context)
 @api_view(['GET','POST'])
 def basicroc_api(request,page):
@@ -1656,6 +1717,7 @@ def basicroc_api(request,page):
     
 # COMPANY CHANGES & RETURN view
 def  companychanges(request,page):
+    allpage=Page.objects.all()
     page_dict={
         'change_d':'Change of Director',
         'change_m_o':'Changes in Main Object',
@@ -1694,7 +1756,7 @@ def  companychanges(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'companychanges/{page}.html', context)
     
 @api_view(['GET','POST'])
@@ -1763,6 +1825,7 @@ def  companychanges_api(request,page):
     return JsonResponse(response_data, status=200)
 # CONVERT TO PRIVATE LIMITED view
 def exitbussiness(request,page):
+    allpage=Page.objects.all()
     page_dict={
         'llp_p_l':'LLP To Private Limited',
         'active_c_d_c_s':'Active Company To Dormant Company Status',
@@ -1799,7 +1862,7 @@ def exitbussiness(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'exitbussiness/{page}.html', context)
     
 @api_view(['GET','POST'])
@@ -2280,3 +2343,5 @@ def search(request):
     params = {'allPosts': allPosts, 'query': query}
     return render(request, 'search.html', params)
 
+def card(request):
+    return render(request,'order/card.html')

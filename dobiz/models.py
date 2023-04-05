@@ -9,6 +9,14 @@ from . manager import UserManager
 from django.contrib.auth.models import PermissionsMixin
 from django_countries.fields import CountryField
 
+class Page(models.Model):
+    pagename = models.CharField(max_length=200,null=True, blank=True)
+    pagetitle = models.CharField(max_length=200,null=True, blank=True)
+    section = models.CharField(max_length=200,null=True, blank=True)
+    
+    def __str__(self):
+        return self.pagetitle
+
 class User(AbstractBaseUser, PermissionsMixin):
     username = None
     email = models.CharField(max_length=255,unique=True)
@@ -62,6 +70,7 @@ class Profile(models.Model):
 
 class Product(models.Model):
     # product_id = models.AutoField
+    page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     product_name = models.CharField(max_length=50)
     category = models.CharField(max_length=50, default="")
     subcategory = models.CharField(max_length=50, default="")
@@ -112,6 +121,7 @@ class Order(models.Model):
         return self.product.product_name + self.user.name
 
 class Banner(models.Model):
+    page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=200, null=True,blank=False)
     heading_text = models.CharField(max_length=200,null=True, blank=True)
     review_rating = models.CharField(max_length=200,null=True, blank=True)
@@ -121,6 +131,7 @@ class Banner(models.Model):
     img = models.ImageField(null=True, blank=True)
 
 class Meaning(models.Model):
+    page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=200, null=True,blank=False)
     heading_text = models.CharField(max_length=200,null=True, blank=True)
     heading_text2 = models.CharField(max_length=200,null=True, blank=True)
@@ -161,6 +172,7 @@ class Meaning(models.Model):
         return self.category
 
 class MinimumRequirement(models.Model):
+    page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=200, null=True,blank=False)
     heading_text = models.CharField(max_length=200,null=True, blank=True)
     heading_text2 = models.CharField(max_length=200,null=True, blank=True)
@@ -195,6 +207,7 @@ class MinimumRequirement(models.Model):
 
 
 class Benefits(models.Model):
+    page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=200, null=True,blank=False)
     heading_text = models.CharField(max_length=200,null=True, blank=True)
     heading_text2 = models.CharField(max_length=200,null=True, blank=True)
@@ -234,6 +247,7 @@ class Benefits(models.Model):
 
 
 class DocumentRequired(models.Model):
+    page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=200, null=True,blank=False)
     heading_text = models.CharField(max_length=200,null=True, blank=True)
     heading_text2 = models.CharField(max_length=200,null=True, blank=True)
@@ -303,6 +317,7 @@ class DocumentRequired(models.Model):
 
 
 class IncorporationProcess(models.Model):
+    page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=200, null=True,blank=False)
     heading_text = models.CharField(max_length=200,null=True, blank=True)
     heading_text2 = models.CharField(max_length=200,null=True, blank=True)
@@ -332,6 +347,7 @@ class IncorporationProcess(models.Model):
 
 
 class Compliance(models.Model):
+    page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=200, null=True,blank=False)
     heading_text = models.CharField(max_length=200,null=True, blank=True)
     heading_text2 = models.CharField(max_length=200,null=True, blank=True)
@@ -376,6 +392,7 @@ class Compliance(models.Model):
 
 
 class Closure(models.Model):
+    page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=200, null=True,blank=False)
     heading_text = models.CharField(max_length=200,null=True, blank=True)
     heading_text2 = models.CharField(max_length=200,null=True, blank=True)
@@ -405,6 +422,7 @@ class Closure(models.Model):
 
 
 class StepWiseProcedure(models.Model):
+    page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=200, null=True,blank=False)
     heading_text = models.CharField(max_length=200,null=True, blank=True)
     heading_text2 = models.CharField(max_length=200,null=True, blank=True)
@@ -460,6 +478,7 @@ class StepWiseProcedure(models.Model):
 
 
 class FAQ(models.Model):
+    page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=200, null=True,blank=False)
     heading_text = models.CharField(max_length=200,null=True, blank=True)
     heading_text2 = models.CharField(max_length=200,null=True, blank=True)
@@ -541,6 +560,7 @@ class FAQ(models.Model):
         return self.category
 
 class PricingSum(models.Model):
+    page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=200, null=True,blank=False)
     
     heading_text = models.CharField(max_length=200,null=True, blank=True)
@@ -565,3 +585,4 @@ class PricingSum(models.Model):
     govt_value = models.CharField(max_length=200,null=True, blank=True)
     def __str__(self):
         return self.category
+

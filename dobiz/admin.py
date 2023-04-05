@@ -49,7 +49,7 @@ admin.site.register(User, CustomUserAdmin)
 
 admin.site.register(Contact)
 admin.site.register(Profile)
-# admin.site.register(Product)
+admin.site.register(Page)
 
 admin.site.register(Banner)
 admin.site.register(Meaning)

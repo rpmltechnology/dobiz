@@ -26,15 +26,20 @@ path('password_reset/', views.password_reset, name='password_reset'),
 # path("checkout",views.checkout,name="checkout"),
 path('order_history',views.order_history,name="order_history"),
 path('cart',views.cart,name="cart"),
+path('card',views.card,name="card"),
 path('addToCart',views.addToCart, name="addToCart"),
 path('dashboard',views.dashboard, name="dashboard"),
 # path('success',views.success, name="success"),
 # path('handlerequest',views.handlerequest, name="handlerequest"),
 path('viewproduct/user_id=(?P<user_id>[0-9]+)?/product_id=(?P<id>[0-9]+)/', views.viewproduct, name='viewproduct'),
 
+#CommonPages
+path('commonPages', views.commonPages, name='commonPages'),
+
 #MOST POPULAR URL
 path('mostpopular_api/<str:page>/', views.mostpopular_api, name='mostpopular_api'),
 path('mostpopular/<str:page>/', views.mostpopular_page, name='mostpopular'),
+
 
 
 # SPECIAL BUSINESS URL

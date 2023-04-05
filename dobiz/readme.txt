@@ -144,32 +144,6 @@ from django.contrib.auth.views import LoginView, LogoutView
 #     return render(request, 'payment/paymentstatus.html', {'response': response_dict})
 
 
-<!-- <script>
-  function clearItem(productId) {
-  console.log('Clearing item with product ID:', productId);
-  let cartItems = JSON.parse(localStorage.getItem('items')) || [];
-  let updatedCartItems = cartItems.filter(item => item.product.id !== productId);
-  localStorage.setItem('items', JSON.stringify(updatedCartItems));
-  
-  // Remove the row from the table in the DOM
-  let row = document.querySelector(`tr[data-product-id="${productId}"]`);
-  if (row) {
-    row.remove();
-  }
-}
-function updateCartItem(productId, quantity) {
-  console.log('Updating cart item with product ID:', productId, 'and quantity:', quantity);
-  let cartItems = JSON.parse(localStorage.getItem('items')) || [];
-  let updatedCartItems = cartItems.map(item => {
-    if (item.product.id === productId) {
-      return { ...item, quantity: quantity };
-    } else {
-      return item;
-    }
-  });
-  localStorage.setItem('items', JSON.stringify(updatedCartItems));
-}
-    </script> -->
 
 client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
         amount = int(final_price * 100)
@@ -178,3 +152,63 @@ client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
         Print('*****************************')
         payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
         order.razor_pay_order_id = payment['id']
+
+<script>
+
+  // Find out the cart items from localStorage
+  if (localStorage.getItem('cart') == null) {
+    var cart = {};
+  } else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    updatecart(cart);
+  }
+  $('.cart').click(function () {
+    var idstr = this.id.toString();
+    if (cart[idstr] != undefined) {
+      cart[idstr] = cart[idstr] + 1;
+    }
+    else {
+      cart[idstr] = 1;
+    }
+    updatecart(cart);
+    
+
+  });
+  // to update the cart and adding + and - button there.
+  function updatecart(cart) {
+  var sum = 0;
+  for (var item in cart) {
+    sum += cart[item]; // add the quantity of the item to the sum
+    document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn btn-primary minus'>-</button> <span id='val" + item + "''>" + cart[item] + "</span> <button id='plus" + item + "' class='btn btn-primary plus'> + </button>";
+  }
+  localStorage.setItem('cart', JSON.stringify(cart));
+  // set the cart badge to the total quantity, not just the number of unique items
+  document.getElementById('cart').innerHTML = sum;
+}
+
+  // If plus or minus button is clicked, change the cart as well as the display value
+  $('.divpr').on("click", "button.minus", function () {
+    a = this.id.slice(5,);
+    cart[a] = Math.max(0, cart[a] - 1);
+    document.getElementById('val' + a).innerHTML = cart[a];
+    updatecart(cart);
+  });
+
+  $('.divpr').on("click", "button.plus", function () {
+    a = this.id.slice(4,);
+    cart[a] = cart[a] + 1;
+    document.getElementById('val' + a).innerHTML = cart[a];
+    updatecart(cart);
+  });
+
+  $(document).ready(function () {
+    $('.share-button').click(function () {
+      var shareOptions = $(this).siblings('.share-options');
+      if (shareOptions.is(':hidden')) {
+        shareOptions.slideDown();
+      } else {
+        shareOptions.slideUp();
+      }
+    });
+  });
+</script>
