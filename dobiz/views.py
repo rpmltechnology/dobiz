@@ -136,7 +136,7 @@ def mostpopular_page(request, page):
             errors = form.errors.as_json()
             return JsonResponse({'errors': errors}, status=400)
 
-    context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
+    context = { 'products': products,'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
             'step':step,'faq':faq,'closure':closure,'allpage':allpage}
     return render(request, f'mostpopular/{page}.html', context)

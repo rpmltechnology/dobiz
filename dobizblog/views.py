@@ -3,50 +3,62 @@ from dobiz.forms import *
 from dobiz.models import *
 from .models import *
 from django.contrib import messages
+from django.utils import timezone
+from django.http import JsonResponse
 #extras
 from dobiz.templatetags import extras
 # Create your views here.
-def bloghome(request):
-    form = ContactUser()
-    banner = Banner.objects.get(category='CommonBanner')
-    price = PricingSum.objects.get(category='Common Price')
+
+
+def blog(request):
+    allpage=Page.objects.all()
+    category = Category.objects.all()
+    blogs = BlogPage.objects.all()
     post = Post.objects.all()
-    print(post)
-    if request.method == 'POST':
-        form = ContactUser(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Your message has been sent successfully!')
-            return redirect('bloghome')
-        else:
-            form = ContactUser()
-    context={'banner':banner,'price':price,'form':form,'post':post}
+    return render (request,'blog.html', {'category':category, 'blogs':blogs, 'allpage':allpage})
 
-    return render(request, 'bloghome.html',context)
+def blog_post(request, page):
+    allpage=Page.objects.all()
+    category = Category.objects.all()
+    blogs = BlogPage.objects.all()
+    blog_page = BlogPage.objects.get(page=page)
+    blog_for_heading = BlogPage.objects.get(page=page)
+    post = Post.objects.filter(page=blog_page).order_by('-timestap')[0:6]
+    total_obj = Post.objects.count()
+    return render(request, 'blog.html', {'category': category, 'blogs': blogs, 'post': post,'total_obj':total_obj,'blog_for_heading':blog_for_heading,'allpage':allpage})
 
-def blogpost(request,pk):
-    form = ContactUser()
-    banner = Banner.objects.get(category='CommonBanner')
-    price = PricingSum.objects.get(category='Common Price')
+def load_more(request):
+    total_item = int(request.GET.get('total_item'))
+    limit = 6
+    pagename = request.GET.get('page')
+    blog_page = BlogPage.objects.get(page=pagename)
+    post_obj = list(Post.objects.filter(page=blog_page).order_by('-timestap').values()[total_item:total_item+limit])
+    data = {
+        'posts':post_obj,
+    }
+    return JsonResponse(data=data)
+
+
+
+def oneblog(request, pk):
+    allpage=Page.objects.all()
     post = Post.objects.get(sno=pk)
-    comments= BlogComment.objects.filter(post=post, parent=None)
-    replies= BlogComment.objects.filter(post=post).exclude(parent=None)
-    replyDict={}
+    pages = BlogPage.objects.all()
+    comments = BlogComment.objects.filter(post=post, parent=None)
+    replies = BlogComment.objects.filter(post=post).exclude(parent=None)
+    replyDict = {}
     for reply in replies:
         if reply.parent.sno not in replyDict.keys():
-            replyDict[reply.parent.sno]=[reply]
+            replyDict[reply.parent.sno] = [reply]
         else:
             replyDict[reply.parent.sno].append(reply)
-    if request.method == 'POST':
-        form = ContactUser(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Your message has been sent successfully!')
-            return redirect('bloghome')
-        else:
-            form = ContactUser()
-    context={'banner':banner,'price':price,'form':form,'post':post,'comments':comments,'replyDict': replyDict}
-    return render(request, 'blogpost.html',context)
+
+    # Get recent posts
+    recent_posts = Post.objects.filter(timestap__lte=timezone.now()).exclude(pk=post.pk).order_by('-timestap')[:5]
+
+    return render(request, 'oneblog.html', {'post': post, 'comments': comments, 'replyDict': replyDict, 'pages': pages, 'recent_posts': recent_posts,'allpage':allpage})
+
+
 
 def postComment(request):
     if request.method == "POST":
@@ -67,35 +79,3 @@ def postComment(request):
         
     return redirect(f"/blogpost/{post.sno}")
 
-# from django_comments_xtd.models import XtdComment
-# from django_comments_xtd.forms import XtdCommentForm
-
-# def blogpost(request,pk):
-#     form = ContactUser()
-#     banner = Banner.objects.get(category='CommonBanner')
-#     price = PricingSum.objects.get(category='Common Price')
-#     post = Post.objects.get(sno=pk)
-#     if request.method == 'POST':
-#         form = ContactUser(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             messages.success(request, 'Your message has been sent successfully!')
-#             return redirect('bloghome')
-#         else:
-#             form = ContactUser()
-#     comments = XtdComment.objects.filter(
-#         is_public=True,
-#         is_removed=False,
-#         object_pk=post.pk,
-#         content_type__model=post.__class__.__name__.lower()
-#     )
-#     comment_form = XtdCommentForm(target_object=post)
-#     context = {
-#         'banner': banner,
-#         'price': price,
-#         'form': form,
-#         'post': post,
-#         'comments': comments,
-#         'comment_form': comment_form,
-#     }
-#     return render(request, 'blogpost.html', context)

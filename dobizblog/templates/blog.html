@@ -1,0 +1,263 @@
+{% extends 'index.html' %}
+{%block title%}Blog Home{% endblock %}
+{% load static %}
+{%block body %}
+<style>
+  .not-visible {
+    display: none;
+  }
+
+  .pageheading {
+    font-family: "Roboto", Sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+<section class="pt-5 blog_sld">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-8 col-12">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'images/gst.jpg' %}" class="d-block w-100" alt="blog_image">
+              <div class="carousel-caption d-none d-md-block text-start">
+                <button type="button" class="btn btn-danger btn-sm">Latest News</button>
+                <p><a href="#"> New scheme under GST </a></p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/gst.jpg' %}" class="d-block w-100" alt="blog_image">
+              <div class="carousel-caption d-none d-md-block text-start">
+                <button type="button" class="btn btn-danger btn-sm">Latest News</button>
+                <p><a href="#"> New scheme under GST </a></p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/gst.jpg' %}" class="d-block w-100" alt="blog_image">
+              <div class="carousel-caption d-none d-md-block text-start">
+                <button type="button" class="btn btn-danger btn-sm">Latest News</button>
+                <p><a href="#"> New scheme under GST </a></p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <div class="mx-5">
+          <h4 class="py-5 color_hd">Lattest Notification and news</h4>
+          <h5><a href="#"> GST lattest news from CBDT </a></h5>
+          <h5><a href="#"> GST lattest news from CBDT </a></h5>
+          <h5><a href="#"> ROC news from CBDT </a></h5>
+          <h5><a href="#"> ROC news from CBDT </a></h5>
+          <h5><a href="#"> ROC news from CBDT </a></h5>
+          <h5><a href="#"> GST lattest news from CBDT </a></h5>
+          <h5><a href="#"> GST lattest news from CBDT </a></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <div class="accordion pt-2 shadow" id="accordionExample">
+          {% for blog in category %}
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="heading{{ forloop.counter }}">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="true"
+                aria-controls="collapse{{ forloop.counter }}">
+                {{ blog.heading }}
+              </button>
+            </h4>
+            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse show"
+              aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#accordionExample">
+              <div class="accordion-body list-style">
+                <ul>
+                  {% for blogpage in blogs %}
+                  {% if blogpage.heading == blog %}
+                  <li>
+                    <i class="fa fa-angle-right">
+                      <a href="{% url 'dobizblog:blog_post' blogpage.page %}"> {{ blogpage.page }}</a>
+                    </i>
+                  </li>
+                  {% endif %}
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+
+
+
+      <div class="col-md-8 col-12 headig2">
+        <div class="elementor-widget-container">
+          <h1 class="elementor-heading-title elementor-size-default pageheading">{{ blog_for_heading.page }}</h1>
+        </div>
+        <div style="border-bottom: 3px solid #F84B22; width: 100%; margin-top: 20px;"></div>
+        <div class="blogs_pg py-2" id="content">
+          {% for i in post %}
+          <div class="col-md-4 col-12">
+            <div class="m-2">
+              <div class="card shadow cardcount" >
+                <img src="/media/{{ i.img }}" class="card-img-top" alt="blog">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.title}}</h5>
+                  <p class="card-text py-2 " style="margin-left: -10px; color: #FF3100;"> <i class="fas fa-circle"></i>
+                    <span> {{ i.timestap }}</span>
+                  </p>
+                  <p class="text-secondary">By. {{i.author}} </p>
+                  <p>{{ i.content|slice:100 }}..</p>
+                  <a href="{% url 'dobizblog:oneblog' i.sno %}" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+
+      <div class="spinner-border not-visible" id="spinner" role="status">
+        <span class="visually-hidden ">Loading...</span>
+      </div>
+
+      <div class="text-center py-4">
+        <button id="load-more-btn" class="btn btn-primary px-6" style="margin-left: 362px;">Load More</button>
+      </div>
+      <div class="alert alert-danger not-visible" id="alert" role="alert">
+        No More Posts to Load!!
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+<section class="py-2 bg-dark text-white">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <span class="social-icon">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <i class="fa fa-youtube-play" aria-hidden="true"></i>
+        </span>
+        <button type="button" class="btn btn-success px-4"> <i class="fa fa-whatsapp" aria-hidden="true"></i> Join
+          Group</button>
+      </div>
+
+      <div class="col-md-8 col-12">
+
+        <div class="row g-3 pt-3">
+          <div class="col-sm">
+            <input type="text" class="form-control" placeholder="Name" aria-label="City">
+          </div>
+          <div class="col-sm">
+            <input type="email" class="form-control" placeholder="Email" aria-label="State">
+          </div>
+          <div class="col-sm">
+            <button type="button" class="btn btn-primary px-4"> Newsletter Signup </button>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+{{ total_obj|json_script:"json-total"}}
+<script>
+  const loadbtn = document.getElementById('load-more-btn');
+  const spinner = document.getElementById('spinner');
+  const alert = document.getElementById('alert');
+  const total = JSON.parse(document.getElementById('json-total').textContent);
+  let totalLoaded = $('.cardcount').length;
+  function loadmorepost() {
+    const pagename = '{{ blog_for_heading.page }}';
+    const content = document.getElementById('content')
+    $.ajax({
+      url: '{% url "dobizblog:load" %}',
+      type: 'GET',
+      data: {
+        'total_item': totalLoaded,
+        'page': pagename,
+      },
+      beforeSend: function () {
+        loadbtn.classList.add('not-visible');
+        spinner.classList.remove('not-visible');
+      },
+      success: function (response) {
+        const data = response.posts
+        spinner.classList.add('not-visible')
+
+        data.map(post => {
+          content.insertAdjacentHTML('beforeend', `<div class="col-md-4 col-12">
+                               <div class="m-2 ">
+                                  <div class="card shadow">
+                                    <img src="/media/${post.img}" class="card-img-top" alt="blog">
+                                    <div class="card-body">
+                                      <h5 class="card-title">${post.title}</h5>
+                                      <p class="card-text py-2 " style="margin-left: -10px; color: #FF3100;"> <i class="fas fa-circle"></i>
+                                        <span> ${post.timestap}</span>
+                                      </p>
+                                      <p class="text-secondary">By. ${post.author} </p>
+                                      <p>${post.content.slice(0, 100)}..</p>
+                                      <a href="/blogpost/${post.sno}" class="btn btn-primary">Read More</a>
+                                    </div>
+                                  </div>
+                                  </div>
+                                </div>`
+          );
+          totalLoaded++; // increment totalLoaded for each post added
+        });
+        if (totalLoaded == total) {
+          alert.classList.remove('not-visible')
+        }
+        else {
+          loadbtn.classList.remove('not-visible');
+        }
+
+      },
+      error: function (err) {
+        console.log(err);
+      }
+    })
+  }
+  loadbtn.addEventListener('click', () => {
+    loadmorepost()
+  })
+</script>
+
+{% endblock %}

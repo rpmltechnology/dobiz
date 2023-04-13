@@ -8,6 +8,7 @@ from django.utils import timezone
 from . manager import UserManager
 from django.contrib.auth.models import PermissionsMixin
 from django_countries.fields import CountryField
+from django.contrib.auth.models import Group
 
 class Page(models.Model):
     pagename = models.CharField(max_length=200,null=True, blank=True)
@@ -27,6 +28,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     phone = models.CharField(max_length=14)
     fname = models.CharField(max_length=10)
     lname = models.CharField(max_length=10)
+    groups = models.ManyToManyField(Group, blank=True, null=True)
     otp = models.CharField(max_length=6,blank=True,null=True)
     is_verified = models.BooleanField(default=False)
     otp_for_mobile = models.CharField(max_length=6,blank=True,null=True)
@@ -71,18 +73,18 @@ class Profile(models.Model):
 class Product(models.Model):
     # product_id = models.AutoField
     page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
-    product_name = models.CharField(max_length=50)
-    category = models.CharField(max_length=50, default="")
-    subcategory = models.CharField(max_length=50, default="")
+    product_name = models.CharField(max_length=50,null=True, blank=False)
+    category = models.CharField(max_length=50, default="", null=True, blank=False)
+    subcategory = models.CharField(max_length=50, default="", null=True, blank=False)
     market_price = models.CharField(max_length =10, null=True, blank=False)
     Dobiz_India_Filings = models.IntegerField( null=True,blank=True)
     gst_percent = models.IntegerField(null=True, blank=True,default=18)
     gst  =models.IntegerField(null=True, blank=True)
     other_cost = models.IntegerField(null=True, blank=True)
-    price = models.IntegerField(default=0)
+    price = models.IntegerField(default=0, null=True, blank=False)
     quantity = models.CharField(max_length=200, null=True, blank=True)
-    desc = models.TextField()
-    pub_date = models.DateField()
+    desc = models.TextField(null=True, blank=False)
+    pub_date = models.DateField(null=True, blank=False)
 
     def __str__(self):
         return self.product_name
@@ -100,8 +102,8 @@ class Coupan(models.Model):
         return self.coupan
 
 class Order(models.Model):
-    product = models.ForeignKey(to=Product, on_delete=models.CASCADE)
-    user = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    product = models.ForeignKey(to=Product, on_delete=models.CASCADE, null=True, blank=False)
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE, null=True, blank=False)
     is_cart = models.IntegerField(default=1, null=True, blank=True)
     status = models.CharField(max_length=200, null=True, blank=True)
     name = models.CharField(max_length=200, null=True,blank= True)

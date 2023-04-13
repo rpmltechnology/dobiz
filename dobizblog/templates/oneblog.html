@@ -1,0 +1,181 @@
+{% extends 'index.html' %}
+{%block title%}POST- {{post.title}} {% endblock %}
+{% load humanize %}
+{% load extras %}
+{% load static %}
+{%block body %}
+
+<section class="pt-5 blog_sld" style="margin-top: 130px;">
+  <div class="container py-5">
+    <div class="row">
+
+      <div class="col-md-9 col-12">
+        <div class="p-2">
+          <h4 class="pt-2 color_hd">{{post.title}}</h4>
+          <p><span> <i class="fa fa-user text-danger" aria-hidden="true"></i> {{post.author}}</span>
+            <span> <i class="fa fa-calendar text-danger" aria-hidden="true"></i> {{post.timestap}}</span>
+            <span> <i class="fa fa-th-list text-danger" aria-hidden="true"></i> {{post.page}}</span>
+          </p>
+          <p>{{post.content}}
+          </p>
+          <div class="text-center border single_page_bl">
+            <img src="/media/{{ post.img }}" class="img-fluid rounded-start" alt="blog">
+          </div>
+        </div>
+        
+        <div class="my-2">
+          {% if user.is_authenticated %}
+          <form action="{% url 'dobizblog:postComment' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <h2> Comments ({{comments.count}})</h2>
+              <label for="exampleInputEmail1" style="margin-bottom: 5px;">Post Comment </label>
+              <input type="text" class="form-control" name="comment" placeholder="Enter comment here">
+            </div>
+            <input type="hidden" name="postSno" value="{{post.sno}}">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          {% else %}
+          <h3 style="margin-bottom: 5px;">Please login to post a comment</h3>
+          {% endif %}
+        </div>
+        {% for comment in comments %}
+        <div class="row my-3">
+          <div class="col-md-1  ">
+            <i class="fa fa-user fs-1" aria-hidden="true"></i>
+          </div>
+          <div class="col-md-11 ">
+            <b> {{comment.user.fname}} </b> <span class="badge bg-secondary"> {{comment.timestamp| naturaltime}}</span>
+            <div> {{comment.comment}} </div>
+            <div class="reply mx-0">
+              {% if user.is_authenticated %}
+              <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#replyBox{{comment.sno}}" aria-expanded="false" aria-controls="replyBox{{comment.sno}}">
+                Reply
+              </button>
+
+              <div class="collapse" id="replyBox{{comment.sno}}">
+                <div class="card card-body my-2">
+                  <form action="{% url 'dobizblog:postComment' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="comment">Post a reply </label>
+                      <input type="text" class="form-control" name="comment" placeholder="Enter comment here">
+                      <input type="hidden" name="parentSno" value="{{comment.sno}}">
+                    </div>
+                    <input type="hidden" name="postSno" value="{{post.sno}}">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
+              </div>
+              {% else %}
+              <button class="btn btn-sm btn-primary" type="button" data-toggle="collapse"
+                data-target="#replyBox{{comment.sno}}" aria-expanded="false" aria-controls="replyBox{{comment.sno}}">
+                Login to reply
+              </button>
+              {% endif %}
+              <div class="replies my-2 ">
+                {% for reply in replyDict|get_val:comment.sno %}
+                <div class="row my-2">
+                  <div class="col-md-1 ">
+                    <i class="fa fa-user fs-1" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-md-11">
+                    <div class="col-md-11 ">
+                      <b> {{reply.user.fname}} </b> <span class="badge bg-secondary">{{reply.timestamp|
+                        naturaltime}}</span>
+                      <div>{{reply.comment}}</div>
+                    </div>
+                    <br>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="col-md-3 col-12 one_blog_text">
+        <a href="{% url 'dobizblog:bloghome'%}">
+          <div class="p-2 border">
+            <h4 class="p-2 bg-primary text-white">Category</h4>
+            <ul>
+              {% for p in pages %}
+              <li>
+                <a href="{% url 'dobizblog:blog_post' p.page %}"> {{ p.page }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </a>
+
+        <div class="p-2 border single_bog_img">
+          <h4 class="p-2 bg-primary text-white">Recent Posts</h4>
+        
+          {% for recent_post in recent_posts %}
+          <a href="{% url 'dobizblog:oneblog' recent_post.sno %}">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="/media/{{ recent_post.img }}" class="img-fluid rounded-start" alt="{{ recent_post.title }}">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <p class="card-text"><b>{{ recent_post.title }}</b></p>
+                    <p class="card-text">{{ recent_post.category }}</p>
+                    <p class="card-text text-danger"> <i class="fa fa-calendar text-danger" aria-hidden="true"></i> {{ recent_post.timestamp }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          {% empty %}
+          <p>No recent posts</p>
+          {% endfor %}
+        </div>
+        
+        
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+<section class="py-2 bg-dark text-white">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 col-12">
+        <span class="social-icon">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <i class="fa fa-youtube-play" aria-hidden="true"></i>
+        </span>
+        <button type="button" class="btn btn-success px-4"> <i class="fa fa-whatsapp" aria-hidden="true"></i> Join
+          Group</button>
+      </div>
+
+      <div class="col-md-8 col-12">
+
+        <div class="row g-3 pt-3">
+          <div class="col-sm">
+            <input type="text" class="form-control" placeholder="Name" aria-label="City">
+          </div>
+          <div class="col-sm">
+            <input type="email" class="form-control" placeholder="Email" aria-label="State">
+          </div>
+          <div class="col-sm">
+            <button type="button" class="btn btn-primary px-4"> Newsletter Signup </button>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

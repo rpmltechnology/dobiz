@@ -11,30 +11,46 @@
       <div class="col-md-9 col-12affix-top bg-light" data-spy="affix" data-offset-top="597">
       <!-- Nav pills -->
       <ul class="nav nav-pills" role="tablist">
+        {% if meaning %}
         <li class="nav-item">
           <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
         </li>
+        {% endif %}
+        {% if minimum %}
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
         </li>
+        {% endif %}
+        {% if benefit %}
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
         </li>
+        {% endif %}
+        {% if document %}
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
         </li>
+        {% endif %}
+        {% if incorporation %}
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
         </li>
+        {% endif %}
+        {% if compliance %}
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
         </li>
+        {% endif %}
+        {% if closure %}
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
         </li>
+        {% endif %}
+        {% if faq %}
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
         </li>
+        {% endif %}
       </ul>
 
       <!-- Tab panes -->

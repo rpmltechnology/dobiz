@@ -2,7 +2,21 @@ from django.db import models
 from dobiz.models import User
 from django.utils.timezone import now
 # Create your models here.
+class Category(models.Model):
+    heading = models.CharField(max_length=255,null=True, blank=True)
+
+    def __str__(self):
+        return self.heading
+
+class BlogPage(models.Model):
+    heading = models.ForeignKey(to=Category,on_delete=models.CASCADE, null=True,blank=True )
+    page = models.CharField(max_length=255,null=True, blank=True)
+
+    def __str__(self):
+        return self.page
+
 class Post(models.Model):
+    page = models.ForeignKey(to=BlogPage,on_delete=models.CASCADE, null=True,blank=True )
     sno = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
     content = models.TextField()

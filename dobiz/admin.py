@@ -34,15 +34,14 @@ class CustomUserAdmin(UserAdmin):
     list_display = ('email', 'fname', 'lname', 'phone','is_staff','is_active','is_verified','refer_by')
     list_filter = ('email', 'fname', 'lname', 'phone','is_staff','is_active','is_verified','refer_by')
     fieldsets = (
-        (None, {'fields':('email', 'password')}),
-        ('additionalfields',{'fields':('fname', 'lname', 'phone','is_staff','is_active','is_verified','otp','otp_for_forgot_pass','otp_for_mobile','refer_by')}),
-        
-    )
+    (None, {'fields':('email', 'password')}),
+    ('additionalfields',{'fields':('fname', 'lname', 'phone','is_staff','is_active','is_verified','otp','otp_for_forgot_pass','otp_for_mobile','refer_by','groups')}),
+)
     add_fieldsets=(
-        (None,{
-            'classes':('wide',),
-            'fields':('email', 'password1','password2','fname', 'lname', 'phone','otp','is_staff','is_active','is_verified','refer_by')}),
-        )
+    (None,{
+        'classes':('wide',),
+        'fields':('email', 'password1','password2','fname', 'lname', 'phone','otp','is_staff','is_active','is_verified','refer_by','groups')}),
+)
     search_fields=('email',)
     ordering =('email',)
 admin.site.register(User, CustomUserAdmin)
