@@ -85,7 +85,9 @@ class Product(models.Model):
     quantity = models.CharField(max_length=200, null=True, blank=True)
     desc = models.TextField(null=True, blank=False)
     pub_date = models.DateField(null=True, blank=False)
-
+    img1 = models.ImageField(null=True, blank=True, default='/common_img.png')
+    is_packed = models.BooleanField(null=True, blank=True) 
+    
     def __str__(self):
         return self.product_name
         

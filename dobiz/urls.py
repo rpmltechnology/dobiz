@@ -23,15 +23,16 @@ path('password_otp/', views.password_otp, name='password_otp'),
 path('password_reset/', views.password_reset, name='password_reset'),
     
     # Order Management
-# path("checkout",views.checkout,name="checkout"),
+path("checkout",views.checkout,name="checkout"),
 path('order_history',views.order_history,name="order_history"),
 path('cart',views.cart,name="cart"),
 path('card',views.card,name="card"),
 path('addToCart',views.addToCart, name="addToCart"),
 path('dashboard',views.dashboard, name="dashboard"),
+path('delete_item/<int:item_id>/', views.delete_item, name='delete_item'),
 # path('success',views.success, name="success"),
 # path('handlerequest',views.handlerequest, name="handlerequest"),
-path('viewproduct/user_id=(?P<user_id>[0-9]+)?/product_id=(?P<id>[0-9]+)/', views.viewproduct, name='viewproduct'),
+path('viewproduct//product_id=<int:id>/', views.viewproduct, name='viewproduct'),
 
 #CommonPages
 path('commonPages', views.commonPages, name='commonPages'),

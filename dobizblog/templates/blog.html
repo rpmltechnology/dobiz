@@ -96,7 +96,7 @@
                 {{ blog.heading }}
               </button>
             </h4>
-            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse show"
+            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse"
               aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#accordionExample">
               <div class="accordion-body list-style">
                 <ul>
@@ -104,7 +104,7 @@
                   {% if blogpage.heading == blog %}
                   <li>
                     <i class="fa fa-angle-right">
-                      <a href="{% url 'dobizblog:blog_post' blogpage.page %}"> {{ blogpage.page }}</a>
+                      <a href="{% url 'dobizblog:blog_post' blogpage.page %}" class="text-decoration-none"> {{ blogpage.page }}</a>
                     </i>
                   </li>
                   {% endif %}

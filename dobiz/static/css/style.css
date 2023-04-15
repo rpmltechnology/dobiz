@@ -1279,6 +1279,9 @@ line-height: 41px;
 }
 .spc_left{
     padding-left: 18%;
+    color: #000;
+    display: flex;
+    justify-content: center;
 }
 
 .spn_spc {

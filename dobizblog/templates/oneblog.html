@@ -3,8 +3,26 @@
 {% load humanize %}
 {% load extras %}
 {% load static %}
+{% load social_share %}
 {%block body %}
-
+<style>
+  .facebook{
+    display: inline-block;
+    padding: 10px;
+  }
+  .twitter{
+    display: inline-block;
+    padding: 10px;
+  }
+  .whatsapp{
+    display: inline-block;
+    padding: 10px;
+  }
+  .linkdein{
+    display: inline-block;
+    padding: 10px;
+  }
+</style>
 <section class="pt-5 blog_sld" style="margin-top: 130px;">
   <div class="container py-5">
     <div class="row">
@@ -14,13 +32,28 @@
           <h4 class="pt-2 color_hd">{{post.title}}</h4>
           <p><span> <i class="fa fa-user text-danger" aria-hidden="true"></i> {{post.author}}</span>
             <span> <i class="fa fa-calendar text-danger" aria-hidden="true"></i> {{post.timestap}}</span>
+            <br>
+        <div class="facebook fa-2x">
+          {% post_to_facebook object_or_url %}
+        </div>
+        <div class="twitter fa-2x">
+          {% post_to_twitter object_or_url %}
+        </div>
+        <div class="whatsapp fa-2x">
+          {% post_to_whatsapp object_or_url %}
+        </div>
+        <div class="linkdein fa-2x">{% post_to_linkedin object_or_url %}
+        </div>
+        <br>
             <span> <i class="fa fa-th-list text-danger" aria-hidden="true"></i> {{post.page}}</span>
           </p>
           <p>{{post.content}}
           </p>
+          {% if post.img %}
           <div class="text-center border single_page_bl">
             <img src="/media/{{ post.img }}" class="img-fluid rounded-start" alt="blog">
           </div>
+          {% endif %}
         </div>
         
         <div class="my-2">

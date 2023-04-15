@@ -25,7 +25,7 @@
             <br />
             <div class="d-grid gap-2">
              <button id="pr{{i.id}}" class="btn btn-primary btn-sm add-to-cart" data-product-id="{{i.id}}">Add To Cart</button>
-              <a  href="{% url 'viewproduct' user_id=request.user.id id=i.id %}"><button id="qv{{i.id}}" class="btn btn-primary btn-sm">View Product</button></a>
+              <a  href="{% url 'viewproduct' id=i.id %}"><button id="qv{{i.id}}" class="btn btn-primary btn-sm">View Product</button></a>
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@
         success: function (response) {
           if (response.Success == 1) {
             if (confirm("Do you want to visit Cart page?")) {
-              window.location.href = "{% url 'cart' %}";
+              window.location.href = "{% url 'card' %}";
             }
           }
         }

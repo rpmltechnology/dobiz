@@ -1,20 +1,22 @@
 {% extends 'index.html' %}
 {%block title%}Cart custom{% endblock %}
 {% load static %}
+{% load social_share %}
 {%block body %}
 <section class="py-5" style="margin-top: 130px;">
   <div class="container ">
     <div class="row">
-  <h3 class="bg_sty spc_left header"><b> Order Cart </b></h3>
-</div>
-</div>
+      <h3 class="bg_sty spc_left header"><b> Order Cart </b></h3>
+    </div>
+  </div>
   <div class="container">
     <div class="row">
 
       <div class="col-md-9 col-12">
+        {% for i in items %}
         <div class="cart1 pt-4 p-2 bg_sty">
           <div class="col-md-3 col-12">
-            <img src="{% static 'images/common_img.png' %}" alt="logo-img" class="img-fluid">
+            <img src="/media/{{ i.product.img1 }}" alt="logo-img" class="img-fluid">
           </div>
           <div class="col-md-1 col-12"></div>
           <div class="col-md-8 col-12">
@@ -26,19 +28,28 @@
                     <th colspan="4">Description</th>
                   </tr>
                   <tr>
-                    <th colspan="3">Private Limited Company</th>
+                    <th colspan="3">{{i.product.product_name}}</th>
                     <th>Price</th>
                   </tr>
                   <tr>
-                    <td colspan="3">Company registration including Government Fee & Stamp Duty*. Incorporation kit with
-                      share certificates.</td>
-                    <td>32000.00</td>
+                    <td colspan="3">{{i.product.desc}}</td>
+                    {% if i.final_price %}
+                    <td>{{ i.final_price }}</td>
+                    {% else %}
+                    <td>{{i.product.price}}</td>
+                    {% endif %}
                   </tr>
                   <tr>
-                    <td>Delete </td>
+                    <td>
+                      <form action="{% url 'delete_item' i.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                      </form>
+                    </td>
                     <td>Save for later </td>
-                    <td>See more like this</td>
-                    <td>Share</td>
+                    
+                    <td> <button type="button" class="btn btn-primary1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      Share</td>
                   </tr>
 
                 </tbody>
@@ -47,44 +58,10 @@
           </div>
 
         </div>
-
-        <div class="cart1 pt-4 p-2 bg_sty">
-          <div class="col-md-3 col-4">
-            <img src="images/common_img.png" alt="logo-img" class="img-fluid">
-          </div>
-          <div class="col-md-1 col-12"></div>
-          <div class="col-md-8 col-12">
-            <div class="table-responsive">
-              <table class="table">
-
-                <tbody>
-                  <tr>
-                    <th colspan="4">Description</th>
-                  </tr>
-                  <tr>
-                    <th colspan="3">Private Limited Company</th>
-                    <th>Price</th>
-                  </tr>
-                  <tr>
-                    <td colspan="3">Company registration including Government Fee & Stamp Duty*. Incorporation kit with
-                      share certificates.</td>
-                    <td>32000.00</td>
-                  </tr>
-                  <tr>
-                    <td>Delete </td>
-                    <td>Save for later </td>
-                    <td>See more like this</td>
-                    <td>Share</td>
-                  </tr>
-
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
 
         <div class="bg_sty p-2">
-          <h5 class="text-end">Subtotal (2 items): 32,990.00</h5>
+          <h5 class="text-end">Subtotal ({{ items.count }}): Rs.{{ final_price }}</h5>
         </div>
 
       </div>
@@ -93,13 +70,18 @@
 
       <div class="col-md-3 col-12 bg_sty">
         <div class="p-2">
-          <p>Company registration including Government Fee & Stamp Duty</p>
-          <p>Company registration including </p>
-          <br /><br />
-          <h5>Subtotal (2 items): &nbsp; 32,990.00</h5>
+          <td>
+            <form method="POST">{% csrf_token %}
+              <input class="uppercase" placeholder="APPLY COUPAN" name="coupan" required>
+              <!-- <input type="hidden" class="uppercase" value="{{i.product.id}}" name="id"> -->
+              <button id="applyBtn" type="submit" class="b-main-color pointer">Apply</button>
+            </form>
+          </td>
+          <h5>Subtotal ({{ items.count }}): Rs.{{final_price }}</h5>
           <h5 class="text-end">Including GST</h5>
           <div class="d-grid gap-2">
-            <button type="button" class="btn-lg mt-4 py-2 px-4 btn_sty"> Process to buy </button>
+            <button type="button" class="btn-lg mt-4 py-2 px-4 btn_sty"> <a
+                href="/checkout?id={{i.product.id}}&order_id={{i.id}}">Buy Now</a> </button>
           </div>
         </div>
 
@@ -175,5 +157,42 @@
 
   </div>
 </section>
+<script>
+  $(document).ready(function() {
+    $('.share-button').click(function() {
+      var shareOptions = $(this).siblings('.share-options');
+      if (shareOptions.is(':hidden')) {
+        shareOptions.slideDown();
+      } else {
+        shareOptions.slideUp();
+      }
+    });
+  });
+</script>
 
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Share</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="model-icon">
+          {% post_to_facebook object_or_url %}
+          {% post_to_twitter object_or_url %}
+          {% post_to_whatsapp object_or_url %}
+          {% post_to_linkedin object_or_url %}
+         
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- // model---->
 {% endblock %}

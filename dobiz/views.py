@@ -2110,55 +2110,55 @@ def password_reset(request):
 
 
 # Order Management
-# def checkout(request):
-#     id = request.GET.get("id")
-#     order_id = request.GET.get("order_id")
-#     try:
-#         product = Product.objects.get(id=id)
-#         if order_id:
-#             print("Oder id ", order_id)
-#             order = Order.objects.get(id=order_id)
-#         else:
-#             order = Order()
-#         final_price = product.gst + product.other_cost + product.Dobiz_India_Filings
+def checkout(request):
+    id = request.GET.get("id")
+    order_id = request.GET.get("order_id")
+    try:
+        product = Product.objects.get(id=id)
+        if order_id:
+            print("Oder id ", order_id)
+            order = Order.objects.get(id=order_id)
+        else:
+            order = Order()
+        final_price = product.gst + product.other_cost + product.Dobiz_India_Filings
 
-#         if request.method == 'POST' and request.POST.get("coupan"):
-#             try:
-#                 coupan = request.POST.get("coupan")
-#                 offer = Coupan.objects.filter(active=1).get(coupan=coupan)
-#                 final_price = final_price - offer.amount
-#             except Exception as e:
-#                 print("Error : ", e)
+        if request.method == 'POST' and request.POST.get("coupan"):
+            try:
+                coupan = request.POST.get("coupan")
+                offer = Coupan.objects.filter(active=1).get(coupan=coupan)
+                final_price = final_price - offer.amount
+            except Exception as e:
+                print("Error : ", e)
 
-#         elif request.method == 'POST':
-#             remark = request.POST.get("remark")
-#             user = User.objects.get(id=request.user.id)
+        elif request.method == 'POST':
+            remark = request.POST.get("remark")
+            user = User.objects.get(id=request.user.id)
 
-#             order.product = product
-#             order.user = user
-#             order.is_cart = 0
-#             order.status = "Success"
-#             order.name = user.name
-#             order.email = user.email
-#             order.remarks = remark
-#             order.buy_time = datetime.now()
-#             order.save()
-#             return redirect("/order_history")
-#         client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
-#         amount = int(final_price * 100)
-#         Print('*****************************')
-#         print(payment)
-#         Print('*****************************')
-#         payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
-#         order.razor_pay_order_id = payment['id']
-#         order.save()
-#         context = {"product": product,
-#                    "final_price": final_price,
-#                    "payment": payment
-#                    }
-#     except:
-#         context = {}
-#     return render(request, "order/checkout.html", context)
+            order.product = product
+            order.user = user
+            order.is_cart = 0
+            order.status = "Success"
+            order.name = user.name
+            order.email = user.email
+            order.remarks = remark
+            order.buy_time = datetime.now()
+            order.save()
+            return redirect("/order_history")
+        client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
+        amount = int(final_price * 100)
+        Print('*****************************')
+        print(payment)
+        Print('*****************************')
+        payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
+        order.razor_pay_order_id = payment['id']
+        order.save()
+        context = {"product": product,
+                   "final_price": final_price,
+                   "payment": payment
+                   }
+    except:
+        context = {}
+    return render(request, "order/checkout.html", context)
 
 def order_history(request):
     orders = Order.objects.filter(user__id = request.user.id).filter(is_cart=0).order_by("-id")
@@ -2167,6 +2167,7 @@ def order_history(request):
 
 
 from django.utils import timezone
+
 
 def cart(request):
     items = Order.objects.filter(user__id=request.user.id).filter(is_cart=1).order_by("-id")
@@ -2312,21 +2313,6 @@ def dashboard(request):
 
 from dobizblog.models import *
 
-# from haystack.query import SearchQuerySet
-
-# def search(request):
-#     query = request.GET.get('query', '')
-#     if len(query) > 78:
-#         allPosts = Post.objects.none()
-#     else:
-#         # Perform a search using Haystack
-#         sqs = SearchQuerySet().filter(content=query)
-#         allPosts = [result.object for result in sqs]
-#     if not allPosts:
-#         messages.warning(request, "No search results found. Please refine your query.")
-#     params = {'allPosts': allPosts, 'query': query}
-#     return render(request, 'search.html', params)
-
 def search(request):
     query = request.GET.get('query', '')
     allPosts = Post.objects.none()
@@ -2344,4 +2330,65 @@ def search(request):
     return render(request, 'search.html', params)
 
 def card(request):
-    return render(request,'order/card.html')
+    items = Order.objects.filter(user__id=request.user.id).filter(is_cart=1).order_by("-id")
+    coupan = request.POST.get("coupan")
+    final_price = 0
+    for item in items:
+        final_price += item.product.price
+
+    if request.method == 'POST' and coupan:
+        try:
+            coupan = coupan.upper()
+            offer = Coupan.objects.filter(active=1).get(coupan=coupan) #checks for username and user
+            for item in items:
+                product = item.product
+                if offer.percentage is not None and offer.amount is not None:
+                    product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
+                    discounted_price_percentage = product_cost - (product_cost * offer.percentage / 100)
+                    discounted_price_amount = product_cost - offer.amount
+                    if discounted_price_percentage > discounted_price_amount:
+                        product_cost = discounted_price_percentage
+                    else:
+                        product_cost = discounted_price_amount
+                elif offer.percentage is not None:
+                    product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
+                    product_cost = product_cost - (product_cost * offer.percentage / 100)
+                elif offer.amount is not None:
+                    product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
+                    product_cost = product_cost - offer.amount
+                item.final_price = product_cost
+                item.save()
+            if offer.percentage is not None:
+                final_price -= final_price * offer.percentage / 100
+                messages.success(request, "Coupon Applied")
+            else:
+                final_price -= offer.amount
+                messages.success(request, "Coupon Applied")
+        except Coupan.DoesNotExist:
+            messages.error(request, "Invalid Coupon, Please Try Again")
+        except Exception as e:
+            print("Error : ", e)
+
+    client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
+    amount = int(final_price * 100)
+    payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
+
+    # Check if the payment is successful
+    if payment['status'] == 'captured':
+        # Create an order object for each item in the cart with the payment status 'success'
+        for item in items:
+            product = item.product
+            user = request.user
+            order = Order.objects.create(product=product, user=user, is_cart=0, status='success', name=user.name, email=user.email, buy_time=timezone.now(), razor_pay_order_id=payment['id'])
+
+    context = {"items": items,
+               "final_price": final_price,
+               "payment": payment,
+               "coupan":coupan
+              }
+    return render(request,'order/card.html',context)
+
+def delete_item(request, item_id):
+    item = Order.objects.get(id=item_id)
+    item.delete()
+    return redirect('card')
