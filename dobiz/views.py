@@ -22,6 +22,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import *
 from datetime import datetime
+from django.urls import reverse
 #integration with razarpay
 import razorpay
 
@@ -2314,7 +2315,7 @@ def dashboard(request):
 from dobizblog.models import *
 
 def search(request):
-    query = request.GET.get('query', '')
+    query = request.GET.get('query')
     allPosts = Post.objects.none()
     if query:
         if len(query) > 78:
@@ -2335,6 +2336,18 @@ def card(request):
     final_price = 0
     for item in items:
         final_price += item.product.price
+    
+    # Get the URL of the first product in the cart (assuming there is at least one product in the cart)
+    product_url = None
+    if items.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': items[0].product.id}))
+    
+    # Get similar products based on the category of the products in the cart
+    similar_products = []
+    if items.exists():
+        category = items[0].product.category
+        similar_products = Product.objects.filter(category=category).exclude(id__in=[item.product.id for item in items]).order_by("-id")[:3]
+
 
     if request.method == 'POST' and coupan:
         try:
@@ -2368,7 +2381,7 @@ def card(request):
             messages.error(request, "Invalid Coupon, Please Try Again")
         except Exception as e:
             print("Error : ", e)
-
+        
     client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
     amount = int(final_price * 100)
     payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
@@ -2384,7 +2397,9 @@ def card(request):
     context = {"items": items,
                "final_price": final_price,
                "payment": payment,
-               "coupan":coupan
+               "coupan":coupan,
+               "product_url": product_url,
+                "similar_products": similar_products
               }
     return render(request,'order/card.html',context)
 

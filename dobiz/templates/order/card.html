@@ -48,8 +48,12 @@
                     </td>
                     <td>Save for later </td>
                     
-                    <td> <button type="button" class="btn btn-primary1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Share</td>
+                    <td>
+                      <button type="button" class="btn btn-primary1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          Share
+                      </button>
+                  </td>
+
                   </tr>
 
                 </tbody>
@@ -72,9 +76,9 @@
         <div class="p-2">
           <td>
             <form method="POST">{% csrf_token %}
-              <input class="uppercase" placeholder="APPLY COUPAN" name="coupan" required>
+              <input class="uppercase py-1" placeholder="APPLY COUPAN" name="coupan" required>
               <!-- <input type="hidden" class="uppercase" value="{{i.product.id}}" name="id"> -->
-              <button id="applyBtn" type="submit" class="b-main-color pointer">Apply</button>
+              <button id="applyBtn" type="submit" class="b-main-color pointer btn_sty py-2 px-2">Apply</button>
             </form>
           </td>
           <h5>Subtotal ({{ items.count }}): Rs.{{final_price }}</h5>
@@ -91,40 +95,13 @@
 
     <div class="row pt-5">
       <div class="col-md-12 col-12 bg_sty">
-        <p class="p-2 border-bottom">Similar Services</p>
-        <p><span>Private Limited Company</span> | <span>Private Limited Company</span> </p>
-        <div class="cart1">
-          <div class="col-md-3 col-12">
-            <img src="images/common_img.png" alt="logo-img" class="img-fluid">
-          </div>
-          <div class="col-md-1 col-12"></div>
-          <div class="col-md-8 col-12">
-            <div class="table-responsive">
-              <table class="table">
-
-                <tbody>
-                  <tr>
-                    <th colspan="2">Description</th>
-                  </tr>
-                  <tr>
-                    <th>Private Limited Company</th>
-                    <td>32000.00</td>
-                  </tr>
-                  <tr>
-                    <td>Company registration including Government Fee & Stamp Duty*. Incorporation kit with share
-                      certificates.</td>
-                    <td> &nbsp; Add to card &nbsp; </td>
-                  </tr>
-
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
+        <p class="p-2 border-bottom">Similar Products</p>
+        <p><span> {{similar_products.category}}</span></p>
+        
+        {% for s in similar_products %}
         <div class="cart1 pt-4">
           <div class="col-md-3 col-12">
-            <img src="images/common_img.png" alt="logo-img" class="img-fluid">
+            <img src="/media/{{ s.img1 }}" alt="logo-img" class="img-fluid">
           </div>
           <div class="col-md-1 col-12"></div>
           <div class="col-md-8 col-12">
@@ -136,13 +113,12 @@
                     <th colspan="2">Description</th>
                   </tr>
                   <tr>
-                    <th>Private Limited Company</th>
-                    <td>32000.00</td>
+                    <th>{{s.product_name}}</th>
+                    <td>{{s.price}}</td>
                   </tr>
                   <tr>
-                    <td>Company registration including Government Fee & Stamp Duty*. Incorporation kit with share
-                      certificates.</td>
-                    <td> &nbsp; Add to card &nbsp; </td>
+                    <td>{{s.desc}}</td>
+                    <td>  <button id="pr{{s.id}}" class="btn btn-primary btn-sm add-to-cart" data-product-id="{{s.id}}" style="white-space: nowrap;">Add To Cart</button> </td>
                   </tr>
 
                 </tbody>
@@ -151,6 +127,7 @@
           </div>
 
         </div>
+        {% endfor %}
 
       </div>
     </div>
@@ -158,6 +135,25 @@
   </div>
 </section>
 <script>
+  $(document).ready(function(){
+  $('.add-to-cart').click(function(){
+    var id = $(this).data('product-id');
+    $.ajax({
+      type: 'POST',
+      url: "{% url 'addToCart' %}",
+      data: {
+        "id": id,
+        csrfmiddlewaretoken: '{{ csrf_token }}'
+      },
+      success: function (response) {
+        if (response.Success == 1) {
+          window.location.href = "{% url 'card' %}";
+        }
+      }
+    });
+  });
+});
+
   $(document).ready(function() {
     $('.share-button').click(function() {
       var shareOptions = $(this).siblings('.share-options');
@@ -180,13 +176,12 @@
       </div>
       <div class="modal-body">
         <div class="model-icon">
-          {% post_to_facebook object_or_url %}
-          {% post_to_twitter object_or_url %}
-          {% post_to_whatsapp object_or_url %}
-          {% post_to_linkedin object_or_url %}
-         
-            </div>
-      </div>
+            {% post_to_facebook product_url %}
+            {% post_to_twitter product_url %}
+            {% post_to_whatsapp product_url %}
+            {% post_to_linkedin product_url %}
+        </div>
+    </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
