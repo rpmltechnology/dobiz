@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-gu(^!8gk9wlz0_lgi)5lp%a5@m%82r)0emtg7r-e_)k=qva78r
 DEBUG = True
 AUTH_USER_MODEL = 'dobiz.User'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django.contrib.sites',
     'django.contrib.humanize',
+    
 ]
 # SITE_ID = 1
 # COMMENTS_APP = 'django_comments_xtd'
@@ -132,6 +133,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -155,14 +157,5 @@ EMAIL_HOST_PASSWORD = 'emqkreqdbqjcvhsv'
 
 KEY = 'rzp_test_D4hi1vsG8ESCJ2'
 SECRET = 'xuZKmllZbwmbKNT1ES0rdplp'
-
-#search
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.elasticsearch5_backend.Elasticsearch5SearchEngine',
-        'URL': 'http://localhost:9200/',
-        'INDEX_NAME': 'myapp',
-    },
-}
 
 #COMMENTS

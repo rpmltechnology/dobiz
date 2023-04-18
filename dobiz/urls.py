@@ -5,8 +5,12 @@ from . import views
 #managing media imports
 from django.conf import settings
 from django.conf.urls.static import static
+from django. urls import re_path as url
+from django. views. static import serve
 urlpatterns = [
-    path('', views.home, name='home'),
+url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+path('', views.home, name='home'),
 #order now url
 path('order', views.order, name='order'),
 path('search', views.search, name="search"),
@@ -32,7 +36,7 @@ path('dashboard',views.dashboard, name="dashboard"),
 path('delete_item/<int:item_id>/', views.delete_item, name='delete_item'),
 # path('success',views.success, name="success"),
 # path('handlerequest',views.handlerequest, name="handlerequest"),
-path('viewproduct//product_id=<int:id>/', views.viewproduct, name='viewproduct'),
+path('viewproduct/product_id=<int:id>/', views.viewproduct, name='viewproduct'),
 
 #CommonPages
 path('commonPages', views.commonPages, name='commonPages'),
@@ -116,6 +120,8 @@ path('exitbussiness/<str:page>/', views.exitbussiness, name='exitbussiness'),
 path('exitbussiness_api/<str:page>/', views.exitbussiness_api, name='exitbussiness_api'),
 
     
-]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+]
+handler404 = 'dobiz.views.four0four'
 
-# path using <str>
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

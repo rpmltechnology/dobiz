@@ -23,9 +23,14 @@ from rest_framework.response import Response
 from .serializers import *
 from datetime import datetime
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
+from django.http import Http404
+
 #integration with razarpay
 import razorpay
 
+def four0four(request, exception):
+    return render(request, '404.html')
 # Create your views here.
 def home(request):
     allpage=Page.objects.all()
@@ -40,7 +45,7 @@ def home(request):
     return render(request, 'home.html', {'form': form,"allpage":allpage})
 
 #View Product
-from django.contrib.auth.decorators import login_required
+
 def viewproduct(request, **kwargs):
     id = kwargs.get('id')
     products = get_object_or_404(Product, id=id)
@@ -2407,3 +2412,4 @@ def delete_item(request, item_id):
     item = Order.objects.get(id=item_id)
     item.delete()
     return redirect('card')
+
