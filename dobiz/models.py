@@ -71,7 +71,6 @@ class Profile(models.Model):
         return self.fname + self.email
 
 class Product(models.Model):
-    # product_id = models.AutoField
     page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     product_name = models.CharField(max_length=50,null=True, blank=False)
     category = models.CharField(max_length=50, default="", null=True, blank=False)
@@ -105,7 +104,7 @@ class Coupan(models.Model):
 
 class Order(models.Model):
     product = models.ForeignKey(to=Product, on_delete=models.CASCADE, null=True, blank=False)
-    user = models.ForeignKey(to=User, on_delete=models.CASCADE, null=True, blank=False)
+    user = models.ForeignKey(to=User, on_delete=models.SET_NULL, null=True, blank=False)
     is_cart = models.IntegerField(default=1, null=True, blank=True)
     status = models.CharField(max_length=200, null=True, blank=True)
     name = models.CharField(max_length=200, null=True,blank= True)
@@ -116,14 +115,16 @@ class Order(models.Model):
     remarks = models.CharField(max_length=300, null=True, blank=True)
     buy_time = models.DateTimeField(null=True, blank=True)
     order_time = models.DateTimeField(auto_now=True)
-    coupan = models.ForeignKey(to=Coupan, null=True, blank=True,on_delete=models.DO_NOTHING)
+    coupan = models.ForeignKey(to=Coupan, null=True, blank=True,on_delete=models.SET_NULL)
     sell_price = models.IntegerField(null=True,blank=True)
     razor_pay_order_id = models.CharField(max_length=100,null=True,blank=True)
     razor_payment_id = models.CharField(max_length=100,null=True,blank=True)
     razor_payment_signature = models.CharField(max_length=100,null=True,blank=True)
     def __str__(self):
-        return self.product.product_name + self.user.name
-
+        return f"{self.product.product_name} {self.user.name}"
+    def apply_coupon(self, coupon):
+        self.coupan = coupon
+        self.save()
 class Banner(models.Model):
     page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     category = models.CharField(max_length=200, null=True,blank=False)

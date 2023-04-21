@@ -7,6 +7,7 @@ from django.utils import timezone
 from django.http import JsonResponse
 #extras
 from dobiz.templatetags import extras
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -59,23 +60,25 @@ def oneblog(request, pk):
     return render(request, 'oneblog.html', {'post': post, 'comments': comments, 'replyDict': replyDict, 'pages': pages, 'recent_posts': recent_posts,'allpage':allpage})
 
 
-
+@login_required
 def postComment(request):
     if request.method == "POST":
-        comment=request.POST.get('comment')
-        user=request.user
-        postSno =request.POST.get('postSno')
-        post= Post.objects.get(sno=postSno)
-        parentSno= request.POST.get('parentSno')
-        if parentSno=="":
-            comment=BlogComment(comment= comment, user=user, post=post)
-            comment.save()
-            messages.success(request, "Your comment has been posted successfully")
+        comment = request.POST.get('comment')
+        user = request.user
+        postSno = request.POST.get('postSno')
+        post = Post.objects.get(sno=postSno)
+        parentSno = request.POST.get('parentSno')
+        if parentSno:
+            try:
+                parent = BlogComment.objects.get(sno=parentSno)
+            except BlogComment.DoesNotExist:
+                messages.error(request, "Parent comment does not exist.")
+                return redirect(f"/blogpost/{post.sno}")
+            comment = BlogComment(comment=comment, user=user, post=post, parent=parent)
         else:
-            parent= BlogComment.objects.get(sno=parentSno)
-            comment=BlogComment(comment= comment, user=user, post=post , parent=parent)
-            comment.save()
-            messages.success(request, "Your reply has been posted successfully")
-        
+            comment = BlogComment(comment=comment, user=user, post=post)
+        comment.save()
+        messages.success(request, "Your comment has been posted successfully.")
     return redirect(f"/blogpost/{post.sno}")
+
 

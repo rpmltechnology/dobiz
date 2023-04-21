@@ -3,6 +3,13 @@
 {% load static %}
 {% load social_share %}
 {%block body %}
+<style>
+  #copy-btn {
+    margin-left: 5px;
+    padding: 12px !important;
+    border-radius: 55px;
+  }
+</style>
 <section class="py-5" style="margin-top: 130px;">
   <div class="container ">
     <div class="row">
@@ -16,7 +23,10 @@
         {% for i in items %}
         <div class="cart1 pt-4 p-2 bg_sty">
           <div class="col-md-3 col-12">
-            <img src="/media/{{ i.product.img1 }}" alt="logo-img" class="img-fluid">
+            <a href="{% url 'viewproduct' i.product.id %}">
+              <img src="/media/{{ i.product.img1 }}" alt="logo-img" class="img-fluid">
+          </a>
+          
           </div>
           <div class="col-md-1 col-12"></div>
           <div class="col-md-8 col-12">
@@ -32,7 +42,7 @@
                     <th>Price</th>
                   </tr>
                   <tr>
-                    <td colspan="3">{{i.product.desc}}</td>
+                    <td colspan="3">{{i.product.desc | slice:"0:200"}}</td>
                     {% if i.final_price %}
                     <td>{{ i.final_price }}</td>
                     {% else %}
@@ -74,19 +84,25 @@
 
       <div class="col-md-3 col-12 bg_sty">
         <div class="p-2">
-          <td>
+          <!-- <td>
             <form method="POST">{% csrf_token %}
-              <input class="uppercase py-1" placeholder="APPLY COUPAN" name="coupan" required>
+              <input class="uppercase py-1" placeholder="APPLY COUPAN" name="coupan" required> -->
               <!-- <input type="hidden" class="uppercase" value="{{i.product.id}}" name="id"> -->
-              <button id="applyBtn" type="submit" class="b-main-color pointer btn_sty py-2 px-2">Apply</button>
+              <!-- <button id="applyBtn" type="submit" class="b-main-color pointer btn_sty py-2 px-2">Apply</button>
             </form>
-          </td>
+          </td> -->
           <h5>Subtotal ({{ items.count }}): Rs.{{final_price }}</h5>
           <h5 class="text-end">Including GST</h5>
           <div class="d-grid gap-2">
-            <button type="button" class="btn-lg mt-4 py-2 px-4 btn_sty"> <a
-                href="/checkout?id={{i.product.id}}&order_id={{i.id}}">Buy Now</a> </button>
-          </div>
+            {% if items.exists %}
+                {% with first_item=items.first %}
+                    <button type="button" class="btn-lg mt-4 py-2 px-4 btn_sty">
+                        <a href="/checkout?id={{first_item.product.id}}&order_id={{first_item.id}}">Buy Now</a>
+                    </button>
+                {% endwith %}
+            {% endif %}
+        </div>
+        
         </div>
 
       </div>
@@ -96,12 +112,15 @@
     <div class="row pt-5">
       <div class="col-md-12 col-12 bg_sty">
         <p class="p-2 border-bottom">Similar Products</p>
+        {% if similar_products %}
         <p><span> {{similar_products.category}}</span></p>
         
         {% for s in similar_products %}
         <div class="cart1 pt-4">
           <div class="col-md-3 col-12">
+            <a href="{% url 'viewproduct' s.id %}">
             <img src="/media/{{ s.img1 }}" alt="logo-img" class="img-fluid">
+          </a>
           </div>
           <div class="col-md-1 col-12"></div>
           <div class="col-md-8 col-12">
@@ -128,7 +147,7 @@
 
         </div>
         {% endfor %}
-
+        {% endif %}
       </div>
     </div>
 
@@ -164,6 +183,16 @@
       }
     });
   });
+  $(document).ready(function() {
+  const copyBtn = $('#copy-btn');
+  copyBtn.click(function() {
+    // console.log('click')
+    const url = copyBtn.attr('data-url')
+    // console.log(url)
+    navigator.clipboard.writeText(url)
+    copyBtn.text('Copied')
+  });
+});
 </script>
 
  <!-- Modal -->
@@ -175,12 +204,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        {% if product_url %}
         <div class="model-icon">
             {% post_to_facebook product_url %}
             {% post_to_twitter product_url %}
             {% post_to_whatsapp product_url %}
             {% post_to_linkedin product_url %}
+            <button id="copy-btn" class="btn btn-primary" data-url="{{ product_url }}">Copy</button>
         </div>
+        {% endif %}
     </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

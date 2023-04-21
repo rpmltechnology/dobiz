@@ -29,7 +29,7 @@ path('password_reset/', views.password_reset, name='password_reset'),
     # Order Management
 path("checkout",views.checkout,name="checkout"),
 path('order_history',views.order_history,name="order_history"),
-path('cart',views.cart,name="cart"),
+# path('cart',views.cart,name="cart"),
 path('card',views.card,name="card"),
 path('addToCart',views.addToCart, name="addToCart"),
 path('dashboard',views.dashboard, name="dashboard"),

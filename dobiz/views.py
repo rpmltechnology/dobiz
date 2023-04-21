@@ -25,7 +25,14 @@ from datetime import datetime
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
+from django.db.models import Sum
+from datetime import date
+from django.db.models import Sum
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from datetime import date, datetime
 
+from .models import Product, Order, Coupan
 #integration with razarpay
 import razorpay
 
@@ -96,10 +103,13 @@ def commonPages(request):
             else:
                 errors = form.errors.as_json()
                 return JsonResponse({'errors': errors}, status=400)
-
+    # Get the URL of the first product in the list
+        product_url = None
+        if products.exists():
+            product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
         context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
                 'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-                'step':step,'faq':faq,'closure':closure,"page":page,"allpage":allpage}
+                'step':step,'faq':faq,'closure':closure,"page":page,"allpage":allpage,'product_url':product_url}
         return render(request, f'common.html', context)
     else:
         return HttPResponse("Invailid Request")
@@ -132,6 +142,10 @@ def mostpopular_page(request, page):
     form = ContactUser()
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     if request.method == 'POST':
         form = ContactUser(request.POST)
         if form.is_valid():
@@ -144,7 +158,7 @@ def mostpopular_page(request, page):
 
     context = { 'products': products,'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'mostpopular/{page}.html', context)
 
 #MOSTPOPULAR API
@@ -252,6 +266,10 @@ def specialbussiness_page(request, page):
     form = ContactUser()
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
+     # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     if request.method == 'POST':
         form = ContactUser(request.POST)
         if form.is_valid():
@@ -264,7 +282,7 @@ def specialbussiness_page(request, page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'specialbussiness/{page}.html', context)
 
 #SPECIAL BUSSINESS API 
@@ -368,6 +386,10 @@ def ngo_page(request, page):
     form = ContactUser()
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
+     # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     if request.method == 'POST':
         form = ContactUser(request.POST)
         if form.is_valid():
@@ -380,7 +402,7 @@ def ngo_page(request, page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'ngo/{page}.html', context)
 
 #NGO API
@@ -478,7 +500,10 @@ def do_bussiness(request, page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -492,7 +517,7 @@ def do_bussiness(request, page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'do_bussiness/{page}.html', context)
 
 @api_view(['GET','POST'])
@@ -584,7 +609,10 @@ def setup(request,page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -598,7 +626,7 @@ def setup(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'setup_india_branch/{page}.html', context)
 
 @api_view(['GET','POST'])
@@ -688,7 +716,10 @@ def trademark(request,page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+     # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -702,7 +733,7 @@ def trademark(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'trademark/{page}.html', context)
 
 
@@ -794,7 +825,10 @@ def copyright(request,page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -808,7 +842,7 @@ def copyright(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'copyright/{page}.html', context)
 
 @api_view(['GET','POST'])
@@ -901,7 +935,10 @@ def patent(request,page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -915,7 +952,7 @@ def patent(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'patent/{page}.html', context)
 
 @api_view(['GET','POST'])
@@ -1009,7 +1046,10 @@ def foodbusiness(request,page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -1023,7 +1063,7 @@ def foodbusiness(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'foodbusiness/{page}.html', context)
 @api_view(['GET','POST'])
 def foodbusiness_api(request,page):
@@ -1114,7 +1154,10 @@ def general(request,page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -1128,7 +1171,7 @@ def general(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'generallicense/{page}.html', context)
 @api_view(['GET','POST'])
 def general_api(request,page):
@@ -1219,7 +1262,10 @@ def industrial(request, page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -1233,7 +1279,7 @@ def industrial(request, page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'industriallicense/{page}.html', context)
 @api_view(['GET','POST'])
 def industrial_api(request, page):
@@ -1325,7 +1371,10 @@ def taxregister(request,page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -1339,7 +1388,7 @@ def taxregister(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'taxregistration/{page}.html', context)
 @api_view(['GET','POST'])
 def taxregister_api(request, page):
@@ -1431,7 +1480,10 @@ def taxcompliance(request,page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -1445,7 +1497,7 @@ def taxcompliance(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'taxcompliance/{page}.html', context)
 @api_view(['GET','POST'])
 def taxcompliance_api(request,page):
@@ -1537,7 +1589,10 @@ def payrollfunding(request,page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -1551,7 +1606,7 @@ def payrollfunding(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'payrollfunding/{page}.html', context)
 
 @api_view(['GET','POST'])
@@ -1641,7 +1696,10 @@ def basicroc(request,page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -1655,7 +1713,7 @@ def basicroc(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'basicroc/{page}.html', context)
 @api_view(['GET','POST'])
 def basicroc_api(request,page):
@@ -1748,7 +1806,10 @@ def  companychanges(request,page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -1762,7 +1823,7 @@ def  companychanges(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'companychanges/{page}.html', context)
     
 @api_view(['GET','POST'])
@@ -1854,7 +1915,10 @@ def exitbussiness(request,page):
 
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-
+    # Get the URL of the first product in the list
+    product_url = None
+    if products.exists():
+        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
     form = ContactUser()
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -1868,7 +1932,7 @@ def exitbussiness(request,page):
 
     context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'exitbussiness/{page}.html', context)
     
 @api_view(['GET','POST'])
@@ -2130,9 +2194,29 @@ def checkout(request):
 
         if request.method == 'POST' and request.POST.get("coupan"):
             try:
-                coupan = request.POST.get("coupan")
+                coupan = request.POST.get("coupan").upper()
                 offer = Coupan.objects.filter(active=1).get(coupan=coupan)
-                final_price = final_price - offer.amount
+                product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
+                
+                if offer.percentage is not None and offer.amount is not None:
+                    discounted_price_percentage = product_cost - (product_cost * offer.percentage / 100)
+                    discounted_price_amount = product_cost - offer.amount
+                    if discounted_price_percentage > discounted_price_amount:
+                        product_cost = discounted_price_percentage
+                    else:
+                        product_cost = discounted_price_amount
+                elif offer.percentage is not None:
+                    product_cost = product_cost - (product_cost * offer.percentage / 100)
+                elif offer.amount is not None:
+                    product_cost = product_cost - offer.amount
+                
+                final_price = product_cost
+                order.sell_price = final_price
+                order.coupan = offer  # save the applied coupon in the Order model
+                order.apply_coupon(offer) 
+                messages.success(request, "Coupon Applied")
+            except Coupan.DoesNotExist:
+                messages.error(request, "Invalid Coupon, Please Try Again")
             except Exception as e:
                 print("Error : ", e)
 
@@ -2148,23 +2232,20 @@ def checkout(request):
             order.email = user.email
             order.remarks = remark
             order.buy_time = datetime.now()
-            order.save()
+            order.sell_price = final_price
+            order.save()  # save the order with the applied coupon
+            messages.success(request, "Order placed successfully")
             return redirect("/order_history")
-        client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
-        amount = int(final_price * 100)
-        Print('*****************************')
-        print(payment)
-        Print('*****************************')
-        payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
-        order.razor_pay_order_id = payment['id']
-        order.save()
         context = {"product": product,
                    "final_price": final_price,
-                   "payment": payment
                    }
     except:
         context = {}
     return render(request, "order/checkout.html", context)
+
+
+
+
 
 def order_history(request):
     orders = Order.objects.filter(user__id = request.user.id).filter(is_cart=0).order_by("-id")
@@ -2175,64 +2256,64 @@ def order_history(request):
 from django.utils import timezone
 
 
-def cart(request):
-    items = Order.objects.filter(user__id=request.user.id).filter(is_cart=1).order_by("-id")
-    coupan = request.POST.get("coupan")
-    final_price = 0
-    for item in items:
-        final_price += item.product.price
+# def cart(request):
+#     items = Order.objects.filter(user__id=request.user.id).filter(is_cart=1).order_by("-id")
+#     coupan = request.POST.get("coupan")
+#     final_price = 0
+#     for item in items:
+#         final_price += item.product.price
 
-    if request.method == 'POST' and coupan:
-        try:
-            coupan = coupan.upper()
-            offer = Coupan.objects.filter(active=1).get(coupan=coupan) #checks for username and user
-            for item in items:
-                product = item.product
-                if offer.percentage is not None and offer.amount is not None:
-                    product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
-                    discounted_price_percentage = product_cost - (product_cost * offer.percentage / 100)
-                    discounted_price_amount = product_cost - offer.amount
-                    if discounted_price_percentage > discounted_price_amount:
-                        product_cost = discounted_price_percentage
-                    else:
-                        product_cost = discounted_price_amount
-                elif offer.percentage is not None:
-                    product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
-                    product_cost = product_cost - (product_cost * offer.percentage / 100)
-                elif offer.amount is not None:
-                    product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
-                    product_cost = product_cost - offer.amount
-                item.final_price = product_cost
-                item.save()
-            if offer.percentage is not None:
-                final_price -= final_price * offer.percentage / 100
-                messages.success(request, "Coupon Applied")
-            else:
-                final_price -= offer.amount
-                messages.success(request, "Coupon Applied")
-        except Coupan.DoesNotExist:
-            messages.error(request, "Invalid Coupon, Please Try Again")
-        except Exception as e:
-            print("Error : ", e)
+#     if request.method == 'POST' and coupan:
+#         try:
+#             coupan = coupan.upper()
+#             offer = Coupan.objects.filter(active=1).get(coupan=coupan) #checks for username and user
+#             for item in items:
+#                 product = item.product
+#                 if offer.percentage is not None and offer.amount is not None:
+#                     product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
+#                     discounted_price_percentage = product_cost - (product_cost * offer.percentage / 100)
+#                     discounted_price_amount = product_cost - offer.amount
+#                     if discounted_price_percentage > discounted_price_amount:
+#                         product_cost = discounted_price_percentage
+#                     else:
+#                         product_cost = discounted_price_amount
+#                 elif offer.percentage is not None:
+#                     product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
+#                     product_cost = product_cost - (product_cost * offer.percentage / 100)
+#                 elif offer.amount is not None:
+#                     product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
+#                     product_cost = product_cost - offer.amount
+#                 item.final_price = product_cost
+#                 item.save()
+#             if offer.percentage is not None:
+#                 final_price -= final_price * offer.percentage / 100
+#                 messages.success(request, "Coupon Applied")
+#             else:
+#                 final_price -= offer.amount
+#                 messages.success(request, "Coupon Applied")
+#         except Coupan.DoesNotExist:
+#             messages.error(request, "Invalid Coupon, Please Try Again")
+#         except Exception as e:
+#             print("Error : ", e)
 
-    client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
-    amount = int(final_price * 100)
-    payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
+#     client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
+#     amount = int(final_price * 100)
+#     payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
 
-    # Check if the payment is successful
-    if payment['status'] == 'captured':
-        # Create an order object for each item in the cart with the payment status 'success'
-        for item in items:
-            product = item.product
-            user = request.user
-            order = Order.objects.create(product=product, user=user, is_cart=0, status='success', name=user.name, email=user.email, buy_time=timezone.now(), razor_pay_order_id=payment['id'])
+#     # Check if the payment is successful
+#     if payment['status'] == 'captured':
+#         # Create an order object for each item in the cart with the payment status 'success'
+#         for item in items:
+#             product = item.product
+#             user = request.user
+#             order = Order.objects.create(product=product, user=user, is_cart=0, status='success', name=user.name, email=user.email, buy_time=timezone.now(), razor_pay_order_id=payment['id'])
 
-    context = {"items": items,
-               "final_price": final_price,
-               "payment": payment,
-               "coupan":coupan
-              }
-    return render(request, "order/cart.html", context)
+#     context = {"items": items,
+#                "final_price": final_price,
+#                "payment": payment,
+#                "coupan":coupan
+#               }
+#     return render(request, "order/cart.html", context)
 
 
 @csrf_exempt
@@ -2253,9 +2334,8 @@ def addToCart(request):
     order.save()
     return JsonResponse({"Success":1})
 
-from django.db.models import Sum
 
-from datetime import date
+
 
 def dashboard(request):
     today = date.today()
@@ -2263,7 +2343,8 @@ def dashboard(request):
     this_year_start = date(today.year, 1, 1)
 
     # get the selected user ID from the form, or use the current user ID by default
-    user_id = request.GET.get('option', request.user.id)
+    user_id = request.GET.get('option', request.user)
+    print("USer Id", user_id)
 
     # Getting the coupons used by the user(s)
     if user_id == 'all':
@@ -2275,6 +2356,8 @@ def dashboard(request):
     total_buy_amount = 0
     coupon_usage_count = 0
     commission = 0
+    monthly_commission = 0
+    yearly_commission = 0
 
     # Iterating over the coupons used and calculating total buy amount, coupon usage count, and commission
     for coupon in coupons_used:
@@ -2282,23 +2365,19 @@ def dashboard(request):
         coupon_usage_count += orders.count()
         total_buy_amount += sum(order.sell_price for order in orders)
         commission += coupon.commissionpaid
+
+        # calculate monthly commission
+        monthly_orders = orders.filter(buy_time__gte=this_month_start)
+        monthly_commission += sum(order.sell_price * (coupon.commissionpaid / 100) for order in monthly_orders)
+
+        # calculate yearly commission
+        yearly_orders = orders.filter(buy_time__gte=this_year_start)
+        yearly_commission += sum(order.sell_price * (coupon.commissionpaid / 100) for order in yearly_orders)
+
     total_buy_amount = round(total_buy_amount, 2)
     commission = round(commission, 2)
-
-    # Calculating monthly and yearly commission for the user(s)
-    if user_id == 'all':
-        month_product_sales = Order.objects.filter(buy_time__gte=this_month_start).aggregate(Sum('sell_price'))['sell_price__sum'] or 0
-        year_product_sales = Order.objects.filter(buy_time__gte=this_year_start).aggregate(Sum('sell_price'))['sell_price__sum'] or 0
-    else:
-        month_product_sales = Order.objects.filter(user=user_id, buy_time__gte=this_month_start).aggregate(Sum('sell_price'))['sell_price__sum'] or 0
-        year_product_sales = Order.objects.filter(user=user_id, buy_time__gte=this_year_start).aggregate(Sum('sell_price'))['sell_price__sum'] or 0
-    month_product_sales = round(month_product_sales, 2)
-    year_product_sales = round(year_product_sales, 2)
-
-    month_commission = month_product_sales *(commission*0.01)*coupon_usage_count #converting commission in to percentage 
-    year_commission = year_product_sales *(commission*0.01)*coupon_usage_count
-    month_commission = round(month_commission, 2)
-    year_commission = round(year_commission, 2)
+    monthly_commission = round(monthly_commission, 2)
+    yearly_commission = round(yearly_commission, 2)
 
     # get the count of how many times the coupons were used, and the total amount sold with coupons
     coupon_use_count = coupons_used.count()
@@ -2309,8 +2388,8 @@ def dashboard(request):
         'total_buy_amount': total_buy_amount,
         'coupon_usage_count': coupon_usage_count,
         'commission': commission,
-        'month_commission': month_commission,
-        'year_commission': year_commission,
+        'month_commission': monthly_commission,
+        'year_commission': yearly_commission,
         'users': User.objects.all(),
         'coupon_use_count': coupon_use_count,
         'coupon_total_amount': coupon_total_amount,
@@ -2386,22 +2465,10 @@ def card(request):
             messages.error(request, "Invalid Coupon, Please Try Again")
         except Exception as e:
             print("Error : ", e)
-        
-    client = razorpay.Client(auth=(settings.KEY, settings.SECRET))
-    amount = int(final_price * 100)
-    payment = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
 
-    # Check if the payment is successful
-    if payment['status'] == 'captured':
-        # Create an order object for each item in the cart with the payment status 'success'
-        for item in items:
-            product = item.product
-            user = request.user
-            order = Order.objects.create(product=product, user=user, is_cart=0, status='success', name=user.name, email=user.email, buy_time=timezone.now(), razor_pay_order_id=payment['id'])
 
     context = {"items": items,
                "final_price": final_price,
-               "payment": payment,
                "coupan":coupan,
                "product_url": product_url,
                 "similar_products": similar_products
