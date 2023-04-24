@@ -1,0 +1,104 @@
+{% extends 'index.html' %}
+{% load static %}
+{%block title%} Apply JObs {% endblock %}
+{%load myfilters %}
+{%block body %}
+{%if messages %}
+{% for message in messages  %}            
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Message : </strong> {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+{% endfor %}
+{% endif %}   
+    <section class="top-bn5 bn-styles" data-aos="fade-left">
+      <div class="container">
+        <div class="row pt-4">
+          <div class="col-md-8 col-12 pt-5 pt-5">
+
+            <h2 class="text-white"><b>Dobizindia Carrier</b></h2>
+            <h1 class="hire_text">Create <span class="offer">Opportunities </span> </h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row my-5">
+
+           <div class="social-icon heading2">
+              <h2 class="text-center"><b>Applying for Post:- {{ post.jobrole }}</b></h2>
+            </div>
+
+          <div class="col-md-8 col-12 mx-auto py-4 p-4 bg-light">
+            <form method="post" enctype="multipart/form-data"> {% csrf_token %}
+              <div class="row g-3 my-2">
+              <div class="col">
+                <label for="inputfield" class="form-label">First Name</label>
+                {{ form.fname.errors }}
+                {{ form.fname|addclass:'form-control'|addplaceholder:'First name'}}
+              </div>
+              <div class="col">
+                <label for="inputfield" class="form-label">Last Name</label>
+                {{ form.lname.errors }}
+                {{ form.lname|addclass:'form-control'|addplaceholder:'Last name'}}
+              </div>
+            </div>
+
+            <div class="row g-3 my-2">
+              <div class="col">
+                <label for="inputfield" class="form-label">Email</label>
+                {{ form.email.errors }}
+                {{ form.email|addclass:'form-control'|addplaceholder:'Email Address'}}
+              </div>
+              <div class="col">
+                <label for="inputfield" class="form-label">Phone</label>
+                {{ form.phone.errors }}
+                {{ form.phone|addclass:'form-control'|addplaceholder:'Phone'}}
+              </div>
+            </div>
+
+
+            <div class="row g-3 my-2">
+              <div class="col">
+                <label for="inputfield" class="form-label">Address</label>
+                {{ form.address.errors }}
+                {{ form.address|addclass:'form-control'|addplaceholder:'address'}}
+              </div>
+              <div class="col">
+                <label for="inputfield" class="form-label">City</label>
+                {{ form.city.errors }}
+                {{ form.city|addclass:'form-control'|addplaceholder:'city'}}
+              </div>
+            </div>
+            
+            <div class="my-4">
+            <label for="exampleFormControlTextarea1" class="form-label">Resume/CV</label>
+            {{ form.files.errors }}
+            {{ form.files|addclass:'form-control'|addplaceholder:'Upload Your Resume Here'}}
+            </div>
+            <div class="my-2">
+            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            {{ form.msg.errors }}
+            {{ form.msg|addclass:'form-control'|addplaceholder:'Any Message'}}
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary px-4 mx-2">Apply</button>
+            </div>
+
+            </form>
+          </div>
+
+          <div class="col-md-12 col-12">
+            <p>Reach professionals with just the right skills and experience. Get great applicants fast. Post your free job in minutes with pre-written job templates. Make a great hire fast! Largest Talent Network. Recruit Top Talent. Advertise Jobs With Ease. Access 690+ Million Users. Post a Job With Ease. Promote Your Open Roles. Make the Right Hire. Types: Finance Recruitment, IT Recruitment, Sales Recruitment. Reach professionals with just the right skills and experience. Get great applicants fast. Post your free job in minutes with pre-written job templates. Make a great hire fast! Largest Talent Network. Recruit Top Talent. Advertise Jobs With Ease. Access 690+ Million Users. Post a Job With Ease. Promote Your Open Roles. Make the Right Hire. Types: Finance Recruitment, IT Recruitment, Sales Recruitment. Reach professionals with just the right skills and experience. Get great applicants fast. Post your free job in minutes with pre-written job templates. Make a great hire fast! Largest Talent Network. Recruit Top Talent. Advertise Jobs With Ease. Access 690+ Million Users. Post a Job With Ease. Promote Your Open Roles. Make the Right Hire. Types: Finance Recruitment, IT Recruitment, Sales Recruitment. Reach professionals with just the right skills and experience. Get great applicants fast. Post your free job in minutes with pre-written job templates. Make a great hire fast! Largest Talent Network. Recruit Top Talent. Advertise Jobs With Ease. Access 690+ Million Users. Post a Job With Ease. Promote Your Open Roles. Make the Right Hire. Types: Finance Recruitment, IT Recruitment, Sales Recruitment.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+{% endblock %}

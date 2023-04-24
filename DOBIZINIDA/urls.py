@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('dobiz.urls')),
     path('blog',include('dobizblog.urls')),
+    path('hire',include('dobizhire.urls')),
 ]

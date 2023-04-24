@@ -1,15 +1,15 @@
 {% load social_share %}
 {% load myfilters %}
 <section class="top-bn1 bn-styles py-4 aos-init aos-animate" data-aos="fade-left">
-    <div class="container py-4">
-        <div class="row pt-4">
+    <div class="container">
+        <div class="row">
 
             <div class="col-md-4 col-12 space_top">
                 <img src="/media/{{ banner.img }}" alt="logo-img" class="img-fluid">
             </div>
 
             <div class="col-md-4 col-12 space_top">
-                <h4 class="fs-1"> {{ banner.heading_text }} </h4>
+                <h4 class="fs-2"> {{ banner.heading_text }} </h4>
                 <p><span class="bg-primary p-1 text-white"> {{ banner.review_rating }} </span> <a
                         class="text-decoration-none" href="#"> &nbsp; {{banner.review}} </a> </p>
                 <p class="fs-5"> {{ banner.text }} </p>
@@ -47,11 +47,9 @@
                         </div>
                     </form>
                 </div>
-                <hr />
 
-                <div class="bg-light p-2">
-                    <p class="text-end">
-                      </p>
+                <div class="bg-light p-2 border-top">
+                    <p class="text-end paraicon"><i class="fa fa-share" aria-hidden="true"></i></p>
                     <h5>{{price.heading_text}}</h5>
                     <div class="table-responsive">
                         <table class="table border border-white">
@@ -61,8 +59,8 @@
                                     <td>{{price.quantity_value}}</td>
                                 </tr>
                                 <tr>
-                                    <td>{{price.mark_price}}</td>
-                                    <td class="text-decoration-line-through">{{price.mark_price_value}}</td>
+                                    <td>{{price.mark_pric}}</td>
+                                    <td class="text-decoration-line-through">{{price.mark_pric_value}}</td>
                                 </tr>
                                 <tr>
                                     <td>{{price.dobiz}}</td>
@@ -86,10 +84,10 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-primary py-3" type="button"><a href="{% url 'order' %}"> Buy Now
-                                </a></button>
-                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary py-2" type="button"><a href="{% url 'order' %}"> Buy Now </a></button>
+                            <button class="btn btn-primary py-2" type="button"><a href="{% url 'order' %}"> Order now </a></button>
+                          </div>
                     </div>
                 </div>
             </div>

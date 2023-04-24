@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dobiz',
     'dobizblog',
+    'dobizhire',
     'rest_framework',
     'django_countries',
     'import_export',
@@ -144,16 +145,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-#SMTP SETTINGS
+################SMTP SETTINGS########################
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_HOST_USER ='your key'
-EMAIL_HOST_PASSWORD = 'your secret'
+EMAIL_HOST_USER ='rpmltest15@gmail.com'
+EMAIL_HOST_PASSWORD = 'nwwpmoqltzkidqtm'
 
 
-####################
+####################Razorpay##############################
 
 KEY = 'rzp_test_D4hi1vsG8ESCJ2'
 SECRET = 'xuZKmllZbwmbKNT1ES0rdplp'

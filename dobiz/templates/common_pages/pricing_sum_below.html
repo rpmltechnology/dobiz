@@ -1,7 +1,7 @@
 {% load social_share %}
 {% load myfilters %}
 <div class="col-md-3 col-12 pricing shadow">
-    <div class="bg-light p-4">
+    <div class="bg-light p-2">
         <form method="POST" id="contact-form"> {% csrf_token %}
             <div class="mb-3">
               <label for="id_name"></label>
@@ -27,12 +27,9 @@
             </div>
           </form>
     </div>
-    <hr />
 
-    <div class="bg-light p-4">
-      <p class="text-end">
-        
-      </p>
+    <div class="bg-light p-2 border-top">
+      <p class="text-end paraicon"><i class="fa fa-share" aria-hidden="true"></i></p>
       <h5>Pricing Summary</h5>
       <div class="table-responsive">
         <table class="table border border-white">
@@ -42,8 +39,8 @@
               <td>{{price.quantity_value}}</td>
             </tr>
             <tr>
-              <td>{{price.mark_price}}</td>
-              <td class="text-decoration-line-through">{{price.mark_price_value}}</td>
+              <td>{{price.mark_pric}}</td>
+              <td class="text-decoration-line-through">{{price.mark_pric_value}}</td>
             </tr>
             <tr>
               <td>{{price.dobiz}}</td>
@@ -67,8 +64,9 @@
             </tr>
           </tbody>
         </table>
-        <div class="d-grid gap-2">
-          <button class="btn btn-primary py-3" type="button"><a href="{% url 'order' %}"> Buy Now </a></button>
+        <div class="text-center">
+          <button class="btn btn-primary py-2" type="button"><a href="{% url 'order' %}"> Buy Now </a></button>
+          <button class="btn btn-primary py-2" type="button"><a href="{% url 'order' %}"> Order now </a></button>
         </div>
       </div>
     </div>

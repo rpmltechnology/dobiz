@@ -8,7 +8,6 @@ from .forms import *
 from math import ceil
 import json
 import os
-from django.contrib import messages
 #register login and logout
 from django.contrib.sites.shortcuts import get_current_site
 import random
@@ -64,12 +63,12 @@ def viewproduct(request, **kwargs):
 
 
 
-#order view
+##################order view#######################
 
 def order(request):
     return render(request, 'order.html')
 
-#CommonPage
+###################CommonPage##################
 def commonPages(request):
     allpage=Page.objects.all()
     pagename = request.GET.get('pagename')
@@ -114,7 +113,7 @@ def commonPages(request):
     else:
         return HttPResponse("Invailid Request")
 
-#MOSTPOPULAR view
+###################MOSTPOPULAR view##################
 def mostpopular_page(request, page):
     allpage=Page.objects.all()
     page_dict = {
@@ -161,7 +160,7 @@ def mostpopular_page(request, page):
             'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'mostpopular/{page}.html', context)
 
-#MOSTPOPULAR API
+###################MOSTPOPULAR API##################
 @api_view(['GET', 'POST'])
 def mostpopular_api(request, page):
     page_dict = {
@@ -231,12 +230,8 @@ def mostpopular_api(request, page):
     response_data['banner'] = BannerSerializer(banner).data
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
-
-
-
-
-    
-  #SPECIAL BUSSINESS view  
+   
+###################SPECIAL BUSSINESS view  ##################
 def specialbussiness_page(request, page):
     allpage=Page.objects.all()
     print(allpage)
@@ -285,7 +280,7 @@ def specialbussiness_page(request, page):
             'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'specialbussiness/{page}.html', context)
 
-#SPECIAL BUSSINESS API 
+###################SPECIAL BUSSINESS API ##################
 
 @api_view(['GET', 'POST'])
 def specialbussiness_api(request, page):
@@ -358,7 +353,7 @@ def specialbussiness_api(request, page):
     return JsonResponse(response_data, status=200)
 
 
-#NGO view
+###################NGO view##################
 def ngo_page(request, page):
     allpage=Page.objects.all()
     page_dict = {
@@ -405,7 +400,7 @@ def ngo_page(request, page):
             'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
     return render(request, f'ngo/{page}.html', context)
 
-#NGO API
+###################NGO API##################
 @api_view(['GET', 'POST'])
 def ngo_api(request, page):
     page_dict = {
@@ -475,7 +470,7 @@ def ngo_api(request, page):
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
 
-#do bussines in india view
+###################do bussines in india view##################
 def do_bussiness(request, page):
     allpage=Page.objects.all()
     page_dict = {
@@ -585,7 +580,7 @@ def do_bussiness_api(request, page):
     return JsonResponse(response_data, status=200)
 
 
-#SETUP INDIAN BRANCH view
+###################SETUP INDIAN BRANCH view##################
 def setup(request,page):
     allpage=Page.objects.all()
     page_dict ={
@@ -692,7 +687,7 @@ def setup_api(request,page):
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
 
-#TRADEMAR view
+###################TRADEMAR view##################
 def trademark(request,page):
     allpage=Page.objects.all()
     page_dict = {
@@ -799,7 +794,7 @@ def trademark_api(request,page):
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
 
-#COPYRIGHT & DESIGN view
+###################COPYRIGHT & DESIGN view##################
 def copyright(request,page):
     allpage=Page.objects.all()
     page_dict={
@@ -909,7 +904,7 @@ def copyright_api(request,page):
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
 
-#PATENT & IPR ENFORCEMENT view 
+###################PATENT & IPR ENFORCEMENT view ##################
 def patent(request,page):
     allpage=Page.objects.all()
     page_dict={
@@ -1018,7 +1013,7 @@ def patent_api(request,page):
     response_data['banner'] = BannerSerializer(banner).data
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
-#>FOOD BUSINESS view
+#>##################FOOD BUSINESS view##################
 def foodbusiness(request,page):
     allpage=Page.objects.all()
     page_dict={
@@ -1130,7 +1125,7 @@ def foodbusiness_api(request,page):
     response_data['banner'] = BannerSerializer(banner).data
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
-# GENERAL LICENSE view
+# ##################GENERAL LICENSE view##################
 def general(request,page):
     allpage=Page.objects.all()
     page_dict = {
@@ -1235,7 +1230,7 @@ def general_api(request,page):
     response_data['banner'] = BannerSerializer(banner).data
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
-# INDUSTRIAL LICENSE
+# ##################INDUSTRIAL LICENSE##################
 def industrial(request, page):
     allpage=Page.objects.all()
     page_dict={
@@ -1347,7 +1342,7 @@ def industrial_api(request, page):
     return JsonResponse(response_data, status=200)
 
 
-# TAX REGISTRATIONS view
+################### TAX REGISTRATIONS view##################
 def taxregister(request,page):
     allpage=Page.objects.all()
     page_dict={
@@ -1452,7 +1447,7 @@ def taxregister_api(request, page):
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
 
-# TAX COMPLIANCE view
+# ##################TAX COMPLIANCE view##################
 def taxcompliance(request,page):
     allpage=Page.objects.all()
     page_dict={
@@ -1565,7 +1560,7 @@ def taxcompliance_api(request,page):
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
 
-# PAYROLL & FUNDING view
+# ##################PAYROLL & FUNDING view##################
 def payrollfunding(request,page):
     allpage=Page.objects.all()
     page_dict={
@@ -1670,7 +1665,7 @@ def payrollfunding_api(request,page):
     response_data['banner'] = BannerSerializer(banner).data
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
-# BASIC ROC COMPLIANCES view
+################### BASIC ROC COMPLIANCES view##################
 def basicroc(request,page):
     allpage=Page.objects.all()
     page_dict={
@@ -1779,7 +1774,7 @@ def basicroc_api(request,page):
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
     
-# COMPANY CHANGES & RETURN view
+################### COMPANY CHANGES & RETURN view##################
 def  companychanges(request,page):
     allpage=Page.objects.all()
     page_dict={
@@ -1890,7 +1885,7 @@ def  companychanges_api(request,page):
     response_data['banner'] = BannerSerializer(banner).data
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
-# CONVERT TO PRIVATE LIMITED view
+################### CONVERT TO PRIVATE LIMITED view##################
 def exitbussiness(request,page):
     allpage=Page.objects.all()
     page_dict={
@@ -1998,13 +1993,7 @@ def exitbussiness_api(request,page):
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
 
-def hire(request):
-    return render(request, 'common_pages/hire.html')
-
-def jobs(request):
-    return render(request, 'jobs.html')
-
-
+##################Contact & Signup, Login, Logout ##################
 def contact(request):
     if request.method == 'POST':
         form = ContactUser(request.POST)
@@ -2029,7 +2018,7 @@ def profile(request):
             return render(request, 'register/profile.html', {'form1':ProfileUser})
         #recaptcha stuff
         clientkey = request.POST['g-recaptcha-response']
-        secretkey = '6Lfi5U8kAAAAACmKRizYxZh6x7MnB85zUPPZy_-P'
+        secretkey = '6LfLjrElAAAAAFd-G-RtXvOBibjGd65c_SqF5Mx'
         captchadata={
             'secret':secretkey,
             'response':clientkey
@@ -2063,7 +2052,7 @@ def signup(request):
             return redirect('verify')
         #recaptcha stuff
         clientkey = request.POST['g-recaptcha-response']
-        secretkey = '6Lfi5U8kAAAAACmKRizYxZh6x7MnB85zUPPZy_-P'
+        secretkey = '6LfLjrElAAAAAFd-G-RtXvOBibjGd65c_SqF5Mx'
         captchadata={
             'secret':secretkey,
             'response':clientkey
@@ -2106,7 +2095,7 @@ def auth_login(request):
             return redirect('auth_login')
         #recaptcha stuff
         clientkey = request.POST['g-recaptcha-response']
-        secretkey = '6Lfi5U8kAAAAACmKRizYxZh6x7MnB85zUPPZy_-P'
+        secretkey = '6LfLjrElAAAAAFd-G-RtXvOBibjGd65c_SqF5Mx9'
         captchadata={
             'secret':secretkey,
             'response':clientkey
@@ -2179,43 +2168,31 @@ def password_reset(request):
 
 
 
-# Order Management
+################### Order Management##################
 def checkout(request):
-    id = request.GET.get("id")
+    items = Order.objects.filter(user__id=request.user.id, is_cart=1)
     order_id = request.GET.get("order_id")
     try:
-        product = Product.objects.get(id=id)
         if order_id:
-            print("Oder id ", order_id)
+            print("Order id ", order_id)
             order = Order.objects.get(id=order_id)
         else:
             order = Order()
-        final_price = product.gst + product.other_cost + product.Dobiz_India_Filings
 
-        if request.method == 'POST' and request.POST.get("coupan"):
+        final_price = sum(item.product.price for item in items)  # calculate final price based on all items in cart
+
+        if request.method == 'POST' and request.POST.get("coupon"):
             try:
-                coupan = request.POST.get("coupan").upper()
-                offer = Coupan.objects.filter(active=1).get(coupan=coupan)
-                product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
-                
-                if offer.percentage is not None and offer.amount is not None:
-                    discounted_price_percentage = product_cost - (product_cost * offer.percentage / 100)
-                    discounted_price_amount = product_cost - offer.amount
-                    if discounted_price_percentage > discounted_price_amount:
-                        product_cost = discounted_price_percentage
-                    else:
-                        product_cost = discounted_price_amount
-                elif offer.percentage is not None:
-                    product_cost = product_cost - (product_cost * offer.percentage / 100)
-                elif offer.amount is not None:
-                    product_cost = product_cost - offer.amount
-                
-                final_price = product_cost
-                order.sell_price = final_price
-                order.coupan = offer  # save the applied coupon in the Order model
-                order.apply_coupon(offer) 
-                messages.success(request, "Coupon Applied")
-            except Coupan.DoesNotExist:
+                coupon_code = request.POST.get("coupon").upper()
+                coupon = Coupon.objects.filter(active=True).get(code=coupon_code)
+                if coupon.is_valid(items):
+                    final_price -= coupon.discount(final_price)
+                    order.coupon = coupon
+                    order.save()
+                    messages.success(request, "Coupon Applied")
+                else:
+                    messages.error(request, "Invalid Coupon, Please Try Again")
+            except Coupon.DoesNotExist:
                 messages.error(request, "Invalid Coupon, Please Try Again")
             except Exception as e:
                 print("Error : ", e)
@@ -2224,7 +2201,6 @@ def checkout(request):
             remark = request.POST.get("remark")
             user = User.objects.get(id=request.user.id)
 
-            order.product = product
             order.user = user
             order.is_cart = 0
             order.status = "Success"
@@ -2233,18 +2209,19 @@ def checkout(request):
             order.remarks = remark
             order.buy_time = datetime.now()
             order.sell_price = final_price
-            order.save()  # save the order with the applied coupon
+            order.save()
+            for item in items:
+                item.order = order
+                item.is_cart = 0
+                item.save()
             messages.success(request, "Order placed successfully")
             return redirect("/order_history")
-        context = {"product": product,
-                   "final_price": final_price,
-                   }
+
+        context = {"items": items, "final_price": final_price, "order": order}
     except:
         context = {}
+
     return render(request, "order/checkout.html", context)
-
-
-
 
 
 def order_history(request):

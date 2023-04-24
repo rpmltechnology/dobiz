@@ -2,9 +2,11 @@ created custom model
 changes made in model.py, admin.py, views.py
 created APi for everypage 
 Created new App with name dobizblog and added blog funtionality also created extras.py in template tags
-for search used iinstance
+for search used i__instance to search in blogs
 for comment used custom model in dobizblog itself
 for payment using razorpay
+custom comment system in Blog
+Used another app for called DobizBlog
 
 
 added new files and folder

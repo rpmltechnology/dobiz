@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 body{
-    zoom: 100%;
+    zoom: normal;
 }
 *{
 	padding: 0;
@@ -988,12 +988,10 @@ button {
   }
 }
 .hire_text{
-    padding-top: 10px;
-    font-size: 9em;
+    font-size: 4em;
     font-weight: bold;
 }
 .hire_text span{
-    margin-left: 211px;
     color: #ff5868;
 }
 .career {
@@ -1362,4 +1360,10 @@ line-height: 41px;
     -webkit-background-clip: text;
     font-weight: bold;
     -webkit-text-fill-color: transparent;
+}
+.table>:not(caption)>*>* {
+    padding: 0.2rem 0.5rem !important;
+    }
+.table>:not(caption)>*>* {
+    padding: 0.2rem 0.5rem !important;
 }

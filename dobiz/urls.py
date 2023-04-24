@@ -14,8 +14,6 @@ path('', views.home, name='home'),
 #order now url
 path('order', views.order, name='order'),
 path('search', views.search, name="search"),
-path('hire', views.hire, name='hire'),
-path('jobs', views.jobs, name='jobs'),
 path('contact', views.contact, name='contact'),
 path('profile', views.profile, name='profile'),
 path('signup/', views.signup,name='signup'),
