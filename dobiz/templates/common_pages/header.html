@@ -129,12 +129,13 @@
                 <div class="col-lg-4 col-12">
                   <div class="col-megamenu">
                     <h6 class="title">RBI LICENSES</h6>
+                    <ul class="list-unstyled">
                     {% for i in allpage %}
                     {% if i.section == "RBI LICENSES" %}
-          <li><a href="/commonPages?pagename={{i.pagename}}">{{i.pagename}} </a></li>
-          {%endif%}
-          {% endfor %}
-
+                    <li><a href="/commonPages?pagename={{i.pagename}}">{{i.pagename}} </a></li>
+                    {%endif%}
+                    {% endfor %}
+                    </ul>
       </div> <!-- col-megamenu.// -->
     </div><!-- end col-3 -->
 
@@ -369,12 +370,13 @@
           <div class="col-lg-4 col-12">
             <div class="col-megamenu">
               <h6 class="title">LLP CHANGES & RETURN</h6>
+              <ul class="list-unstyled">
               {% for i in allpage %}
               {% if i.section == "LLP CHANGES & RETURN" %}
-    <li><a href="/commonPages?pagename={{i.pagename}}">{{i.pagename}} </a></li>
-    {%endif%}
-    {% endfor %}
-
+              <li><a href="/commonPages?pagename={{i.pagename}}">{{i.pagename}} </a></li>
+              {%endif%}
+              {% endfor %}
+              </ul>
     </div> <!-- col-megamenu.// -->
     </div>
 

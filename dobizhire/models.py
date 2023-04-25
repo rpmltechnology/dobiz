@@ -14,16 +14,16 @@ class PostJobs(models.Model):
         return self.jobrole
 
 class AppliedForJobs(models.Model):
-    jobrole = models.ForeignKey(to=PostJobs, on_delete=models.CASCADE,null=True,blank=True)
-    fname = models.CharField(max_length=200,null=True,blank=True)
-    lname = models.CharField(max_length=200,null=True,blank=True)
-    email = models.CharField(max_length=200,null=True,blank=True)
-    phone = models.CharField(max_length=200,null=True,blank=True)
-    address = models.CharField(max_length=200,null=True,blank=True)
-    city = models.CharField(max_length=200,null=True,blank=True)
-    address = models.CharField(max_length=200,null=True,blank=True)
-    files = models.FileField(upload_to='CV',null=True,blank=True)
+    jobrole = models.ForeignKey(to=PostJobs, on_delete=models.CASCADE,null=True)
+    fname = models.CharField(max_length=200,null=True)
+    lname = models.CharField(max_length=200,null=True)
+    email = models.CharField(max_length=200,null=True)
+    phone = models.CharField(max_length=200,null=True)
+    address = models.CharField(max_length=200,null=True)
+    city = models.CharField(max_length=200,null=True)
+    address = models.CharField(max_length=200,null=True)
+    files = models.FileField(upload_to='CV-Resumes/',max_length=500,null=True)
     msg = models.TextField(null=True,blank=True)
 
     def __str__(self):
-        return f'Name =:- {self.fname} from Email:-{self.email}'
+        return f'Name:- {self.fname} from Email:-{self.email}'

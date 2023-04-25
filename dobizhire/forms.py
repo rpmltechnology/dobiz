@@ -6,3 +6,4 @@ class JobApplication(forms.ModelForm):
     class Meta:
         model =AppliedForJobs
         fields = ('jobrole','fname','lname','email','phone','address','city','msg','files')
+    

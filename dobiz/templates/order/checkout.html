@@ -497,23 +497,23 @@
               </li>
               <li class="flex-between">
                 <span>Order number</span>
-                <strong>DI00A{{product.id}}</strong>
+                <strong>DI00A{{items.product.id}}</strong>
               </li>
               <li class="flex-between">
                 <span>Product</span>
-                <strong>{{product.product_name}}</strong>
+                <strong>{{items.product.product_name}}</strong>
               </li>
               <li class="flex-between">
                 <span>Price </span>
-                <strong>INR{{product.Dobiz_India_Filings}}.00</strong>
+                <strong>INR{{total_dobiz_price}}.00</strong>
               </li>
               <li class="flex-between">
-                <span>GST ({{product.gst_percent}}%)</span>
-                <strong>INR{{product.gst}}.00</strong>
+                <span>GST ({{items.product.gst_percent}}%)</span>
+                <strong>INR{{total_gst}}.00</strong>
               </li>
               <li class="flex-between">
                 <span>Other Price </span>
-                <strong> INR {{product.other_cost}}.00</strong>
+                <strong> INR {{total_other_cost}}.00</strong>
               </li>
             </ul>
           </div>

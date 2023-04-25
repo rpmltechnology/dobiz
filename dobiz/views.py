@@ -2170,37 +2170,63 @@ def password_reset(request):
 
 ################### Order Management##################
 def checkout(request):
+    # Retrieve all products in the cart for the current user
     items = Order.objects.filter(user__id=request.user.id, is_cart=1)
-    order_id = request.GET.get("order_id")
-    try:
-        if order_id:
-            print("Order id ", order_id)
-            order = Order.objects.get(id=order_id)
-        else:
-            order = Order()
-
-        final_price = sum(item.product.price for item in items)  # calculate final price based on all items in cart
-
-        if request.method == 'POST' and request.POST.get("coupon"):
-            try:
-                coupon_code = request.POST.get("coupon").upper()
-                coupon = Coupon.objects.filter(active=True).get(code=coupon_code)
-                if coupon.is_valid(items):
-                    final_price -= coupon.discount(final_price)
-                    order.coupon = coupon
-                    order.save()
-                    messages.success(request, "Coupon Applied")
+    
+    # Calculate total price and other details for all the products
+    final_price = 0
+    total_gst = 0
+    total_other_cost = 0
+    total_dobiz_price = 0
+    total_market_price = 0
+    for item in items:
+        product = item.product
+        final_price += product.gst + product.other_cost + product.Dobiz_India_Filings
+        total_gst += product.gst
+        total_other_cost += product.other_cost
+        total_dobiz_price += product.Dobiz_India_Filings
+        total_market_price += product.price
+    
+    # Apply coupon if one was submitted
+    if request.method == 'POST' and request.POST.get("coupan"):
+        try:
+            coupan = request.POST.get("coupan").upper()
+            offer = Coupan.objects.filter(active=1).get(coupan=coupan)
+            
+            # Calculate discounted price based on coupon
+            product_cost = total_dobiz_price + total_gst + total_other_cost
+            if offer.percentage is not None and offer.amount is not None:
+                discounted_price_percentage = product_cost - (product_cost * offer.percentage / 100)
+                discounted_price_amount = product_cost - offer.amount
+                if discounted_price_percentage > discounted_price_amount:
+                    product_cost = discounted_price_percentage
                 else:
-                    messages.error(request, "Invalid Coupon, Please Try Again")
-            except Coupon.DoesNotExist:
-                messages.error(request, "Invalid Coupon, Please Try Again")
-            except Exception as e:
-                print("Error : ", e)
-
-        elif request.method == 'POST':
-            remark = request.POST.get("remark")
-            user = User.objects.get(id=request.user.id)
-
+                    product_cost = discounted_price_amount
+            elif offer.percentage is not None:
+                product_cost = product_cost - (product_cost * offer.percentage / 100)
+            elif offer.amount is not None:
+                product_cost = product_cost - offer.amount
+            
+            final_price = product_cost
+        
+        except Coupan.DoesNotExist:
+            messages.error(request, "Invalid Coupon, Please Try Again")
+            return redirect("checkout")
+        
+        except Exception as e:
+            messages.error(request, "Something went wrong, Please Try Again")
+            return redirect("checkout")
+    
+    # Handle form submission
+    elif request.method == 'POST':
+        remark = request.POST.get("remark")
+        user = User.objects.get(id=request.user.id)
+        
+        # Save order for each product in the cart
+        for item in items:
+            product = item.product
+            order = Order()
+            order.product = product
             order.user = user
             order.is_cart = 0
             order.status = "Success"
@@ -2208,19 +2234,20 @@ def checkout(request):
             order.email = user.email
             order.remarks = remark
             order.buy_time = datetime.now()
-            order.sell_price = final_price
+            order.sell_price = product.gst + product.other_cost + product.Dobiz_India_Filings
             order.save()
-            for item in items:
-                item.order = order
-                item.is_cart = 0
-                item.save()
-            messages.success(request, "Order placed successfully")
-            return redirect("/order_history")
-
-        context = {"items": items, "final_price": final_price, "order": order}
-    except:
-        context = {}
-
+        
+        messages.success(request, "Order placed successfully")
+        return redirect("/order_history")
+    
+    context = {
+        "items": items,
+        "final_price": final_price,
+        "total_gst": total_gst,
+        "total_other_cost": total_other_cost,
+        "total_dobiz_price": total_dobiz_price,
+        "total_market_price": total_market_price
+    }
     return render(request, "order/checkout.html", context)
 
 
