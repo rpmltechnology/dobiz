@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{%block title%}Order Failed {% endblock %}
+{% load static %}
+{%block body %}
+
+<section class="py-5">
+    <div class="container py-5">
+      <div class="row pt-5">
+        <div class="col-md-12 text-center">
+          <h1 class="not_found">Order Fail</h1>
+          <p>Your order has been cancelled. We couldn't process your online payment.</p>
+           <button class="mx-1 hire glow px-4 py-2 my-1"> <a href="#"> Try Again </a> </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

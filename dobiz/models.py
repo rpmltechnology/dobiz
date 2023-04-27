@@ -53,6 +53,7 @@ class Contact(models.Model):
         return self.name
 
 class Profile(models.Model):
+    user = models.ForeignKey(to=User, on_delete=models.DO_NOTHING,null=True,blank=True)
     fname = models.CharField(max_length=20)
     lname = models.CharField(max_length=20)
     dob = models.DateField(auto_now_add=False, auto_now=False, blank=True)
@@ -81,7 +82,6 @@ class Product(models.Model):
     gst  =models.IntegerField(null=True, blank=True)
     other_cost = models.IntegerField(null=True, blank=True)
     price = models.IntegerField(default=0, null=True, blank=False)
-    quantity = models.CharField(max_length=200, null=True, blank=True)
     desc = models.TextField(null=True, blank=False)
     pub_date = models.DateField(null=True, blank=False)
     img1 = models.ImageField(null=True, blank=True, default='/common_img.png')
@@ -115,6 +115,7 @@ class Order(models.Model):
     remarks = models.CharField(max_length=300, null=True, blank=True)
     buy_time = models.DateTimeField(null=True, blank=True)
     order_time = models.DateTimeField(auto_now=True)
+    quantity = models.IntegerField(null=True, blank=True)
     coupan = models.ForeignKey(to=Coupan, null=True, blank=True,on_delete=models.SET_NULL)
     sell_price = models.IntegerField(null=True,blank=True)
     razor_pay_order_id = models.CharField(max_length=100,null=True,blank=True)
@@ -124,6 +125,7 @@ class Order(models.Model):
         return f"{self.product.product_name} {self.user.name}"
     def apply_coupon(self, coupon):
         self.coupan = coupon
+        print("apply_coupon method called!")
         self.save()
 class Banner(models.Model):
     page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)

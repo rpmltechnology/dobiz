@@ -17,11 +17,11 @@
     </div>
   </section>
 
-  <section class="py-5">
+  <section class="py-2">
     <div class="container">
       {% for i in post %}
         {% if forloop.counter0|divisibleby:4 %}
-          <div class="row my-5">
+          <div class="row my-4">
         {% endif %}
         <div class="col-md-3 col-12">
           <div class="border shadow">
@@ -31,6 +31,7 @@
               <p><b>Job Role:<span class="posts"> {{ i.jobrole }} </span></b></p>
               <p><b>Experience:<span class="posts"> {{ i.exp }} </span></b></p>
               <p><b>Qualification:<span class="posts"> {{ i.qualification }} </span></b></p>
+              
               <h2 class="text-center"><i class="fa fa-address-card" aria-hidden="true"></i></h2>
               <div class="text-center my-4">
                 <button type="button" class="btn btn-primary px-2 mx-1">

@@ -475,7 +475,7 @@
           
             <input type="hidden" value="test">
           <div class="action flex-center">
-            <button id="payBtn" type="submit" class="b-main-color pointer">Pay Now</button>
+            <button id="payBtn" type="submit" class="b-main-color pointer" name="place_order">Pay Now</button>
           </div>
       
         </div>
@@ -497,7 +497,7 @@
               </li>
               <li class="flex-between">
                 <span>Order number</span>
-                <strong>DI00A{{items.product.id}}</strong>
+                <strong id="orderNumber">DI00A{{items.product.id}}</strong>
               </li>
               <li class="flex-between">
                 <span>Product</span>
@@ -528,19 +528,20 @@
             </div>
             <i class="ai-coin size-lg"></i>
           </div>
-        <form method="POST">{% csrf_token %}
-          <input type="text" class="uppercase" placeholder="APPLY COUPAN" name="coupan">
-          <button id="applyBtn" type="submit" class="b-main-color pointer">Apply</button>          
-        </form>
+          <form method="POST">{% csrf_token %}
+            <input type="text" class="uppercase" placeholder="APPLY COUPAN" name="coupan" id="coupan">
+            <button id="applyBtn" type="submit" class="b-main-color pointer">Apply</button>          
+          </form>
         </div>
     </div>
   </div>
   
   <script>
-    const pay = document.getElementById("payBtn")
-    pay.addEventListener('click',()=>{
-        alert("Your order Started. \n Please check order History page to check status")
-    })
+   const pay = document.getElementById("payBtn");
+pay.addEventListener('click',()=>{
+  const orderNumber = document.querySelector('#orderNumber').textContent;
+  alert(`Your order is Successfully Placed. \nPlease check order History page to check status`);
+});
     
 /* COPY INPUT VALUES TO CARD MOCKUP */
 const bounds = document.querySelectorAll('[data-bound]');

@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{%block title%} Order Successful {% endblock %}
+
+{%block body %}
+<section class="py-5">
+    <div class="container py-5">
+      <div class="row pt-5">
+        <div class="col-md-12 text-center">
+          <h1 class="not_found">Order Success</h1>
+          <h4><b>Thank you for your purchase</b></h4>
+          <h4><b>Your order id is : {{ order.id }}</b></h4>
+          <p>Product Name: {{ order.product.product_name }}</p>
+          <p>Buy Price: {{ order.sell_price }}</p>
+          <p>Please check Order History to track your status </p>
+           <button class="mx-1 hire glow px-4 py-2 my-1"> <a href="{% url 'order_history' %}"> Order History </a> </button>
+           <button class="mx-1 hire glow px-4 py-2 my-1"> <a href="/"> Home </a> </button>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

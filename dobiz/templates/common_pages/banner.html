@@ -1,7 +1,7 @@
 {% load social_share %}
 {% load myfilters %}
 <section class="top-bn1 bn-styles py-4 aos-init aos-animate" data-aos="fade-left">
-    <div class="container">
+    <div class="container pt-4">
         <div class="row">
 
             <div class="col-md-4 col-12 space_top">
@@ -23,26 +23,23 @@
 
                 <div class="bg-light p-2">
                     <form method="POST" id="contact-form1"> {% csrf_token %}
-                        <div class="mb-3">
-                            <label for="id_name"></label>
+                        <div class="mb-2">
                             {{ form.name.errors }}
-                            {{ form.name|addclass:'form-control'|addplaceholder:'Name'}}
+                            {{ form.name|addclass:'form-control border'|addplaceholder:'Name'}}
                         </div>
 
-                        <div class="mb-3">
-                            <label for="id_email"></label>
+                        <div class="mb-2">
                             {{ form.email.errors }}
-                            {{ form.email|addclass:'form-control'|addplaceholder:'Email Address'}}
+                            {{ form.email|addclass:'form-control border'|addplaceholder:'Email Address'}}
                         </div>
 
-                        <div class="mb-3">
-                            <label for="id_phone"></label>
+                        <div class="mb-2">
                             {{ form.phone.errors }}
-                            {{ form.phone|addclass:'form-control'|addplaceholder:'Phone Number'}}
+                            {{ form.phone|addclass:'form-control border'|addplaceholder:'Phone Number'}}
                         </div>
 
                         <div class="d-grid gap-2">
-                            <button class="btn btn-primary py-3" type="submit">Talk To Adviser
+                            <button class="btn btn-primary py-1" type="submit">Talk To Adviser
                             </button>
                         </div>
                     </form>
@@ -85,8 +82,8 @@
                             </tbody>
                         </table>
                         <div class="text-center">
-                            <button class="btn btn-primary py-2" type="button"><a href="{% url 'order' %}"> Buy Now </a></button>
-                            <button class="btn btn-primary py-2" type="button"><a href="{% url 'order' %}"> Order now </a></button>
+                            <button class="btn btn-primary py-1" type="button"><a href="{% url 'checkout' %}"> Buy Now </a></button>
+                            <button class="btn btn-primary py-1" type="button"><a href="{% url 'card' %}"> Order now </a></button>
                           </div>
                     </div>
                 </div>

@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
 from . import views
-
 #managing media imports
 from django.conf import settings
 from django.conf.urls.static import static
@@ -12,7 +11,7 @@ url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 path('', views.home, name='home'),
 #order now url
-path('order', views.order, name='order'),
+
 path('search', views.search, name="search"),
 path('contact', views.contact, name='contact'),
 path('profile', views.profile, name='profile'),
@@ -25,6 +24,12 @@ path('password_otp/', views.password_otp, name='password_otp'),
 path('password_reset/', views.password_reset, name='password_reset'),
     
     # Order Management
+path('order', views.order, name='order'),
+path('ordersucess', views.ordersucess, name='ordersucess'),
+path('orderfail', views.orderfail, name='orderfail'),
+path('cancel-order/<int:order_id>/', views.cancel_order, name='cancel_order'),
+path('cancel_order_page/<int:order_id>/', views.cancel_order_page, name='cancel_order_page'),
+path('cancelstatus',views.cancelstatus,name='cancelstatus'),
 path("checkout",views.checkout,name="checkout"),
 path('order_history',views.order_history,name="order_history"),
 # path('cart',views.cart,name="cart"),
@@ -120,6 +125,7 @@ path('exitbussiness_api/<str:page>/', views.exitbussiness_api, name='exitbussine
     
 ]
 handler404 = 'dobiz.views.four0four'
+handler500 = 'dobiz.views.server_error'
 
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -117,19 +117,22 @@ table th {
     <thead >
       <tr class="thead">
         <th scope="col">Product Name</th>
-        
+        <th scope="col">Order Id</th>
         <th scope="col">Price</th>
         <th scope="col">Status</th>
 		<th scope="col">Order Time</th>
+		<th scope="col">Cancel Order</th>
       </tr>
     </thead>
     <tbody>
         {% for i in orders %}
       <tr>
         <td data-label="Name">{{i.product.product_name}}</td>
+        <td data-label="Name">{{i.id}}</td>
         <td data-label="Title">{{i.sell_price}}</td>
         <td data-label="Website">{{i.status}}</td>
         <td data-label="Website">{{i.buy_time}}</td>
+        <td data-label="Website"> <a href="{% url 'cancel_order_page' i.id %}">Cancel Order</a></td>
       </tr>
       {% endfor %}
   

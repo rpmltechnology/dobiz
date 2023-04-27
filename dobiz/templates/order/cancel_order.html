@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{%block title%}Cancel Order {% endblock %}
+{% load static %}
+{%block body %}
+
+<section class="py-5">
+    <div class="container py-5">
+        <div class="row pt-5">
+            <div class="col-md-12 text-center">
+                {% if is_cancelled %}
+                    <h3>Order {{ order.id }} has already been cancelled</h3>
+                    <button class="mx-1 hire glow px-4 py-2 my-1"> <a href="/">Go Back to Home</a> </button>
+                {% else %}
+                <form method="post" action="{% url 'cancel_order' order.id %}">
+                    {% csrf_token %}
+                    <h1 class="not_found">Cancel Order</h1>
+                    <h3>Your Order Details are</h3>
+                    <h4><b>Your order id is : {{ order.id }}</b></h4>
+                    <p>Product Name: {{ order.product.product_name }}</p>
+                    <p>Buy Price: {{ order.sell_price }}</p>
+                    <p>Are you sure you'd like to cancel this order ? This action cannot be undone.</p>
+                    <button class="mx-1 hire glow px-4 py-2 my-1" type="submit">Yes Cancel Order</button>
+                    <a href="/" class="mx-1 hire glow px-4 py-2 my-1">No</a>
+                  </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

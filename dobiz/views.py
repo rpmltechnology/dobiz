@@ -37,6 +37,10 @@ import razorpay
 
 def four0four(request, exception):
     return render(request, '404.html')
+
+def server_error(request):
+    return render(request, '500.html')
+    
 # Create your views here.
 def home(request):
     allpage=Page.objects.all()
@@ -2006,16 +2010,39 @@ def contact(request):
     return render(request, 'contact.html', {'form': form})
 
 def profile(request):
-    form1 = ProfileUser()
+    user = request.user
+    profile = Profile.objects.filter(user=user).first()
+    profile_data = {
+        'fname': user.fname,
+        'lname': user.lname,
+        'email': user.email,
+        'mobile': user.phone
+    }
+    if profile:
+        profile_data.update({
+            'dob': profile.dob,
+            'address': profile.address,
+            'area': profile.area,
+            'city': profile.city,
+            'state': profile.state,
+            'country': profile.country,
+            'pin': profile.pin,
+            'Services': profile.Services,
+            'Business': profile.Business,
+            'Think_to_start_business': profile.Think_to_start_business,
+        })
+    form1 = ProfileUser(initial=profile_data)
     if request.method =='POST':
-        form1 = ProfileUser(request.POST)
+        form1 = ProfileUser(request.POST, instance=profile)
         if form1.is_valid():
-            form1.save()
-            messages.success(request, 'Your profile is being succesfully created')
+            profile = form1.save(commit=False)
+            profile.user = user
+            profile.save()
+            messages.success(request, 'Your profile has been successfully updated')
             return redirect('home')
         else:
             messages.error(request, 'Please fill all fields correctly as mentioned')
-            return render(request, 'register/profile.html', {'form1':ProfileUser})
+            return render(request, 'register/profile.html', {'form1': form1})
         #recaptcha stuff
         clientkey = request.POST['g-recaptcha-response']
         secretkey = '6LfLjrElAAAAAFd-G-RtXvOBibjGd65c_SqF5Mx'
@@ -2027,7 +2054,7 @@ def profile(request):
         response = json.loads(r.text)
         verify = response['success']
         # print('Your success is:', verify)
-    return render(request, 'register/profile.html', {'form1':ProfileUser})
+    return render(request, 'register/profile.html', {'form1':form1})
 
 
 def signup(request):
@@ -2181,16 +2208,18 @@ def checkout(request):
     total_market_price = 0
     for item in items:
         product = item.product
-        final_price += product.gst + product.other_cost + product.Dobiz_India_Filings
-        total_gst += product.gst
-        total_other_cost += product.other_cost
-        total_dobiz_price += product.Dobiz_India_Filings
-        total_market_price += product.price
+        quan = item.quantity
+        final_price += (product.gst + product.other_cost + product.Dobiz_India_Filings)*quan
+        total_gst += product.gst*quan
+        total_other_cost += product.other_cost*quan
+        total_dobiz_price += product.Dobiz_India_Filings*quan
+        total_market_price += product.price*quan
     
     # Apply coupon if one was submitted
-    if request.method == 'POST' and request.POST.get("coupan"):
+    offer = None
+    if request.session.get("coupan"):
         try:
-            coupan = request.POST.get("coupan").upper()
+            coupan = request.session.get("coupan").upper()
             offer = Coupan.objects.filter(active=1).get(coupan=coupan)
             
             # Calculate discounted price based on coupon
@@ -2218,7 +2247,7 @@ def checkout(request):
             return redirect("checkout")
     
     # Handle form submission
-    elif request.method == 'POST':
+    if request.method == 'POST':
         remark = request.POST.get("remark")
         user = User.objects.get(id=request.user.id)
         
@@ -2233,12 +2262,14 @@ def checkout(request):
             order.name = user.name
             order.email = user.email
             order.remarks = remark
+            order.quantity = item.quantity
+            order.sell_price = final_price
+            if offer:
+                order.coupan = offer
             order.buy_time = datetime.now()
-            order.sell_price = product.gst + product.other_cost + product.Dobiz_India_Filings
             order.save()
-        
-        messages.success(request, "Order placed successfully")
-        return redirect("/order_history")
+            item.delete()
+        return redirect("/ordersucess")
     
     context = {
         "items": items,
@@ -2256,6 +2287,35 @@ def order_history(request):
     context = {"orders":orders}
     return render(request,"order/order_history.html",context)
 
+def ordersucess(request):
+    # Retrieve the recently placed order for the current user
+    order = Order.objects.filter(user=request.user).latest('buy_time')
+    
+    context = {
+        "order": order
+    }
+    return render(request,"order/ordersucess.html",context)
+def cancel_order_page(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+    return render(request, 'order/cancel_order.html', {'order': order})
+
+def cancel_order(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+    is_cancelled = order.status == "cancelled"
+    if not is_cancelled:
+        if request.method == "POST":
+            order.status = "cancelled"
+            order.save()
+            return redirect("cancelstatus")
+        return render(request, 'order/cancel_order.html', {'order': order, 'is_cancelled': is_cancelled})
+    return render(request, 'order/cancel_order.html', {'order': order, 'is_cancelled': is_cancelled})
+
+def cancelstatus(request):
+    order = Order.objects.filter(user=request.user,status='cancelled')
+    return render(request, 'order/cancelstatus.html',{'order':order})
+
+def orderfail(request):
+    return render( request,'order/orderfail.html')
 
 from django.utils import timezone
 
@@ -2323,20 +2383,30 @@ from django.utils import timezone
 @csrf_exempt
 def addToCart(request):
     id = request.POST.get("id")
-    product = Product.objects.get(id = id)
-    user = User.objects.get(id = request.user.id)
-    order = Order()
-    remark = ""
-    order.product = product
-    order.user = user
-    order.is_cart = 1
-    order.status ="In Cart"
-    order.name = user.name
-    order.email = user.email
-    order.remarks = remark
-    order.buy_time = datetime.now()
-    order.save()
-    return JsonResponse({"Success":1})
+    product = Product.objects.get(id=id)
+    user = User.objects.get(id=request.user.id)
+
+    # Check if the product is already in the cart for this user
+    order, created = Order.objects.get_or_create(
+        product=product,
+        user=user,
+        is_cart=1,
+        defaults={
+            "status": "In Cart",
+            "name": user.name,
+            "email": user.email,
+            "remarks": "",
+            "buy_time": datetime.now(),
+            "quantity": 1,  # Set default quantity to 1
+        }
+    )
+
+    # If the product is already in the cart, increment its quantity by 1
+    if not created:
+        order.quantity += 1
+        order.save()
+
+    return JsonResponse({"Success": 1})
 
 
 
@@ -2367,16 +2437,24 @@ def dashboard(request):
     for coupon in coupons_used:
         orders = Order.objects.filter(coupan=coupon)
         coupon_usage_count += orders.count()
-        total_buy_amount += sum(order.sell_price for order in orders)
+        data = []
+        for order in orders:
+            try:
+                total_buy_amount +=order.sell_price
+            except:
+                pass
+
+        
+        print(total_buy_amount)
         commission += coupon.commissionpaid
 
         # calculate monthly commission
         monthly_orders = orders.filter(buy_time__gte=this_month_start)
-        monthly_commission += sum(order.sell_price * (coupon.commissionpaid / 100) for order in monthly_orders)
+        monthly_commission += sum(order.sell_price * (coupon.commissionpaid / 100) for order in monthly_orders if order.sell_price is not None)
 
         # calculate yearly commission
         yearly_orders = orders.filter(buy_time__gte=this_year_start)
-        yearly_commission += sum(order.sell_price * (coupon.commissionpaid / 100) for order in yearly_orders)
+        yearly_commission += sum(order.sell_price * (coupon.commissionpaid / 100) for order in yearly_orders if order.sell_price is not None)
 
     total_buy_amount = round(total_buy_amount, 2)
     commission = round(commission, 2)
@@ -2385,7 +2463,7 @@ def dashboard(request):
 
     # get the count of how many times the coupons were used, and the total amount sold with coupons
     coupon_use_count = coupons_used.count()
-    coupon_total_amount = sum(Order.objects.filter(coupan__in=coupons_used).values_list('sell_price', flat=True))
+    coupon_total_amount = sum(Order.objects.filter(coupan__in=coupons_used).exclude(sell_price = None).values_list('sell_price', flat=True))
     coupon_total_amount = round(coupon_total_amount, 2)
 
     context = {
@@ -2419,11 +2497,13 @@ def search(request):
     return render(request, 'search.html', params)
 
 def card(request):
+    context = {}
     items = Order.objects.filter(user__id=request.user.id).filter(is_cart=1).order_by("-id")
     coupan = request.POST.get("coupan")
     final_price = 0
     for item in items:
-        final_price += item.product.price
+        total_price = item.product.price * item.quantity
+        final_price += total_price
     
     # Get the URL of the first product in the cart (assuming there is at least one product in the cart)
     product_url = None
@@ -2438,6 +2518,7 @@ def card(request):
 
 
     if request.method == 'POST' and coupan:
+        request.session["coupan"] = coupan
         try:
             coupan = coupan.upper()
             offer = Coupan.objects.filter(active=1).get(coupan=coupan) #checks for username and user
@@ -2446,17 +2527,22 @@ def card(request):
                 if offer.percentage is not None and offer.amount is not None:
                     product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
                     discounted_price_percentage = product_cost - (product_cost * offer.percentage / 100)
+
                     discounted_price_amount = product_cost - offer.amount
                     if discounted_price_percentage > discounted_price_amount:
                         product_cost = discounted_price_percentage
+                        context["saved_amount"] = (product_cost * offer.percentage / 100)
                     else:
                         product_cost = discounted_price_amount
+                        context["saved_amount"] = offer.amount
                 elif offer.percentage is not None:
                     product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
                     product_cost = product_cost - (product_cost * offer.percentage / 100)
+                    context["saved_amount"] = (product_cost * offer.percentage / 100)
                 elif offer.amount is not None:
                     product_cost = product.Dobiz_India_Filings + product.gst + product.other_cost
                     product_cost = product_cost - offer.amount
+                    context["saved_amount"] = offer.amount
                 item.final_price = product_cost
                 item.save()
             if offer.percentage is not None:
@@ -2469,16 +2555,17 @@ def card(request):
             messages.error(request, "Invalid Coupon, Please Try Again")
         except Exception as e:
             print("Error : ", e)
+    else:
+        request.session["coupan"] = None
 
+    
+    context["items"] = items
+    context["final_price"] = final_price
+    context["coupan"] = coupan
+    context["product_url"] = product_url
+    context["similar_products"] = similar_products
 
-    context = {"items": items,
-               "final_price": final_price,
-               "coupan":coupan,
-               "product_url": product_url,
-                "similar_products": similar_products
-              }
     return render(request,'order/card.html',context)
-
 def delete_item(request, item_id):
     item = Order.objects.get(id=item_id)
     item.delete()

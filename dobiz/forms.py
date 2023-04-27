@@ -36,6 +36,15 @@ class ProfileUser(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('fname','lname','dob','email','mobile','Services', 'Business', 'Think_to_start_business','address','area','city','country','pin','state')
+    
+    def __init__(self, *args, **kwargs):
+        super(ProfileUser, self).__init__(*args, **kwargs)
+        if 'initial' in kwargs:
+            initial = kwargs['initial']
+            self.fields['fname'].initial = initial['fname']
+            self.fields['lname'].initial = initial['lname']
+            self.fields['email'].initial = initial['email']
+            self.fields['mobile'].initial = initial['mobile']
 
 class PasswordResetForm(forms.Form):
     password1 = forms.CharField(widget=forms.PasswordInput())
