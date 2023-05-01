@@ -6,6 +6,7 @@ class PostJobs(models.Model):
     jobrole = models.CharField(max_length=200,null=True,blank=True)
     jobcategory = models.CharField(max_length=200,null=True,blank=True)
     exp = models.CharField(max_length=200,null=True,blank=True)
+    total_openings = models.CharField(max_length=200,null=True,blank=True)
     qualification = models.CharField(max_length=200,null=True,blank=True)
     desc = models.TextField(null=True,blank=True)
     postdate = models.DateTimeField(blank=True,default=now)

@@ -51,9 +51,10 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django.contrib.sites',
     'django.contrib.humanize',
+    'django_simple_cookie_consent',
     
 ]
-# SITE_ID = 1
+SITE_ID = 1
 # COMMENTS_APP = 'django_comments_xtd'
 # COMMENTS_XTD_MAX_THREAD_LEVEL=2
 
@@ -158,5 +159,3 @@ EMAIL_HOST_PASSWORD = 'nwwpmoqltzkidqtm'
 
 KEY = 'rzp_test_D4hi1vsG8ESCJ2'
 SECRET = 'xuZKmllZbwmbKNT1ES0rdplp'
-
-#COMMENTS

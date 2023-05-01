@@ -1,22 +1,23 @@
 {% load social_share %}
 {% load myfilters %}
+{% if non_packed_products %}
 <section class="top-bn1 bn-styles py-4 aos-init aos-animate" data-aos="fade-left">
     <div class="container pt-4">
         <div class="row">
-
+            {% for i in non_packed_products %}
             <div class="col-md-4 col-12 space_top">
-                <img src="/media/{{ banner.img }}" alt="logo-img" class="img-fluid">
+                <img src="/media/{{ i.img1 }}" alt="logo-img" class="img-fluid">
             </div>
 
             <div class="col-md-4 col-12 space_top">
-                <h4 class="fs-2"> {{ banner.heading_text }} </h4>
+                <h4 class="fs-2"> {{i.product_name}} </h4>
                 <p><span class="bg-primary p-1 text-white"> {{ banner.review_rating }} </span> <a
                         class="text-decoration-none" href="#"> &nbsp; {{banner.review}} </a> </p>
-                <p class="fs-5"> {{ banner.text }} </p>
-                <p class="fs-5"> <a href="#" class="text-decoration-none text-dark"> {{ banner.text2 }} </a> </p>
+                <p class="fs-5"> {{i.desc| slice:"0:60"}} </p>
+                <p class="fs-5"> <a href="#" class="text-decoration-none text-dark"> {{i.pub_date}} </a> </p>
                 <p> <a href="#"> Terms and conditions </a> </p>
             </div>
-
+            {% endfor %}
             <div class="col-md-1"></div>
 
             <div class="col-md-3 col-12 pricing shadow">
@@ -44,57 +45,107 @@
                         </div>
                     </form>
                 </div>
-
+                {% for p in non_packed_products %}
                 <div class="bg-light p-2 border-top">
-                    <p class="text-end paraicon"><i class="fa fa-share" aria-hidden="true"></i></p>
-                    <h5>{{price.heading_text}}</h5>
+                    <p class="text-end">
+                        <button type="button" class="btn btn-primary2" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                            <i class="fa fa-share" aria-hidden="true"></i>
+                          </button>
+                      </p>
+                    <h5>Pricing Summary</h5>
                     <div class="table-responsive">
                         <table class="table border border-white">
                             <tbody>
                                 <tr>
-                                    <td>{{price.quantity}}</td>
-                                    <td>{{price.quantity_value}}</td>
+                                    <td>Product Name</td>
+                                    <td>{{p.product_name}}</td>
                                 </tr>
                                 <tr>
-                                    <td>{{price.mark_pric}}</td>
-                                    <td class="text-decoration-line-through">{{price.mark_pric_value}}</td>
+                                    <td>Market Price</td>
+                                    <td class="text-decoration-line-through">:Rs.{{p.market_price}}</td>
                                 </tr>
                                 <tr>
-                                    <td>{{price.dobiz}}</td>
-                                    <th class="text-danger">: {{price.dobiz_value1}}</th>
+                                    <td>Dobiz India</td>
+                                    <th class="text-danger">:Rs.{{p.Dobiz_India_Filings}}</th>
                                 </tr>
                                 <tr>
-                                    <td></td>
-                                    <td> &nbsp; {{price.dobiz_value2}}</td>
+                                    <td> GST</td>
+                                    <td>:Rs.{{p.gst}}</td>
                                 </tr>
                                 <tr>
-                                    <td>{{price.gst}}</td>
-                                    <th>{{price.gst_value}}</th>
+                                    <td>Other Cost</td>
+                                    <td>:Rs.{{p.other_cost}}</td>
                                 </tr>
                                 <tr>
-                                    <td>{{price.yoursave}}</td>
-                                    <th>{{price.yoursave_value}}</th>
-                                </tr>
-                                <tr>
-                                    <td>{{price.govt}}</td>
-                                    <th>{{price.govt_value}}</th>
+                                    <td>Price</td>
+                                    <th>:Rs.{{p.price}} incl. GST</th>
                                 </tr>
                             </tbody>
                         </table>
                         <div class="text-center">
-                            <button class="btn btn-primary py-1" type="button"><a href="{% url 'checkout' %}"> Buy Now </a></button>
-                            <button class="btn btn-primary py-1" type="button"><a href="{% url 'card' %}"> Order now </a></button>
-                          </div>
+                            <button class="btn btn-primary py-1 add-to-cart1" type="button" id="pr{{p.id}}"
+                                data-product-id="{{p.id}}"> Add to Cart</button>
+                            <a href="{% url 'viewproduct' id=p.id %}"><button class="btn btn-primary py-1" type="button"
+                                    id="qv{{p.id}}">View Product</button></a>
+                        </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-
+         
 
 
         </div>
     </div>
 </section>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel2">Share</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {% if non_packed_product_url %}
+          <div class="model-icon">
+            {% post_to_facebook non_packed_product_url %}
+            {% post_to_twitter non_packed_product_url %}
+            {% post_to_whatsapp non_packed_product_url %}
+            {% post_to_linkedin non_packed_product_url %}
+            <button id="copy-btn-banner" class="btn btn-primary" data-url="{{ non_packed_product_url }}">Copy</button>
+          </div>
+          {% endif %}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // model---->  
+{% endif %}
 <script>
+    $(document).ready(function () {
+        $('.add-to-cart1').click(function () {
+            var id = $(this).data('product-id');
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'addToCart' %}",
+                data: {
+                    "id": id,
+                    csrfmiddlewaretoken: '{{ csrf_token }}'
+                },
+                success: function (response) {
+                    if (response.Success == 1) {
+                        if (confirm("Do you want to visit Cart page?")) {
+                            window.location.href = "{% url 'card' %}";
+                        }
+                    }
+                }
+            });
+        });
+    });
     const contactForm = document.getElementById('contact-form1');
     contactForm.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent the form from submitting normally
@@ -122,5 +173,12 @@
                 console.error('Failed to submit the form:', error);
             });
     });
-
+    $(document).ready(function() {
+  const copyBtn = $('#copy-btn-banner');
+  copyBtn.click(function() {
+    const url = copyBtn.attr('data-url');
+    navigator.clipboard.writeText(url);
+    copyBtn.text('Copied');
+  });
+});
 </script>

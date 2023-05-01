@@ -16,13 +16,13 @@
       </div>
     </div>
     <div class="row pro-box">
-      {% for i in products %}
+      {% for i in packed_products %}
       <div class="col-md-4 col-12">
         <div class="shadow bg-light p-5">
           <p class="text-end">
-            <button type="button" class="btn btn-primary1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary1 share-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-product-id="{{ i.id }}">
               <i class="fa fa-share" aria-hidden="true"></i>
-            </button>
+            </button>            
           </p>
           <div class="text-center" style="height:400px">
             <h2 id="namepr{{i.id}}"> {{i.product_name}} </h2>
@@ -54,15 +54,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        {% if product_url %}
         <div class="model-icon">
-          {% post_to_facebook product_url %}
-          {% post_to_twitter product_url %}
-          {% post_to_whatsapp product_url %}
-          {% post_to_linkedin product_url %}
-          <button id="copy-btn" class="btn btn-primary" data-url="{{ product_url }}">Copy</button>
+              <a href="#" class="whatsapp-share"> <i class="fa fa-whatsapp"></i></a>
+              <a href="#" class="facebook-share"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="twitter-share"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="linkedin-share"><i class="fa fa-linkedin"></i></a>
+              <button id="copy-btn" class="btn btn-primary">Copy</button>
         </div>
-        {% endif %}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -92,24 +90,23 @@
       });
     });
   });
-  $(document).ready(function () {
-    $('.share-button').click(function () {
-      var shareOptions = $(this).siblings('.share-options');
-      if (shareOptions.is(':hidden')) {
-        shareOptions.slideDown();
-      } else {
-        shareOptions.slideUp();
-      }
+  $(function() {
+  $('.share-btn').click(function() {
+    var productId = $(this).data('product-id');
+    var baseUrl = window.location.protocol + '//' + window.location.host;
+    var shareUrl = baseUrl + '/viewproduct/product_id=' + productId + '/';
+    $('.whatsapp-share').attr('href', 'https://wa.me/?text=' + encodeURIComponent(shareUrl));
+    $('.facebook-share').attr('href', 'https://www.facebook.com/sharer.php?u=' + encodeURIComponent(shareUrl));
+    $('.twitter-share').attr('href', 'https://twitter.com/share?url=' + encodeURIComponent(shareUrl));
+    $('.linkedin-share').attr('href', 'https://www.linkedin.com/shareArticle?url=' + encodeURIComponent(shareUrl));
+    const copyBtn = $('#copy-btn');
+    copyBtn.attr('shareUrl', shareUrl); // set the shareUrl attribute
+    copyBtn.click(function() {
+      const url = copyBtn.attr('shareUrl'); // retrieve the shareUrl attribute
+      navigator.clipboard.writeText(url)
+      copyBtn.text('Copied')
     });
   });
-  $(document).ready(function() {
-  const copyBtn = $('#copy-btn');
-  copyBtn.click(function() {
-    // console.log('click')
-    const url = copyBtn.attr('data-url')
-    // console.log(url)
-    navigator.clipboard.writeText(url)
-    copyBtn.text('Copied')
-  });
 });
+
 </script>

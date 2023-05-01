@@ -1,5 +1,6 @@
 {% load social_share %}
 {% load myfilters %}
+{% if non_packed_products %}
 <div class="col-md-3 col-12 pricing shadow">
     <div class="bg-light p-2">
         <form method="POST" id="contact-form"> {% csrf_token %}
@@ -25,51 +26,71 @@
           </form>
     </div>
 
+    {% for p in non_packed_products %}
     <div class="bg-light p-2 border-top">
-      <p class="text-end paraicon"><i class="fa fa-share" aria-hidden="true"></i></p>
-      <h5>Pricing Summary</h5>
-      <div class="table-responsive">
-        <table class="table border border-white">
-          <tbody>
-            <tr>
-              <td>{{price.quantity}}</td>
-              <td>{{price.quantity_value}}</td>
-            </tr>
-            <tr>
-              <td>{{price.mark_pric}}</td>
-              <td class="text-decoration-line-through">{{price.mark_pric_value}}</td>
-            </tr>
-            <tr>
-              <td>{{price.dobiz}}</td>
-              <th class="text-danger">: {{price.dobiz_value1}}</th>
-            </tr>
-            <tr>
-              <td></td>
-              <td> &nbsp; {{price.dobiz_value2}}</td>
-            </tr>
-            <tr>
-              <td>{{price.gst}}</td>
-              <th>{{price.gst_value}}</th>
-            </tr>
-            <tr>
-              <td>{{price.yoursave}}</td>
-              <th>{{price.yoursave_value}}</th>
-            </tr>
-            <tr>
-              <td>{{price.govt}}</td>
-              <th>{{price.govt_value}}</th>
-            </tr>
-          </tbody>
-        </table>
-        <div class="text-center">
-          <button class="btn btn-primary py-1" type="button"><a href="{% url 'checkout' %}"> Buy Now </a></button>
-          <button class="btn btn-primary py-1" type="button"><a href="{% url 'card' %}"> Order now </a></button>
+        <h5>Pricing Summary</h5>
+        <div class="table-responsive">
+            <table class="table border border-white">
+                <tbody>
+                    <tr>
+                        <td>Product Name</td>
+                        <td>{{p.product_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Market Price</td>
+                        <td class="text-decoration-line-through">:Rs. {{p.market_price}}</td>
+                    </tr>
+                    <tr>
+                        <td>Dobiz India</td>
+                        <th class="text-danger">:Rs.{{p.Dobiz_India_Filings}}</th>
+                    </tr>
+                    <tr>
+                        <td> GST</td>
+                        <td>:Rs.{{p.gst}}</td>
+                    </tr>
+                    <tr>
+                        <td>Other Cost</td>
+                        <td>:Rs.{{p.other_cost}}</td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <th>:Rs.{{p.price}} incl. GST</th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center">
+                <button class="btn btn-primary py-1 add-to-cart2" type="button" id="pr{{p.id}}"
+                    data-product-id="{{p.id}}"> Add to Cart</button>
+                <a href="{% url 'viewproduct' id=p.id %}"><button class="btn btn-primary py-1" type="button"
+                        id="qv{{p.id}}">View Product</button></a>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+    {% endfor %}
 
+  </div>
+{% endif %}
   <script>
+      $(document).ready(function () {
+        $('.add-to-cart2').click(function () {
+            var id = $(this).data('product-id');
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'addToCart' %}",
+                data: {
+                    "id": id,
+                    csrfmiddlewaretoken: '{{ csrf_token }}'
+                },
+                success: function (response) {
+                    if (response.Success == 1) {
+                        if (confirm("Do you want to visit Cart page?")) {
+                            window.location.href = "{% url 'card' %}";
+                        }
+                    }
+                }
+            });
+        });
+    });
     const form_second = document.getElementById('contact-form');
   form_second.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the form from submitting normally

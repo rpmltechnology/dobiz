@@ -119,7 +119,7 @@ def commonPages(request):
 
 ###################MOSTPOPULAR view##################
 def mostpopular_page(request, page):
-    allpage=Page.objects.all()
+    allpage = Page.objects.all()
     page_dict = {
         'types_of_business': 'Types of Business',
         'sole_p_r': 'Sole Proprietorship Registration',
@@ -131,7 +131,11 @@ def mostpopular_page(request, page):
     }
     if page not in page_dict:
         raise Http404('Invalid page')
-    products = Product.objects.filter(category=page_dict.get(page))
+        
+    # Filter products based on the category and is_packed field
+    packed_products = Product.objects.filter(category=page_dict.get(page), is_package=True)
+    non_packed_products = Product.objects.filter(category=page_dict.get(page), is_package=False)
+
     meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
     minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
     benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
@@ -145,10 +149,10 @@ def mostpopular_page(request, page):
     form = ContactUser()
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-    # Get the URL of the first product in the list
-    product_url = None
-    if products.exists():
-        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
+    # Get the URLs of the first product in the lists
+    non_packed_product_url = None
+    if non_packed_products.exists():
+        non_packed_product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': non_packed_products[0].id}))
     if request.method == 'POST':
         form = ContactUser(request.POST)
         if form.is_valid():
@@ -159,9 +163,9 @@ def mostpopular_page(request, page):
             errors = form.errors.as_json()
             return JsonResponse({'errors': errors}, status=400)
 
-    context = { 'products': products,'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
+    context = { 'non_packed_products': non_packed_products, 'packed_products': packed_products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'non_packed_product_url':non_packed_product_url}
     return render(request, f'mostpopular/{page}.html', context)
 
 ###################MOSTPOPULAR API##################
@@ -238,7 +242,6 @@ def mostpopular_api(request, page):
 ###################SPECIAL BUSSINESS view  ##################
 def specialbussiness_page(request, page):
     allpage=Page.objects.all()
-    print(allpage)
     page_dict = {
         'gst_r_i': 'GST Registration in India',
         'import_e_c_i': 'Import export Code',
@@ -251,7 +254,9 @@ def specialbussiness_page(request, page):
 
     if page not in page_dict:
         raise Http404('Invalid page')
-    products = Product.objects.filter(category=page_dict.get(page))
+    # Filter products based on the category and is_packed field
+    packed_products = Product.objects.filter(category=page_dict.get(page), is_package=True)
+    non_packed_products = Product.objects.filter(category=page_dict.get(page), is_package=False)
     meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
     minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
     benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
@@ -265,10 +270,10 @@ def specialbussiness_page(request, page):
     form = ContactUser()
     banner = Banner.objects.get(category='CommonBanner')
     price = PricingSum.objects.get(category='Common Price')
-     # Get the URL of the first product in the list
-    product_url = None
-    if products.exists():
-        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
+    # Get the URLs of the first product in the lists
+    non_packed_product_url = None
+    if non_packed_products.exists():
+        non_packed_product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': non_packed_products[0].id}))
     if request.method == 'POST':
         form = ContactUser(request.POST)
         if form.is_valid():
@@ -279,9 +284,9 @@ def specialbussiness_page(request, page):
             errors = form.errors.as_json()
             return JsonResponse({'errors': errors}, status=400)
 
-    context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
+    context = { 'non_packed_products': non_packed_products, 'packed_products': packed_products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'non_packed_product_url':non_packed_product_url}
     return render(request, f'specialbussiness/{page}.html', context)
 
 ###################SPECIAL BUSSINESS API ##################
@@ -2196,6 +2201,7 @@ def password_reset(request):
 
 
 ################### Order Management##################
+@login_required
 def checkout(request):
     # Retrieve all products in the cart for the current user
     items = Order.objects.filter(user__id=request.user.id, is_cart=1)
@@ -2379,7 +2385,7 @@ from django.utils import timezone
 #               }
 #     return render(request, "order/cart.html", context)
 
-
+@login_required(login_url='auth_login')
 @csrf_exempt
 def addToCart(request):
     id = request.POST.get("id")
@@ -2410,7 +2416,7 @@ def addToCart(request):
 
 
 
-
+@login_required(login_url='auth_login')
 def dashboard(request):
     today = date.today()
     this_month_start = date(today.year, today.month, 1)
@@ -2495,7 +2501,7 @@ def search(request):
                 messages.warning(request, "No search results found. Please refine your query.")
     params = {'allPosts': allPosts, 'query': query}
     return render(request, 'search.html', params)
-
+@login_required
 def card(request):
     context = {}
     items = Order.objects.filter(user__id=request.user.id).filter(is_cart=1).order_by("-id")
@@ -2571,3 +2577,5 @@ def delete_item(request, item_id):
     item.delete()
     return redirect('card')
 
+def cookie(request):
+    return render(request, 'cookie.html')
