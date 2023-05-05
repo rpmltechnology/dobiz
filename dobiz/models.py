@@ -1,6 +1,6 @@
 
 from django.db import models
-
+from decimal import Decimal
 # Create your models here.
 from django.contrib.auth.models import User, AbstractBaseUser, AbstractUser
 from django.utils import timezone
@@ -9,6 +9,7 @@ from . manager import UserManager
 from django.contrib.auth.models import PermissionsMixin
 from django_countries.fields import CountryField
 from django.contrib.auth.models import Group
+import datetime
 
 class Page(models.Model):
     pagename = models.CharField(max_length=200,null=True, blank=True)
@@ -74,19 +75,41 @@ class Profile(models.Model):
 class Product(models.Model):
     page = models.ForeignKey(to=Page, on_delete=models.CASCADE,null=True,blank=True)
     product_name = models.CharField(max_length=50,null=True, blank=False)
-    category = models.CharField(max_length=50, default="", null=True, blank=False)
-    subcategory = models.CharField(max_length=50, default="", null=True, blank=False)
+    category = models.CharField(max_length=50, default="", null=True, blank=True)
+    subcategory = models.CharField(max_length=50, default="", null=True, blank=True)
     market_price = models.CharField(max_length =10, null=True, blank=False)
+    discounted_percentage = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     Dobiz_India_Filings = models.IntegerField( null=True,blank=True)
     gst_percent = models.IntegerField(null=True, blank=True,default=18)
     gst  =models.IntegerField(null=True, blank=True)
     other_cost = models.IntegerField(null=True, blank=True)
-    price = models.IntegerField(default=0, null=True, blank=False)
-    desc = models.TextField(null=True, blank=False)
+    price = models.IntegerField(default=0, null=True, blank=True)
+    desc = models.TextField(null=True, blank=True)
+    estimated_delivery_days = models.PositiveIntegerField(null=True, blank=True)
     pub_date = models.DateField(null=True, blank=False)
     img1 = models.ImageField(null=True, blank=True, default='/common_img.png')
     is_package = models.BooleanField(null=True, blank=True) 
-    
+    @property
+    def estimated_delivery_date(self):
+        if self.estimated_delivery_days:
+            return datetime.date.today() + datetime.timedelta(days=self.estimated_delivery_days)
+        else:
+            return None
+
+    @estimated_delivery_date.setter
+    def estimated_delivery_date(self, value):
+        pass
+    def save(self, *args, **kwargs):
+        if self.discounted_percentage:
+            self.Dobiz_India_Filings = Decimal(self.market_price) * (Decimal('1') - Decimal(self.discounted_percentage) / Decimal('100'))
+            self.gst = self.Dobiz_India_Filings * Decimal(self.gst_percent) / Decimal('100')
+            self.price = self.gst + self.Dobiz_India_Filings
+            if self.other_cost:
+                self.price += self.other_cost
+        else:
+            self.price = Decimal(self.market_price)
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.product_name
         

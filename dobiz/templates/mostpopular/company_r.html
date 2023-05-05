@@ -5,7 +5,12 @@
 {%block body %}
 
 
-{% include 'common_pages/banner.html'%}
+
+{% if non_packed_products %}
+      {% include 'common_pages/product_upper.html' %}
+{% else %}
+{% include 'common_pages/banner.html' %}
+{% endif %}
 
 <section class="py-4 bg-light1">
   <div class="container-fluid mt-3">
@@ -343,13 +348,17 @@
         </div>
       </div>
 
-        {% include 'common_pages/pricing_sum_below.html' %}
+      {% if non_packed_products %}
+      {% include 'common_pages/product_lower.html' %}
+{% else %}
+{% include 'common_pages/pricing_sum_below.html' %}
+{% endif %}
 
     </div>
   </div>
 </section>
 
-{% include 'common_pages/fssai.html'%}
+{% include 'common_pages/product.html'%}
 
 <section class="checklist py-5">
   <div class="container">

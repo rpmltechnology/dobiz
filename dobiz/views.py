@@ -20,16 +20,15 @@ from django.contrib.auth import update_session_auth_hash
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import *
-from datetime import datetime
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from django.db.models import Sum
-from datetime import date
 from django.db.models import Sum
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from datetime import date, datetime
+from datetime import date, datetime,timedelta
+import datetime
 
 from .models import Product, Order, Coupan
 #integration with razarpay
@@ -57,9 +56,10 @@ def home(request):
 #View Product
 
 def viewproduct(request, **kwargs):
+    allpage = Page.objects.all()
     id = kwargs.get('id')
     products = get_object_or_404(Product, id=id)
-    context = {'products': products}
+    context = {'products': products,'allpage':allpage}
     user_id = kwargs.get('user_id')
     if user_id is not None:
         context['user_id'] = user_id
@@ -83,7 +83,8 @@ def commonPages(request):
             
             raise Http404('Invalid page')
 
-        products = Product.objects.filter(page=page)
+        packed_products = Product.objects.filter(page=page, is_package=True)
+        non_packed_products = Product.objects.filter(page=page, is_package=False)
         meaning = Meaning.objects.filter(page=page).first()
         minimum = MinimumRequirement.objects.filter(page=page).last()
         benefit = Benefits.objects.filter(page=page).first()
@@ -97,6 +98,15 @@ def commonPages(request):
         form = ContactUser()
         banner = Banner.objects.get(category='CommonBanner')
         price = PricingSum.objects.get(category='Common Price')
+        non_packed_product_url = None
+        if non_packed_products.exists():
+            non_packed_product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': non_packed_products[0].id}))
+        #Getting diffn betn prices
+        diffn = None
+        diffn_percentage = None
+        for p in non_packed_products:
+            diffn = int(p.market_price) - p.Dobiz_India_Filings
+            diffn_percentage = round((diffn / int(p.market_price)) * 100, 2)
         if request.method == 'POST':
             form = ContactUser(request.POST)
             if form.is_valid():
@@ -106,13 +116,10 @@ def commonPages(request):
             else:
                 errors = form.errors.as_json()
                 return JsonResponse({'errors': errors}, status=400)
-    # Get the URL of the first product in the list
-        product_url = None
-        if products.exists():
-            product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
-        context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
+    
+        context = {'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
                 'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-                'step':step,'faq':faq,'closure':closure,"page":page,"allpage":allpage,'product_url':product_url}
+                'step':step,'faq':faq,'closure':closure,"page":page,"allpage":allpage,'non_packed_products': non_packed_products, 'packed_products': packed_products,'non_packed_product_url':non_packed_product_url,'diffn':diffn,'diffn_percentage':diffn_percentage}
         return render(request, f'common.html', context)
     else:
         return HttPResponse("Invailid Request")
@@ -153,6 +160,14 @@ def mostpopular_page(request, page):
     non_packed_product_url = None
     if non_packed_products.exists():
         non_packed_product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': non_packed_products[0].id}))
+    #Getting diffn betn prices and estimated delivery date
+    diffn = None
+    diffn_percentage = None
+    for p in non_packed_products:
+        diffn = int(p.market_price) - p.Dobiz_India_Filings
+        diffn_percentage = round((diffn / int(p.market_price)) * 100, 2)
+        if p.estimated_delivery_days is not None:
+            p.estimated_delivery_date = date.today() + timedelta(days=p.estimated_delivery_days)
     if request.method == 'POST':
         form = ContactUser(request.POST)
         if form.is_valid():
@@ -165,7 +180,7 @@ def mostpopular_page(request, page):
 
     context = { 'non_packed_products': non_packed_products, 'packed_products': packed_products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'non_packed_product_url':non_packed_product_url}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'non_packed_product_url':non_packed_product_url,'diffn':diffn,'diffn_percentage':diffn_percentage}
     return render(request, f'mostpopular/{page}.html', context)
 
 ###################MOSTPOPULAR API##################
@@ -274,6 +289,12 @@ def specialbussiness_page(request, page):
     non_packed_product_url = None
     if non_packed_products.exists():
         non_packed_product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': non_packed_products[0].id}))
+    #Getting diffn betn prices
+    diffn = None
+    diffn_percentage = None
+    for p in non_packed_products:
+        diffn = int(p.market_price) - p.Dobiz_India_Filings
+        diffn_percentage = round((diffn / int(p.market_price)) * 100, 2)
     if request.method == 'POST':
         form = ContactUser(request.POST)
         if form.is_valid():
@@ -286,7 +307,7 @@ def specialbussiness_page(request, page):
 
     context = { 'non_packed_products': non_packed_products, 'packed_products': packed_products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
             'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'non_packed_product_url':non_packed_product_url}
+            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'non_packed_product_url':non_packed_product_url,'diffn':diffn,'diffn_percentage':diffn_percentage}
     return render(request, f'specialbussiness/{page}.html', context)
 
 ###################SPECIAL BUSSINESS API ##################
@@ -2272,7 +2293,7 @@ def checkout(request):
             order.sell_price = final_price
             if offer:
                 order.coupan = offer
-            order.buy_time = datetime.now()
+            order.buy_time = datetime.datetime.now()
             order.save()
             item.delete()
         return redirect("/ordersucess")
@@ -2402,7 +2423,7 @@ def addToCart(request):
             "name": user.name,
             "email": user.email,
             "remarks": "",
-            "buy_time": datetime.now(),
+            "buy_time": datetime.datetime.now(),
             "quantity": 1,  # Set default quantity to 1
         }
     )
