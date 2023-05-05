@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 body{
-    zoom: normal;
+    zoom: 100%;
 }
 *{
 	padding: 0;
@@ -52,7 +52,7 @@ button a:hover{
 .content {
 /*  margin-left: 286px;*/
 /*  padding: 1px 16px;*/
-  height: 791px;
+  height: 536px;
   overflow-y: scroll;
 }
 .content-2s{
@@ -738,7 +738,7 @@ ul {
     background-image: url(../images/bg.jpg);
 }
 .top-bn5 {
-    background-image: url(../images/hire.jpg);
+    background: #d6d6d6;
 }
 .top-bn2 {
     background-image: url(../images/bn2.jpg);
@@ -991,17 +991,17 @@ button {
     font-size: 4em;
     font-weight: bold;
 }
-.hire_text span{
-    color: #ff5868;
+.hire_text span {
+    color: #8338eb;
 }
 .career {
     background: #dadada;
     padding: 9px;
 }
-.career span{
-    background: #4ec7f4;
+.career span {
+    background: #8139e5;
     padding: 9px;
-    margin-left: 86px;
+    margin-left: 58%;
     color: #fff;
 }
 .posts{
@@ -1016,7 +1016,7 @@ button {
     color: #fff;
 }
 .offer {
-    font-size: 106px;
+    font-size: 76px;
 }
 .btn-flex{
     display: flex;
@@ -1366,4 +1366,30 @@ line-height: 41px;
     }
 .table>:not(caption)>*>* {
     padding: 0.2rem 0.5rem !important;
+}
+.btn-group .dropdown-menu {
+    margin-top: 47px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border: 1px solid #d1d1d1 !important;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: -7rem;
+    line-height: 46px;
+}
+.dft_blue{
+    color: #3a86fe;
+}
+.new_customer {
+    width: 19em;
+}
+.dropdown-item i{
+    color: #0d6efd;
+    margin-right: 16px;
+}
+.hire_btn .btn-primary {
+    color: #fff;
+    background-color: #8339e9 !important;
+    border-color: #8338eb !important;
 }
