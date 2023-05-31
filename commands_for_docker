@@ -1,0 +1,4 @@
+docker-compose build #to build an image
+docker-compose run --rm app django-admin startproject projectname (app: is something u have given in image of docker-compose.yml
+opted this command if project is already created)
+docker-compose up (to start the server)

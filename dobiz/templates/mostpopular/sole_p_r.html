@@ -6,7 +6,7 @@
 
 
 {% if non_packed_products %}
-      {% include 'common_pages/product_upper.html' %}
+{% include 'common_pages/product_upper.html' %}
 {% else %}
 {% include 'common_pages/banner.html' %}
 {% endif %}
@@ -19,7 +19,7 @@
         <ul class="nav nav-pills" role="tablist">
           {% if meaning %}
           <li class="nav-item">
-            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Basic overview</a>
           </li>
           {% endif %}
           {% if minimum %}
@@ -34,7 +34,7 @@
           {% endif %}
           {% if document %}
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+            <a class="nav-link" data-bs-toggle="pill" href="#required">List of Documents</a>
           </li>
           {% endif %}
           {% if incorporation %}
@@ -63,26 +63,55 @@
         <div class="tab-content">
 
           <div id="meaning" class="container tab-pane content active"><br>
+            {% if meaning.heading_text %}
             <h2>{{meaning.heading_text}}</h2>
+            {% endif %}
+            {% if meaning.text %}
             <p>{{ meaning.text }}
             </p>
-            <h4> {{meaning.heading_text2}} </h4>
-            <p> {{ meaning.text2 }}</p>
+            {% endif %}
+            {% if meaning.heading_text2 %}
+            <h4>{{meaning.heading_text2}}</h4>
+            {% endif %}
+            {% if meaning.text2 %}
+            <p>{{ meaning.text2 }}
+            </p>
+            {% endif %}
+            {% if meaning.text3 %}
+            <p>{{ meaning.text3 }}
+            </p>
+            {% endif %}
 
-            <p class="b-style text-style"> {{ meaning.text3 }}</p>
 
-
-            <h4 class="py-4 text-primary">{{meaning.heading_text3}} </h4>
+            {% if meaning.heading_text3 %}
+            <h4>{{meaning.heading_text3}}</h4>
+            {% endif %}
             <div class="about-text-style">
               <ul>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list1}}  </li>
+                {% if meaning.list1 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list1}} </li>
+                {% endif %}
+                {% if meaning.list2 %}
                 <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list2}} </li>
+                {% endif %}
+                {% if meaning.list3 %}
                 <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list3}} </li>
+                {% endif %}
+                {% if meaning.list4 %}
                 <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list4}} </li>
+                {% endif %}
+                {% if meaning.list5 %}
                 <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list5}} </li>
+                {% endif %}
+                {% if meaning.list6 %}
                 <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list6}} </li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list7}}</li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list8}}</li>
+                {% endif %}
+                {% if meaning.list7 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list7}} </li>
+                {% endif %}
+                {% if meaning.list8 %}
+                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{meaning.list8}} </li>
+                {% endif %}
               </ul>
             </div>
           </div>
@@ -90,70 +119,89 @@
           <div id="requirement" class="container tab-pane fade"><br>
             <div class="row">
               <div class="col-md-10 col-12">
+                {% if minimum.heading_text %}
                 <h2 class="py-4">{{minimum.heading_text}}</h2>
+                {% endif %}
+                {% if minimum.text %}
                 <p>{{minimum.text}}</p>
+                {% endif %}
               </div>
-
-            </div>
-          </div>
-
-          <div id="benefit" class="container tab-pane fade"><br>
-            <div class="about-text-style">
-              <ul>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{benefit.list1}} </li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{benefit.list2}} </li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{benefit.list3}} </li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{benefit.list4}} </li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{benefit.list5}}</li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{benefit.list6}}</li>
-                <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{benefit.list7}}</li>
-              </ul>
-            </div>
-          </div>
-
-          <div id="process" class="container tab-pane fade"><br>
-            <div class="row text-center btm_grd_banner">
-              <div class="col-md-12 col-12">
-                <div class="py-2 text-white heading2">
-                  <h2 class="py-2">{{document.heading_text}}</h2>
-                  <p class="fs-6 pt-2">{{document.text}}</p>
-                </div>
+              <div class="about-text-style">
+                <ul>
+                  {% if minimum.list1 %}
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{ minimum.list1 }} </li>
+                  {% endif %}
+                  {% if minimum.list2 %}
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{ minimum.list2 }} </li>
+                  {% endif %}
+                  {% if minimum.list3 %}
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list3}} </li>
+                  {% endif %}
+                  {% if minimum.list4 %}
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list4}} </li>
+                  {% endif %}
+                  {% if minimum.list5 %}
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list5}} </li>
+                  {% endif %}
+                  {% if minimum.list6 %}
+                  <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{minimum.list6}} </li>
+                  {% endif %}
+                </ul>
               </div>
             </div>
-
           </div>
 
           <div id="required" class="container tab-pane fade"><br>
             <div class="row">
               <div class="col-md-12 col-12 heading">
-                <h2 class="py-4">{{ incorporation.heading_text}}</h2>
-                <p>{{ incorporation.text }}</p>
+                {% if document.heading_text %}
+                <h2 class="py-2">{{document.heading_text}}</h2>
+                {% endif %}
+                {% if document.text %}
+                <p class="fs-6 pt-2">{{document.text}}</p>
+                {% endif %}
               </div>
             </div>
             <div class="row table-responsive-sm">
               <div class="col-md-6 col-12 p-2">
                 <table class="table">
                   <tbody>
+                    {% if document.list1 %}
                     <tr class="table-dark">
-                      <td>{{ incorporation.list1}}</td>
+
+                      <td>{{document.list1}}</td>
                     </tr>
+                    {% endif %}
+                    {% if document.list2 %}
                     <tr class="table-primary">
-                      <td>{{ incorporation.list2}}</td>
+                      <td>{{document.list2 }}</td>
                     </tr>
-
+                    {% endif %}
+                    {% if document.list3 %}
                     <tr class="table-info">
-                      <td>{{ incorporation.list3}}</td>
+                      <td>{{document.list3}}</td>
                     </tr>
+                    {% endif %}
+                    {% if document.list4 %}
                     <tr class="table-warning">
-                      <td>{{ incorporation.list4}}</td>
+                      <td>{{document.list4}}</td>
                     </tr>
-
+                    {% endif %}
+                    {% if document.list5 %}
                     <tr class="table-light">
-                      <td> {{ incorporation.list5}} </td>
+                      <td>{{document.list5}}</td>
                     </tr>
+                    {% endif %}
+                    {% if document.list6 %}
+                    <tr class="table-primary">
+                      <td>{{document.list6}}</td>
+                    </tr>
+                    {% endif %}
+                    {% if document.list7 %}
                     <tr class="table-info">
-                      <td> {{ incorporation.text2}} </td>
+                      <td>{{document.list7}}</td>
                     </tr>
+                    {% endif %}
                   </tbody>
                 </table>
               </div>
@@ -161,60 +209,42 @@
               <div class="col-md-6 col-12 p-2">
                 <table class="table">
                   <tbody>
+                    {% if document.list8 %}
                     <tr class="table-dark">
-                      <td>{{ incorporation.list6}}</td>
+
+                      <td>{{document.list8}}</td>
                     </tr>
+                    {% endif %}
+                    {% if document.list9 %}
                     <tr class="table-primary">
-                      <td>{{ incorporation.list7}}</td>
+                      <td>{{document.list9 }}</td>
                     </tr>
-
+                    {% endif %}
+                    {% if document.list10 %}
                     <tr class="table-info">
-                      <td>{{ incorporation.list8}}</td>
+                      <td>{{document.list10}}</td>
                     </tr>
+                    {% endif %}
+                    {% if document.list11 %}
                     <tr class="table-warning">
-                      <td>{{ incorporation.text3}}</td>
+                      <td>{{document.list11}}</td>
                     </tr>
-
-                    <tr class="table-light">
-                      <td>{{ incorporation.list9}}</td>
-                    </tr>
-
-                    <tr class="table-info">
-                      <td>{{ incorporation.list10}}</td>
-                    </tr>
-
+                    {% endif %}
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
 
-          <div id="compliance" class="container tab-pane fade"><br>
-            <div class="row">
-
-              <div class="col-md-10 col-12 mx-auto heading2">
-                <h2 class="text-center">{{compliance.heading_text}} <span class="text-primary">{{compliance.heading_text2}}</span></h2>
-                <p>{{compliance.text}}</p>
-              </div>
-            </div>
-          </div>
-
-          <div id="closure" class="container tab-pane fade"><br>
-            <h2> closure </h2>
-          </div>
-
-          <div id="faq" class="container tab-pane fade"><br>
-            <h2>Faq</h2>
-          </div>
 
         </div>
       </div>
 
       {% if non_packed_products %}
       {% include 'common_pages/product_lower.html' %}
-{% else %}
-{% include 'common_pages/pricing_sum_below.html' %}
-{% endif %}
+      {% else %}
+      {% include 'common_pages/pricing_sum_below.html' %}
+      {% endif %}
     </div>
   </div>
 </section>
@@ -224,6 +254,7 @@
 <section class="checklist py-5">
   <div class="container">
     <h2> {{step.heading_text}} </h2>
+    <h4> {{step.heading_text2}} </h4>
     <div class="row py-4">
 
       <div class="col-md-12 col-12">
