@@ -52,6 +52,11 @@
             <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
           </li>
           {% endif %}
+          {% if step %}
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#step">Registration Process </a>
+          </li>
+          {% endif %}
           {% if faq %}
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
@@ -235,7 +240,46 @@
               </div>
             </div>
           </div>
+          <div id="step" class="container tab-pane content fade"><br>
+            <h2> {{step.heading_text}} </h2>
+            <div class="row py-4 checklist prs_in_steps">
+              <div class="col-md-12 col-12">
+                <div class="shadow p-4">
+                  <h5 class="text-primary"> {{step.step1}} </h5>
+                  <p> {{step.answer1}} </p>
+                </div>
+              </div>
 
+              <div class="col-md-12 col-12">
+                <div class="shadow p-4">
+                  <h5 class="text-primary"> {{step.step2}} </h5>
+                  <p> {{step.answer2}} </p>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-12">
+                <div class="shadow p-4">
+                  <h5 class="text-primary"> {{step.step3}}</h5>
+                  <p> {{step.answer3}} </p>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-12">
+                <div class="shadow p-4">
+                  <h5 class="text-primary"> {{step.step4}} </h5>
+                  <p> {{step.answer4}}</p>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-12">
+                <div class="shadow p-4">
+                  <h5 class="text-primary"> {{step.step5}} </h5>
+                  <p>{{step.answer5}}</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
 
         </div>
       </div>
@@ -251,50 +295,5 @@
 
 {% include 'common_pages/product.html'%}
 
-<section class="checklist py-5">
-  <div class="container">
-    <h2> {{step.heading_text}} </h2>
-    <h4> {{step.heading_text2}} </h4>
-    <div class="row py-4">
-
-      <div class="col-md-12 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> {{step.step1}} </h5>
-          <p> {{step.answer1}} </p>
-        </div>
-      </div>
-
-      <div class="col-md-12 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> {{step.step2}} </h5>
-          <p> {{step.answer2}} </p>
-        </div>
-      </div>
-
-      <div class="col-md-12 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> {{step.step3}}</h5>
-          <p> {{step.answer3}} </p>
-        </div>
-      </div>
-
-      <div class="col-md-12 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> {{step.step4}} </h5>
-          <p> {{step.answer4}}</p>
-        </div>
-      </div>
-
-      <div class="col-md-12 col-12">
-        <div class="shadow p-4">
-          <h5 class="text-primary"> {{step.step5}} </h5>
-          <p>{{step.answer5}}</p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
 {% include 'common_pages/reviews.html' %}
 {% endblock %}

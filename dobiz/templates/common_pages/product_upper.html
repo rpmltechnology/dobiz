@@ -14,7 +14,36 @@
                 <h4 class="fs-2"> {{i.product_name}} </h4>
                 <p><span class="bg-primary p-1 text-white"> {{ banner.review_rating }} </span> <a
                         class="text-decoration-none" href="#"> &nbsp; {{banner.review}} </a> </p>
-                <p class="fs-5"> {{i.desc| slice:"0:60"}} </p>
+                <p class="fs-5"> {{i.desc}} 
+                </p>
+                {% if i.package_type %}
+                <p> Package name:<strong> {{ i.package_type }}
+                    <ul>
+                        {% if i.package_list1 %}
+                        <li>{{ i.package_list1 }}</li>
+                        {% endif %}
+                        {% if i.package_list2 %}
+                        <li>{{ i.package_list2 }}</li>
+                        {% endif %}
+                        {% if i.package_list3 %}
+                        <li>{{ i.package_list3 }}</li>
+                        {% endif %}
+                        {% if i.package_list4 %}
+                        <li>{{ i.package_list4 }}</li>
+                        {% endif %}
+                        {% if i.package_list5 %}
+                        <li>{{ i.package_list5 }}</li>
+                        {% endif %}
+                        {% if i.package_list6 %}
+                        <li>{{ i.package_list6 }}</li>
+                        {% endif %}
+                        {% if i.package_list7 %}
+                        <li>{{ i.package_list7 }}</li>
+                        {% endif %}
+                    </strong>
+                    </ul>
+                </p>
+                {% endif %}
                 {% if i.estimated_delivery_date %}
                 <p class="fs-5"><a href="#" class="text-decoration-none text-dark">Estimated Delivery - {{ i.estimated_delivery_date }}</a></p>
                 {% endif %}

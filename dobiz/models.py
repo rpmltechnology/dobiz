@@ -88,7 +88,15 @@ class Product(models.Model):
     estimated_delivery_days = models.PositiveIntegerField(null=True, blank=True)
     pub_date = models.DateField(null=True, blank=False)
     img1 = models.ImageField(null=True, blank=True, default='/common_img.png')
-    is_package = models.BooleanField(null=True, blank=True) 
+    is_package = models.BooleanField(null=True, blank=True)
+    package_type = models.CharField(max_length=50,null=True, blank=True) 
+    package_list1 = models.CharField(max_length=50,null=True, blank=True) 
+    package_list2 = models.CharField(max_length=50,null=True, blank=True) 
+    package_list3 = models.CharField(max_length=50,null=True, blank=True) 
+    package_list4 = models.CharField(max_length=50,null=True, blank=True) 
+    package_list5 = models.CharField(max_length=50,null=True, blank=True) 
+    package_list6 = models.CharField(max_length=50,null=True, blank=True) 
+    package_list7 = models.CharField(max_length=50,null=True, blank=True) 
     @property
     def estimated_delivery_date(self):
         if self.estimated_delivery_days:
