@@ -132,7 +132,7 @@ def mostpopular_page(request, page):
         'sole_p_r': 'Sole Proprietorship Registration',
         'partnership_f_r': 'Partnership firm Registration',
         'one_p_c_r': 'One person Company Registration',
-        'startup_i_r_dpiit': 'Startup India registration DPIIT',
+        'llpregistration': 'llpregistration',
         'company_r': 'Company Registration',
         'iip_r_i': 'IIP Registration in India'
     }

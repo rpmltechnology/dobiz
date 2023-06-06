@@ -1393,3 +1393,17 @@ line-height: 41px;
     background-color: #8339e9 !important;
     border-color: #8338eb !important;
 }
+.prs_in_steps h5{
+    font-size: 18px;
+    line-height: 26px;
+}
+.prs_in_steps p{
+    font-size: 15px;
+    line-height: 26px;
+}
+.content {
+    /*  margin-left: 286px;*/
+    /*  padding: 1px 16px;*/
+      height: 691px;
+      overflow-y: scroll;
+    }

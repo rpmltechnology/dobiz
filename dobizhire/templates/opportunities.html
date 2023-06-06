@@ -93,7 +93,12 @@
 
 <script>
   function showAlert() {
-  alert("Your application has been submitted. We will get back to you shortly.");
+    Swal.fire({
+      title: "Success!",
+      text: "Your application has been submitted. We will get back to you shortly.",
+      icon: "success",
+      confirmButtonText: "OK"
+    });
   }
 </script>
 {% endblock %}

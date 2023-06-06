@@ -97,6 +97,9 @@ class Product(models.Model):
     package_list5 = models.CharField(max_length=50,null=True, blank=True) 
     package_list6 = models.CharField(max_length=50,null=True, blank=True) 
     package_list7 = models.CharField(max_length=50,null=True, blank=True) 
+    package_list8 = models.CharField(max_length=50,null=True, blank=True) 
+    package_list9 = models.CharField(max_length=50,null=True, blank=True) 
+    package_list10 = models.CharField(max_length=50,null=True, blank=True) 
     @property
     def estimated_delivery_date(self):
         if self.estimated_delivery_days:
@@ -425,6 +428,31 @@ class Compliance(models.Model):
     list23 = models.CharField(max_length=200,blank=True,null=True)
     list24 = models.CharField(max_length=200,blank=True,null=True)
     list25 = models.CharField(max_length=200,blank=True,null=True)
+    list26 = models.CharField(max_length=200,blank=True,null=True)
+    list27 = models.CharField(max_length=200,blank=True,null=True)
+    list28 = models.CharField(max_length=200,blank=True,null=True)
+    list29 = models.CharField(max_length=200,blank=True,null=True)
+    list30 = models.CharField(max_length=200,blank=True,null=True)
+    list31 = models.CharField(max_length=200,blank=True,null=True)
+    list32 = models.CharField(max_length=200,blank=True,null=True)
+    list33 = models.CharField(max_length=200,blank=True,null=True)
+    list34 = models.CharField(max_length=200,blank=True,null=True)
+    list35 = models.CharField(max_length=200,blank=True,null=True)
+    list36 = models.CharField(max_length=200,blank=True,null=True)
+    list37 = models.CharField(max_length=200,blank=True,null=True)
+    list38 = models.CharField(max_length=200,blank=True,null=True)
+    list39 = models.CharField(max_length=200,blank=True,null=True)
+    list40 = models.CharField(max_length=200,blank=True,null=True)
+    list41 = models.CharField(max_length=200,blank=True,null=True)
+    list42 = models.CharField(max_length=200,blank=True,null=True)
+    list43 = models.CharField(max_length=200,blank=True,null=True)
+    list44 = models.CharField(max_length=200,blank=True,null=True)
+    list45 = models.CharField(max_length=200,blank=True,null=True)
+    list46 = models.CharField(max_length=200,blank=True,null=True)
+    list47 = models.CharField(max_length=200,blank=True,null=True)
+    list48 = models.CharField(max_length=200,blank=True,null=True)
+    list49 = models.CharField(max_length=200,blank=True,null=True)
+    list50 = models.CharField(max_length=200,blank=True,null=True)
     def __str__(self):
         return self.category
 
