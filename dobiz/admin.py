@@ -22,7 +22,7 @@ class CoupanSort(ImportExportModelAdmin):
 admin.site.register(Coupan,CoupanSort)
 
 class ProductSort(ImportExportModelAdmin):
-    list_display = ('category','product_name','is_package','market_price','Dobiz_India_Filings','gst_percent','gst','other_cost','price')
+    list_display = ('category','subcategory','product_name','is_package','market_price','Dobiz_India_Filings','gst_percent','gst','other_cost','price')
     list_filter = ('category',)
     ordering=["product_name"]
 admin.site.register(Product,ProductSort)

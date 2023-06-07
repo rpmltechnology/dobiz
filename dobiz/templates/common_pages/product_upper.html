@@ -14,7 +14,7 @@
                 <h4 class="fs-2"> {{i.product_name}} </h4>
                 <p><span class="bg-primary p-1 text-white"> {{ banner.review_rating }} </span> <a
                         class="text-decoration-none" href="#"> &nbsp; {{banner.review}} </a> </p>
-                <p class="fs-5"> {{i.desc}} 
+                <p class="fs-5"> {{i.desc|slice:":71"}} 
                 </p>
                 {% if i.package_type %}
                 <p> Package name:<strong> {{ i.package_type }}

@@ -22,15 +22,15 @@
                   <div class="col-megamenu">
                     <h6 class="title">For Indian Owners</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{% url 'mostpopular' page='types_of_business' %}">Types of Business</a></li>
                       <li><a href="{% url 'mostpopular' page='sole_p_r' %}">Proprietorship Frim</a></li>
                       <li><a href="{% url 'mostpopular' page='partnership_f_r' %}">Partnership Firm Registration</a>
                       </li>
                       <li><a href="{% url 'mostpopular' page='one_p_c_r' %}">One Person Company </a></li>
                       <li><a href="{% url 'mostpopular' page='llpregistration' %}">LLP Registration
                       </a></li>
-                      <li><a href="{% url 'mostpopular' page='company_r' %}">Company Registration </a></li>
-                      <li><a href="{% url 'mostpopular' page='iip_r_i' %}">IIP Registration in India </a></li>
+                      <li><a href="{% url 'mostpopular' page='pvc' %}">Private Limited Company </a></li>
+                      <li><a href="{% url 'mostpopular' page='dsc' %}">Digital Signature Certificate </a></li>
+                      <li><a href="{% url 'mostpopular' page='rcn' %}">Reserve Company Name</a></li>
                       {% for i in allpage %}
                       {% if i.section == "MOST POPULAR" %}
                       <li><a href="/commonPages?pagename={{i.pagename}}">{{i.pagename}} </a></li>

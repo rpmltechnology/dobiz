@@ -128,13 +128,13 @@ def commonPages(request):
 def mostpopular_page(request, page):
     allpage = Page.objects.all()
     page_dict = {
-        'types_of_business': 'Types of Business',
         'sole_p_r': 'Sole Proprietorship Registration',
         'partnership_f_r': 'Partnership firm Registration',
         'one_p_c_r': 'One person Company Registration',
         'llpregistration': 'llpregistration',
-        'company_r': 'Company Registration',
-        'iip_r_i': 'IIP Registration in India'
+        'pvc': 'Private Limited Company',
+        'dsc': 'Digital Signature Certificate',
+        'rcn': 'Reserve Company Name',
     }
     if page not in page_dict:
         raise Http404('Invalid page')
