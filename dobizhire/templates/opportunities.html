@@ -91,14 +91,25 @@
       </div>
     </section>
 
-<script>
-  function showAlert() {
-    Swal.fire({
-      title: "Success!",
-      text: "Your application has been submitted. We will get back to you shortly.",
-      icon: "success",
-      confirmButtonText: "OK"
-    });
-  }
-</script>
+    <script>
+      {% if messages %}
+        {% for message in messages %}
+          swal.fire({
+            title: "{{ message.tags }}",
+            text: "{{ message }}",
+            icon: "{{ message.tags }}",
+            button: "OK",
+          });
+        {% endfor %}
+      {% endif %}
+    
+      {% if form.is_bound and form.errors %}
+        swal({
+          title: "error",
+          text: "Something went wrong",
+          icon: "error",
+          button: "OK",
+        });
+      {% endif %}
+    </script>
 {% endblock %}

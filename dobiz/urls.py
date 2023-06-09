@@ -10,7 +10,10 @@ urlpatterns = [
 url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 #cookie
-path('cookie',views.cookie,name='cookie'),
+path('privacy-policy',views.privacy,name='privacy-policy'),
+path('cancellation-policy',views.cancellation,name='cancellation-policy'),
+path('refund-policy',views.refund,name='refund-policy'),
+path('terms-and-conditions',views.terms,name='terms-and-conditions'),
 
 path('', views.home, name='home'),
 #order now url
@@ -49,7 +52,7 @@ path('commonPages', views.commonPages, name='commonPages'),
 
 #MOST POPULAR URL
 path('mostpopular_api/<str:page>/', views.mostpopular_api, name='mostpopular_api'),
-path('mostpopular/<str:page>/', views.mostpopular_page, name='mostpopular'),
+path('indian-owners/<str:page>/', views.mostpopular_page, name='indian-owners'),
 
 
 

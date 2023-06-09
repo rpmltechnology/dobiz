@@ -31,9 +31,10 @@ def opportunities(request, id):
             job_application.files.name = job_application.fname + os.path.splitext(job_application.files.name)[1]
             job_application.save()
             messages.success(request, 'Your message has been sent successfully!')
-            return redirect('home')
+            # return redirect('home')
+        else:
+            messages.error(request, 'Something went wrong')
     else:
         form = JobApplication()
-        messages.error(request, 'Something went wrong')
 
     return render(request, 'opportunities.html', {'post': post, 'form': form})

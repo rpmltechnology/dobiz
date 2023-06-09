@@ -128,13 +128,13 @@ def commonPages(request):
 def mostpopular_page(request, page):
     allpage = Page.objects.all()
     page_dict = {
-        'sole_p_r': 'Sole Proprietorship Registration',
-        'partnership_f_r': 'Partnership firm Registration',
-        'one_p_c_r': 'One person Company Registration',
+        'proprietorship-frim': 'Sole Proprietorship Registration',
+        'partnership-firm-registration': 'Partnership firm Registration',
+        'one-person-company': 'One person Company Registration',
         'llpregistration': 'llpregistration',
-        'pvc': 'Private Limited Company',
-        'dsc': 'Digital Signature Certificate',
-        'rcn': 'Reserve Company Name',
+        'private-limited-company': 'Private Limited Company',
+        'digital-signature-certificate': 'Digital Signature Certificate',
+        'reserve-company-name': 'Reserve Company Name',
     }
     if page not in page_dict:
         raise Http404('Invalid page')
@@ -2598,5 +2598,14 @@ def delete_item(request, item_id):
     item.delete()
     return redirect('card')
 
-def cookie(request):
-    return render(request, 'cookie.html')
+def privacy(request):
+    return render(request, 'policy/privacy-policy.html')
+
+def cancellation(request):
+    return render(request, 'policy/cancellation-policy.html')
+
+def refund(request):
+    return render(request, 'policy/refund-policy.html')
+
+def terms(request):
+    return render(request, 'policy/terms-conditions.html')
