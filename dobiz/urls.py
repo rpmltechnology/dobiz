@@ -65,6 +65,10 @@ path('ngo/<str:page>/', views.ngo_page, name='ngo'),
 path('ngo_api/<str:page>/', views.ngo_api, name='ngo_api'),
 
 
+#Startup Services URL
+path('start-up-services/<str:page>/', views.startup, name='start-up-services'),
+path('ngo_api/<str:page>/', views.ngo_api, name='ngo_api'),
+
 # DO BUSINESS IN INDIA URL
 path('do_bussiness/<str:page>/', views.do_bussiness, name='do_bussiness'),
 path('do_bussiness_api/<str:page>/', views.do_bussiness_api, name='do_bussiness_api'),
