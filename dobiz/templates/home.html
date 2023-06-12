@@ -34,7 +34,7 @@
         <p> Dobizindia Business Solutions offers a complete range of IPR, tax, and compliance solutions to companies in
           India. Through a team consisting of CAs, CSs, and lawyers, backed by a pool of skilled paralegals,
           accountants, and other professionals. </p>
-        <button type="button" class="btn btn-lg btn-primary mt-4 py-2 px-4">Book Free Consultation</button>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-lg btn-primary mt-4 py-2 px-4">Book Free Consultation</button>
       </div>
     </div>
   </div>
@@ -413,6 +413,39 @@
     </div>
   </div>
 </section>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Book Free Consultation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-sm-12">
+            <input type="text" class="form-control border" placeholder="Name" aria-label="City">
+          </div>
+          <div class="col-sm-12">
+            <input type="email" class="form-control border" placeholder="Email" aria-label="State">
+          </div>
+          <div class="col-sm-12">
+            <input type="number" class="form-control border" placeholder="Mobile No." aria-label="Zip">
+          </div>
+        </div>
+
+        <div class="mb-3 py-2">
+        <textarea class="form-control border" placeholder="Write us here" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% include 'common_pages/reviews.html' %}
 {% endblock %}
 <script>

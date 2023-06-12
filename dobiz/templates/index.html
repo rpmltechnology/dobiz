@@ -189,7 +189,32 @@
   </script>
 
   <!-- /////////////our aos data/////////// -->
+  <script>
+    $('body').bind('copy paste',function(e) {
+    e.preventDefault(); return false; 
+    });
+  </script>
+  {% comment %} <script>
+    $(document).ready(function() {
+    document.onkeydown = function(e){
+        if (e.ctrlKey &&
+            (e.keyCode === 67 ||
+                e.keyCode === 86 ||
+                e.keyCode === 85 ||
+                e.keyCode === 117)) {
+            return false;
+        } else {
+            return true;
+        }
+    };
+});
 
+  </script>
+  <script>
+  document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+}); {% endcomment %}
+  </script>
 </body>
 
 </html>
