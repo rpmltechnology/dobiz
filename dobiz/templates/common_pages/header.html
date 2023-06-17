@@ -135,8 +135,11 @@
 
                 <div class="col-lg-4 col-12">
                   <div class="col-megamenu">
-                    <h6 class="title">RBI LICENSES</h6>
+                    <h6 class="title">FOREIGN OWNERS</h6>
                     <ul class="list-unstyled">
+                        <li><a href="{%url 'foreignowner:foreign-owners' page='liaison-office-registration'%}">Liaison Office Registration </a></li>
+                        <li><a href="{%url 'foreignowner:foreign-owners' page='foreignowner:branch-office-registration'%}">Branch Office Registration </a></li>
+                        <li><a href="{% url 'foreignowner:foreign-owners' page='foreignowner:project-office-registration' %}">Project Office Registration </a></li>
                     {% for i in allpage %}
                     {% if i.section == "RBI LICENSES" %}
                     <li><a href="/commonPages?pagename={{i.pagename}}">{{i.pagename}} </a></li>

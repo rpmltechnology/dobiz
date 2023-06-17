@@ -45,13 +45,12 @@ INSTALLED_APPS = [
     'django_countries',
     'import_export',
     'django_social_share',
-    # 'haystack',
-    # 'django_comments_xtd',
-    # 'django_comments',
     'crispy_forms',
     'django.contrib.sites',
     'django.contrib.humanize',
     'django_simple_cookie_consent',
+    'foreignowner',
+    
     
 ]
 SITE_ID = 1

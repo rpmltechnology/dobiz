@@ -29,8 +29,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from datetime import date, datetime,timedelta
 import datetime
-
-from .models import Product, Order, Coupan
 #integration with razarpay
 import razorpay
 

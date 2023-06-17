@@ -91,25 +91,4 @@
       </div>
     </section>
 
-    <script>
-      {% if messages %}
-        {% for message in messages %}
-          swal.fire({
-            title: "{{ message.tags }}",
-            text: "{{ message }}",
-            icon: "{{ message.tags }}",
-            button: "OK",
-          });
-        {% endfor %}
-      {% endif %}
-    
-      {% if form.is_bound and form.errors %}
-        swal({
-          title: "error",
-          text: "Something went wrong",
-          icon: "error",
-          button: "OK",
-        });
-      {% endif %}
-    </script>
 {% endblock %}

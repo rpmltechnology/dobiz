@@ -10,6 +10,8 @@ from django.shortcuts import get_object_or_404
 import os
 # Create your views here.
 ##############Hiring#########################
+def thank(request):
+    return render(request,'thank-you.html')
 
 def hire(request):
     post = PostJobs.objects.all()
@@ -31,7 +33,7 @@ def opportunities(request, id):
             job_application.files.name = job_application.fname + os.path.splitext(job_application.files.name)[1]
             job_application.save()
             messages.success(request, 'Your message has been sent successfully!')
-            # return redirect('home')
+            return redirect('dobizhire:thank')
         else:
             messages.error(request, 'Something went wrong')
     else:
