@@ -52,7 +52,6 @@ path('commonPages', views.commonPages, name='commonPages'),
 
 #MOST POPULAR URL
 path('mostpopular_api/<str:page>/', views.mostpopular_api, name='mostpopular_api'),
-path('indian-owners/<str:page>/', views.mostpopular_page, name='indian-owners'),
 
 
 
@@ -66,7 +65,6 @@ path('ngo_api/<str:page>/', views.ngo_api, name='ngo_api'),
 
 
 #Startup Services URL
-path('start-up-services/<str:page>/', views.startup, name='start-up-services'),
 path('ngo_api/<str:page>/', views.ngo_api, name='ngo_api'),
 
 # DO BUSINESS IN INDIA URL

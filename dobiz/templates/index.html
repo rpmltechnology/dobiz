@@ -37,6 +37,9 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.css">
   
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
       /////// Prevent closing from click inside dropdown
@@ -48,11 +51,11 @@
     });
         // DOMContentLoaded  end
   </script>
- <style>
+  {% comment %} <style>
     #google_element a.VIpgJd-ZVi9od-l4eHX-hSRGPd,
     #google_element a.VIpgJd-ZVi9od-l4eHX-hSRGPd img {
       display: none !important;
-    }
+    } {% endcomment %}
     
   </style>
   <style type="text/css">
@@ -104,7 +107,7 @@
                     aria-hidden="true"></i> We are hiring </a> </li>
               <li> <a href="#"><i class="fa fa-phone" aria-hidden="true"></i> +91 9471807687</a> </li>
               <li> <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> dobizindia.bspl@gmail.com</a> </li>
-              <li id='google_element' style='margin-right:-105px'> </li>
+              {% comment %} <li id='google_element' style='margin-right:-105px'> </li> {% endcomment %}
             </ul>
           </div>
         </div>
@@ -123,7 +126,7 @@
 
   {% include 'common_pages/footer.html'%}
 <!-- Google Translate -->
-<script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate">
+{% comment %} <script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate">
 </script> 
 <script>
   function loadGoogleTranslate () {
@@ -131,7 +134,7 @@
     includedLanguages: 'en,hi,mr,pa',  // Specify the languages you want to include
     layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL},"google_element");
     }   
-</script>
+</script> {% endcomment %}
 
   
   <!-- <//////// Owl Crowsel /////////> -->
@@ -214,7 +217,7 @@
     e.preventDefault(); return false; 
     });
   </script>
- <script>
+  {% comment %} <script>
     $(document).ready(function() {
     document.onkeydown = function(e){
         if (e.ctrlKey &&
@@ -233,7 +236,7 @@
   <script>
   document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
-}); 
+}); {% endcomment %}
   </script>
 </body>
 

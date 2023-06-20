@@ -22,13 +22,13 @@
                   <div class="col-megamenu">
                     <h6 class="title">For Indian Owners</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{% url 'indian-owners' page='proprietorship-frim' %}">Proprietorship Frim</a></li>
-                      <li><a href="{% url 'indian-owners' page='partnership-firm-registration' %}">Partnership Firm Registration</a></li>
-                      <li><a href="{% url 'indian-owners' page='one-person-company' %}">One Person Company</a></li>
-                      <li><a href="{% url 'indian-owners' page='llpregistration' %}">LLP Registration</a></li>
-                      <li><a href="{% url 'indian-owners' page='private-limited-company' %}">Private Limited Company</a></li>
-                      <li><a href="{% url 'indian-owners' page='digital-signature-certificate' %}">Digital Signature Certificate</a></li>
-                      <li><a href="{% url 'indian-owners' page='reserve-company-name' %}">Reserve Company Name</a></li>
+                      <li><a href="{% url 'indainowner:indian-owners' 'proprietorship-frim' %}">Proprietorship Frim</a></li>
+                      <li><a href="{% url 'indainowner:indian-owners' 'partnership-firm-registration' %}">Partnership Firm Registration</a></li>
+                      <li><a href="{% url 'indainowner:indian-owners' 'one-person-company' %}">One Person Company</a></li>
+                      <li><a href="{% url 'indainowner:indian-owners' 'llpregistration' %}">LLP Registration</a></li>
+                      <li><a href="{% url 'indainowner:indian-owners' 'private-limited-company' %}">Private Limited Company</a></li>
+                      <li><a href="{% url 'indainowner:indian-owners' 'digital-signature-certificate' %}">Digital Signature Certificate</a></li>
+                      <li><a href="{% url 'indainowner:indian-owners' 'reserve-company-name' %}">Reserve Company Name</a></li>
                       {% for i in allpage %}
                       {% if i.section == "MOST POPULAR" %}
                       <li><a href="/commonPages?pagename={{i.pagename}}">{{i.pagename}}</a></li>
@@ -59,14 +59,16 @@
           
                 <div class="col-lg-3 col-12">
                   <div class="col-megamenu">
-                    <h6 class="title">NGO</h6>
+                    <h6 class="title">NGO Registration</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{%url 'ngo' page='trust_registration'%}">Trust Registration</a></li>
-                      <li><a href="{%url 'ngo' page='society_registration'%}">Society Registration</a></li>
-                      <li><a href="{%url 'ngo' page='section_8'%}">Section 8 Company Registration</a></li>
-                      <li><a href="{% url 'ngo' page='roc' %}">ROC Registrations with CSR-1</a></li>
-                      <li><a href="{%url 'ngo' page='patent'%}">Patent registration</a></li>
-                      <li><a href="{%url 'ngo' page='startup'%}">Startup Business</a></li>
+                      <li><a href="{%url 'ngo:ngo' 'section-8-company-registration'%}">Section 8 Company Registratio</a></li>
+                      <li><a href="{%url 'ngo:ngo' 'society-registration'%}">Society Registration</a></li>
+                      <li><a href="{%url 'ngo:ngo' 'trust-registration'%}">Trust Registration</a></li>
+                      <li><a href="{% url 'ngo:ngo' '80G&12a-registration' %}">80G&12A Registration</a></li>
+                      <li><a href="{%url 'ngo:ngo' '80G&12a-registration'%}">80G&12A Registration</a></li>
+                      <li><a href="{%url 'ngo:ngo' 'ngo-csr-1-filing'%}">NGO CSR - 1 Filing</a></li>
+                      <li><a href="{%url 'ngo:ngo' 'fcra-registration'%}">FCRA Registration</a></li>
+                      <li><a href="{%url 'ngo:ngo' 'niti-aayog-registration'%}">NITI Aayog Registration (Darpan)</a></li>
                       {% for i in allpage %}
                       {% if i.section == "NGO" %}
                       <li><a href="/commonPages?pagename={{i.pagename}}">{{i.pagename}}</a></li>
@@ -80,10 +82,10 @@
                   <div class="col-megamenu">
                     <h6 class="title">Other Startup Services</h6>
                     <ul class="list-unstyled">
-                      <li><a href="{%url 'start-up-services' page='typesof-Business-comparison'%}">Types Of Business-Comparison</a></li>
-                      <li><a href="{%url 'start-up-services' page='dpiit-startup-india-recognition'%}">DPIIT-Startup India Recognition</a></li>
-                      <li><a href="{%url 'start-up-services' page='dpiit-seed-fund-application'%}">DPIIT-Seed Fund Application</a></li>
-                      <li><a href="{%url 'start-up-services' page='dpiit-startup-india-examption-us-80ac'%}">DPIIT-Startup India Examption Us 80AC</a></li>
+                      <li><a href="{%url 'otherstartup:start-up-services' 'typesof-Business-comparison'%}">Types Of Business-Comparison</a></li>
+                      <li><a href="{%url 'otherstartup:start-up-services' 'dpiit-startup-india-recognition'%}">DPIIT-Startup India Recognition</a></li>
+                      <li><a href="{%url 'otherstartup:start-up-services' 'dpiit-seed-fund-application'%}">DPIIT-Seed Fund Application</a></li>
+                      <li><a href="{%url 'otherstartup:start-up-services' 'dpiit-startup-india-examption-us-80ac'%}">DPIIT-Startup India Examption Us 80AC</a></li>
                       {% for i in allpage %}
                       {% if i.section == "Other Startup Services" %}
                       <li><a href="/commonPages?pagename={{i.pagename}}">{{i.pagename}}</a></li>

@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gu(^!8gk9wlz0_lgi)5lp%a5@m%82r)0emtg7r-e_)k=qva78r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 AUTH_USER_MODEL = 'dobiz.User'
 
 ALLOWED_HOSTS = ['*']
@@ -50,7 +50,9 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django_simple_cookie_consent',
     'foreignowner',
-    
+    'ngo',
+    'indainowner',
+    'otherstartup',
     
 ]
 SITE_ID = 1
