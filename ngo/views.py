@@ -41,7 +41,6 @@ def NGO(request, page):
         'society-registration': 'Society Registration',
         'trust-registration': 'Trust Registration',
         '80G&12a-registration': '80G&12A Registration',
-        '80G&12a-registration': '80G&12A Registration',
         'ngo-csr-1-filing': 'NGO CSR - 1 Filing',
         'fcra-registration': 'FCRA Registration',
         'niti-aayog-registration': 'NITI Aayog Registration (Darpan)',
