@@ -1,7 +1,3 @@
-
-
-# Create your views here.
-from django.shortcuts import render
 from django.shortcuts import render, redirect, HttpResponse,get_object_or_404
 import requests
 from django.http import JsonResponse

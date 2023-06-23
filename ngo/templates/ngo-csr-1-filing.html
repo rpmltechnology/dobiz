@@ -1,5 +1,5 @@
 {% extends 'index.html' %}
-{%block title%}Branch Office Registration {% endblock %}
+{%block title%}NGO CSR - 1 Filing{% endblock %}
 {% load static %}
 {%load myfilters %}
 {%block body %}
@@ -25,21 +25,21 @@
           {% endif %}
           {% if minimum %}
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Conditions</a>
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Eligible</a>
           </li>
           {% endif %}
          
-          {% if document %}
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="pill" href="#required">Documents for registration</a>
-          </li>
-          {% endif %}
+          
           {% if step %}
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="pill" href="#step">Eligibility</a>
+            <a class="nav-link" data-bs-toggle="pill" href="#step">Process</a>
           </li>
           {% endif %}
-          
+          {% if document %}
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Documents</a>
+          </li>
+          {% endif %}
           {% if faq %}
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
@@ -61,36 +61,55 @@
           <div id="requirement" class="container tab-pane content fade"><br>
             <div class="row">
               <div class="col-md-12 col-12">
-                <h2 class='py-4'>{{minimum.heading_text}}</h2>
-                <h4>{{minimum.heading_text2}}</h4>
-                
-
-              </div>
-
-            </div>
-
-            <div class="row">
-              <div class="col-md-12 col-12">
-                <h2 class="py-4">{{minimum.heading_text3}} </h2>
+                <h2 class='py-4'>{{minimum.heading_text}}</h2>  
                 <p>{{minimum.text}} </p>
               </div>
+
             </div>
             <div class="row">
               <div class="col-md-12 col-12">
-                <h2 class="py-4">{{minimum.heading_text4}} </h2>
-                <p>{{minimum.text2}} </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 col-12">
-                <h2 class="py-4">{{minimum.text3}} </h2>
-                <p>{{minimum.text4}} </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 col-12">
-                <h2 class="py-4">{{minimum.text5}} </h2>
-                <p>{{minimum.text6}} </p>
+                <div class="row table-responsive-sm">
+                  <div class="col-md-12 col-12">
+                    <table class="table table-bordered table-sm">
+                      <thead>
+                        <tr>
+                          <th>{{minimum.list1}}</th>
+                          <th>{{minimum.list2}}</th>
+                         
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{{minimum.list3}} </td>
+                          <td>{{minimum.list4}}</td>
+                          
+                        </tr>
+                        <tr>
+                          <td>{{minimum.list5}}</td>
+    
+                          <td>{{minimum.list6}}</td>
+                          
+                        </tr>
+                        <tr>
+                          <td>{{minimum.list7}} </td>
+                          <td>{{minimum.list8}}</td>
+                         
+                        </tr>
+                        <tr>
+                          <td>{{minimum.list9}}</td>
+                          <td>{{minimum.list10}} </td>
+                        </tr>
+                        <tr>
+                          <td>{{minimum.list11}}</td>
+                          <td>{{minimum.list12}}</td>
+                        </tr>
+    
+                      </tbody>
+                    </table>
+                  </div>
+    
+                </div>
+             
               </div>
             </div>
 
@@ -98,90 +117,45 @@
           <div id="step" class="container tab-pane content fade"><br>
             <div class="row py-4 checklist prs_in_steps">
               <h2> {{step.heading_text}} </h2>
-              <h3> {{step.heading_text2}} </h3>
               <p>  {{step.text}} </p>
-              <div class="col-md-12 col-12 heading">
-                <div class="about-text-style">
-                  <ul>
-                    {% if step.list1 %}
-                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list1}} </li>
-                    {% endif %}
-                    {% if step.list2 %}
-                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list2}} </li>
-                    {% endif %}
-                    {% if step.list3 %}
-                    <li>  {{step.list3}} </li>
-                    {% endif %}
-                    {% if step.list4 %}
-                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list4}} </li>
-                    {% endif %}
-                    {% if step.list5 %}
-                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list5}} </li>
-                    {% endif %}
-                    {% if step.list6 %}
-                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list6}} </li>
-                    {% endif %}
-                    {% if step.list7 %}
-                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list7}} </li>
-                    {% endif %}
-                    {% if step.list8 %}
-                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list8}} </li>
-                    {% endif %}
-                    {% if step.list9 %}
-                    <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{step.list9}} </li>
-                    {% endif %}
-                  </ul>
-                </div>
-              </div>
+              <h3> {{step.heading_text2}} </h3>
+              
               <div class="col-md-12 col-12">
                 <div class="shadow p-4">
                   <h5 class="text-primary"> {{step.step1}} </h5>
                   <p> {{step.answer1}} </p>
-                  <p>{{step.step2}}</p>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-12">
+                <div class="shadow p-4">
+                  <h5 class="text-primary"> {{step.step2}}</h5>
                   <p> {{step.answer2}} </p>
                 </div>
               </div>
 
               <div class="col-md-12 col-12">
                 <div class="shadow p-4">
-                  <h5 class="text-primary"> {{step.step3}}</h5>
-                  <p> {{step.answer3}} </p>
+                  <h5 class="text-primary"> {{step.step3}} </h5>
+                  <p>{{step.answer3}} </p>
                 </div>
               </div>
 
               <div class="col-md-12 col-12">
                 <div class="shadow p-4">
                   <h5 class="text-primary"> {{step.step4}} </h5>
-                  <p> {{step.answer4}}</p>
+                  <p>{{step.answer4}}</p>
                 </div>
               </div>
-
               <div class="col-md-12 col-12">
                 <div class="shadow p-4">
                   <h5 class="text-primary"> {{step.step5}} </h5>
                   <p>{{step.answer5}}</p>
+                 
                 </div>
               </div>
-              <div class="col-md-12 col-12">
-                <div class="shadow p-4">
-                  <h5 class="text-primary"> {{step.step6}} </h5>
-                  <p>{{step.answer6}}</p>
-                  <p>{{step.step7}} </p>
-                  <p>{{step.answer7}}</p>
-                </div>
-              </div>
-              <div class="col-md-12 col-12">
-                <div class="shadow p-4">
-                  <h5 class="text-primary"> {{step.step8}} </h5>
-                  <p>{{step.answer8}}</p>
-                </div>
-              </div>
-              <div class="col-md-12 col-12">
-                <div class="shadow p-4">
-                  <h5 class="text-primary"> {{step.step9}} </h5>
-                  <p>{{step.answer9}}</p>
-                </div>
-              </div>
+             
+           
 
             </div>
           </div>
@@ -192,53 +166,40 @@
                 <h2 class="fs-2"> {{document.heading_text}}</h2>
 
                 <div class="row table-responsive-sm">
+                  <h3 class="py-4"> {{document.heading_text2}}</h3>
                   <div class="col-md-12 col-12">
                     <table class="table table-bordered table-sm">
                       <thead>
                         <tr>
                           <th>{{document.list1}}</th>
                           <th>{{document.list2}}</th>
-                          <th>{{document.list3}}</th>
+                          
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
+                          <td>{{document.list3}}</td>
                           <td>{{document.list4}} </td>
-    
+                        </tr>
+                        <tr>
                           <td>{{document.list5}}</td>
-    
                           <td>{{document.list6}}</td>
+
                         </tr>
                         <tr>
                           <td>{{document.list7}} </td>
                           <td>{{document.list8}}</td>
-                          <td>{{document.list9}}</td>
+                          
                         </tr>
                         <tr>
+                          <td>{{document.list9}}</td>
                           <td>{{document.list10}} </td>
+                        </tr>
+                        <tr>
                           <td>{{document.list11}}</td>
                           <td>{{document.list12}}</td>
                         </tr>
-                        <tr>
-                          <td>{{document.list13}} </td>
-                          <td>{{document.list14}}</td>
-                          <td>{{document.list15}} </td>
-                        </tr>
-                        <tr>
-                          <td>{{document.list16}} </td>
-                          <td>{{document.list17}}</td>
-                          <td>{{document.list18}} </td>
-                        </tr>
-                        <tr>
-                          <td>{{document.list19}} </td>
-                          <td>{{document.list20}}</td>
-                          <td>{{document.list21}} </td>
-                        </tr>
-                        <tr>
-                          <td>{{document.list22}} </td>
-                          <td>{{document.list23}}</td>
-                          <td>{{document.list24}} </td>
-                        </tr>
+                        
     
                       </tbody>
                     </table>
@@ -251,7 +212,6 @@
 
           </div>
           <div id="faq" class="container tab-pane content fade">
-            <h2 class='py-4 text-center'> {{faq.heading_text}} </h2>
             <div class="row">
 
               <div class="col-md-11 col-12 mx-auto heading2">
@@ -281,6 +241,115 @@
                       data-bs-parent="#accordionExample">
                       <div class="accordion-body">
                         {{faq.answer2}}
+                        <div class="about-text-style">
+                          <ul>
+                            {% if faq.list1 %}
+                            <li> {{faq.list1}} </li>
+                            {% endif %}
+                            {% if faq.list2 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list2}} </li>
+                            {% endif %}
+                            {% if faq.list3 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list3}} </li>
+                            {% endif %}
+                            {% if faq.list4 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list4}} </li>
+                            {% endif %}
+                            {% if faq.list5 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list5}} </li>
+                            {% endif %}
+                            {% if faq.list6 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list6}} </li>
+                            {% endif %}
+                            {% if faq.list7 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list7}} </li>
+                            {% endif %}
+                            {% if faq.list8 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list8}} </li>
+                            {% endif %}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h4 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        {{faq.question3}}
+                      </button>
+                    </h4>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        {{faq.answer3}}
+                        <div class="about-text-style">
+                          <ul>
+                            {% if faq.list9 %}
+                            <li> {{faq.list9}} </li>
+                            {% endif %}
+                            {% if faq.list10 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list10}} </li>
+                            {% endif %}
+                            {% if faq.list11 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list11}} </li>
+                            {% endif %}
+                            {% if faq.list12 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list12}} </li>
+                            {% endif %}
+                            {% if faq.list13 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list13}} </li>
+                            {% endif %}
+                            {% if faq.list14 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list14}} </li>
+                            {% endif %}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h4 class="accordion-header" id="headingFour">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        {{faq.question4}}
+                      </button>
+                    </h4>
+                    <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        {{faq.answer4}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h4 class="accordion-header" id="headingFive">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                        {{faq.question5}}
+                      </button>
+                    </h4>
+                    <div id="collapseFive" class="accordion-collapse collapse show" aria-labelledby="headingFive"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        {{faq.answer5}}
+                        <div class="about-text-style">
+                          <ul>
+                      
+                            {% if faq.list15 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list15}} </li>
+                            {% endif %}
+                            {% if faq.list16 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list16}} </li>
+                            {% endif %}
+                            {% if faq.list17 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list17}} </li>
+                            {% endif %}
+                            {% if faq.list18 %}
+                            <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{faq.list18}} </li>
+                            {% endif %}
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
