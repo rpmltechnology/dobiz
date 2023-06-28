@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'ngo',
     'indainowner',
     'otherstartup',
+    'fssaieating',
     
 ]
 SITE_ID = 1

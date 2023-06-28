@@ -984,52 +984,6 @@ def patent_api(request,page):
     response_data['price'] = PricingSumSerializer(price).data
     return JsonResponse(response_data, status=200)
 #>##################FOOD BUSINESS view##################
-def foodbusiness(request,page):
-    allpage=Page.objects.all()
-    page_dict={
-        'fssai_a_r':'FSSAI Annual Return',
-        'fssai_c_l':'FSSAI Central License',
-        'fssai_l_r':'FSSAI License Renewal',
-        'fssai_r':'FSSAI Registration',
-        'fssai_s_l':'FSSAI State License',
-        'fssai_a':'fssai-applicability'
-        
-    }
-    if page not in page_dict:
-        raise Http404('Invalid Page')
-
-    products = Product.objects.filter(category=page_dict.get(page))
-    meaning = Meaning.objects.filter(category=page_dict.get(page)).first()
-    minimum = MinimumRequirement.objects.filter(category=page_dict.get(page)).first()
-    benefit = Benefits.objects.filter(category=page_dict.get(page)).first()
-    document = DocumentRequired.objects.filter(category=page_dict.get(page)).first()
-    incorporation = IncorporationProcess.objects.filter(category=page_dict.get(page)).first()
-    compliance = Compliance.objects.filter(category=page_dict.get(page)).first()
-    step = StepWiseProcedure.objects.filter(category=page_dict.get(page)).first()
-    faq = FAQ.objects.filter(category=page_dict.get(page)).first()
-    closure = Closure.objects.filter(category=page_dict.get(page)).first()
-
-    banner = Banner.objects.get(category='CommonBanner')
-    price = PricingSum.objects.get(category='Common Price')
-    # Get the URL of the first product in the list
-    product_url = None
-    if products.exists():
-        product_url = request.build_absolute_uri(reverse('viewproduct', kwargs={'id': products[0].id}))
-    form = ContactUser()
-    if request.method == 'POST':
-        form = ContactUser(request.POST)
-        if form.is_valid():
-            form.save()
-            serializer = ContactUserSerializer(form.instance)
-            return JsonResponse(serializer.data, status=201)
-        else:
-            errors = form.errors.as_json()
-            return JsonResponse({'errors': errors}, status=400)
-
-    context = {'products': products, 'form': form, 'price':price,'banner': banner, 'meaning':meaning,'minimum':minimum,
-            'benefit':benefit, 'document':document,'incorporation':incorporation,'compliance':compliance,
-            'step':step,'faq':faq,'closure':closure,'allpage':allpage,'product_url':product_url}
-    return render(request, f'foodbusiness/{page}.html', context)
 @api_view(['GET','POST'])
 def foodbusiness_api(request,page):
     page_dict={

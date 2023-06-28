@@ -10,6 +10,7 @@ urlpatterns = [
     path('foreign-owners/',include('foreignowner.urls')),
     path('ngo/',include('ngo.urls')),
     path('indian-owners/',include('indainowner.urls')),
-     path('start-up-services/',include('otherstartup.urls')),
+    path('start-up-services/',include('otherstartup.urls')),
+    path('fssai-eating-license/',include('fssaieating.urls')),
     # path('cookie-consent/', cookie_consent, name='cookie_consent'),
 ]

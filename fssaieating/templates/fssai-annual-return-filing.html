@@ -1,0 +1,166 @@
+{% extends 'index.html' %}
+
+{%block title%}FSSAI License Renewal {% endblock %}
+
+{%block body %}
+{% include 'common_pages/banner.html'%}
+
+<section class="py-4 bg-light1">
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-9 col-12 affix-top bg-light" data-spy="affix" data-offset-top="597">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+          {% if meaning %}
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#meaning">Meaning</a>
+          </li>
+          {% endif %}
+          {% if minimum %}
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#requirement">Minimum requirement</a>
+          </li>
+          {% endif %}
+          {% if benefit %}
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#benefit">Benefit</a>
+          </li>
+          {% endif %}
+          {% if document %}
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#required">Document required</a>
+          </li>
+          {% endif %}
+          {% if incorporation %}
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#process">Incorporation Process</a>
+          </li>
+          {% endif %}
+          {% if compliance %}
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#compliance">Compliance</a>
+          </li>
+          {% endif %}
+          {% if closure %}
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#closure">Closure </a>
+          </li>
+          {% endif %}
+          {% if faq %}
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#faq">FAQ</a>
+          </li>
+          {% endif %}
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+          <div id="meaning" class="container tab-pane content active"><br>
+            <h2>{{meaning.heading_text}}</h2>
+            <p><b>{{meaning.text}}</b></p>
+            <p>{{meaning.heading_text2}}</p>
+            <p><b>{{meaning.heading_text3}}</b></p>
+
+            <h2>{{meaning.heading_text4}}</h2>
+            <p>{{meaning.text2}}</p>
+            <p class="b-style text-style">{{meaning.text3}}</p>
+            <h4>{{meaning.heading_text5}}</h4>
+            <p class="fs-6"><b>{{meaning.heading_text6}} </b> {{meaning.text4}} </p>
+            <h2>{{meaning.heading_text7}}</h2>
+            <p class="b-style text-style">{{meaning.text5}}</p>
+          </div>
+
+          <div id="requirement" class="container tab-pane fade"><br>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <h2>{{minimum.heading_text}}</h2>
+                <p class="b-style text-style">{{minimum.text}}</p>
+                <p>{{minimum.text2}}</p>
+                <p>{{minimum.text3}}</p>
+                <p>{{minimum.heading_text2}}</p>
+                <p>{{minimum.heading_text3}}</p>
+                <p>{{minimum.heading_text4}}</p>
+                <p>{{minimum.text4}}</p>
+
+              </div>
+
+            </div>
+
+
+
+          </div>
+
+          <div id="benefit" class="container tab-pane fade"><br>
+            <h2>Benefits</h2>
+
+          </div>
+
+          <div id="required" class="container tab-pane fade"><br>
+            <div class="row">
+
+              <div class="col-md-12 col-12 heading">
+                <h2>Documents.</h2>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div id="process" class="container tab-pane fade"><br>
+
+            <h2>Proccess</h2>
+          </div>
+
+          <div id="compliance" class="container tab-pane fade"><br>
+            <h2>Compliance</h2>
+          </div>
+
+          <div id="closure" class="container tab-pane fade"><br>
+            <h2> closure </h2>
+          </div>
+
+          <div id="faq" class="container tab-pane fade"><br>
+            <h2 class="fs-4">FAQ</h2>
+
+          </div>
+
+        </div>
+      </div>
+
+      {% include 'common_pages/pricing_sum_below.html'%}
+
+    </div>
+  </div>
+</section>
+
+{% include 'common_pages/product.html'%}
+
+<section class="checklist py-5">
+  <div class="container">
+    <div class="row py-4">
+      <h2>{{document.heading_text}}</h2>
+      <p>{{document.text}}</p>
+      <p>{{document.heading_text2}}</p>
+      <p><b>{{document.heading_text3}} </b> {{document.text2}} </p>
+      <div class="about-text-style">
+        <ul>
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list1}} </li>
+
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i>{{document.list2}} </li>
+
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list3}} </li>
+
+          <li> <i class="fa fa-check-circle" aria-hidden="true"></i> {{document.list4}} </li>
+        </ul>
+      </div>
+      <p>{{document.text3}}</p>
+      <h2 class="py-4">{{document.heading_text4}}</h2>
+      <p>{{document.text4}}</p>
+      <p>{{document.text5}}</p>
+
+    </div>
+  </div>
+</section>
+{% include 'common_pages/reviews.html' %}
+{% endblock %}

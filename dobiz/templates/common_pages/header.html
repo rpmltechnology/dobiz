@@ -215,21 +215,22 @@
     </li>
 
     <li class="nav-item dropdown has-megamenu">
-      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> LICENCES </a>
+      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Registartion </a>
       <div class="dropdown-menu megamenu" role="menu">
         <div class="row g-3">
           <div class="col-lg-4 col-12">
             <div class="col-megamenu">
-              <h6 class="title">FOOD BUSINESS</h6>
+              <h6 class="title">FSSAI & EATING LICENSE</h6>
               <ul class="list-unstyled">
-                <li><a href="{% url 'foodbusiness' page='fssai_a_r' %}">FSSAI Annual Return </a></li>
-                <li><a href="{% url 'foodbusiness' page='fssai_c_l' %}">FSSAI Central License </a></li>
-                <li><a href="{% url 'foodbusiness' page='fssai_l_r' %}">FSSAI License Renewal </a></li>
-                <li><a href="{% url 'foodbusiness' page='fssai_r'%}">FSSAI Registration </a></li>
-                <li><a href="{% url 'foodbusiness' page='fssai_s_l' %}">FSSAI State License </a></li>
-                <li><a href="{% url 'foodbusiness' page='fssai_a' %}">fssai-applicability </a></li>
+                <li><a href="{% url 'fssaieating:fssai-eating-license' page='fssai-applicability' %}">FSSAI Applicability </a></li>
+                <li><a href="{% url 'fssaieating:fssai-eating-license' page='fssai-registration' %}">FSSAI Registration</a></li>
+                <li><a href="{% url 'fssaieating:fssai-eating-license' page='fssai-state-license' %}">FSSAI State License </a></li>
+                <li><a href="{% url 'fssaieating:fssai-eating-license' page='fssai-central-license'%}">FSSAI Central License </a></li>
+                <li><a href="{% url 'fssaieating:fssai-eating-license' page='fssai-renewal' %}">FSSAI Renewal </a></li>
+                <li><a href="{% url 'fssaieating:fssai-eating-license' page='fssai-annual-return-filing' %}">FSSAI Annual Return Filing </a></li>
+                <li><a href="{% url 'fssaieating:fssai-eating-license' page='eating-house-license' %}">Eating House License </a></li>
                 {% for i in allpage %}
-                {% if i.section == "FOOD BUSINESS" %}
+                {% if i.section == "FSSAI & EATING LICENSE" %}
                 <li><a href="/commonPages?pagename={{i.pagename}}">{{i.pagename}} </a></li>
                 {%endif%}
                 {% endfor %}

@@ -91,7 +91,6 @@ path('patent_api/<str:page>/', views.patent_api, name='patent_api'),
 
 
 # FOOD BUSINESS url
-path('foodbusiness/<str:page>/', views.foodbusiness, name='foodbusiness'),
 path('foodbusiness_api/<str:page>/', views.foodbusiness_api, name='foodbusiness_api'),
 
 
